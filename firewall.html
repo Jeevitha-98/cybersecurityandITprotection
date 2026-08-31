@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - Cyber Protection</title>
+    <!-- Link External Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CREATIVE PRELOADER LAYER -->
+    <div id="preloader">
+        <div class="cyber-anim-container">
+            <!-- Outer spinning dashed track -->
+            <div class="orbital-ring"></div>
+            <!-- Inner reverse spinning track -->
+            <div class="orbital-ring-inner"></div>
+            <!-- Vector Shield Icon -->
+            <svg class="svg-shield-icon" viewBox="0 0 24 24" xmlns="http://w3.org">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <!-- Branded Preloader Heading -->
+        <div class="loader-title">Stackly</div>
+        <div class="loader-status">Initializing Firewall</div>
+        <div class="progress-timeline">
+            <div class="progress-fill"></div>
+        </div>
+    </div>
+
+    <!-- MAIN UI PAGE (Hidden initially) -->
+    
+
+    <!-- Link External JavaScript Logic -->
+    <script> document.addEventListener("DOMContentLoaded", () => {
+    const preloader = document.getElementById("preloader");
+    const appContent = document.getElementById("appContent");
+    const actionBtn = document.getElementById("actionBtn");
+
+    // Clear and handle the 2-second loading time handover
+    setTimeout(() => {
+        if (preloader) {
+            preloader.classList.add("loaded");
+        }
+        if (appContent) {
+            appContent.classList.add("visible");
+        }
+    }, 2000); 
+
+    if (actionBtn) {
+        actionBtn.addEventListener("click", () => {
+            alert("Stackly Security Protocols updated successfully!");
+        });
+    }
+});
+</script>
+
+<header class="main-header">
+    <div class="header-container">
+        <!-- Brand Logo Container (Tied to JS Window Reload Engine) -->
+        <div class="logo-wrapper" id="brandLogoBtn" title="Refresh Dashboard">
+            <img src="https://placehold.co" alt="Stackly Logo" class="brand-img">
+        </div>
+
+        <!-- Centralized App Menu Navigation Links (Now with Contact Us) -->
+    <nav class="nav-menu" id="navigationDrawer">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="firewall.html" class="nav-link">Firewall</a>
+            <a href="logs.html" class="nav-link">Threat Logs</a>
+            <a href="analytics.html" class="nav-link">Analytics</a>
+            <a href="settings.html" class="nav-link">Settings</a>
+            <a href="contact.html" class="nav-link">Contact Us</a>
+        </nav>
+
+        <!-- Authorization Action Controls Corner -->
+        <div class="auth-wrapper">
+            <button class="auth-btn">Access Console</button>
+        </div>
+
+        <!-- Adaptive Mobile Hamburger Icon Trigger -->
+        <button class="hamburger-menu" id="hamburgerToggle" aria-label="Toggle Navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </div>
+</header>
+
+<!-- Overlay background asset used to execute backdrop blur behind the open mobile nav menu -->
+<div class="blur-backdrop" id="screenOverlay"></div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const brandLogoBtn = document.getElementById("brandLogoBtn");
+    const hamburgerToggle = document.getElementById("hamburgerToggle");
+    const screenOverlay = document.getElementById("screenOverlay");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    // 1. Core Page Refresh Bind tied to Brand Image element clicks
+    if (brandLogoBtn) {
+        brandLogoBtn.addEventListener("click", () => {
+            window.location.reload();
+        });
+    }
+
+    // 2. Responsive Mobile Navigation Menu & Blurring Layer Toggle Control
+    function toggleMobileMenu() {
+        document.body.classList.toggle("menu-open");
+    }
+
+    if (hamburgerToggle) {
+        hamburgerToggle.addEventListener("click", toggleMobileMenu);
+    }
+
+    // Collapse drawer panel if a user clicks outside the menu boundaries onto the blurred viewport backdrop
+    if (screenOverlay) {
+        screenOverlay.addEventListener("click", toggleMobileMenu);
+    }
+
+    // Auto-collapse mobile navigation dropdown drawer seamlessly when items are selected
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            document.body.classList.remove("menu-open");
+            
+            // Clean active track classes variables 
+            navLinks.forEach(item => item.classList.remove("active"));
+            link.classList.add("active");
+        });
+    });
+});
+
+</script>
