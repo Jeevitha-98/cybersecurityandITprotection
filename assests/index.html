@@ -1,0 +1,3728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - Cyber Protection</title>
+    <!-- Link External Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CREATIVE PRELOADER LAYER -->
+    <div id="preloader">
+        <div class="cyber-anim-container">
+            <!-- Outer spinning dashed track -->
+            <div class="orbital-ring"></div>
+            <!-- Inner reverse spinning track -->
+            <div class="orbital-ring-inner"></div>
+            <!-- Vector Shield Icon -->
+            <svg class="svg-shield-icon" viewBox="0 0 24 24" xmlns="http://w3.org">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <!-- Branded Preloader Heading -->
+        <div class="loader-title">Stackly</div>
+        <div class="loader-status">Initializing Firewall</div>
+        <div class="progress-timeline">
+            <div class="progress-fill"></div>
+        </div>
+    </div>
+
+    <!-- MAIN UI PAGE (Hidden initially) -->
+    
+
+    <!-- Link External JavaScript Logic -->
+    <script> document.addEventListener("DOMContentLoaded", () => {
+    const preloader = document.getElementById("preloader");
+    const appContent = document.getElementById("appContent");
+    const actionBtn = document.getElementById("actionBtn");
+
+    // Clear and handle the 2-second loading time handover
+    setTimeout(() => {
+        if (preloader) {
+            preloader.classList.add("loaded");
+        }
+        if (appContent) {
+            appContent.classList.add("visible");
+        }
+    }, 2000); 
+
+    if (actionBtn) {
+        actionBtn.addEventListener("click", () => {
+            alert("Stackly Security Protocols updated successfully!");
+        });
+    }
+});
+</script>
+
+<header class="main-header">
+    <div class="header-container">
+        <!-- Brand Logo Container (Tied to JS Window Reload Engine) -->
+        <div class="logo-wrapper" id="brandLogoBtn" title="Refresh Dashboard">
+            <img src="https://placehold.co" alt="Stackly Logo" class="brand-img">
+        </div>
+
+        <!-- Centralized App Menu Navigation Links (Now with Contact Us) -->
+        <nav class="nav-menu" id="navigationDrawer">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#firewall" class="nav-link">Firewall</a>
+            <a href="#logs" class="nav-link">Threat Logs</a>
+            <a href="#analytics" class="nav-link">Analytics</a>
+            <a href="#settings" class="nav-link">Settings</a>
+            <a href="#contact" class="nav-link">Contact Us</a>
+        </nav>
+
+        <!-- Authorization Action Controls Corner -->
+        <div class="auth-wrapper">
+            <button class="auth-btn">Access Console</button>
+        </div>
+
+        <!-- Adaptive Mobile Hamburger Icon Trigger -->
+        <button class="hamburger-menu" id="hamburgerToggle" aria-label="Toggle Navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </div>
+</header>
+
+<!-- Overlay background asset used to execute backdrop blur behind the open mobile nav menu -->
+<div class="blur-backdrop" id="screenOverlay"></div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const brandLogoBtn = document.getElementById("brandLogoBtn");
+    const hamburgerToggle = document.getElementById("hamburgerToggle");
+    const screenOverlay = document.getElementById("screenOverlay");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    // 1. Core Page Refresh Bind tied to Brand Image element clicks
+    if (brandLogoBtn) {
+        brandLogoBtn.addEventListener("click", () => {
+            window.location.reload();
+        });
+    }
+
+    // 2. Responsive Mobile Navigation Menu & Blurring Layer Toggle Control
+    function toggleMobileMenu() {
+        document.body.classList.toggle("menu-open");
+    }
+
+    if (hamburgerToggle) {
+        hamburgerToggle.addEventListener("click", toggleMobileMenu);
+    }
+
+    // Collapse drawer panel if a user clicks outside the menu boundaries onto the blurred viewport backdrop
+    if (screenOverlay) {
+        screenOverlay.addEventListener("click", toggleMobileMenu);
+    }
+
+    // Auto-collapse mobile navigation dropdown drawer seamlessly when items are selected
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            document.body.classList.remove("menu-open");
+            
+            // Clean active track classes variables 
+            navLinks.forEach(item => item.classList.remove("active"));
+            link.classList.add("active");
+        });
+    });
+});
+
+</script>
+
+<section class="hero-section" id="home">
+    <div class="hero-container">
+        
+        <!-- Left Column: Content & Metrics -->
+        <div class="hero-content">
+            <div class="cyber-badge">// NEXT-GEN CYBER DEPLOYMENT</div>
+            
+            <!-- Target heading container for character split animation -->
+            <h1 class="scroll-trigger-title" id="autoTypeTitle">
+                Defining the new era of digital stealth
+            </h1>
+            
+            <p class="hero-description">
+                Stackly delivers low-latency, zero-trust infrastructure designed to camouflage corporate network footprints, ensuring total data invisibility and hyper-optimized defensive perimeter security.
+            </p>
+            
+            <!-- Isolated button row configuration -->
+            <div class="cta-group">
+                <button class="cta-btn primary-cta" type="button">Audit Secure Data</button>
+                <button class="cta-btn secondary-cta" type="button">
+                    <span>Manage Shield</span> 
+                    <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Real User Avatar Image Grid with Sliding Text Loop -->
+            <div class="social-validation">
+                <div class="avatar-stack">
+                    <img src="https://unsplash.com" alt="Active Operator 1" class="avatar-img">
+                    <img src="https://unsplash.com" alt="Active Operator 2" class="avatar-img">
+                    <img src="https://unsplash.com" alt="Active Operator 3" class="avatar-img">
+                </div>
+                <div class="validation-text-carousel" id="carouselText">
+                    <div class="slide active"><strong>800+ Enterprise Networks Securing Assets</strong><span>Daily active threat monitoring updates via Stackly.</span></div>
+                    <div class="slide"><strong>99.99% Threat Mitigation Rate</strong><span>Continuous global perimeter synchronization.</span></div>
+                    <div class="slide"><strong>24/7 Quantum Firewall Active</strong><span>Isolating backend vulnerabilities instantly.</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Multi-Axis Fluid Geometric Mesh -->
+        <div class="hero-visual">
+            <div class="vector-quantum-core">
+                <svg class="quantum-svg" viewBox="0 0 400 400" xmlns="http://w3.org">
+                    <defs>
+                        <linearGradient id="cyberGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.85"/>
+                            <stop offset="100%" stop-color="#9d4edd" stop-opacity="0.4"/>
+                        </linearGradient>
+                        <filter id="neonBlur">
+                            <feGaussianBlur stdDeviation="10" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <g class="rotating-cluster">
+                        <!-- Structural geometric beams overlapping to frame 3D dimensions -->
+                        <rect x="175" y="40" width="50" height="320" rx="25" fill="url(#cyberGlow)" filter="url(#neonBlur)" />
+                        <rect x="40" y="175" width="320" height="50" rx="25" fill="url(#cyberGlow)" filter="url(#neonBlur)" />
+                        <rect x="175" y="40" width="50" height="320" rx="25" fill="url(#cyberGlow)" transform="rotate(45 200 200)" />
+                        <rect x="175" y="40" width="50" height="320" rx="25" fill="url(#cyberGlow)" transform="rotate(-45 200 200)" />
+                        <circle cx="200" cy="200" r="28" fill="none" stroke="#00f0ff" stroke-width="2" stroke-dasharray="8, 6" />
+                        <circle cx="200" cy="200" r="10" fill="#00f0ff" />
+                    </g>
+                </svg>
+                <div class="hud-pointer top-right"><span> LAYER_STEALTH</span></div>
+                <div class="hud-pointer bottom-left"><span> QUANTUM_CORE</span></div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #64748b;
+}
+
+/* ==========================================
+   FLUID HERO RESPONSIVE CONTAINER DESIGN
+========================================== */
+.hero-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 110px 0;
+    background-color: var(--bg-deep);
+    position: relative;
+}
+
+.hero-container {
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr; /* Controls perfect side-by-side splitting */
+    gap: 48px;
+    align-items: center;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cyber-badge {
+    font-family: monospace;
+    color: var(--neon-cyan);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.scroll-trigger-title {
+    font-size: 3.4rem;
+    font-weight: 800;
+    line-height: 1.15;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+    color: var(--text-bright);
+}
+
+/* Base parameters for character-by-character reveals */
+.scroll-trigger-title .char {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.scroll-trigger-title .char.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-description {
+    font-size: 1.05rem;
+    color: var(--text-bright);
+    line-height: 1.65;
+    margin-bottom: 35px;
+    opacity: 0.95;
+}
+
+/* Non-collapsing flow block button group layout handles */
+.cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.cta-btn {
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--text-bright);
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+
+.primary-cta {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.primary-cta:hover {
+    background-color: var(--text-bright);
+    color: var(--bg-deep) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.15);
+}
+
+.secondary-cta {
+    background: rgba(13, 21, 39, 0.6);
+    border: 1px solid var(--neon-cyan);
+}
+
+.secondary-cta:hover {
+    background: linear-gradient(90deg, var(--neon-purple), var(--neon-cyan));
+    border-color: transparent;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 240, 255, 0.3);
+}
+
+.btn-arrow {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.secondary-cta:hover .btn-arrow {
+    transform: translateX(4px);
+}
+
+/* ==========================================
+   USER SOCIAL PROFILES & SLIDER CAROUSEL
+========================================== */
+.social-validation {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: rgba(13, 21, 39, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 16px 24px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 520px;
+    box-sizing: border-box;
+}
+
+.avatar-stack {
+    display: flex;
+    flex-shrink: 0;
+}
+
+.avatar-img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid var(--bg-deep);
+    object-fit: cover;
+    margin-right: -12px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.avatar-img:hover {
+    transform: scale(1.25) translateY(-3px);
+    z-index: 10;
+}
+
+.validation-text-carousel {
+    position: relative;
+    height: 38px;
+    flex: 1;
+    overflow: hidden;
+}
+
+.validation-text-carousel .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.validation-text-carousel .slide.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide strong {
+    font-size: 0.85rem;
+    color: var(--text-bright);
+}
+
+.slide span {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+}
+
+/* ==========================================
+   RIGHT COLUMN GEOMETRIC CORE VECTOR ASSETS
+========================================== */
+.hero-visual {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.vector-quantum-core {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    animation: floatVisual 6s ease-in-out infinite;
+}
+
+.quantum-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.rotating-cluster {
+    transform-origin: 200px 200px;
+    animation: continuousRotate 28s linear infinite;
+}
+
+.hud-pointer {
+    position: absolute;
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: var(--neon-cyan);
+    border-bottom: 1px solid rgba(0, 240, 255, 0.3);
+    padding-bottom: 4px;
+}
+.top-right { top: 12%; right: -2%; }
+.bottom-left { bottom: 12%; left: -2%; }
+
+/* Core Infinite Keyframes */
+@keyframes continuousRotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes floatVisual { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-12px); } }
+
+/* ==========================================
+   ADAPTIVE BREAKPOINTS (PREVENTS OVERLAPS)
+========================================== */
+@media (max-width: 992px) {
+    .hero-container {
+        grid-template-columns: 1fr; /* Switch to clean vertical list stack layout */
+        padding: 0 24px;
+        gap: 50px;
+    }
+    .hero-content {
+        align-items: center;
+        text-align: center;
+    }
+    .scroll-trigger-title { font-size: 2.8rem; }
+    .cta-group { justify-content: center; }
+    .social-validation { justify-content: center; }
+    .hero-visual { justify-content: center; width: 100%; }
+}
+
+@media (max-width: 480px) {
+    .hero-container { padding: 0 16px; }
+    .scroll-trigger-title { font-size: 2.2rem; }
+    .cta-group { flex-direction: column; }
+    .cta-btn { width: 100%; }
+    .social-validation { flex-direction: column; gap: 12px; padding: 16px; }
+    .validation-text-carousel { height: 42px; text-align: center; }
+    .validation-text-carousel .slide { align-items: center; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const autoTitle = document.getElementById("autoTypeTitle");
+    const carouselContainer = document.getElementById("carouselText");
+
+    // 1. Fixed Character Split String Generator Engine
+    if (autoTitle) {
+        const titleText = autoTitle.textContent.trim();
+        autoTitle.textContent = ""; // Safely erase layout context
+
+        const letterSpans = titleText.split("").map(char => {
+            const span = document.createElement("span");
+            span.className = "char";
+            span.innerHTML = char === " " ? "&nbsp;" : char;
+            autoTitle.appendChild(span);
+            return span;
+        });
+
+        // Loop arrays and inject visual delay timings sequentially
+        letterSpans.forEach((spanElement, sequentialIndex) => {
+            setTimeout(() => {
+                spanElement.classList.add("revealed");
+            }, 25 * sequentialIndex); // Typing animation rate parameter
+        });
+    }
+
+    // 2. Social Validation Panel 2-Second Slider Loop
+    if (carouselContainer) {
+        const slides = carouselContainer.querySelectorAll(".slide");
+        let activeSlideIndex = 0;
+
+        setInterval(() => {
+            slides[activeSlideIndex].classList.remove("active");
+            activeSlideIndex = (activeSlideIndex + 1) % slides.length;
+            slides[activeSlideIndex].classList.add("active");
+        }, 2000); // 2000 milliseconds handover window
+    }
+});
+
+</script>
+
+<section class="brand-carousel-section">
+    <div class="brand-section-header">
+        <span class="header-indicator">// SECURED SYSTEM ARCHITECTURES</span>
+    </div>
+    
+    <!-- Infinite Horizontal Marquee Window -->
+    <div class="marquee-viewport">
+        <div class="marquee-track">
+            
+            <!-- Original Set of Vector Brand Elements -->
+            <div class="brand-node">
+                <svg viewBox="0 0 24 24" class="brand-svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                <span class="brand-name">NexusShield</span>
+            </div>
+            <div class="brand-node">
+                <svg viewBox="0 0 24 24" class="brand-svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span class="brand-name">AegisFront</span>
+            </div>
+            <div class="brand-node">
+                <svg viewBox="0 0 24 24" class="brand-svg"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                <span class="brand-name">CyberCore</span>
+            </div>
+            <div class="brand-node">
+                <svg viewBox="0 0 24 24" class="brand-svg"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3zM6 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3z"/></svg>
+                <span class="brand-name">ParallelIT</span>
+            </div>
+            <div class="brand-node">
+                <svg viewBox="0 0 24 24" class="brand-svg"><polygon points="12 2 2 22 22 22"></polygon></svg>
+                <span class="brand-name">DeltaSec</span>
+            </div>
+
+            <!-- Identical Cloned Set to ensure an uninterrupted visual looping point -->
+            <div class="brand-node">
+                <svg viewBox="0 0 24 24" class="brand-svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                <span class="brand-name">NexusShield</span>
+            </div>
+            <div class="brand-node">
+                <svg viewBox="0 0 24 24" class="brand-svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span class="brand-name">AegisFront</span>
+            </div>
+            <div class="brand-node">
+                <svg viewBox="0 0 24 24" class="brand-svg"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                <span class="brand-name">CyberCore</span>
+            </div>
+            <div class="brand-node">
+                <svg viewBox="0 0 24 24" class="brand-svg"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3zM6 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3z"/></svg>
+                <span class="brand-name">ParallelIT</span>
+            </div>
+            <div class="brand-node">
+                <svg viewBox="0 0 24 24" class="brand-svg"><polygon points="12 2 2 22 22 22"></polygon></svg>
+                <span class="brand-name">DeltaSec</span>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #64748b;
+}
+
+/* ==========================================
+   INFINITE BRAND CAROUSEL LOOK & FEEL
+========================================== */
+.brand-carousel-section {
+    width: 100%;
+    display: block;          /* Natural vertical flow to avoid overlays */
+    padding-top: 0px;        /* Forced 0px top padding layout */
+    padding-bottom: 20px;    /* Forced 20px bottom padding layout */
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.brand-section-header {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 40px 15px 40px;
+    text-align: left;
+}
+
+.header-indicator {
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    letter-spacing: 2px;
+}
+
+/* Linear Clipping viewport masks out harsh side edges */
+.marquee-viewport {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    display: flex;
+    /* Soft linear mask gradients fade items out at the viewport limits */
+    mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
+    padding: 12px 0;
+}
+
+/* Infinite Horizontal Streaming Wrapper */
+.marquee-track {
+    display: inline-flex;
+    align-items: center;
+    gap: 80px; /* Spacing separation index between icon blocks */
+    padding-right: 80px;
+    animation: streamMarquee 25s linear infinite;
+    will-change: transform;
+}
+
+/* Pause the looping timeline safely when a user hovers over the marquee track */
+.marquee-viewport:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+/* Individual Interactive Item Cards */
+.brand-node {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Forced Crisp White Vector Assets */
+.brand-svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: var(--text-bright); /* Forced white path color */
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke 0.3s ease, filter 0.3s ease;
+    will-change: filter;
+}
+
+/* Forced Crisp White Text Labels */
+.brand-name {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-bright); /* Forced white typography */
+    letter-spacing: 0.5px;
+    opacity: 0.65;
+    transition: opacity 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* ==========================================
+   NEON INTERACTIVE HOVER GLOW CONFIG
+========================================== */
+.brand-node:hover {
+    transform: scale(1.05);
+}
+
+/* Cyan glow effect for odd elements */
+.brand-node:hover .brand-svg {
+    stroke: var(--neon-cyan);
+    filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.85));
+}
+
+.brand-node:hover .brand-name {
+    color: var(--neon-cyan);
+    opacity: 1;
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
+}
+
+/* Alternating Purple glow effect for even elements */
+.brand-node:nth-child(even):hover .brand-svg {
+    stroke: var(--neon-purple);
+    filter: drop-shadow(0 0 8px rgba(157, 78, 221, 0.85));
+}
+
+.brand-node:nth-child(even):hover .brand-name {
+    color: var(--neon-purple);
+    opacity: 1;
+    text-shadow: 0 0 8px rgba(157, 78, 221, 0.4);
+}
+
+/* ==========================================
+   HARDWARE PERFORMANCE ANIMATION LOOPS
+========================================== */
+@keyframes streamMarquee {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        /* Translates exactly halfway across to achieve seamless handover looping points */
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN VIEWPORTS
+========================================== */
+@media (max-width: 992px) {
+    .brand-section-header {
+        padding: 0 24px 12px 24px;
+    }
+    .marquee-track {
+        gap: 60px;
+        padding-right: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-section-header {
+        padding: 0 16px 10px 16px;
+    }
+    .marquee-track {
+        gap: 45px;
+        padding-right: 45px;
+        animation-duration: 20s; /* Loops slightly quicker on small screens for dynamic feel */
+    }
+    .brand-name {
+        font-size: 0.95rem;
+    }
+    .brand-svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+</style>
+
+<section class="features-section" id="firewall">
+    <div class="features-container">
+        
+        <div class="features-header">
+            <div class="cyber-badge">// SYSTEM MATRIX CORE</div>
+            <!-- This title triggers character-by-character purely on viewport scroll -->
+            <h2 class="scroll-reveal-title" id="scrollFeatureTitle">
+                Engineered for absolute perimeter isolation
+            </h2>
+        </div>
+
+        <!-- 3-Column Adaptive Grid System -->
+        <div class="features-grid" id="cascadeGrid">
+            
+            <!-- Card 1 -->
+            <div class="feature-card animate-on-scroll">
+                <div class="card-glow-layer"></div>
+                <div class="card-image-wrapper">
+                    <img src="https://unsplash.com" alt="Quantum Encryption Matrix" class="feature-img">
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">MODULE_01 // COLD_VAULT</div>
+                    <h3>Quantum Shielding</h3>
+                    <p>Enforces hardware-isolated polymorphic keys, rendering data completely unreadable to intercepting rogue foreign terminal relays.</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="feature-card animate-on-scroll">
+                <div class="card-glow-layer"></div>
+                <div class="card-image-wrapper">
+                    <img src="https://unsplash.com" alt="Network Invisibility Map" class="feature-img">
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">MODULE_02 // DARK_POD</div>
+                    <h3>Footprint Stealth</h3>
+                    <p>Camouflages outgoing server packet header routes dynamically, making high-traffic cloud infrastructure clusters invisible to mapping sniffers.</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="feature-card animate-on-scroll">
+                <div class="card-glow-layer"></div>
+                <div class="card-image-wrapper">
+                    <img src="https://unsplash.com" alt="Live Threat Mitigation Analytics" class="feature-img">
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">MODULE_03 // KINETIC_AI</div>
+                    <h3>Autonomous Reflex</h3>
+                    <p>Instantly deploys self-healing sandbox subnets the millisecond unexpected anomalies bypass edge load balancers.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #64748b;
+}
+
+/* ==========================================
+   ISOLATED FEATURES DESIGN BLOCK
+========================================== */
+.features-section {
+    width: 100%;
+    display: block;
+    padding-top: 50px;       /* Explicitly restricted top padding constraint */
+    padding-bottom: 30px;    /* Explicitly restricted bottom padding footprint */
+    background-color: var(--bg-deep);
+    box-sizing: border-box;
+}
+
+.features-container {
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.features-header {
+    max-width: 700px;
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+/* ==========================================
+   SCROLL REVEAL CHARACTER TYPOGRAPHY
+========================================== */
+.scroll-reveal-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1.15;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    color: var(--text-bright);
+    margin-top: 10px;
+}
+
+/* Individual characters mapped to opacity triggers */
+.scroll-reveal-title .char-node {
+    display: inline-block;
+    opacity: 0.1; /* Dull placeholder state before window scroll intersects */
+    transition: opacity 0.15s ease, text-shadow 0.15s ease, color 0.15s ease;
+}
+
+.scroll-reveal-title .char-node.illuminated {
+    opacity: 1;
+    color: var(--text-bright);
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+}
+
+/* ==========================================
+   3-COLUMN ADAPTIVE CARD MATRIX GRID
+========================================== */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
+.feature-card {
+    background-color: var(--bg-surface);
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    
+    /* Scroll entrance baseline settings (Hidden by default) */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* JavaScript class appends target activation parameter smoothly */
+.feature-card.card-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ambient glow container layered over background nodes */
+.card-glow-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(800px circle at var(--x, 0px) var(--y, 0px), rgba(0, 240, 255, 0.06), transparent 40%);
+    pointer-events: none;
+    z-index: 3;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.feature-card:hover .card-glow-layer {
+    opacity: 1;
+}
+
+.card-image-wrapper {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.feature-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.6s ease;
+    filter: saturate(0.7) brightness(0.8);
+}
+
+.card-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    z-index: 4;
+}
+
+.card-meta {
+    font-family: monospace;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    color: var(--text-dim);
+    margin-bottom: 12px;
+    transition: color 0.3s ease;
+}
+
+.card-content h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-bright);
+    margin-bottom: 12px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+/* ==========================================
+   INTERACTIVE NEON HOVER GLOW COUPLINGS
+========================================== */
+.feature-card:hover {
+    border-color: rgba(0, 240, 255, 0.2);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.feature-card:hover .feature-img {
+    transform: scale(1.06);
+    filter: saturate(1.1) brightness(0.95);
+}
+
+.feature-card:hover .card-meta {
+    color: var(--neon-cyan);
+}
+
+.feature-card:hover h3 {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
+}
+
+.feature-card:hover p {
+    color: var(--text-bright);
+}
+
+/* Alternating theme variances for the middle structural card card elements */
+.feature-card:nth-child(2):hover {
+    border-color: rgba(157, 78, 221, 0.2);
+}
+.feature-card:nth-child(2):hover .card-meta { color: var(--neon-purple); }
+.feature-card:nth-child(2):hover h3 { color: var(--neon-purple); text-shadow: 0 0 10px rgba(157, 78, 221, 0.4); }
+
+/* ==========================================
+   RESPONSIVE DESIGN ADAPTIONS
+========================================== */
+@media (max-width: 992px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr); /* Collapses smoothly to dual-column lists */
+        gap: 24px;
+    }
+    .scroll-reveal-title { font-size: 2.4rem; }
+    .features-container { padding: 0 24px; }
+}
+
+@media (max-width: 640px) {
+    .features-grid {
+        grid-template-columns: 1fr; /* Pure linear stack format for mobile phones */
+    }
+    .scroll-reveal-title { font-size: 1.9rem; }
+    .features-container { padding: 0 16px; }
+    .card-image-wrapper { height: 180px; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. SCROLL TRIGGER: Letter-by-Letter Title Animation
+    const scrollTitle = document.getElementById("scrollFeatureTitle");
+    if (scrollTitle) {
+        const titleText = scrollTitle.textContent.trim();
+        scrollTitle.textContent = "";
+
+        const splitChars = titleText.split("").map(char => {
+            const span = document.createElement("span");
+            span.className = "char-node";
+            span.innerHTML = char === " " ? "&nbsp;" : char;
+            scrollTitle.appendChild(span);
+            return span;
+        });
+
+        function handleTitleScrollReveal() {
+            const boundingBox = scrollTitle.getBoundingClientRect();
+            const winHeight = window.innerHeight;
+            
+            // Text illuminates as header crosses past the bottom 90% view toward center 35% height
+            const startRevealPos = winHeight * 0.9;
+            const endRevealPos = winHeight * 0.35;
+            
+            let revealRatio = (startRevealPos - boundingBox.top) / (startRevealPos - endRevealPos);
+            revealRatio = Math.max(0, Math.min(1, revealRatio));
+
+            const maxIndexToLight = Math.floor(revealRatio * splitChars.length);
+
+            splitChars.forEach((charSpan, idx) => {
+                if (idx < maxIndexToLight) {
+                    charSpan.classList.add("illuminated");
+                } else {
+                    charSpan.classList.remove("illuminated");
+                }
+            });
+        }
+        window.addEventListener("scroll", handleTitleScrollReveal);
+        handleTitleScrollReveal(); // Process check instantly on reload
+    }
+
+    // 2. SCROLL TRIGGER: One-by-One Grid Card Cascade Reveal
+    const cascadeCards = document.querySelectorAll(".animate-on-scroll");
+    
+    function handleGridCascadeReveal() {
+        cascadeCards.forEach((card, progressiveIdx) => {
+            const cardTop = card.getBoundingClientRect().top;
+            const activationBarrier = window.innerHeight * 0.88; // Triggers slightly before it enters layout viewports
+
+            if (cardTop < activationBarrier) {
+                // Instantly checks if element is unrevealed, then initiates delayed cascading index shifts
+                if (!card.classList.contains("card-revealed")) {
+                    setTimeout(() => {
+                        card.classList.add("card-revealed");
+                    }, progressiveIdx * 120); // 120ms staging layout lag offset per element card
+                }
+            }
+        });
+    }
+    window.addEventListener("scroll", handleGridCascadeReveal);
+    handleGridCascadeReveal();
+
+    // 3. INTERACTIVE EFFECT: Dynamic Mouse Laser Pointer Tracker over Cards
+    const targetCards = document.querySelectorAll(".feature-card");
+    targetCards.forEach(card => {
+        card.addEventListener("mousemove", (event) => {
+            const rect = card.getBoundingClientRect();
+            const cursorX = event.clientX - rect.left;
+            const cursorY = event.clientY - rect.top;
+            
+            // Shifts mathematical parameter handles directly within the scoped element card node
+            card.style.setProperty("--x", `${cursorX}px`);
+            card.style.setProperty("--y", `${cursorY}px`);
+        });
+    });
+});
+
+</script>
+
+<section class="contact-section" id="contact">
+    <!-- Ambient image background backdrop layer -->
+    <img src="https://unsplash.com" alt="Cyber Grid Backdrop" class="contact-bg-overlay">
+
+    <div class="contact-container">
+        
+        <!-- Left Column: Contextual System Status Details -->
+        <div class="contact-info-panel">
+            <div class="cyber-badge">// SECURE COMM CHANNEL</div>
+            <h2 class="contact-main-title">Initiate a perimeter security audit</h2>
+            <p class="contact-subtitle">
+                Connect with our deployment engineers to map data vectors, evaluate localized vulnerability nodes, and configure structural network camouflage tailored for your cloud infrastructure footprint.
+            </p>
+            
+            <div class="contact-status-tracker">
+                <div class="status-row">
+                    <svg viewBox="0 0 24 24" class="status-svg"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    <span>Average triage response time: <strong>&lt; 9 Mins</strong></span>
+                </div>
+                <div class="status-row">
+                    <svg viewBox="0 0 24 24" class="status-svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    <span>Encryption Tunnel: <strong>TLS_1.3_ACTIVE</strong></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Glassmorphic Validation Input Card -->
+        <div class="contact-form-panel">
+            <div class="glass-form-card">
+                <form id="stacklyAuditForm" novalidate>
+                    
+                    <div class="form-input-group">
+                        <label for="auditName">Authorized Operator Name</label>
+                        <div class="field-wrapper">
+                            <svg viewBox="0 0 24 24" class="input-icon"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            <input type="text" id="auditName" placeholder="e.g. Sarah Connor" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div class="form-input-group">
+                        <label for="auditEmail">Secure Terminal Routing Email</label>
+                        <div class="field-wrapper">
+                            <svg viewBox="0 0 24 24" class="input-icon"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            <input type="email" id="auditEmail" placeholder="operator@domain.com" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div class="form-input-group">
+                        <label for="auditMessage">Scope of Infrastructure Audit</label>
+                        <div class="field-wrapper text-area-wrapper">
+                            <svg viewBox="0 0 24 24" class="input-icon"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                            <textarea id="auditMessage" rows="4" placeholder="Describe network layout node vulnerabilities..."></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-audit-btn">
+                        <span>Transmit Secure Payload</span>
+                        <svg viewBox="0 0 24 24" class="btn-send-icon"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    </button>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-error: #ff3366;
+}
+
+.contact-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.contact-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.02;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.contact-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    z-index: 2;
+}
+
+.contact-info-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contact-main-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: var(--text-bright);
+    margin-top: 15px;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+.contact-subtitle {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.65;
+    margin-bottom: 35px;
+    max-width: 500px;
+}
+
+.contact-status-tracker {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+}
+
+.status-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.85rem;
+    color: var(--text-bright);
+}
+
+.status-svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: var(--neon-cyan);
+    stroke-width: 2;
+}
+
+.status-row:nth-child(2) .status-svg { stroke: var(--neon-purple); }
+
+.contact-form-panel {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.glass-form-card {
+    width: 100%;
+    max-width: 480px;
+    background: rgba(13, 21, 39, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 16px;
+    padding: 30px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.glass-form-card:hover {
+    border-color: rgba(0, 240, 255, 0.15);
+    box-shadow: 0 20px 50px rgba(0, 240, 255, 0.05);
+}
+
+.form-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.form-input-group label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.field-wrapper { position: relative; width: 100%; }
+
+.input-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: var(--text-dim);
+    stroke-width: 2;
+    transition: stroke 0.25s ease;
+    pointer-events: none;
+}
+
+.text-area-wrapper .input-icon { top: 16px; transform: none; }
+
+.form-input-group input, 
+.form-input-group textarea {
+    width: 100%;
+    padding: 12px 14px 12px 42px;
+    background-color: rgba(6, 9, 19, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    color: var(--text-bright);
+    font-size: 0.9rem;
+    box-sizing: border-box;
+    transition: border-color 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.3s ease;
+    font-family: inherit;
+}
+
+.form-input-group textarea { resize: none; }
+
+.form-input-group input:focus,
+.form-input-group textarea:focus {
+    outline: none;
+    border-color: var(--neon-cyan);
+    background-color: rgba(6, 9, 19, 0.8);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.15);
+}
+
+.form-input-group input:focus + .input-icon,
+.form-input-group textarea:focus + .input-icon {
+    stroke: var(--neon-cyan);
+}
+
+.submit-audit-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, var(--neon-purple), var(--neon-cyan));
+    color: var(--text-bright);
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.submit-audit-btn:hover {
+    box-shadow: 0 10px 25px rgba(0, 240, 255, 0.35);
+    transform: translateY(-2px);
+}
+
+.btn-send-icon {
+    width: 14px;
+    height: 14px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    transition: transform 0.3s ease;
+}
+
+.submit-audit-btn:hover .btn-send-icon { transform: translate(3px, -3px); }
+
+/* ==========================================
+   RESPONSIVE DESIGN VIEWPORTS
+========================================== */
+@media (max-width: 992px) {
+    .contact-container { grid-template-columns: 1fr; padding: 0 24px; gap: 40px; }
+    .contact-info-panel { align-items: center; text-align: center; }
+    .contact-main-title { font-size: 2.1rem; }
+    .contact-status-tracker { align-items: center; }
+    .contact-form-panel { justify-content: center; width: 100%; }
+    .glass-form-card { max-width: 100%; }
+}
+
+@media (max-width: 480px) {
+    .contact-container { padding: 0 16px; }
+    .contact-main-title { font-size: 1.7rem; }
+    .glass-form-card { padding: 20px; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const auditForm = document.getElementById("stacklyAuditForm");
+
+    if (auditForm) {
+        auditForm.addEventListener("submit", (event) => {
+            event.preventDefault(); // Stop automated browser reloads
+
+            // Grab elements nodes to flash conditional border properties
+            const nameField = document.getElementById("auditName");
+            const emailField = document.getElementById("auditEmail");
+            const messageField = document.getElementById("auditMessage");
+
+            const operatorName = nameField.value.trim();
+            const operatorEmail = emailField.value.trim();
+            const auditScope = messageField.value.trim();
+
+            // 1. Double check fields are not empty before transmission
+            if (!operatorName || !operatorEmail || !auditScope) {
+                
+                // Set custom high-contrast error states dynamically onto missing entries
+                if (!operatorName) nameField.style.borderColor = "var(--accent-error)";
+                if (!operatorEmail) emailField.style.borderColor = "var(--accent-error)";
+                if (!auditScope) messageField.style.borderColor = "var(--accent-error)";
+                
+                alert("Please fill all the fields before transmitting payload.");
+                return;
+            }
+
+            // 2. Successful fill validation -> Secure routing call
+            window.location.href = "404.html";
+        });
+
+        // Clear warning highlights immediately upon user interaction
+        const inputElements = auditForm.querySelectorAll("input, textarea");
+        inputElements.forEach(element => {
+            element.addEventListener("input", () => {
+                element.style.borderColor = "rgba(255, 255, 255, 0.05)";
+            });
+        });
+    }
+});
+
+</script>
+
+<section class="cta-banner-section">
+    <!-- Base atmospheric background image tag -->
+    <img src="https://unsplash.com" alt="Cyber Glow Backdrop" class="cta-bg-image">
+
+    <!-- Floating Background Vector SVG Icons Layer -->
+    <div class="floating-vector-field">
+        <svg class="float-svg icon-1" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <svg class="float-svg icon-2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        <svg class="float-svg icon-3" viewBox="0 0 24 24"><polygon points="12 2 2 22 22 22"></polygon></svg>
+        <svg class="float-svg icon-4" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+    </div>
+
+    <div class="cta-banner-container">
+        <!-- Scroll-Triggered Title (Fixed premature wrap-blur metrics) -->
+        <h2 class="scroll-letter-title" id="scrollCtaTitle">
+            Secure your digital matrix today
+        </h2>
+        
+        <p class="cta-banner-desc">
+            Deploy Stackly low-latency camouflage infrastructure onto your enterprise clusters in under ten minutes.
+        </p>
+
+        <!-- Floating Central Action Button -->
+        <div class="floating-btn-wrap">
+            <button class="banner-action-btn" type="button">Deploy Immediate Guard</button>
+        </div>
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+}
+
+/* ==========================================
+   CTA BANNER STRUCTURES & BACKGROUNDS
+========================================== */
+.cta-banner-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding: 80px 0;
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(0, 240, 255, 0.05);
+    border-bottom: 1px solid rgba(157, 78, 221, 0.05);
+}
+
+.cta-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.cta-banner-container {
+    position: relative;
+    max-width: 850px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 3;
+}
+
+/* ==========================================
+   SCROLL REGISTERED TITLE WITH WRAP FIXES
+========================================== */
+.scroll-letter-title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.25; /* Prevents text-shadow clipping on wrapped lines */
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    color: var(--text-bright);
+    margin-bottom: 20px;
+    word-break: keep-all; /* Keeps words intact when shifting columns */
+    overflow-wrap: break-word;
+    width: 100%;
+}
+
+.scroll-letter-title .char-unit {
+    display: inline-block;
+    opacity: 0.15;
+    transform: scale(0.95);
+    transition: opacity 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), text-shadow 0.2s ease;
+}
+
+.scroll-letter-title .char-unit.glow-active {
+    opacity: 1;
+    transform: scale(1);
+    color: var(--text-bright);
+    text-shadow: 0 0 15px rgba(0, 240, 255, 0.45);
+}
+
+.cta-banner-desc {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 540px;
+}
+
+/* ==========================================
+   FLOATING ACTION BUTTON MECHANICS
+========================================== */
+.floating-btn-wrap {
+    animation: ctaButtonFloat 4.5s ease-in-out infinite;
+}
+
+.banner-action-btn {
+    padding: 16px 36px;
+    border-radius: 35px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--text-bright);
+    background: linear-gradient(90deg, var(--neon-purple), var(--neon-cyan));
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    white-space: nowrap;
+    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+}
+
+.banner-action-btn:hover {
+    box-shadow: 0 12px 35px rgba(0, 240, 255, 0.45);
+    transform: scale(1.03);
+}
+
+/* ==========================================
+   FLOATING BACKGROUND DECORATIVE FIELDS
+========================================== */
+.floating-vector-field {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.float-svg {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    fill: none;
+    stroke-width: 1.5;
+    opacity: 0.15;
+    will-change: transform;
+}
+
+.icon-1 { top: 15%; left: 10%; stroke: var(--neon-cyan); animation: vectorDriftOne 8s ease-in-out infinite; }
+.icon-2 { bottom: 20%; left: 18%; stroke: var(--neon-purple); animation: vectorDriftTwo 11s ease-in-out infinite; }
+.icon-3 { top: 25%; right: 12%; stroke: var(--neon-purple); animation: vectorDriftTwo 9s ease-in-out infinite; }
+.icon-4 { bottom: 15%; right: 8%; stroke: var(--neon-cyan); animation: vectorDriftOne 12s ease-in-out infinite; }
+
+@keyframes ctaButtonFloat { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
+@keyframes vectorDriftOne { 0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.15; } 50% { transform: translateY(-15px) rotate(8deg); opacity: 0.25; filter: drop-shadow(0 0 6px var(--neon-cyan)); } }
+@keyframes vectorDriftTwo { 0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.12; } 50% { transform: translateY(18px) rotate(-10deg); opacity: 0.22; filter: drop-shadow(0 0 6px var(--neon-purple)); } }
+
+/* ==========================================
+   FLUID RESPONSIVE DESIGN BOUNDARIES
+========================================== */
+@media (max-width: 768px) {
+    .cta-banner-section { padding: 60px 0; }
+    .scroll-letter-title { font-size: 2.2rem; }
+    .cta-banner-container { padding: 0 24px; }
+    .float-svg { width: 22px; height: 22px; }
+    .icon-1 { left: 4%; } .icon-4 { right: 4%; }
+}
+
+@media (max-width: 480px) {
+    .scroll-letter-title { font-size: 1.7rem; }
+    .cta-banner-container { padding: 0 16px; }
+    .banner-action-btn { width: 100%; text-align: center; padding: 14px; }
+    .floating-vector-field { display: none; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const ctaTitleNode = document.getElementById("scrollCtaTitle");
+
+    if (ctaTitleNode) {
+        const structuralTextStr = ctaTitleNode.textContent.trim();
+        ctaTitleNode.textContent = ""; 
+
+        // Split text content string into structured span units
+        const charSpanElements = structuralTextStr.split("").map(character => {
+            const spanNode = document.createElement("span");
+            spanNode.className = "char-unit";
+            spanNode.innerHTML = character === " " ? "&nbsp;" : character;
+            ctaTitleNode.appendChild(spanNode);
+            return spanNode;
+        });
+
+        function handleBannerTitleScrollReveal() {
+            const nodeRect = ctaTitleNode.getBoundingClientRect();
+            const browserViewportHeight = window.innerHeight;
+            
+            // Fixed threshold triggers with a 100px safety buffer to prevent trailing word blurring on wrapped text
+            const startScrollRevealLine = browserViewportHeight * 0.95;
+            const endScrollRevealLine = (browserViewportHeight * 0.4) + 100;
+            
+            let scrollRevealProgress = (startScrollRevealLine - nodeRect.top) / (startScrollRevealLine - endScrollRevealLine);
+            scrollRevealProgress = Math.max(0, Math.min(1, scrollRevealProgress));
+
+            const totalActiveCharsIndex = Math.floor(scrollRevealProgress * charSpanElements.length);
+
+            charSpanElements.forEach((spanNode, index) => {
+                if (index < totalActiveCharsIndex) {
+                    spanNode.classList.add("glow-active");
+                } else {
+                    spanNode.classList.remove("glow-active");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", handleBannerTitleScrollReveal);
+        window.addEventListener("resize", handleBannerTitleScrollReveal);
+        handleBannerTitleScrollReveal(); 
+    }
+});
+
+</script>
+
+<section class="radar-hub-section" id="intel">
+    <!-- Atmospheric radar grid mapping texture in the background -->
+    <img src="https://unsplash.com" alt="Cyber Grid Texture" class="radar-bg-grid">
+
+    <div class="radar-hub-container">
+        
+        <div class="radar-hub-header">
+            <div class="cyber-badge">// SYSTEM ARCHITECTURE MATRIX</div>
+            <!-- Letter-by-letter scroll revelation title -->
+            <h2 class="scroll-letter-header" id="scrollRadarTitle">
+                Decentralized grid protection
+            </h2>
+        </div>
+
+        <!-- CREATIVE RADAR ENGINE LAYOUT -->
+        <div class="radar-matrix-display" id="radarDisplayContainer">
+            
+            <!-- Left Side: Sequential Threat Feed Cards -->
+            <div class="radar-cards-stack">
+                
+                <!-- Card Node 1 -->
+                <div class="radar-intel-card animate-cascade">
+                    <div class="card-pulse-node cyan-pulse"></div>
+                    <div class="intel-card-image">
+                        <img src="https://unsplash.com" alt="Polymorphic Key Core" class="intel-img">
+                    </div>
+                    <div class="intel-card-content">
+                        <div class="intel-meta">NODE_01 // SECURE</div>
+                        <h3>Polymorphic Keys</h3>
+                        <p>Mutates packet structures mid-transit, rendering traffic completely invisible to interception sensors.</p>
+                    </div>
+                </div>
+
+                <!-- Card Node 2 -->
+                <div class="radar-intel-card animate-cascade">
+                    <div class="card-pulse-node purple-pulse"></div>
+                    <div class="intel-card-image">
+                        <img src="https://unsplash.com" alt="Subnet Camouflage Topology" class="intel-img">
+                    </div>
+                    <div class="intel-card-content">
+                        <div class="intel-meta">NODE_02 // COUT_STEALTH</div>
+                        <h3>Subnet Camouflage</h3>
+                        <p>Masks outgoing packet server paths dynamically to hide underlying core cloud servers completely.</p>
+                    </div>
+                </div>
+
+                <!-- Card Node 3 -->
+                <div class="radar-intel-card animate-cascade">
+                    <div class="card-pulse-node green-pulse"></div>
+                    <div class="intel-card-image">
+                        <img src="https://unsplash.com" alt="Reflexive Subnet Sandbox" class="intel-img">
+                    </div>
+                    <div class="intel-card-content">
+                        <div class="intel-meta">NODE_03 // CRIT_REFLEX</div>
+                        <h3>Reflexive Sandbox</h3>
+                        <p>Deploys microsecond sandboxed virtual environments the moment any entry deviation is logged.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Side: The Interactive Diagnostic Tracking Core -->
+            <div class="radar-scope-panel">
+                <div class="radar-scope-circle">
+                    <!-- Concentric Sweeping Core Overlay Line -->
+                    <div class="radar-sweep-beam"></div>
+                    <div class="radar-crosshair horizontal"></div>
+                    <div class="radar-crosshair vertical"></div>
+                    
+                    <div class="radar-target-lock pin-1"><span>KEY_MUTATION</span></div>
+                    <div class="radar-target-lock pin-2"><span>MASK_UPSTREAM</span></div>
+                    <div class="radar-target-lock pin-3"><span>AUTO_SANDBOX</span></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-success: #00ff88;
+}
+
+.radar-hub-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 50px;        /* Strict 50px top padding layout requirement */
+    padding-bottom: 30px;     /* Strict 30px bottom padding layout requirement */
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.radar-bg-grid {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; opacity: 0.015; pointer-events: none; z-index: 1;
+}
+
+.radar-hub-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    z-index: 2;
+}
+
+.radar-hub-header { width: 100%; margin-bottom: 50px; text-align: left; }
+
+/* ==========================================
+   SCROLL REVEAL TITLE (LETTER-BY-LETTER)
+========================================== */
+.scroll-letter-header {
+    font-size: 2.8rem; font-weight: 800; line-height: 1.2;
+    text-transform: uppercase; color: var(--text-bright); margin-top: 10px;
+}
+.scroll-letter-header .char-node {
+    display: inline-block; opacity: 0.15; transform: translateY(6px);
+    transition: opacity 0.15s ease, transform 0.15s ease, text-shadow 0.15s;
+}
+.scroll-letter-header .char-node.illuminated {
+    opacity: 1; transform: translateY(0); color: var(--text-bright);
+    text-shadow: 0 0 12px rgba(0, 240, 255, 0.45);
+}
+
+/* ==========================================
+   INTERACTIVE RADAR ASYMMETRIC GRID
+========================================== */
+.radar-matrix-display {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 50px;
+    width: 100%;
+    align-items: center;
+}
+
+/* ==========================================
+   ONE-BY-ONE INTEL CARD STACK CASCADE
+========================================== */
+.radar-cards-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.radar-intel-card {
+    background: rgba(13, 21, 39, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    padding: 16px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    
+    /* Incremental one-by-one loading baseline states */
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s;
+}
+
+/* Appended sequentially one-by-one via JS scroll math script delays */
+.radar-intel-card.card-synced {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Pulse indicator tracking beacons next to nodes */
+.card-pulse-node {
+    position: absolute; left: -5px; top: 50%; transform: translateY(-50%);
+    width: 10px; height: 10px; border-radius: 50%;
+}
+.cyan-pulse { background-color: var(--neon-cyan); box-shadow: 0 0 10px var(--neon-cyan); }
+.purple-pulse { background-color: var(--neon-purple); box-shadow: 0 0 10px var(--neon-purple); }
+.green-pulse { background-color: var(--accent-success); box-shadow: 0 0 10px var(--accent-success); }
+
+.intel-card-image {
+    width: 110px; height: 110px;
+    border-radius: 8px; overflow: hidden; flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.01);
+}
+
+.intel-img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: saturate(0.6) brightness(0.65) contrast(1.15);
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.intel-card-content { display: flex; flex-direction: column; text-align: left; }
+.intel-meta { font-family: monospace; font-size: 0.65rem; color: var(--text-dim); letter-spacing: 1.5px; margin-bottom: 6px; transition: color 0.3s; }
+.intel-card-content h3 { font-size: 1.2rem; font-weight: 700; color: var(--text-bright); margin-bottom: 6px; transition: color 0.3s, text-shadow 0.3s; }
+.intel-card-content p { font-size: 0.85rem; color: rgba(255, 255, 255, 0.6); line-height: 1.5; }
+
+/* ==========================================
+   HIGH-INTERACTIVE HOVER NEON GLOWS
+========================================== */
+.radar-intel-card:hover {
+    border-color: rgba(0, 240, 255, 0.25);
+    box-shadow: 0 15px 40px rgba(0, 240, 255, 0.06);
+}
+.radar-intel-card:hover .intel-img { transform: scale(1.04); filter: saturate(0.85) brightness(0.8) contrast(1.2); }
+.radar-intel-card:hover .intel-meta { color: var(--neon-cyan); }
+.radar-intel-card:hover h3 { color: var(--neon-cyan); text-shadow: 0 0 10px rgba(0, 240, 255, 0.4); }
+
+.radar-intel-card:nth-child(2):hover { border-color: rgba(157, 78, 221, 0.25); box-shadow: 0 15px 40px rgba(157, 78, 221, 0.06); }
+.radar-intel-card:nth-child(2):hover .intel-meta { color: var(--neon-purple); }
+.radar-intel-card:nth-child(2):hover h3 { color: var(--neon-purple); text-shadow: 0 0 10px rgba(157, 78, 221, 0.4); }
+
+/* ==========================================
+   RADAR CONCENTRIC SCAN TERMINAL INTERFACE
+========================================== */
+.radar-scope-panel {
+    display: flex; justify-content: flex-end; align-items: center;
+}
+
+.radar-scope-circle {
+    position: relative;
+    width: 100%; max-width: 360px; aspect-ratio: 1 / 1;
+    background: radial-gradient(circle, rgba(13, 21, 39, 0.4) 0%, rgba(6, 9, 19, 0.8) 100%);
+    border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.04);
+    display: flex; justify-content: center; align-items: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* Continuous vector sweeping laser line effect */
+.radar-sweep-beam {
+    position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+    background: conic-gradient(from 0deg, rgba(0, 240, 255, 0.12) 0%, transparent 40%);
+    animation: continuousSweep 5s linear infinite;
+    transform-origin: center center; pointer-events: none;
+}
+
+.radar-crosshair { position: absolute; background-color: rgba(255, 255, 255, 0.03); }
+.horizontal { width: 90%; height: 1px; }
+.vertical { width: 1px; height: 90%; }
+
+/* HUD Terminal Node Targets mapping points */
+.radar-target-lock {
+    position: absolute; font-family: monospace; font-size: 0.6rem; color: var(--text-dim);
+    padding: 2px 6px; border: 1px solid rgba(0, 240, 255, 0.2); border-radius: 3px; background-color: var(--bg-deep);
+}
+.radar-target-lock::before {
+    content: ''; position: absolute; width: 4px; height: 4px; border-radius: 50%; background-color: var(--neon-cyan);
+}
+.pin-1 { top: 25%; left: 30%; } .pin-1::before { bottom: -8px; left: 50%; }
+.pin-2 { bottom: 30%; right: 25%; border-color: rgba(157, 78, 221, 0.2); } .pin-2::before { top: -8px; left: 50%; background-color: var(--neon-purple); }
+.pin-3 { top: 55%; left: 15%; } .pin-3::before { right: -8px; top: 50%; }
+
+/* Highlights scope container elements cleanly on hover triggers */
+.radar-matrix-display:hover .radar-scope-circle { border-color: rgba(0, 240, 255, 0.15); box-shadow: 0 0 35px rgba(0, 240, 255, 0.06); }
+.radar-matrix-display:hover .radar-target-lock { color: var(--text-bright); border-color: rgba(0, 240, 255, 0.4); }
+
+/* ==========================================
+   CORE RUNTIME SWEEPING KEYFRAMES
+========================================== */
+@keyframes continuousSweep { 0% { transform: translate(0, 0) rotate(0deg); } 100% { transform: translate(0, 0) rotate(360deg); } }
+
+/* ==========================================
+   FLUID RESPONSIVE BOUNDARIES
+========================================== */
+@media (max-width: 992px) {
+    .radar-matrix-display {
+        grid-template-columns: 1fr; /* Switch to standard linear blocks to avoid asset overlap text hiding bugs */
+        gap: 45px;
+    }
+    .scroll-letter-header { font-size: 2.4rem; }
+    .radar-hub-container { padding: 0 24px; }
+    .radar-scope-panel { justify-content: center; width: 100%; }
+}
+
+@media (max-width: 640px) {
+    .radar-intel-card { flex-direction: column; text-align: center; gap: 15px; padding: 20px; }
+    .intel-card-content { align-items: center; text-align: center; }
+    .intel-card-image { width: 90px; height: 90px; }
+    .card-pulse-node { left: 50%; top: -5px; transform: translateX(-50%) translateY(0); }
+    .scroll-letter-header { font-size: 1.9rem; }
+    .radar-hub-container { padding: 0 16px; }
+    .radar-scope-circle { max-width: 280px; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. SCROLL TRIGGER: Title Letter-by-Letter Real-Time Character Revealer
+    const radarTitleNode = document.getElementById("scrollRadarTitle");
+    if (radarTitleNode) {
+        const textPayloadStr = radarTitleNode.textContent.trim();
+        radarTitleNode.textContent = "";
+
+        const letterSpanNodes = textPayloadStr.split("").map(character => {
+            const span = document.createElement("span");
+            span.className = "char-node";
+            span.innerHTML = character === " " ? "&nbsp;" : character;
+            radarTitleNode.appendChild(span);
+            return span;
+        });
+
+        function handleRadarTitleReveal() {
+            const boundRect = radarTitleNode.getBoundingClientRect();
+            const viewHeight = window.innerHeight;
+            
+            const startRevealPos = viewHeight * 0.92;
+            const endRevealPos = viewHeight * 0.4;
+            
+            let revealFraction = (startRevealPos - boundRect.top) / (startRevealPos - endRevealPos);
+            revealFraction = Math.max(0, Math.min(1, revealFraction));
+
+            const maxIndexToLight = Math.floor(revealFraction * letterSpanNodes.length);
+            letterSpanNodes.forEach((spanNode, index) => {
+                if (index < maxIndexToLight) spanNode.classList.add("illuminated");
+                else spanNode.classList.remove("illuminated");
+            });
+        }
+        window.addEventListener("scroll", handleRadarTitleReveal);
+        handleRadarTitleReveal();
+    }
+
+    // 2. SCROLL TRIGGER: One-by-One Staggered Intel Card Cascade Entrance
+    const activeIntelCards = document.querySelectorAll(".radar-intel-card");
+
+    function handleRadarCardsCascadeReveal() {
+        activeIntelCards.forEach((card, progressiveIdx) => {
+            const currentCardTop = card.getBoundingClientRect().top;
+            const screenActivationBarrier = window.innerHeight * 0.88;
+
+            if (currentCardTop < screenActivationBarrier) {
+                if (!card.classList.contains("card-synced")) {
+                    // Stagger entries one-by-one by multiplying loop tracking array index counts
+                    setTimeout(() => {
+                        card.classList.add("card-synced");
+                    }, progressiveIdx * 150); // 150ms delay interval triggers crisp one-by-one slides
+                }
+            }
+        });
+    }
+    window.addEventListener("scroll", handleRadarCardsCascadeReveal);
+    handleRadarCardsCascadeReveal();
+});
+
+</script>
+
+<section class="para-matrix-section" id="telemetry">
+    <img src="https://unsplash.com" alt="Tech Wireframe Backdrop" class="para-bg-mesh">
+
+    <div class="para-container">
+        
+        <!-- Left Column: Geometric Grid with Corner Floating Labels -->
+        <div class="para-visual-panel">
+            <div class="para-grid-container">
+                
+                <!-- Parallelogram Block 01 -->
+                <div class="para-node-card animate-cascade">
+                    <div class="para-shape-mask">
+                        <img src="https://unsplash.com" alt="Polymorphic Key Core" class="para-img">
+                    </div>
+                    <!-- Minimalist Single-Line Floating Badges pinned to corners -->
+                    <div class="corner-label top-left-tag">NODE_01 // SECURE</div>
+                    <div class="corner-label bottom-right-tag">MUTATION_ACTIVE</div>
+                </div>
+
+                <!-- Parallelogram Block 02 -->
+                <div class="para-node-card animate-cascade">
+                    <div class="para-shape-mask mask-purple">
+                        <img src="https://unsplash.com" alt="Subnet Camouflage Topology" class="para-img">
+                    </div>
+                    <div class="corner-label top-right-tag">NODE_02 // CAMOUFLAGE</div>
+                    <div class="corner-label bottom-left-tag">FOOTPRINT_STEALTH</div>
+                </div>
+
+                <!-- Parallelogram Block 03 -->
+                <div class="para-node-card animate-cascade">
+                    <div class="para-shape-mask mask-green">
+                        <img src="https://unsplash.com" alt="Reflexive Subnet Sandbox" class="para-img">
+                    </div>
+                    <div class="corner-label top-left-tag">NODE_03 // CRIT_REFLEX</div>
+                    <div class="corner-label bottom-right-tag">AUTO_SANDBOX</div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Right Column: High-Contrast Bold Content Hierarchy -->
+        <div class="para-text-panel">
+            <div class="cyber-badge">// SYSTEM ARCHITECTURE MATRIX</div>
+            
+            <h2 class="sentence-stream-title" id="sentenceStreamTitle">
+                <span class="stream-line">Intercepting traffic vectors.</span>
+                <span class="stream-line">Securing corporate networks.</span>
+                <span class="stream-line">Neutralizing runtime threats.</span>
+            </h2>
+            
+            <!-- Magnified High-Contrast Description -->
+            <p class="para-large-desc">
+                Stackly abstracts network traffic layers completely. By analyzing incoming routing metadata on a microsecond scale, our defensive mesh redirects anomalous requests away from core enterprise environments.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-success: #00ff88;
+}
+
+.para-matrix-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.para-bg-mesh {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; opacity: 0.012; pointer-events: none; z-index: 1;
+}
+
+.para-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    /* Inverted columns layout: grid maps left visual first, then right text copy */
+    grid-template-columns: 0.9fr 1.1fr; 
+    gap: 60px;
+    align-items: center;
+    z-index: 2;
+}
+
+/* ==========================================
+   LEFT PANEL - PARALLELOGRAM STRUCTURAL MESH
+========================================== */
+.para-visual-panel {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start; /* Aligned cleanly to the left corner */
+    align-items: center;
+}
+
+.para-grid-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+    max-width: 440px;
+}
+
+.para-node-card {
+    position: relative;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    transition: opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.para-node-card.node-synced {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Elegant skewing clip-mask filters */
+.para-shape-mask {
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    transform: skewX(-14deg); 
+    border-radius: 8px;
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    background-color: var(--bg-surface);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mask-purple { border-color: rgba(157, 78, 221, 0.2); }
+.mask-green { border-color: rgba(0, 255, 136, 0.2); }
+
+.para-img {
+    width: 130%; 
+    height: 100%;
+    object-fit: cover;
+    transform: skewX(14deg) scale(1.15); 
+    filter: saturate(0.5) brightness(0.6) contrast(1.1);
+    transition: transform 0.6s ease, filter 0.5s ease;
+}
+
+/* ==========================================
+   MINIMALIST SINGLE-LINE BADGES (IMAGE CORNERS)
+========================================== */
+.corner-label {
+    position: absolute;
+    font-family: monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.top-left-tag { top: -16px; left: 0; }
+.top-right-tag { top: -16px; right: 0; }
+.bottom-left-tag { bottom: -16px; left: 0; }
+.bottom-right-tag { bottom: -16px; right: 0; }
+
+/* ==========================================
+   RIGHT PANEL - MASSIVE CONTRAST TEXT COPY
+========================================== */
+.para-text-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px; /* Gives left visualization some padding clearance */
+}
+
+.cyber-badge {
+    font-family: monospace;
+    color: var(--neon-cyan);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+}
+
+.sentence-stream-title {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    font-size: 2.6rem;
+    font-weight: 800;
+    line-height: 1.25;
+    text-transform: uppercase;
+    color: var(--text-bright);
+}
+
+.stream-line {
+    opacity: 0.15;
+    transform: translateY(12px);
+    transition: opacity 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    border-left: 3px solid transparent;
+}
+
+.stream-line.line-revealed {
+    opacity: 1;
+    transform: translateY(0);
+    border-left-color: var(--neon-cyan);
+    padding-left: 20px;
+}
+
+.stream-line:nth-child(2).line-revealed { border-left-color: var(--neon-purple); }
+.stream-line:nth-child(3).line-revealed { border-left-color: var(--accent-success); }
+
+.para-large-desc {
+    font-size: 1.25rem; 
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.7;
+    max-width: 540px;
+}
+
+/* ==========================================
+   INTERACTIVE NEON HOVER GLOWS
+========================================== */
+.para-node-card:hover .para-shape-mask {
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.15);
+}
+.para-node-card:hover .para-img {
+    transform: skewX(14deg) scale(1.2);
+    filter: saturate(0.85) brightness(0.7) contrast(1.15);
+}
+.para-node-card:hover .corner-label {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
+}
+
+.para-node-card:nth-child(2):hover .para-shape-mask { border-color: var(--neon-purple); box-shadow: 0 0 25px rgba(157, 78, 221, 0.15); }
+.para-node-card:nth-child(2):hover .corner-label { color: var(--neon-purple); text-shadow: 0 0 8px rgba(157, 78, 221, 0.4); }
+
+.para-node-card:nth-child(3):hover .para-shape-mask { border-color: var(--accent-success); box-shadow: 0 0 25px rgba(0, 255, 136, 0.15); }
+.para-node-card:nth-child(3):hover .corner-label { color: var(--accent-success); text-shadow: 0 0 8px rgba(0, 255, 136, 0.4); }
+
+/* ==========================================
+   FLUID RESPONSIVE METRICS
+========================================== */
+@media (max-width: 992px) {
+    .para-container { 
+        grid-template-columns: 1fr; /* Flex-direction stacks items vertically */
+        padding: 0 24px; 
+        gap: 50px; 
+    }
+    
+    /* Responsive re-ordering ensures visual parallelogram drops below text description cleanly */
+    .para-visual-panel { order: 2; justify-content: center; }
+    .para-text-panel { order: 1; align-items: center; text-align: center; padding-left: 0; }
+    
+    .sentence-stream-title { font-size: 2.2rem; align-items: center; }
+    .stream-line { border-left: none; border-bottom: 2px solid transparent; }
+    .stream-line.line-revealed { padding-left: 0; padding-bottom: 6px; border-bottom-color: var(--neon-cyan); }
+    .stream-line:nth-child(2).line-revealed { border-bottom-color: var(--neon-purple); }
+    .stream-line:nth-child(3).line-revealed { border-bottom-color: var(--accent-success); }
+    .para-large-desc { max-width: 100%; font-size: 1.15rem; }
+    .para-grid-container { max-width: 100%; padding: 20px 0; gap: 40px; }
+}
+
+@media (max-width: 540px) {
+    .para-container { padding: 0 16px; }
+    .sentence-stream-title { font-size: 1.7rem; }
+    .para-shape-mask { transform: none; height: 100px; } 
+    .para-img { transform: scale(1.1); width: 100%; }
+    .para-node-card:hover .para-img { transform: scale(1.15); }
+    .corner-label { font-size: 0.65rem; }
+    .top-left-tag, .top-right-tag { top: -14px; }
+    .bottom-left-tag, .bottom-right-tag { bottom: -14px; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    const targetSentenceTitle = document.getElementById("sentenceStreamTitle");
+    const cascadingParaCards = document.querySelectorAll(".animate-cascade");
+    
+    function processParaMatrixScrollAnimations() {
+        // 1. SCROLL REVEAL: Sentence-by-Sentence Execution
+        if (targetSentenceTitle) {
+            const sentences = targetSentenceTitle.querySelectorAll(".stream-line");
+            sentences.forEach(sentenceNode => {
+                const rect = sentenceNode.getBoundingClientRect();
+                // Lights up text when it crosses the bottom 85% barrier
+                if (rect.top < window.innerHeight * 0.85) {
+                    sentenceNode.classList.add("line-revealed");
+                } else {
+                    sentenceNode.classList.remove("line-revealed");
+                }
+            });
+        }
+
+        // 2. SCROLL TRIGGER: One-by-One Parallelogram Card Reveals
+        cascadingParaCards.forEach((cardNode, progressiveIdx) => {
+            const cardTop = cardNode.getBoundingClientRect().top;
+            const activationBarrierLine = window.innerHeight * 0.88;
+
+            if (cardTop < activationBarrierLine) {
+                if (!cardNode.classList.contains("node-synced")) {
+                    // Stagger entries sequentially using time delays multiplication offsets
+                    setTimeout(() => {
+                        cardNode.classList.add("node-synced");
+                    }, progressiveIdx * 150); // 150ms delay intervals forces smooth one-by-one sweeps
+                }
+            }
+        });
+    }
+    
+    // Attach event listeners for scroll and layout adjustments
+    window.addEventListener("scroll", processParaMatrixScrollAnimations);
+    window.addEventListener("resize", processParaMatrixScrollAnimations);
+    
+    // Initial passivation check to process existing nodes immediately on page render
+    processParaMatrixScrollAnimations(); 
+});
+
+</script>
+
+<section class="intel-grid-section" id="logs">
+    <!-- Atmospheric subtle background wireframe layer -->
+    <img src="https://unsplash.com" alt="Cyber Grid Texture" class="intel-bg-grid">
+
+    <div class="intel-grid-container">
+        
+        <div class="intel-section-header">
+            <div class="cyber-badge">// MONITORING NODE ACTIVE</div>
+            <!-- Main Title triggered cleanly letter-by-letter via window scrolling checks -->
+            <h2 class="scroll-letter-header" id="scrollIntelGridTitle">
+                Live threat intercept metrics
+            </h2>
+        </div>
+
+        <!-- Asymmetric Creative Grid Matrix Area -->
+        <div class="intel-matrix-layout">
+            
+            <!-- Left Side Panel: Interactive Live Log Feed -->
+            <div class="intel-panel log-feed-panel animate-scroll-panel">
+                <div class="panel-header-tag">TERMINAL_FEED // SINK_STATUS</div>
+                
+                <div class="terminal-shell">
+                    <div class="shell-line text-cyan">[OK] NODE_MAPPING_INITIALIZED...</div>
+                    <div class="shell-line text-purple">[BLOCK] INBOUND_EXPLOIT // IP: 192.168.42.109</div>
+                    <div class="shell-line text-green">[CAMOUFLAGE] MASQUERADE_UPSTREAM // ADAPT_SUCCESS</div>
+                    <div class="shell-line text-purple">[BLOCK] MULTI_VECTOR_DDOS_MITIGATED // LATENCY: 0.2ms</div>
+                    <div class="shell-line text-cyan">[SCAN] NO_NEW_PERIMETER_LEAKS_DETECTED</div>
+                </div>
+
+                <div class="panel-interactive-content">
+                    <span class="panel-meta">PERIMETER_STABILIZATION</span>
+                    <h3>Automated Containment</h3>
+                    <p>Stackly isolates compromised subnets instantly, running payloads inside ephemeral sandboxes to evaluate attack signatures without core infrastructure exposure.</p>
+                </div>
+            </div>
+
+            <!-- Right Side Panel: Threat Radar Map Scope -->
+            <div class="intel-panel map-radar-panel animate-scroll-panel">
+                <div class="panel-header-tag">VECTOR_RADAR // NODE_STABILITY</div>
+                
+                <div class="radar-viewport">
+                    <!-- Saturated, vivid graphic image overlay -->
+                    <img src="https://unsplash.com" alt="World Map Topography Data Node Matrix" class="radar-display-img">
+                    
+                    <div class="radar-sweep-beam"></div>
+                    <div class="radar-ping node-ny"></div>
+                    <div class="radar-ping node-tokyo"></div>
+                </div>
+
+                <div class="panel-interactive-content">
+                    <span class="panel-meta">QUANTUM_TOPOLOGY</span>
+                    <h3>Global Fabric Shifting</h3>
+                    <p>By constantly morphing server node footprints across multiple distributed cloud infrastructure regions, Stackly keeps system perimeters hidden from automated brute scanners.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-success: #00ff88;
+}
+
+/* ==========================================
+   ISOLATED METRICS GRID CONFIGURATIONS
+========================================== */
+.intel-grid-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 50px;        /* Restricts layout to requested 50px top padding limit */
+    padding-bottom: 30px;     /* Restricts layout to requested 30px bottom padding layout */
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.intel-bg-grid {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; opacity: 0.015; pointer-events: none; z-index: 1;
+}
+
+.intel-grid-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    z-index: 2;
+}
+
+.intel-section-header {
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+/* ==========================================
+   SCROLL REVEAL TITLE (LETTER-BY-LETTER)
+========================================== */
+.scroll-letter-header {
+    font-size: 2.6rem; font-weight: 800; line-height: 1.2;
+    text-transform: uppercase; color: var(--text-bright); margin-top: 10px;
+}
+
+.scroll-letter-header .char-node {
+    display: inline-block; opacity: 0.12; transform: translateY(6px);
+    transition: opacity 0.15s ease, transform 0.15s ease, text-shadow 0.15s;
+}
+
+.scroll-letter-header .char-node.illuminated {
+    opacity: 1; transform: translateY(0); color: var(--text-bright);
+    text-shadow: 0 0 12px rgba(0, 240, 255, 0.45);
+}
+
+/* ==========================================
+   ASYMMETRIC GRAPHIC MATRIX PANELS
+========================================== */
+.intel-matrix-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    width: 100%;
+}
+
+.intel-panel {
+    background: rgba(13, 21, 39, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    padding: 24px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    
+    /* One-by-one sequential cascading entrance default configs */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Class attached sequentially one-by-one by JS viewport intervals */
+.intel-panel.panel-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.panel-header-tag {
+    font-family: monospace; font-size: 0.7rem; color: var(--text-dim); letter-spacing: 1px;
+    margin-bottom: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.03); padding-bottom: 8px;
+}
+
+/* Left Panel Console Block */
+.terminal-shell {
+    background-color: rgba(6, 9, 19, 0.7);
+    border-radius: 8px; padding: 16px;
+    font-family: monospace; font-size: 0.75rem; line-height: 1.8;
+    height: 180px; overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.01);
+}
+.shell-line { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.text-cyan { color: var(--neon-cyan); }
+.text-purple { color: var(--neon-purple); }
+.text-green { color: var(--accent-success); }
+
+/* Right Panel Radar Target Block */
+.radar-viewport {
+    position: relative;
+    width: 100%; height: 180px;
+    border-radius: 8px; overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.01);
+}
+
+.radar-display-img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: saturate(0.5) contrast(1.1) brightness(0.55);
+    transition: transform 0.6s ease, filter 0.5s ease;
+}
+
+/* Sweeping visual beam overlay line */
+.radar-sweep-beam {
+    position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+    background: conic-gradient(from 0deg, rgba(0, 240, 255, 0.15) 0%, transparent 40%);
+    animation: continuousSweep 4s linear infinite;
+    transform-origin: center center; pointer-events: none;
+}
+
+.radar-ping {
+    position: absolute; width: 6px; height: 6px; border-radius: 50%;
+    background-color: var(--neon-cyan); box-shadow: 0 0 10px var(--neon-cyan);
+}
+.radar-ping::after {
+    content: ''; position: absolute; top: -6px; left: -6px; width: 18px; height: 18px;
+    border-radius: 50%; border: 1px solid var(--neon-cyan); opacity: 0;
+    animation: pingRing 1.5s ease-out infinite;
+}
+.node-ny { top: 35%; left: 25%; }
+.node-tokyo { top: 45%; right: 22%; background-color: var(--neon-purple); box-shadow: 0 0 10px var(--neon-purple); }
+.node-tokyo::after { border-color: var(--neon-purple); }
+
+/* Card copy details typography */
+.panel-interactive-content {
+    margin-top: 20px;
+    display: flex; flex-direction: column; text-align: left;
+}
+
+.panel-meta { font-family: monospace; font-size: 0.65rem; color: var(--text-dim); letter-spacing: 1px; margin-bottom: 6px; transition: color 0.3s; }
+.panel-interactive-content h3 { font-size: 1.25rem; font-weight: 700; color: var(--text-bright); margin-bottom: 10px; transition: color 0.3s, text-shadow 0.3s; }
+.panel-interactive-content p { font-size: 0.85rem; color: rgba(255, 255, 255, 0.7); line-height: 1.6; }
+
+/* ==========================================
+   HIGH-CONTRAST INTERACTIVE GLOW EFFECTS
+========================================== */
+.intel-panel:hover {
+    border-color: rgba(0, 240, 255, 0.2);
+    box-shadow: 0 20px 50px rgba(0, 240, 255, 0.05);
+}
+.intel-panel:hover .panel-meta { color: var(--neon-cyan); }
+.intel-panel:hover h3 { color: var(--neon-cyan); text-shadow: 0 0 10px rgba(0, 240, 255, 0.4); }
+
+.intel-matrix-layout .intel-panel:nth-child(2):hover {
+    border-color: rgba(157, 78, 221, 0.2);
+    box-shadow: 0 20px 50px rgba(157, 78, 221, 0.05);
+}
+.intel-matrix-layout .intel-panel:nth-child(2):hover .panel-meta { color: var(--neon-purple); }
+.intel-matrix-layout .intel-panel:nth-child(2):hover h3 { color: var(--neon-purple); text-shadow: 0 0 10px rgba(157, 78, 221, 0.4); }
+.intel-matrix-layout .intel-panel:nth-child(2):hover .radar-display-img { transform: scale(1.03); filter: saturate(0.7) contrast(1.15) brightness(0.65); }
+
+@keyframes continuousSweep { 0% { transform: translate(-25%, -25%) rotate(0deg); } 100% { transform: translate(-25%, -25%) rotate(360deg); } }
+@keyframes pingRing { 0% { transform: scale(0.3); opacity: 1; } 100% { transform: scale(1); opacity: 0; } }
+
+/* ==========================================
+   FLUID RESPONSIVE BREAKPOINTS
+========================================== */
+@media (max-width: 992px) {
+    .intel-matrix-layout {
+        grid-template-columns: 1fr; /* Instantly flat stacks columns to avoid clipping overlays */
+        gap: 24px;
+    }
+    .scroll-letter-header { font-size: 2.2rem; }
+    .intel-grid-container { padding: 0 24px; }
+}
+
+@media (max-width: 480px) {
+    .scroll-letter-header { font-size: 1.7rem; }
+    .intel-grid-container { padding: 0 16px; }
+    .terminal-shell, .radar-viewport { height: 160px; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. SCROLL REVEAL: Letter-by-Letter Title Trigger Engine
+    const intelTitleNode = document.getElementById("scrollIntelGridTitle");
+    if (intelTitleNode) {
+        const textPayloadStr = intelTitleNode.textContent.trim();
+        intelTitleNode.textContent = ""; 
+
+        const characterSpans = textPayloadStr.split("").map(character => {
+            const span = document.createElement("span");
+            span.className = "char-node";
+            span.innerHTML = character === " " ? "&nbsp;" : character;
+            intelTitleNode.appendChild(span);
+            return span;
+        });
+
+        function handleIntelTitleScrollReveal() {
+            const boundsRect = intelTitleNode.getBoundingClientRect();
+            const browserHeight = window.innerHeight;
+            
+            // Letters illuminate dynamically as header crosses past bottom 92% toward center 40% height boundaries
+            const startRevealPos = browserHeight * 0.92;
+            const endRevealPos = browserHeight * 0.4;
+            
+            let revealFraction = (startRevealPos - boundsRect.top) / (startRevealPos - endRevealPos);
+            revealFraction = Math.max(0, Math.min(1, revealFraction));
+
+            const maxIndexToLight = Math.floor(revealFraction * characterSpans.length);
+            characterSpans.forEach((spanNode, index) => {
+                if (index < maxIndexToLight) {
+                    spanNode.classList.add("illuminated");
+                } else {
+                    spanNode.classList.remove("illuminated");
+                }
+            });
+        }
+        window.addEventListener("scroll", handleIntelTitleScrollReveal);
+        handleIntelTitleScrollReveal();
+    }
+
+    // 2. SCROLL TRIGGER: One-by-One Staggered Card Panel Entrance Cascades
+    const activeIntelPanels = document.querySelectorAll(".animate-scroll-panel");
+
+    function handleIntelPanelsCascadeReveal() {
+        activeIntelPanels.forEach((panel, progressiveIdx) => {
+            const panelTop = panel.getBoundingClientRect().top;
+            const activationBarrier = window.innerHeight * 0.88;
+
+            if (panelTop < activationBarrier) {
+                if (!panel.classList.contains("panel-revealed")) {
+                    // Stagger panel entries one-by-one by multiplying tracking index limits
+                    setTimeout(() => {
+                        panel.classList.add("panel-revealed");
+                    }, progressiveIdx * 160); // 160ms delay offset creates crisp chain reaction
+                }
+            }
+        });
+    }
+    window.addEventListener("scroll", handleIntelPanelsCascadeReveal);
+    handleIntelPanelsCascadeReveal();
+});
+
+</script>
+
+<section class="testimonial-section" id="reviews">
+    <!-- Atmospheric background image overlay -->
+    <img src="https://unsplash.com" alt="Cyber Grid Backdrop" class="testimonial-bg-overlay">
+
+    <div class="testimonial-container">
+        
+        <div class="testimonial-header">
+            <div class="cyber-badge">// RECON VALIDATION</div>
+            <h2 class="scroll-letter-header" id="scrollReviewTitle">Trusted by perimeter commanders</h2>
+        </div>
+
+        <!-- 3-Column Adaptive Feedback Grid Cascade -->
+        <div class="testimonial-grid">
+            
+            <!-- Card 1 -->
+            <div class="review-card animate-scroll-card">
+                <div class="card-laser-glow cyan-glow"></div>
+                <div class="review-user-block">
+                    <div class="user-avatar-frame">
+                        <img src="https://unsplash.com" alt="Operator Marcus" class="user-avatar-img">
+                    </div>
+                    <div class="user-meta-data">
+                        <h4>Marcus Vance</h4>
+                        <span>SecOps Director // AegisGlobal</span>
+                    </div>
+                </div>
+                
+                <!-- Glowing Vector Star Ratings Grid -->
+                <div class="star-rating-row">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                
+                <p class="review-quote-text">
+                    "Stackly completely blinded our cloud infrastructure footprints. Distributed mapping scans directed at our secondary authentication gateways drop without a trace."
+                </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="review-card animate-scroll-card">
+                <div class="card-laser-glow purple-glow"></div>
+                <div class="review-user-block">
+                    <div class="user-avatar-frame">
+                        <img src="https://unsplash.com" alt="Operator Elena" class="user-avatar-img">
+                    </div>
+                    <div class="user-meta-data">
+                        <h4>Elena Rostova</h4>
+                        <span>Principal Architect // CyberNet</span>
+                    </div>
+                </div>
+                
+                <div class="star-rating-row">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                
+                <p class="review-quote-text">
+                    "The reflexive subnet sandboxing saved our development pipeline last month. The millisecond an endpoint boundary deviated, a sandbox isolated the vector instantly."
+                </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="review-card animate-scroll-card">
+                <div class="card-laser-glow green-glow"></div>
+                <div class="review-user-block">
+                    <div class="user-avatar-frame">
+                        <img src="https://unsplash.com" alt="Operator Dev" class="user-avatar-img">
+                    </div>
+                    <div class="user-meta-data">
+                        <h4>Devon Lane</h4>
+                        <span>Infrastructure Lead // ApexInfra</span>
+                    </div>
+                </div>
+                
+                <div class="star-rating-row">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                
+                <p class="review-quote-text">
+                    "Low-latency zero-trust that actually honors throughput speeds. Our microservices coordinate securely across global container clusters under 10ms."
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-success: #00ff88;
+}
+
+/* ==========================================
+   TESTIMONIAL SECTION CORE AND RESTRICTIONS
+========================================== */
+.testimonial-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 50px;        /* Strict 50px top padding limit constraint */
+    padding-bottom: 30px;     /* Strict 30px bottom padding layout constraint */
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.testimonial-bg-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; opacity: 0.02; pointer-events: none; z-index: 1;
+}
+
+.testimonial-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    z-index: 2;
+}
+
+.testimonial-header {
+    width: 100%; margin-bottom: 40px; text-align: left;
+}
+
+/* ==========================================
+   SCROLL REVEAL TITLE (LETTER-BY-LETTER)
+========================================== */
+.scroll-letter-header {
+    font-size: 2.6rem; font-weight: 800; line-height: 1.2;
+    text-transform: uppercase; color: var(--text-bright); margin-top: 10px;
+}
+.scroll-letter-header .char-node {
+    display: inline-block; opacity: 0.12; transform: translateY(6px);
+    transition: opacity 0.15s ease, transform 0.15s ease, text-shadow 0.15s;
+}
+.scroll-letter-header .char-node.illuminated {
+    opacity: 1; transform: translateY(0); color: var(--text-bright);
+    text-shadow: 0 0 12px rgba(0, 240, 255, 0.45);
+}
+
+/* ==========================================
+   3-COLUMN ADAPTIVE CASCADE MESH GRID
+========================================== */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
+.review-card {
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 14px;
+    padding: 24px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    
+    /* Incremental sequential cascade initial params */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Appended one-by-one sequentially via JS scroll index loops */
+.review-card.card-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ambient laser linear lighting bands atop cards */
+.card-laser-glow {
+    position: absolute; left: 24px; top: 0; width: 40px; height: 2px; border-radius: 2px;
+    transition: width 0.4s ease, box-shadow 0.4s ease;
+}
+.cyan-glow { background-color: var(--neon-cyan); box-shadow: 0 0 8px var(--neon-cyan); }
+.purple-glow { background-color: var(--neon-purple); box-shadow: 0 0 8px var(--neon-purple); }
+.green-glow { background-color: var(--accent-success); box-shadow: 0 0 8px var(--accent-success); }
+
+.review-user-block {
+    display: flex; align-items: center; gap: 16px; margin-bottom: 18px;
+}
+
+.user-avatar-frame {
+    width: 46px; height: 46px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
+    border: 2px solid var(--bg-deep);
+}
+
+.user-avatar-img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: brightness(0.9) contrast(1.05);
+}
+
+.user-meta-data { display: flex; flex-direction: column; text-align: left; }
+.user-meta-data h4 { font-size: 0.95rem; font-weight: 700; color: var(--text-bright); margin-bottom: 2px; }
+.user-meta-data span { font-family: monospace; font-size: 0.65rem; color: var(--text-dim); letter-spacing: 0.5px; }
+
+/* Neon Cyber Star Ratings */
+.star-rating-row {
+    display: flex; gap: 4px; color: var(--text-dim); font-size: 0.95rem; margin-bottom: 16px;
+    cursor: default; transition: color 0.3s ease;
+}
+.star-rating-row span {
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.review-quote-text {
+    font-size: 0.85rem; color: rgba(255, 255, 255, 0.65); line-height: 1.6; text-align: left;
+}
+
+/* ==========================================
+   INTERACTIVE NEON HOVER GLOWS
+========================================== */
+.review-card:hover {
+    border-color: rgba(0, 240, 255, 0.2);
+    box-shadow: 0 20px 50px rgba(0, 240, 255, 0.05);
+}
+.review-card:hover .card-laser-glow { width: calc(100% - 48px); }
+.review-card:hover .star-rating-row { color: var(--neon-cyan); text-shadow: 0 0 8px rgba(0, 240, 255, 0.6); }
+.review-card:hover .star-rating-row span { transform: scale(1.12); }
+.review-card:hover .review-quote-text { color: var(--text-bright); }
+
+/* Alternating themed hover states mapped onto secondary row indices */
+.review-card:nth-child(2):hover { border-color: rgba(157, 78, 221, 0.2); box-shadow: 0 20px 50px rgba(157, 78, 221, 0.05); }
+.review-card:nth-child(2):hover .star-rating-row { color: var(--neon-purple); text-shadow: 0 0 8px rgba(157, 78, 221, 0.6); }
+
+.review-card:nth-child(3):hover { border-color: rgba(0, 255, 136, 0.2); box-shadow: 0 20px 50px rgba(0, 255, 136, 0.05); }
+.review-card:nth-child(3):hover .star-rating-row { color: var(--accent-success); text-shadow: 0 0 8px rgba(0, 255, 136, 0.6); }
+
+/* ==========================================
+   FLUID RESPONSIVE METRICS
+========================================== */
+@media (max-width: 992px) {
+    .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr); /* Collapse down smoothly to dual column layout layouts */
+        gap: 24px;
+    }
+    .scroll-letter-header { font-size: 2.3rem; }
+    .testimonial-container { padding: 0 24px; }
+}
+
+@media (max-width: 640px) {
+    .testimonial-grid {
+        grid-template-columns: 1fr; /* Pure linear stack format for smartphone screen padding comfort */
+    }
+    .scroll-letter-header { font-size: 1.85rem; }
+    .testimonial-container { padding: 0 16px; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. SCROLL REVEAL: Letter-by-Letter Title Calculator
+    const reviewTitle = document.getElementById("scrollReviewTitle");
+    if (reviewTitle) {
+        const textPayload = reviewTitle.textContent.trim();
+        reviewTitle.textContent = "";
+
+        const splitSpansList = textPayload.split("").map(character => {
+            const span = document.createElement("span");
+            span.className = "char-node";
+            span.innerHTML = character === " " ? "&nbsp;" : character;
+            reviewTitle.appendChild(span);
+            return span;
+        });
+
+        function handleReviewTitleReveal() {
+            const rect = reviewTitle.getBoundingClientRect();
+            const viewHeight = window.innerHeight;
+            
+            const startRevealPos = viewHeight * 0.92;
+            const endRevealPos = viewHeight * 0.4;
+            
+            let revealFraction = (startRevealPos - rect.top) / (startRevealPos - endRevealPos);
+            revealFraction = Math.max(0, Math.min(1, revealFraction));
+
+            const maxIndexToLight = Math.floor(revealFraction * splitSpansList.length);
+            splitSpansList.forEach((spanNode, index) => {
+                if (index < maxIndexToLight) spanNode.classList.add("illuminated");
+                else spanNode.classList.remove("illuminated");
+            });
+        }
+        window.addEventListener("scroll", handleReviewTitleReveal);
+        handleReviewTitleReveal();
+    }
+
+    // 2. SCROLL REVEAL: One-by-One Delayed Card Grid Cascades
+    const activeReviewCards = document.querySelectorAll(".review-card");
+
+    function handleReviewCardsCascadeReveal() {
+        activeReviewCards.forEach((card, progressiveIdx) => {
+            const cardTop = card.getBoundingClientRect().top;
+            const screenActivationBarrier = window.innerHeight * 0.88;
+
+            if (cardTop < screenActivationBarrier) {
+                if (!card.classList.contains("card-revealed")) {
+                    // Timeout delay multiplication guarantees clean step-by-step entrances
+                    setTimeout(() => {
+                        card.classList.add("card-revealed");
+                    }, progressiveIdx * 130); // 130ms delay interval forces beautiful chain reactions
+                }
+            }
+        });
+    }
+    window.addEventListener("scroll", handleReviewCardsCascadeReveal);
+    handleReviewCardsCascadeReveal();
+});
+
+</script>
+
+<section class="faq-section" id="faq">
+    <!-- Atmospheric background network grid layer -->
+    <img src="https://unsplash.com" alt="Tech Wireframe Matrix" class="faq-bg-mesh">
+
+    <div class="faq-container">
+        
+        <!-- FAQ Section Header Block -->
+        <div class="faq-header">
+            <div class="cyber-badge">// CENTRAL KNOWLEDGE NODE</div>
+            <!-- Main Title triggered cleanly letter-by-letter via window scrolling checks -->
+            <h2 class="scroll-letter-header" id="scrollFaqTitle">
+                System decrypt & operational protocols
+            </h2>
+        </div>
+
+        <!-- Accordion Interface Column -->
+        <div class="faq-accordion-stack">
+            
+            <!-- FAQ Item 1 -->
+            <div class="faq-item animate-scroll-node">
+                <button class="faq-trigger-btn" type="button" aria-expanded="false">
+                    <div class="trigger-meta-block">
+                        <span class="faq-index">Q_01</span>
+                        <h3>How does Stackly cloak outgoing server traffic?</h3>
+                    </div>
+                    <div class="trigger-icon-wrap">
+                        <span class="icon-line horizontal"></span>
+                        <span class="icon-line vertical"></span>
+                    </div>
+                </button>
+                <div class="faq-content-wrapper">
+                    <div class="faq-inner-body">
+                        <div class="diagnostic-grid-glow"></div>
+                        <p>Stackly abstracts network traffic completely. By dynamically mutating packet header routes on a microsecond scale across decentralized secure nodes, we disguise corporate server signatures and keep physical data center locations hidden from automated port scanners.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="faq-item animate-scroll-node">
+                <button class="faq-trigger-btn" type="button" aria-expanded="false">
+                    <div class="trigger-meta-block">
+                        <span class="faq-index">Q_02</span>
+                        <h3>Will zero-trust architectures impact application latency?</h3>
+                    </div>
+                    <div class="trigger-icon-wrap">
+                        <span class="icon-line horizontal"></span>
+                        <span class="icon-line vertical"></span>
+                    </div>
+                </button>
+                <div class="faq-content-wrapper">
+                    <div class="faq-inner-body">
+                        <div class="diagnostic-grid-glow purple-grid"></div>
+                        <p>No. Our edge infrastructure operates on low-latency protocols engineered explicitly for high-throughput microservices. Security processing tokens coordinate seamlessly with active global container networks, keeping end-to-end endpoint authentication delays under 10ms.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="faq-item animate-scroll-node">
+                <button class="faq-trigger-btn" type="button" aria-expanded="false">
+                    <div class="trigger-meta-block">
+                        <span class="faq-index">Q_03</span>
+                        <h3>What happens the millisecond a perimeter breach is logged?</h3>
+                    </div>
+                    <div class="trigger-icon-wrap">
+                        <span class="icon-line horizontal"></span>
+                        <span class="icon-line vertical"></span>
+                    </div>
+                </button>
+                <div class="faq-content-wrapper">
+                    <div class="faq-inner-body">
+                        <div class="diagnostic-grid-glow green-grid"></div>
+                        <p>Our autonomous firewall deploys a reflexive sandbox routine instantly. The compromised subnet is isolated within a hardware-fenced virtual environment while fake metadata payloads are fed to the entry vector, neutralizing the exploit threat without interrupting primary cluster operations.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-success: #00ff88;
+}
+
+/* ==========================================
+   FAQ CONTAINER CONFIGURATIONS
+========================================== */
+.faq-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.faq-bg-mesh {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; opacity: 0.015; pointer-events: none; z-index: 1;
+}
+
+.faq-container {
+    position: relative;
+    max-width: 1100px; /* Expanded for proper multi-line reading comfort */
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    z-index: 2;
+}
+
+.faq-header {
+    width: 100%; 
+    margin-bottom: 50px; 
+    text-align: left;
+}
+
+.cyber-badge {
+    font-family: monospace;
+    color: var(--neon-cyan);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+/* ==========================================
+   BUG RECON: RESOLVED WORD BREAK CRASH
+========================================== */
+.scroll-letter-header {
+    font-size: 3rem; /* Increased size significantly for sharp prominence */
+    font-weight: 800; 
+    line-height: 1.25; /* Expanded to clean up glow metrics overlapping lines */
+    text-transform: uppercase; 
+    color: var(--text-bright); 
+    margin-top: 15px;
+    word-break: keep-all; /* Fixed: Prevents words like PROTOCOLS from breaking midway */
+    overflow-wrap: break-word;
+    width: 100%;
+}
+
+.scroll-letter-header .char-node {
+    display: inline-block; 
+    opacity: 0.15; 
+    transform: translateY(6px);
+    transition: opacity 0.2s ease, transform 0.2s ease, text-shadow 0.2s;
+}
+
+.scroll-letter-header .char-node.illuminated {
+    opacity: 1; 
+    transform: translateY(0); 
+    color: var(--text-bright);
+    text-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+}
+
+/* ==========================================
+   HIGH-UTILITY ACCORDION STRUCTURES
+========================================== */
+.faq-accordion-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Increased separation footprint */
+    width: 100%;
+}
+
+.faq-item {
+    background-color: rgba(13, 21, 39, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-item.node-synced {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.faq-trigger-btn {
+    width: 100%;
+    padding: 28px 30px; /* Increased internal cell breathing bounds */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+.trigger-meta-block {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    text-align: left;
+}
+
+.faq-index {
+    font-family: monospace;
+    font-size: 0.9rem; /* Increased index typography size */
+    font-weight: 700;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+/* Increased Question Heading Size */
+.trigger-meta-block h3 {
+    font-size: 1.35rem; /* Increased size significantly for heavy prominence */
+    font-weight: 700;
+    color: var(--text-bright);
+    line-height: 1.4;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.trigger-icon-wrap {
+    position: relative;
+    width: 16px; height: 16px;
+    flex-shrink: 0;
+}
+
+.icon-line {
+    position: absolute; background-color: var(--text-dim);
+    border-radius: 2px; transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.3s ease;
+}
+.horizontal { top: 7px; left: 0; width: 100%; height: 2px; }
+.vertical { top: 0; left: 7px; width: 2px; height: 100%; }
+
+.faq-content-wrapper {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.faq-inner-body {
+    padding: 0 30px 30px 86px; /* Aligns description cleanly under expanded columns */
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Increased Description Paragraph Size */
+.faq-inner-body p {
+    font-size: 1.05rem; /* Increased from 0.9rem for prominent readability contrast */
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.7;
+    text-align: left;
+    margin: 0;
+    z-index: 3;
+    position: relative;
+}
+
+/* Background grid glow textures */
+.diagnostic-grid-glow {
+    position: absolute;
+    bottom: 0; left: 0; width: 100%; height: 100%;
+    background-image: linear-gradient(rgba(0, 240, 255, 0.02) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(0, 240, 255, 0.02) 1px, transparent 1px);
+    background-size: 16px 16px;
+    mask-image: linear-gradient(to top, #000 20%, transparent);
+    -webkit-mask-image: linear-gradient(to top, #000 20%, transparent);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+.purple-grid { background-image: linear-gradient(rgba(157, 78, 221, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(157, 78, 221, 0.02) 1px, transparent 1px); }
+.green-grid { background-image: linear-gradient(rgba(0, 255, 136, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 136, 0.02) 1px, transparent 1px); }
+
+/* ==========================================
+   INTERACTIVE NEON HOVER GLOWS
+========================================== */
+.faq-item:hover { border-color: rgba(0, 240, 255, 0.2); box-shadow: 0 12px 35px rgba(0, 240, 255, 0.05); }
+.faq-item:hover .faq-index { color: var(--neon-cyan); }
+.faq-item:hover .trigger-meta-block h3 { color: var(--neon-cyan); }
+.faq-item:hover .icon-line { background-color: var(--neon-cyan); }
+
+.faq-item:nth-child(2):hover { border-color: rgba(157, 78, 221, 0.2); box-shadow: 0 12px 35px rgba(157, 78, 221, 0.05); }
+.faq-item:nth-child(2):hover .faq-index { color: var(--neon-purple); }
+.faq-item:nth-child(2):hover .trigger-meta-block h3 { color: var(--neon-purple); }
+.faq-item:nth-child(2):hover .icon-line { background-color: var(--neon-purple); }
+
+.faq-item:nth-child(3):hover { border-color: rgba(0, 255, 136, 0.2); box-shadow: 0 12px 35px rgba(0, 255, 136, 0.05); }
+.faq-item:nth-child(3):hover .faq-index { color: var(--accent-success); }
+.faq-item:nth-child(3):hover .trigger-meta-block h3 { color: var(--accent-success); }
+.faq-item:nth-child(3):hover .icon-line { background-color: var(--accent-success); }
+
+.faq-item.accordion-active { border-color: rgba(0, 240, 255, 0.3) !important; background-color: rgba(13, 21, 39, 0.6); }
+.faq-item:nth-child(2).accordion-active { border-color: rgba(157, 78, 221, 0.3) !important; }
+.faq-item:nth-child(3).accordion-active { border-color: rgba(0, 255, 136, 0.3) !important; }
+
+.faq-item.accordion-active .trigger-meta-block h3 { color: var(--text-bright); text-shadow: 0 0 10px rgba(255, 255, 255, 0.2); }
+.faq-item.accordion-active .diagnostic-grid-glow { opacity: 1; }
+.faq-item.accordion-active .vertical { transform: rotate(90deg); opacity: 0; }
+.faq-item.accordion-active .horizontal { transform: rotate(180deg); }
+
+/* ==========================================
+   FLUID RESPONSIVE DESIGN BOUNDARIES
+========================================== */
+@media (max-width: 992px) {
+    .scroll-letter-header { font-size: 2.5rem; }
+    .faq-container { padding: 0 24px; }
+    .faq-trigger-btn { padding: 22px 24px; }
+    .trigger-meta-block h3 { font-size: 1.2rem; }
+    .faq-inner-body { padding: 0 24px 24px 76px; }
+}
+
+@media (max-width: 768px) {
+    .scroll-letter-header { font-size: 2rem; }
+    .trigger-meta-block { gap: 16px; align-items: flex-start; flex-direction: column; }
+    .faq-index { line-height: 1; }
+    .faq-inner-body { padding: 0 20px 24px 20px; } /* Correctly aligns paragraph on tight viewports */
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. SCROLL REVEAL: Letter-by-Letter Title Calculator
+    const faqTitleNode = document.getElementById("scrollFaqTitle");
+    if (faqTitleNode) {
+        const textPayloadStr = faqTitleNode.textContent.trim();
+        faqTitleNode.textContent = "";
+
+        const letterSpans = textPayloadStr.split("").map(character => {
+            const span = document.createElement("span");
+            span.className = "char-node";
+            span.innerHTML = character === " " ? "&nbsp;" : character;
+            faqTitleNode.appendChild(span);
+            return span;
+        });
+
+        function handleFaqTitleScrollReveal() {
+            const rect = faqTitleNode.getBoundingClientRect();
+            const viewHeight = window.innerHeight;
+            
+            const startReveal = viewHeight * 0.92;
+            const endReveal = viewHeight * 0.4;
+            
+            let progress = (startReveal - rect.top) / (startReveal - endReveal);
+            progress = Math.max(0, Math.min(1, progress));
+
+            const maxIndex = Math.floor(progress * letterSpans.length);
+            letterSpans.forEach((spanNode, index) => {
+                if (index < maxIndex) spanNode.classList.add("illuminated");
+                else spanNode.classList.remove("illuminated");
+            });
+        }
+        window.addEventListener("scroll", handleFaqTitleScrollReveal);
+        handleFaqTitleScrollReveal();
+    }
+
+    // 2. SCROLL REVEAL: One-by-One Delayed Column Cascade Accents
+    const cascadingFaqItems = document.querySelectorAll(".faq-item");
+    function handleFaqItemsCascadeReveal() {
+        cascadingFaqItems.forEach((itemNode, progressiveIdx) => {
+            if (itemNode.getBoundingClientRect().top < window.innerHeight * 0.88) {
+                if (!itemNode.classList.contains("node-synced")) {
+                    setTimeout(() => {
+                        itemNode.classList.add("node-synced");
+                    }, progressiveIdx * 120); 
+                }
+            }
+        });
+    }
+    window.addEventListener("scroll", handleFaqItemsCascadeReveal);
+    handleFaqItemsCascadeReveal();
+
+    // 3. HIGH-UTILITY INTERACTION: Height-Calibrated Accordion Drawer Toggles
+    cascadingFaqItems.forEach(item => {
+        const triggerBtn = item.querySelector(".faq-trigger-btn");
+        const contentWrapper = item.querySelector(".faq-content-wrapper");
+
+        if (triggerBtn && contentWrapper) {
+            triggerBtn.addEventListener("click", () => {
+                const isActive = item.classList.contains("accordion-active");
+
+                // Auto-collapse other open FAQ panels first to maintain clean terminal viewports
+                cascadingFaqItems.forEach(otherItem => {
+                    otherItem.classList.remove("accordion-active");
+                    const otherWrapper = otherItem.querySelector(".faq-content-wrapper");
+                    if (otherWrapper) {
+                        otherWrapper.style.height = "0px";
+                        otherItem.querySelector(".faq-trigger-btn").setAttribute("aria-expanded", "false");
+                    }
+                });
+
+                // Toggle current element node parameters cleanly
+                if (!isActive) {
+                    item.classList.add("accordion-active");
+                    triggerBtn.setAttribute("aria-expanded", "true");
+                    // Collect actual calculated DOM content layout pixel requirements dynamically
+                    const internalHeight = contentWrapper.querySelector(".faq-inner-body").scrollHeight;
+                    contentWrapper.style.height = `${internalHeight}px`;
+                }
+            });
+        }
+    });
+
+    // Optional recalculation engine to adjust open drawer heights if screen scales flip sizes
+    window.addEventListener("resize", () => {
+        const activeItem = document.querySelector(".faq-item.accordion-active");
+        if (activeItem) {
+            const contentWrapper = activeItem.querySelector(".faq-content-wrapper");
+            const internalHeight = contentWrapper.querySelector(".faq-inner-body").scrollHeight;
+            contentWrapper.style.height = `${internalHeight}px`;
+        }
+    });
+});
+
+</script>
+
+<section class="single-line-cta-section">
+    <!-- Atmospheric base layout background image tag -->
+    <img src="https://unsplash.com" alt="Cyber Glow Backdrop" class="cta-banner-bg">
+
+    <div class="cta-banner-container">
+        
+        <!-- Left Side: Content Title Only -->
+        <div class="cta-left-content">
+            <h2 class="scroll-letter-title" id="scrollCtaBannerTitle">
+                Secure your digital matrix today
+            </h2>
+        </div>
+
+        <!-- Right Side: Floating Action Button Only -->
+        <div class="cta-right-action">
+            <div class="floating-btn-wrap">
+                <button class="banner-action-btn" type="button">
+                    <span>Deploy Immediate Guard</span>
+                    <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+}
+
+/* ==========================================
+   CTA BANNER GENERAL LAYOUT SETTINGS
+========================================== */
+.single-line-cta-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 50px;       /* Strict 50px top padding layout limit */
+    padding-bottom: 30px;    /* Strict 30px bottom padding layout footprint */
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(0, 240, 255, 0.05);
+    border-bottom: 1px solid rgba(157, 78, 221, 0.05);
+}
+
+.cta-banner-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; opacity: 0.04; pointer-events: none; z-index: 1;
+}
+
+.cta-banner-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between; /* Perfect horizontal corner-to-corner balance */
+    align-items: center;
+    gap: 40px;
+    z-index: 3;
+}
+
+/* ==========================================
+   LEFT ZONE - TITLE STYLING
+========================================== */
+.cta-left-content {
+    display: flex;
+    max-width: 65%;
+    flex: 1;
+}
+
+.scroll-letter-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    color: var(--text-bright);
+    margin: 0;
+    text-align: left;
+    word-break: keep-all; 
+    overflow-wrap: break-word;
+    width: 100%;
+}
+
+/* Character split node baselines before scrolling viewport intersection */
+.scroll-letter-title .char-unit {
+    display: inline-block;
+    opacity: 0.15;
+    transform: scale(0.95);
+    transition: opacity 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), text-shadow 0.2s ease;
+}
+
+.scroll-letter-title .char-unit.glow-active {
+    opacity: 1;
+    transform: scale(1);
+    color: var(--text-bright);
+    text-shadow: 0 0 15px rgba(0, 240, 255, 0.45);
+}
+
+/* ==========================================
+   RIGHT ZONE - FLOATING BUTTON ACTION
+========================================== */
+.cta-right-action {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.floating-btn-wrap {
+    animation: ctaButtonFloat 4.5s ease-in-out infinite; /* Automated smooth float loop */
+}
+
+.banner-action-btn {
+    padding: 16px 36px;
+    border-radius: 35px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--text-bright);
+    background: linear-gradient(90deg, var(--neon-purple), var(--neon-cyan));
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+}
+
+/* Hover glow illumination effects */
+.banner-action-btn:hover {
+    box-shadow: 0 12px 35px rgba(0, 240, 255, 0.45);
+    transform: scale(1.02);
+}
+
+.banner-action-btn:active {
+    transform: scale(0.98);
+}
+
+.btn-arrow {
+    width: 16px; height: 16px;
+    transition: transform 0.3s ease;
+}
+.banner-action-btn:hover .btn-arrow {
+    transform: translateX(4px);
+}
+
+/* Floating animation timelines */
+@keyframes ctaButtonFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+}
+
+/* ==========================================
+   FLUID RESPONSIVE DESIGN BOUNDARIES
+========================================== */
+@media (max-width: 992px) {
+    .cta-banner-container {
+        flex-direction: column; /* Flips track layout cleanly to columns on tablet/mobile screens */
+        text-align: center;
+        gap: 30px;
+        padding: 0 24px;
+    }
+    
+    .cta-left-content {
+        max-width: 100%;
+    }
+    
+    .scroll-letter-title { font-size: 2.2rem; text-align: center; }
+    .cta-right-action { justify-content: center; width: 100%; }
+}
+
+@media (max-width: 480px) {
+    .cta-banner-container { padding: 0 16px; }
+    .scroll-letter-title { font-size: 1.75rem; }
+    .banner-action-btn { width: 100%; justify-content: center; padding: 14px; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // SCROLL REVEAL: Minimal Single-Line Title Animation Engine
+    const ctaTitleNode = document.getElementById("scrollCtaBannerTitle");
+
+    if (ctaTitleNode) {
+        const structuralTextStr = ctaTitleNode.textContent.trim();
+        ctaTitleNode.textContent = ""; // Clear placeholder text context
+
+        // Split text cleanly into individual character wrapper span nodes
+        const charSpanElements = structuralTextStr.split("").map(character => {
+            const spanNode = document.createElement("span");
+            spanNode.className = "char-unit";
+            // Ensure blank spacing values are rendered as non-breaking entities
+            spanNode.innerHTML = character === " " ? "&nbsp;" : character;
+            ctaTitleNode.appendChild(spanNode);
+            return spanNode;
+        });
+
+        function handleBannerTitleScrollReveal() {
+            const nodeRect = ctaTitleNode.getBoundingClientRect();
+            const browserViewportHeight = window.innerHeight;
+            
+            // Text illuminates progressively once section passes bottom 95% threshold
+            const startScrollRevealLine = browserViewportHeight * 0.95;
+            const endScrollRevealLine = (browserViewportHeight * 0.4) + 100; // Built-in padding buffer
+            
+            let scrollRevealProgress = (startScrollRevealLine - nodeRect.top) / (startScrollRevealLine - endScrollRevealLine);
+            scrollRevealProgress = Math.max(0, Math.min(1, scrollRevealProgress));
+
+            const totalActiveCharsIndex = Math.floor(scrollRevealProgress * charSpanElements.length);
+
+            charSpanElements.forEach((spanNode, index) => {
+                if (index < totalActiveCharsIndex) {
+                    spanNode.classList.add("glow-active");
+                } else {
+                    spanNode.classList.remove("glow-active");
+                }
+            });
+        }
+
+        // Attach lightweight resize and scroll window listener loops
+        window.addEventListener("scroll", handleBannerTitleScrollReveal);
+        window.addEventListener("resize", handleBannerTitleScrollReveal);
+        
+        // Execute an instant baseline run frame immediately on DOM initialization
+        handleBannerTitleScrollReveal(); 
+    }
+});
+
+</script>
