@@ -1,0 +1,2883 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - Cyber Protection</title>
+    <!-- Link External Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CREATIVE PRELOADER LAYER -->
+    <div id="preloader">
+        <div class="cyber-anim-container">
+            <!-- Outer spinning dashed track -->
+            <div class="orbital-ring"></div>
+            <!-- Inner reverse spinning track -->
+            <div class="orbital-ring-inner"></div>
+            <!-- Vector Shield Icon -->
+            <svg class="svg-shield-icon" viewBox="0 0 24 24" xmlns="http://w3.org">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <!-- Branded Preloader Heading -->
+        <div class="loader-title">Stackly</div>
+        <div class="loader-status">Initializing Firewall</div>
+        <div class="progress-timeline">
+            <div class="progress-fill"></div>
+        </div>
+    </div>
+
+    <!-- MAIN UI PAGE (Hidden initially) -->
+    
+
+    <!-- Link External JavaScript Logic -->
+    <script> document.addEventListener("DOMContentLoaded", () => {
+    const preloader = document.getElementById("preloader");
+    const appContent = document.getElementById("appContent");
+    const actionBtn = document.getElementById("actionBtn");
+
+    // Clear and handle the 2-second loading time handover
+    setTimeout(() => {
+        if (preloader) {
+            preloader.classList.add("loaded");
+        }
+        if (appContent) {
+            appContent.classList.add("visible");
+        }
+    }, 2000); 
+
+    if (actionBtn) {
+        actionBtn.addEventListener("click", () => {
+            alert("Stackly Security Protocols updated successfully!");
+        });
+    }
+});
+</script>
+
+<header class="main-header">
+    <div class="header-container">
+        <!-- Brand Logo Container (Tied to JS Window Reload Engine) -->
+        <div class="logo-wrapper" id="brandLogoBtn" title="Refresh Dashboard">
+            <img src="https://placehold.co" alt="Stackly Logo" class="brand-img">
+        </div>
+
+        <!-- Centralized App Menu Navigation Links (Now with Contact Us) -->
+        <nav class="nav-menu" id="navigationDrawer">
+            <a href="index.html" class="nav-link ">Home</a>
+            <a href="firewall.html" class="nav-link">Firewall</a>
+            <a href="logs.html" class="nav-link">Threat Logs</a>
+            <a href="analytics.html" class="nav-link active">Analytics</a>
+            <a href="blogs.html" class="nav-link">Blogs</a>
+            <a href="contact.html" class="nav-link">Contact Us</a>
+        </nav>
+
+        <!-- Authorization Action Controls Corner -->
+        <div class="auth-wrapper">
+          <button class="auth-btn" onclick="window.location.href='login.html'">
+    Access Console
+</button>
+        </div>
+
+        <!-- Adaptive Mobile Hamburger Icon Trigger -->
+        <button class="hamburger-menu" id="hamburgerToggle" aria-label="Toggle Navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </div>
+</header>
+
+<!-- Overlay background asset used to execute backdrop blur behind the open mobile nav menu -->
+<div class="blur-backdrop" id="screenOverlay"></div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const brandLogoBtn = document.getElementById("brandLogoBtn");
+    const hamburgerToggle = document.getElementById("hamburgerToggle");
+    const screenOverlay = document.getElementById("screenOverlay");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    // 1. Core Page Refresh Bind tied to Brand Image element clicks
+    if (brandLogoBtn) {
+        brandLogoBtn.addEventListener("click", () => {
+            window.location.reload();
+        });
+    }
+
+    // 2. Responsive Mobile Navigation Menu & Blurring Layer Toggle Control
+    function toggleMobileMenu() {
+        document.body.classList.toggle("menu-open");
+    }
+
+    if (hamburgerToggle) {
+        hamburgerToggle.addEventListener("click", toggleMobileMenu);
+    }
+
+    // Collapse drawer panel if a user clicks outside the menu boundaries onto the blurred viewport backdrop
+    if (screenOverlay) {
+        screenOverlay.addEventListener("click", toggleMobileMenu);
+    }
+
+    // Auto-collapse mobile navigation dropdown drawer seamlessly when items are selected
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            document.body.classList.remove("menu-open");
+            
+            // Clean active track classes variables 
+            navLinks.forEach(item => item.classList.remove("active"));
+            link.classList.add("active");
+        });
+    });
+});
+
+</script>
+
+<section class="analytics-hero-section" id="analytics-core">
+    <!-- Atmospheric subtle technical grid backdrop layer -->
+    <div class="analytics-bg-overlay"></div>
+
+    <div class="analytics-hero-container">
+        
+        <!-- Left Side Column: Sticky Sentence-by-Sentence Content Tracking -->
+        <div class="analytics-hero-content">
+            <div class="cyber-badge">// PREDICTIVE CORE // REAL_TIME_METRICS</div>
+            
+            <!-- Complete sentences illuminate one-by-one upon window scroll intersection -->
+            <h1 class="sentence-stream-title" id="scrollAnalyticsHeroTitle">
+                <span class="stream-line first-major-line">Decoding encrypted backend traffic streams.</span>
+                <span class="stream-line sub-minor-line">Aggregating cloud infrastructure anomalies.</span>
+                <span class="stream-line sub-minor-line">Predicting structural perimeter bottlenecks.</span>
+            </h1>
+            
+            <p class="analytics-hero-desc">
+                Stackly processes millions of network metadata markers simultaneously, distilling raw data logs into a highly visual, centralized cryptographic dashboard timeline with zero throughput latency.
+            </p>
+
+            <!-- Floating CTA Controls Row -->
+            <div class="floating-btn-wrap">
+                <div class="cta-group">
+                    <button class="cta-btn primary-cta" type="button">Mount Live Console</button>
+                    <button class="cta-btn secondary-cta" type="button">
+                        <span>Export Audit Logs</span> 
+                        <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side Column: Complex Interlocking Vector SVG Diagnostic Core -->
+        <div class="analytics-hero-visual">
+            <div class="vector-hud-scope">
+                <svg class="hud-matrix-svg" viewBox="0 0 200 200" xmlns="http://w3.org">
+                    <defs>
+                        <linearGradient id="matrixGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.85"/>
+                            <stop offset="100%" stop-color="#9d4edd" stop-opacity="0.2"/>
+                        </linearGradient>
+                        <filter id="glowBlur">
+                            <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+
+                    <!-- Concentric Target Telemetry Rings -->
+                    <circle cx="100" cy="100" r="90" fill="none" stroke="rgba(255,255,255,0.02)" stroke-width="1"/>
+                    <circle cx="100" cy="100" r="75" fill="none" stroke="url(#matrixGlow)" stroke-width="1" stroke-dasharray="12, 6" class="radar-outer-ring" />
+                    <circle cx="100" cy="100" r="50" fill="none" stroke="#9d4edd" stroke-width="1.5" stroke-dasharray="4, 4" class="radar-inner-ring" />
+                    
+                    <!-- Isometric Interconnecting Pathway Data Blueprint Nodes -->
+                    <g class="matrix-data-nodes" filter="url(#glowBlur)">
+                        <!-- Central Analytics Hub Base -->
+                        <polygon points="100,85 115,93 115,107 100,115 85,107 85,93" fill="rgba(13, 21, 39, 0.9)" stroke="#00f0ff" stroke-width="1.5" class="cube-polygon"/>
+                        <!-- Node Top Left -->
+                        <polygon points="60,55 70,60 70,72 60,67 50,72 50,60" fill="rgba(6,9,19,0.8)" stroke="#9d4edd" stroke-width="1" class="cube-polygon"/>
+                        <!-- Node Bottom Right -->
+                        <polygon points="140,135 150,140 150,152 140,147 130,152 130,140" fill="rgba(6,9,19,0.8)" stroke="#9d4edd" stroke-width="1" class="cube-polygon"/>
+                        
+                        <!-- Connection Vector Live Stream Link Lines -->
+                        <line x1="60" y1="67" x2="100" y2="85" stroke="rgba(0, 240, 255, 0.4)" stroke-width="1" stroke-dasharray="2, 4" class="stream-line-trace"/>
+                        <line x1="140" y1="135" x2="100" y2="115" stroke="rgba(157, 78, 221, 0.4)" stroke-width="1" stroke-dasharray="2, 4" class="stream-line-trace"/>
+                    </g>
+                    
+                    <!-- Crosshair Reticle Axis lines -->
+                    <line x1="100" y1="5" x2="100" y2="195" stroke="rgba(255, 255, 255, 0.03)" stroke-width="0.5" />
+                    <line x1="5" y1="100" x2="195" y2="100" stroke="rgba(255, 255, 255, 0.03)" stroke-width="0.5" />
+                </svg>
+
+                <div class="hud-telemetry-chip chip-top">METRIC_STREAM // SYNCED</div>
+                <div class="hud-telemetry-chip chip-bottom">THROUGHPUT // UNLIMITED</div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-success: #00ff88;
+    --header-height: 70px;
+}
+
+/* ==========================================
+   ANALYTICS HERO GENERAL CONTAINER SETTINGS
+========================================== */
+.analytics-hero-section {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - var(--header-height));
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 130px 0;
+}
+
+.analytics-bg-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.006) 1px, transparent 1px);
+    background-size: 24px 24px;
+    pointer-events: none; z-index: 1;
+}
+
+.analytics-hero-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 60px;
+    align-items: center;
+    z-index: 2;
+}
+
+/* ==========================================
+   LEFT SIDE - HIGH FIRST-SENTENCE HIERARCHY
+========================================== */
+.analytics-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cyber-badge {
+    font-family: monospace;
+    color: var(--neon-cyan);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+}
+
+.sentence-stream-title {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    line-height: 1.25;
+    text-transform: uppercase;
+    color: var(--text-bright); /* Forced white typography system */
+}
+
+.stream-line {
+    opacity: 0.15;
+    transform: translateY(12px);
+    transition: opacity 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.stream-line.line-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* First Sentence Title: Premium Bold Scale Accent */
+.first-major-line {
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
+    border-left: 3px solid transparent;
+    transition: padding-left 0.4s ease, border-color 0.4s ease;
+}
+.first-major-line.line-revealed {
+    border-left-color: var(--neon-cyan);
+    padding-left: 18px;
+}
+
+/* Lower Sub-Sentences Scale Rules */
+.sub-minor-line {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 8px;
+}
+.sub-minor-line.line-revealed { color: var(--text-bright); }
+
+/* Reduced Paragraph Scales */
+.analytics-hero-desc {
+    font-size: 0.95rem; /* Reduced description scale for maximum hierarchy contrast */
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.65;
+    margin-bottom: 35px;
+    max-width: 540px;
+    transition: color 0.3s ease;
+}
+
+/* ==========================================
+   FLOATING ACTION BUTTON CONTROLS ROWS
+========================================== */
+.floating-btn-wrap {
+    animation: actionRowFloat 4.5s ease-in-out infinite; /* Continuous vertical float engine loop */
+    width: 100%;
+}
+
+.cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.cta-btn {
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--text-bright); /* Forced white typography buttons */
+    box-sizing: border-box;
+    white-space: nowrap;
+    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+}
+
+.primary-cta {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+.primary-cta:hover {
+    background-color: var(--text-bright);
+    color: var(--bg-deep) !important;
+    border-color: var(--text-bright);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+.secondary-cta {
+    background: rgba(13, 21, 39, 0.6);
+    border: 1px solid var(--neon-cyan);
+}
+.secondary-cta:hover {
+    background: linear-gradient(90deg, var(--neon-purple), var(--neon-cyan));
+    border-color: transparent;
+    box-shadow: 0 10px 30px rgba(0, 240, 255, 0.35);
+    transform: translateY(-2px);
+}
+
+.btn-arrow { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.5; transition: transform 0.3s ease; }
+.secondary-cta:hover .btn-arrow { transform: translateX(4px); }
+
+/* ==========================================
+   RIGHT PANEL - RESPONSIVE HUD SCOPE VECTOR
+========================================== */
+.analytics-hero-visual {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.vector-hud-scope {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    aspect-ratio: 1 / 1;
+    background: rgba(13, 21, 39, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hud-matrix-svg { width: 100%; height: auto; display: block; }
+
+/* Continuous vector movement animation properties loop */
+.radar-outer-ring { transform-origin: 100px 100px; animation: continuousRotate 30s linear infinite; }
+.radar-inner-ring { transform-origin: 100px 100px; animation: continuousReverseRotate 15s linear infinite; }
+.matrix-data-nodes { animation: floatingScopeDrift 6s ease-in-out infinite; transform-origin: 100px 100px; }
+.cube-polygon { transition: stroke 0.3s ease, fill 0.3s ease; }
+.stream-line-trace { transition: stroke 0.3s ease; }
+
+/* Interactive Content Hover Glow mappings */
+.analytics-hero-section:hover .analytics-hero-desc { color: var(--text-bright); }
+.vector-hud-scope:hover { border-color: rgba(0, 240, 255, 0.2); box-shadow: 0 0 35px rgba(0, 240, 255, 0.1); }
+.vector-hud-scope:hover .cube-polygon { stroke: var(--accent-success); }
+.vector-hud-scope:hover .stream-line-trace { stroke: rgba(0, 255, 136, 0.4); }
+
+/* HUD Labels position layout anchors */
+.hud-telemetry-chip {
+    position: absolute; font-family: monospace; font-size: 0.65rem; color: var(--text-dim);
+    letter-spacing: 1px; background-color: var(--bg-deep); padding: 2px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.04); border-radius: 4px;
+}
+.chip-top { top: -6px; }
+.chip-bottom { bottom: -6px; }
+
+/* ==========================================
+   CORE RUNTIME SYSTEM TIMELINE KEYFRAMES
+========================================== */
+@keyframes continuousRotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes continuousReverseRotate { 0% { transform: rotate(360deg); } 100% { transform: rotate(0deg); } }
+@keyframes actionRowFloat { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-5px); } }
+@keyframes floatingScopeDrift { 0%, 100% { transform: translateY(0px) scale(0.98); } 50% { transform: translateY(-8px) scale(1.02); } }
+
+/* ==========================================
+   FLUID RESPONSIVE DESIGN BOUNDARIES
+========================================== */
+@media (max-width: 992px) {
+    .analytics-hero-container {
+        grid-template-columns: 1fr; /* Switch to clean vertical stacks to bypass layout clipping bugs */
+        padding: 0 24px;
+        gap: 50px;
+    }
+    .analytics-hero-content { align-items: center; text-align: center; }
+    .sentence-stream-title { align-items: center; }
+    .first-major-line { font-size: 2.2rem; border-left: none; border-bottom: 2px solid transparent; }
+    .first-major-line.line-revealed { padding-left: 0; padding-bottom: 6px; border-bottom-color: var(--neon-cyan); }
+    .sub-minor-line { font-size: 1.25rem; }
+    .analytics-hero-desc { max-width: 100%; font-size: 0.9rem; }
+    .cta-group { justify-content: center; }
+    .analytics-hero-visual { justify-content: center; width: 100%; }
+    .vector-hud-scope { max-width: 320px; }
+}
+
+@media (max-width: 480px) {
+    .analytics-hero-container { padding: 0 16px; }
+    .first-major-line { font-size: 1.75rem; }
+    .cta-group { flex-direction: column; }
+    .cta-btn { width: 100%; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // SCROLL REVEAL: Sentence-by-Sentence Lighting Observer Engine
+    const analyticsHeroTitle = document.getElementById("scrollAnalyticsHeroTitle");
+    
+    if (analyticsHeroTitle) {
+        const structuralLines = analyticsHeroTitle.querySelectorAll(".stream-line");
+
+        function processHeroSentencesReveal() {
+            structuralLines.forEach(lineNode => {
+                const boundingBox = lineNode.getBoundingClientRect();
+                const displayWindowHeight = window.innerHeight;
+                
+                // Elements illuminate individual sentences when passing the bottom 86% view line
+                const activationLineThreshold = displayWindowHeight * 0.86;
+
+                if (boundingBox.top < activationLineThreshold) {
+                    lineNode.classList.add("line-revealed");
+                } else {
+                    lineNode.classList.remove("line-revealed");
+                }
+            });
+        }
+        
+        window.addEventListener("scroll", processHeroSentencesReveal);
+        window.addEventListener("resize", processHeroSentencesReveal);
+        
+        // Execute an instant baseline pass immediately upon DOM asset render check
+        processHeroSentencesReveal();
+    }
+});
+
+</script>
+
+<section class="analytics-matrix-section" id="intel-matrix">
+    <!-- Base structural blueprint line wireframe decoration backdrop -->
+    <div class="matrix-bg-wireframe"></div>
+
+    <div class="matrix-container">
+        
+        <!-- Left Side: Interactive 3D Topological Vector Path Dashboard Grid -->
+        <div class="matrix-visual-panel scroll-cascade-node">
+            <div class="topology-blueprint-card">
+                <div class="blueprint-header-tag">
+                    <span class="tag-title">TOPOLOGICAL_ROUTE // MATRIX_SCANNER</span>
+                    <svg viewBox="0 0 24 24" class="header-vector-icon"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                </div>
+
+                <div class="svg-canvas-wrapper">
+                    <!-- Complete Vector SVG Topological Spline Link Layout Map -->
+                    <svg class="topological-vector-svg" viewBox="0 0 400 220" xmlns="http://w3.org">
+                        <defs>
+                            <linearGradient id="splineGlowCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="rgba(0, 240, 255, 0)"/>
+                                <stop offset="50%" stop-color="rgba(0, 240, 255, 0.6)"/>
+                                <stop offset="100%" stop-color="rgba(0, 240, 255, 0)"/>
+                            </linearGradient>
+                            <linearGradient id="splineGlowPurple" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="rgba(157, 78, 221, 0)"/>
+                                <stop offset="50%" stop-color="rgba(157, 78, 221, 0.6)"/>
+                                <stop offset="100%" stop-color="rgba(157, 78, 221, 0)"/>
+                            </linearGradient>
+                        </defs>
+
+                        <!-- Topological Perimeter Mesh Lines Grid -->
+                        <path d="M20,110 L380,110 M20,40 L380,40 M20,180 L380,180" stroke="rgba(255,255,255,0.02)" stroke-width="0.75"/>
+                        <path d="M80,20 L80,200 M200,20 L200,200 M320,20 L320,200" stroke="rgba(255,255,255,0.02)" stroke-width="0.75"/>
+
+                        <!-- Active Intercept Signal Tracking Splines Lines -->
+                        <path d="M40,110 Q 120,30, 200,110 T 360,110" fill="none" stroke="url(#splineGlowCyan)" stroke-width="2.5" class="spline-path-animate-1" />
+                        <path d="M40,110 Q 120,190, 200,110 T 360,110" fill="none" stroke="url(#splineGlowPurple)" stroke-width="2.5" class="spline-path-animate-2" />
+
+                        <!-- Central System Analytics Core Node Point -->
+                        <g class="topology-core-node" transform="translate(200, 110)">
+                            <circle cx="0" cy="0" r="18" fill="rgba(13, 21, 39, 0.9)" stroke="#00f0ff" stroke-width="1.5" class="core-ring-glow"/>
+                            <circle cx="0" cy="0" r="10" fill="none" stroke="#9d4edd" stroke-width="2" stroke-dasharray="3, 2" class="core-inner-spin"/>
+                            <circle cx="0" cy="0" r="3" fill="#ffffff" />
+                        </g>
+
+                        <!-- Peripheral Threat Tracker coordinate beacons -->
+                        <circle cx="95" cy="55" r="4" fill="#ff3366" class="beacon-pulse-red" />
+                        <circle cx="305" cy="165" r="4" fill="#00ff88" class="beacon-pulse-green" />
+                    </svg>
+                    <!-- Visual laser tracker line overlay -->
+                    <div class="blueprint-radar-sweep"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Content Header and One-by-One Diagnostic Cards -->
+        <div class="matrix-text-panel">
+            <div class="matrix-section-header scroll-cascade-node">
+                <div class="cyber-badge">// PREDICTIVE INTEL // MATRIX_SINK</div>
+                <h2 class="matrix-main-title">Decentralized trend analytics</h2>
+                <p class="matrix-subtitle">
+                    Stackly tracks and cross-references data behavior markers cleanly across all server subsystems, compiling threat profiles before anomalies compromise stability pipelines.
+                </p>
+            </div>
+
+            <!-- Staggered Metric Rows (Appear one-by-one on scroll viewport triggers) -->
+            <div class="matrix-diagnostic-stack">
+                
+                <div class="metric-card-node scroll-cascade-node">
+                    <div class="card-glow-edge cyan-glow"></div>
+                    <div class="card-inner-meta">
+                        <span class="c-label">DATA_DECRYPT</span>
+                        <h4>NODE_LOG // 0x8A_FORENSICS</h4>
+                    </div>
+                    <span class="card-status-value txt-cyan">PARSED_SUCCESS</span>
+                </div>
+
+                <div class="metric-card-node scroll-cascade-node">
+                    <div class="card-glow-edge purple-glow"></div>
+                    <div class="card-inner-meta">
+                        <span class="c-label">VECTOR_TRACKING</span>
+                        <h4>CLUSTER_INGEST // 0x9B_METRICS</h4>
+                    </div>
+                    <span class="card-status-value txt-purple">COMPLIANCE_SINK</span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-error: #ff3366;
+    --accent-success: #00ff88;
+}
+
+/* ==========================================
+   RESTRICTED PADDING MOUNT PARAMETERS
+========================================== */
+.analytics-matrix-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 10px;        /* Restricts layout strictly to 50px top padding limit */
+    padding-bottom: 30px;     /* Restricts layout strictly to 30px bottom padding layout */
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.matrix-bg-wireframe {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.005) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none; z-index: 1;
+}
+
+.matrix-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 60px;
+    align-items: center;
+    z-index: 2;
+}
+
+/* ==========================================
+   ONE-BY-ONE SCROLL TIMELINE CASCADES
+========================================== */
+.scroll-cascade-node {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+    transition: opacity 0.75s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                transform 0.75s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.scroll-cascade-node.revealed-active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Left Column Topological Diagram HUD Panel */
+.matrix-visual-panel { width: 100%; display: flex; justify-content: flex-start; }
+
+.topology-blueprint-card {
+    width: 100%; max-width: 460px;
+    background: rgba(13, 21, 39, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 16px; padding: 20px; box-sizing: border-box;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.blueprint-header-tag {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.03); padding-bottom: 10px;
+}
+.tag-title { font-family: monospace; font-size: 0.7rem; color: var(--text-dim); letter-spacing: 1px; }
+.header-vector-icon { width: 14px; height: 14px; fill: none; stroke: var(--text-dim); stroke-width: 1.5; }
+
+.svg-canvas-wrapper {
+    position: relative; width: 100%; background-color: rgba(6, 9, 19, 0.65);
+    border-radius: 8px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.01);
+}
+
+.topological-vector-svg { width: 100%; height: auto; display: block; }
+
+/* Continuous vector streaming pathways keyframes */
+.spline-path-animate-1 { stroke-dasharray: 120, 240; animation: traceSplineData 8s linear infinite; }
+.spline-path-animate-2 { stroke-dasharray: 80, 200; animation: traceSplineData 12s linear infinite reverse; }
+
+.core-inner-spin { transform-origin: 0 0; animation: innerCoreSpin 5s linear infinite; }
+.core-ring-glow { animation: centralCorePulse 3s ease-in-out infinite alternate; }
+.beacon-pulse-red { animation: trackerNodePulse var(--accent-error) 2s infinite ease-out; transform-origin: center; }
+.beacon-pulse-green { animation: trackerNodePulse var(--accent-success) 2.5s infinite ease-out; transform-origin: center; }
+
+.blueprint-radar-sweep {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(0,240,255,0) 95%, rgba(0,240,255,0.08) 100%);
+    background-size: 100% 8px; pointer-events: none;
+}
+
+/* Right Column Content Copy Layout Rules */
+.matrix-text-panel { display: flex; flex-direction: column; align-items: flex-start; }
+.cyber-badge { font-family: monospace; color: var(--neon-cyan); font-size: 0.75rem; letter-spacing: 2px; }
+
+.matrix-main-title {
+    font-size: 2.6rem; font-weight: 800; line-height: 1.2; text-transform: uppercase;
+    letter-spacing: -0.5px; color: var(--text-bright); margin-top: 15px; margin-bottom: 20px;
+}
+.matrix-subtitle {
+    font-size: 0.95rem; color: rgba(255, 255, 255, 0.7); line-height: 1.6;
+    margin-bottom: 30px; text-align: left; max-width: 540px;
+}
+
+.matrix-diagnostic-stack { display: flex; flex-direction: column; gap: 14px; width: 100%; }
+
+.metric-card-node {
+    background-color: var(--bg-surface); border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 10px; padding: 14px 20px; display: flex; justify-content: space-between;
+    align-items: center; position: relative; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box; transition: border-color 0.3s, background-color 0.3s, transform 0.3s;
+    cursor: default;
+}
+
+.card-glow-edge { position: absolute; left: 0; top: 25%; height: 50%; width: 3px; border-radius: 2px; }
+.cyan-glow { background-color: var(--neon-cyan); box-shadow: 0 0 8px var(--neon-cyan); }
+.purple-glow { background-color: var(--neon-purple); box-shadow: 0 0 8px var(--neon-purple); }
+
+.card-inner-meta { display: flex; flex-direction: column; text-align: left; }
+.c-label { font-family: monospace; font-size: 0.65rem; color: var(--text-dim); letter-spacing: 1px; margin-bottom: 2px; }
+.card-inner-meta h4 { font-size: 1.05rem; font-weight: 700; color: var(--text-bright); margin: 0; transition: color 0.3s; }
+
+.card-status-value { font-family: monospace; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.5px; }
+.txt-cyan { color: var(--neon-cyan); text-shadow: 0 0 6px rgba(0,240,255,0.3); }
+.txt-purple { color: var(--neon-purple); text-shadow: 0 0 6px rgba(157,78,221,0.3); }
+
+/* ==========================================
+   INTERACTIVE NEON HOVER GLOWS
+========================================== */
+.topology-blueprint-card:hover { border-color: rgba(0, 240, 255, 0.2); box-shadow: 0 20px 50px rgba(0, 240, 255, 0.06); }
+.topology-blueprint-card:hover .core-ring-glow { stroke: var(--accent-success); filter: drop-shadow(0 0 4px var(--accent-success)); }
+
+.metric-card-node:hover { border-color: rgba(255, 255, 255, 0.06); background-color: rgba(13, 21, 39, 0.7); transform: translateX(4px); }
+.metric-card-node:hover h4 { color: var(--neon-cyan); }
+.metric-card-node:nth-child(2):hover h4 { color: var(--neon-purple); }
+
+@keyframes traceSplineData { 0% { stroke-dashoffset: 480; } 100% { stroke-dashoffset: 0; } }
+@keyframes innerCoreSpin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes centralCorePulse { 0% { stroke: var(--neon-cyan); } 100% { stroke: var(--neon-purple); } }
+@keyframes trackerNodePulse { 0% { r: 3; opacity: 1; } 100% { r: 12; opacity: 0; } }
+
+/* ==========================================
+   FLUID RESPONSIVE MATRIX OVERRIDES
+========================================== */
+@media (max-width: 992px) {
+    .matrix-container {
+        grid-template-columns: 1fr; /* Switch to column stacks format to bypass layout clipping bugs */
+        padding: 0 24px; gap: 45px;
+    }
+    .matrix-visual-panel { justify-content: center; width: 100%; }
+    .topology-blueprint-card { max-width: 100%; }
+    .matrix-text-panel { align-items: center; text-align: center; }
+    .matrix-subtitle { max-width: 100%; }
+}
+
+@media (max-width: 540px) {
+    .matrix-container { padding: 0 16px; }
+    .matrix-main-title { font-size: 1.85rem; }
+    .metric-card-node { flex-direction: column; gap: 10px; align-items: flex-start; padding: 16px; }
+    .card-status-value { align-self: flex-end; }
+    .card-glow-edge { left: 25%; top: 0; width: 50%; height: 3px; } /* Shifts side accents layout on touch sets */
+    .topology-blueprint-card { padding: 16px; }
+}
+
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // SCROLL REVEAL: Staggered Node Cascade Appearance Window Tracker
+    const cascadeElementsNodes = document.querySelectorAll(".scroll-cascade-node");
+
+    function processScrollCascadeEngine() {
+        const windowDisplayHeight = window.innerHeight;
+
+        cascadeElementsNodes.forEach((nodeItem, nodeIndex) => {
+            const nodeTopCoordinate = nodeItem.getBoundingClientRect().top;
+            
+            // Triggers elements dynamically once they roll past 88% of viewport height
+            const scrollActivationBarrier = windowDisplayHeight * 0.88; 
+
+            if (nodeTopCoordinate < scrollActivationBarrier) {
+                if (!nodeItem.classList.contains("revealed-active")) {
+                    // Stagger individual card entries one-by-one by multiplying loop tracking indices
+                    setTimeout(() => {
+                        nodeItem.classList.add("revealed-active");
+                    }, nodeIndex * 140); // 140ms delay separation creates clean step-by-step locks
+                }
+            }
+        });
+    }
+
+    // Attach lightweight window scroll and layout mutation listener loops
+    window.addEventListener("scroll", processScrollCascadeEngine);
+    window.addEventListener("resize", processScrollCascadeEngine);
+    
+    // Execute a baseline scan pass instantly on load to mount any visible starting elements
+    processScrollCascadeEngine(); 
+});
+
+</script>
+
+<section class="throughput-matrix-section" id="distribution-mesh">
+    <!-- Subtle architectural background network micro-grid -->
+    <div class="mesh-grid-backdrop"></div>
+
+    <div class="mesh-container">
+        
+        <!-- Top Block: Centered Content Header & Topological Distribution SVG -->
+        <div class="mesh-top-block scroll-reveal-node">
+            <div class="cyber-badge">// NETWORK_FABRIC // BANDWIDTH_FLOW</div>
+            <h2 class="mesh-main-title">Live Throughput Distribution</h2>
+            
+            <div class="svg-graph-viewport">
+                <svg class="topological-distribution-svg" viewBox="0 0 600 160" xmlns="http://w3.org">
+                    <defs>
+                        <linearGradient id="gradientCyan" x1="0%" y1="100%" x2="0%" y2="0%">
+                            <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.05"/>
+                            <stop offset="100%" stop-color="#00f0ff" stop-opacity="0.4"/>
+                        </linearGradient>
+                        <linearGradient id="gradientPurple" x1="0%" y1="100%" x2="0%" y2="0%">
+                            <stop offset="0%" stop-color="#9d4edd" stop-opacity="0.05"/>
+                            <stop offset="100%" stop-color="#9d4edd" stop-opacity="0.4"/>
+                        </linearGradient>
+                    </defs>
+
+                    <line x1="20" y1="130" x2="580" y2="130" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+                    <line x1="20" y1="80" x2="580" y2="80" stroke="rgba(255,255,255,0.01)" stroke-width="0.5" stroke-dasharray="4, 4"/>
+                    <line x1="20" y1="30" x2="580" y2="30" stroke="rgba(255,255,255,0.01)" stroke-width="0.5" stroke-dasharray="4, 4"/>
+
+                    <path d="M20,130 Q100,20 180,90 T340,40 T500,110 T580,130" fill="url(#gradientCyan)" stroke="#00f0ff" stroke-width="2" class="distribution-wave-1"/>
+                    <path d="M20,130 Q80,110 160,30 T320,120 T480,50 T580,130" fill="url(#gradientPurple)" stroke="#9d4edd" stroke-width="1.5" stroke-dasharray="3, 3" class="distribution-wave-2"/>
+
+                    <circle cx="100" cy="62" r="4" fill="#00f0ff" class="node-pulse-beacon"/>
+                    <circle cx="230" cy="68" r="4" fill="#9d4edd" class="node-pulse-beacon"/>
+                    <circle cx="410" cy="74" r="4" fill="#00ff88" class="node-pulse-beacon"/>
+                </svg>
+                <div class="mesh-laser-sweep"></div>
+            </div>
+        </div>
+
+        <!-- INFINITE AUTOMATED SWAPPING TRACK WITH COMPACT CARD FRAMES -->
+        <div class="mesh-carousel-viewport">
+            <div class="mesh-carousel-track">
+                
+                <!-- Card Module 01 -->
+                <div class="mesh-node-card">
+                    <div class="node-laser-trim cyan-trim"></div>
+                    <div class="node-card-body">
+                        <span class="node-meta-tag">CLUSTER // 01_AMER</span>
+                        <h3>Packet Ingestion</h3>
+                        <p>Aggregates multi-region transaction server logs under sub-millisecond timelines without footprint leaks.</p>
+                    </div>
+                </div>
+
+                <!-- Card Module 02 -->
+                <div class="mesh-node-card">
+                    <div class="node-laser-trim purple-trim"></div>
+                    <div class="node-card-body">
+                        <span class="node-meta-tag">CLUSTER // 02_EMEA</span>
+                        <h3>Camouflage Transit</h3>
+                        <p>Mutates incoming network routing properties continuously, blending primary clusters with dynamic edge noise.</p>
+                    </div>
+                </div>
+
+                <!-- Card Module 03 -->
+                <div class="mesh-node-card">
+                    <div class="node-laser-trim green-trim"></div>
+                    <div class="node-card-body">
+                        <span class="node-meta-tag">CLUSTER // 03_APAC</span>
+                        <h3>Reflexive Isolation</h3>
+                        <p>Deploys isolated temporary compliance containers instantly when threat behavior boundaries intersect rules.</p>
+                    </div>
+                </div>
+
+                <!-- Cloned Handover Looping Elements -->
+                <!-- Card Module 01 Duplicate -->
+                <div class="mesh-node-card">
+                    <div class="node-laser-trim cyan-trim"></div>
+                    <div class="node-card-body">
+                        <span class="node-meta-tag">CLUSTER // 01_AMER</span>
+                        <h3>Packet Ingestion</h3>
+                        <p>Aggregates multi-region transaction server logs under sub-millisecond timelines without footprint leaks.</p>
+                    </div>
+                </div>
+
+                <!-- Card Module 02 Duplicate -->
+                <div class="mesh-node-card">
+                    <div class="node-laser-trim purple-trim"></div>
+                    <div class="node-card-body">
+                        <span class="node-meta-tag">CLUSTER // 02_EMEA</span>
+                        <h3>Camouflage Transit</h3>
+                        <p>Mutates incoming network routing properties continuously, blending primary clusters with dynamic edge noise.</p>
+                    </div>
+                </div>
+
+                <!-- Card Module 03 Duplicate -->
+                <div class="mesh-node-card">
+                    <div class="node-laser-trim green-trim"></div>
+                    <div class="node-card-body">
+                        <span class="node-meta-tag">CLUSTER // 03_APAC</span>
+                        <h3>Reflexive Isolation</h3>
+                        <p>Deploys isolated temporary compliance containers instantly when threat behavior boundaries intersect rules.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-success: #00ff88;
+}
+
+.throughput-matrix-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.mesh-grid-backdrop {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.003) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.003) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none; z-index: 1;
+}
+
+.mesh-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    z-index: 2;
+}
+
+/* ==========================================
+   TOP BLOCK - HEADER DIAGRAM MATRIX
+========================================== */
+.mesh-top-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.mesh-top-block.revealed-active { opacity: 1; transform: translateY(0); }
+
+.cyber-badge { font-family: monospace; color: var(--neon-cyan); font-size: 0.75rem; letter-spacing: 2px; }
+.mesh-main-title { font-size: 2.4rem; font-weight: 800; line-height: 1.2; text-transform: uppercase; color: var(--text-bright); margin-top: 10px; margin-bottom: 25px; }
+
+.svg-graph-viewport {
+    position: relative; width: 100%; max-width: 850px;
+    background-color: rgba(6, 9, 19, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.01);
+    border-radius: 12px; overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    padding: 10px; box-sizing: border-box;
+}
+.topological-distribution-svg { width: 100%; height: auto; display: block; }
+.node-pulse-beacon { animation: pulseRadarPing 1.6s infinite ease-out; transform-origin: center; }
+
+.mesh-laser-sweep {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to right, rgba(0,240,255,0) 95%, rgba(0,240,255,0.06) 100%);
+    background-size: 8px 100%; pointer-events: none;
+    animation: lateralLaserSweep 6s linear infinite;
+}
+
+/* ==========================================
+   CAROUSEL MARQUEE VIEWPORT WINDOW
+========================================== */
+.mesh-carousel-viewport {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+    padding: 10px 0;
+}
+
+.mesh-carousel-track {
+    display: inline-flex;
+    align-items: stretch;
+    gap: 24px;
+    padding-right: 24px;
+    animation: autoStreamTrack 30s linear infinite;
+    will-change: transform;
+}
+
+.mesh-carousel-viewport:hover .mesh-carousel-track {
+    animation-play-state: paused;
+}
+
+/* ==========================================
+   RECON: COMPACT SLIM CARDS (NO EMPTY SPACE)
+========================================== */
+.mesh-node-card {
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 14px;
+    /* Fixed text padding variables instead of giant layout aspect heights */
+    padding: 24px 22px; 
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+    
+    /* Reduced widths and eliminated vertical aspect-ratio binds */
+    width: 290px;
+    height: auto; 
+    flex-shrink: 0;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Sidebar neon accent trim bands */
+.node-laser-trim {
+    position: absolute; left: 22px; top: 0; width: 30px; height: 2px; border-radius: 2px;
+    transition: width 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.cyan-trim { background-color: var(--neon-cyan); box-shadow: 0 0 8px var(--neon-cyan); }
+.purple-trim { background-color: var(--neon-purple); box-shadow: 0 0 8px var(--neon-purple); }
+.green-trim { background-color: var(--accent-success); box-shadow: 0 0 8px var(--accent-success); }
+
+.node-card-body { 
+    display: flex; 
+    flex-direction: column; 
+    text-align: left; 
+}
+
+.node-meta-tag { 
+    font-family: monospace; 
+    font-size: 0.65rem; 
+    color: var(--text-dim); 
+    letter-spacing: 1px; 
+    margin-bottom: 8px; 
+}
+
+.node-card-body h3 { 
+    font-size: 1.25rem; 
+    font-weight: 700; 
+    color: var(--text-bright); 
+    margin-bottom: 10px; 
+    line-height: 1.3;
+}
+
+.node-card-body p { 
+    font-size: 0.85rem; 
+    color: rgba(255, 255, 255, 0.6); 
+    line-height: 1.55; 
+    margin: 0; 
+}
+
+/* ==========================================
+   NEON HOVER STATE GLOW COUPLINGS
+========================================== */
+.mesh-node-card:hover {
+    border-color: rgba(0, 240, 255, 0.25);
+    box-shadow: 0 15px 40px rgba(0, 240, 255, 0.05);
+    transform: translateY(-4px);
+}
+.mesh-node-card:hover .node-laser-trim { width: calc(100% - 44px); }
+.mesh-node-card:hover .node-meta-tag { color: var(--neon-cyan); }
+.mesh-node-card:hover h3 { color: var(--neon-cyan); text-shadow: 0 0 10px rgba(0, 240, 255, 0.4); }
+.mesh-node-card:hover p { color: var(--text-bright); }
+
+.mesh-node-card:nth-child(2):hover, .mesh-node-card:nth-child(5):hover { border-color: rgba(157, 78, 221, 0.25); }
+.mesh-node-card:nth-child(2):hover .node-meta-tag, .mesh-node-card:nth-child(5):hover .node-meta-tag { color: var(--neon-purple); }
+.mesh-node-card:nth-child(2):hover h3, .mesh-node-card:nth-child(5):hover h3 { color: var(--neon-purple); text-shadow: 0 0 10px rgba(157, 78, 221, 0.4); }
+
+.mesh-node-card:nth-child(3):hover, .mesh-node-card:nth-child(6):hover { border-color: rgba(0, 255, 136, 0.25); }
+.mesh-node-card:nth-child(3):hover .node-meta-tag, .mesh-node-card:nth-child(6):hover .node-meta-tag { color: var(--accent-success); }
+.mesh-node-card:nth-child(3):hover h3, .mesh-node-card:nth-child(6):hover h3 { color: var(--accent-success); text-shadow: 0 0 10px rgba(0, 255, 136, 0.4); }
+
+/* ==========================================
+   CAROUSEL TRANSLATION LOOPS
+========================================== */
+@keyframes autoStreamTrack {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(calc(-50% - 12px), 0, 0); }
+}
+@keyframes pulseRadarPing { 0%, 100% { transform: scale(1); opacity: 0.5; } 50% { transform: scale(1.4); opacity: 1; } }
+@keyframes lateralLaserSweep { 0% { transform: translate3d(-100%, 0, 0); } 100% { transform: translate3d(1100%, 0, 0); } }
+
+/* ==========================================
+   FLUID RESPONSIVE MATRIX VIEWPORTS
+========================================== */
+@media (max-width: 992px) {
+    .mesh-main-title { font-size: 2.1rem; }
+    .mesh-container { padding: 0 24px; }
+}
+
+@media (max-width: 640px) {
+    .mesh-main-title { font-size: 1.7rem; }
+    .mesh-container { padding: 0 16px; gap: 24px; }
+    .mesh-node-card { width: 260px; padding: 20px 16px; } 
+    .mesh-carousel-track { gap: 16px; padding-right: 16px; animation-duration: 22s; } 
+    @keyframes autoStreamTrack { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(calc(-50% - 8px), 0, 0); } }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // SCROLL REVEAL: Top Header Block Viewport Intersection Observer
+    const topHeaderBlock = document.querySelector(".mesh-top-block");
+
+    function processThroughputScrollEngine() {
+        if (topHeaderBlock) {
+            const headerTop = topHeaderBlock.getBoundingClientRect().top;
+            const windowDisplayHeight = window.innerHeight;
+            
+            // Unlocks top diagram block visibility once it rolls past the 90% display marker
+            if (headerTop < windowDisplayHeight * 0.9) {
+                topHeaderBlock.classList.add("revealed-active");
+            }
+        }
+    }
+
+    // Attach lightweight event hooks for scroll and viewport mutation loops
+    window.addEventListener("scroll", processThroughputScrollEngine);
+    window.addEventListener("resize", processThroughputScrollEngine);
+    
+    // Execute a baseline pass instantly on load to mount any visible starting elements
+    processThroughputScrollEngine(); 
+});
+
+</script>
+
+<section class="dual-line-cta-section">
+    <!-- Atmospheric base layout background image tag -->
+    <img src="https://unsplash.com" alt="Cyber Grid Core Backdrop" class="cta-banner-bg">
+
+    <div class="cta-banner-container">
+        
+        <!-- Left Side: Balanced 2-Line Text Content Column -->
+        <div class="cta-content-column">
+            <div class="cyber-badge">// IMMUTABLE DEPLOYMENT MESH</div>
+            <h2 class="cta-main-title">Secure your corporate digital matrix today</h2>
+            <p class="cta-sub-paragraph">
+                Instantiate Stackly zero-trust camouflage infrastructure across your global container clusters in under ten minutes to fully isolate critical cloud architecture footprints.
+            </p>
+        </div>
+
+        <!-- Right Side: Floating Central Action Button Column -->
+        <div class="cta-action-column">
+            <div class="floating-btn-wrap">
+                <button class="banner-action-btn" type="button">
+                    <span>Deploy Immediate Guard</span>
+                    <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+}
+
+/* ==========================================
+   CTA BANNER GENERAL LAYOUT SETTINGS
+========================================== */
+.dual-line-cta-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 50px;       /* Strict 50px top padding layout limit */
+    padding-bottom: 30px;    /* Strict 30px bottom padding layout footprint */
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(0, 240, 255, 0.05);
+    border-bottom: 1px solid rgba(157, 78, 221, 0.05);
+}
+
+.cta-banner-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; opacity: 0.04; pointer-events: none; z-index: 1;
+}
+
+.cta-banner-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    /* Splices container into an asymmetric left content and right button grid */
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 50px;
+    align-items: center;
+    z-index: 3;
+}
+
+/* ==========================================
+   LEFT ZONE - TWO LINE TYPOGRAPHY HIERARCHY
+========================================== */
+.cta-content-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.cyber-badge {
+    font-family: monospace;
+    color: var(--neon-cyan);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+/* First Content Line: Bold Accent Title */
+.cta-main-title {
+    font-size: 2.3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    color: var(--text-bright);
+    margin-bottom: 14px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Second Content Line: Detailed Description Copy */
+.cta-sub-paragraph {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+/* ==========================================
+   RIGHT ZONE - FLOATING BUTTON ACTION
+========================================== */
+.cta-action-column {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.floating-btn-wrap {
+    animation: ctaButtonFloat 4.5s ease-in-out infinite; /* Automated vertical floating loop */
+    flex-shrink: 0;
+}
+
+.banner-action-btn {
+    padding: 16px 36px;
+    border-radius: 35px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--text-bright);
+    background: linear-gradient(90deg, var(--neon-purple), var(--neon-cyan));
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+}
+
+/* ==========================================
+   INTERACTIVE NEON HOVER GLOW COUPLINGS
+========================================== */
+.dual-line-cta-section:hover .cta-main-title {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+}
+
+.dual-line-cta-section:hover .cta-sub-paragraph {
+    color: var(--text-bright);
+}
+
+.banner-action-btn:hover {
+    box-shadow: 0 12px 35px rgba(0, 240, 255, 0.45);
+    transform: scale(1.03);
+}
+
+.banner-action-btn:active {
+    transform: scale(0.98);
+}
+
+.btn-arrow {
+    width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.5;
+    transition: transform 0.3s ease;
+}
+.banner-action-btn:hover .btn-arrow {
+    transform: translateX(5px);
+}
+
+/* Floating animation keyframes */
+@keyframes ctaButtonFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+}
+
+/* ==========================================
+   FLUID RESPONSIVE DESIGN BOUNDARIES
+========================================== */
+@media (max-width: 992px) {
+    .cta-banner-container {
+        grid-template-columns: 1fr; /* Flips side grid elements cleanly to vertical list columns */
+        text-align: center;
+        gap: 35px;
+        padding: 0 24px;
+    }
+    .cta-content-column {
+        align-items: center;
+        text-align: center;
+    }
+    .cta-main-title { font-size: 2rem; text-align: center; }
+    .cta-action-column { justify-content: center; width: 100%; }
+}
+
+@media (max-width: 480px) {
+    .cta-banner-container { padding: 0 16px; }
+    .cta-main-title { font-size: 1.7rem; }
+    .banner-action-btn { width: 100%; justify-content: center; padding: 14px; }
+}
+
+</style>
+
+<section class="analytics-threat-matrix" id="threat-analysis">
+    <!-- Subtle architectural background wireframe mesh -->
+    <div class="threat-matrix-bg-lines"></div>
+
+    <div class="threat-matrix-container">
+        
+        <!-- Header Profile Row -->
+        <div class="threat-matrix-header">
+            <div class="cyber-badge">// FORENSIC // THREAT_PREDICTION</div>
+            <h2 class="threat-matrix-title">Predictive threat vector matrices</h2>
+        </div>
+
+        <!-- 3-Column Balanced Asymmetric Layout Grid -->
+        <div class="threat-matrix-grid">
+            
+            <!-- Analysis Module Card 01 -->
+            <div class="matrix-vector-card">
+                <div class="matrix-card-header">
+                    <span class="card-meta">VECTOR_CORE // 0x1_ALPHA</span>
+                    <!-- Integrated Pinned Vector Status Light Beacon -->
+                    <div class="card-beacon-dot cyan-glow"></div>
+                </div>
+                
+                <!-- Modern Minimalist Structural Vector Graphic Panel Inside Box -->
+                <div class="matrix-svg-holder">
+                    <svg viewBox="0 0 100 100" class="mini-vector-chart" xmlns="http://w3.org">
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+                        <path d="M50,10 L50,90 M10,50 L90,50" stroke="rgba(255,255,255,0.02)" stroke-width="0.5"/>
+                        <path d="M20,70 L40,40 L60,55 L80,20" fill="none" stroke="#00f0ff" stroke-width="1.5" class="chart-spline-path"/>
+                        <circle cx="80" cy="20" r="3" fill="#00f0ff" class="glowing-target-node"/>
+                    </svg>
+                </div>
+
+                <div class="matrix-card-body">
+                    <h3>Anomaly Clustering</h3>
+                    <p>Aggregates millions of decentralized metadata hashes into centralized security trend loops with zero packet delay.</p>
+                </div>
+            </div>
+
+            <!-- Analysis Module Card 02 -->
+            <div class="matrix-vector-card">
+                <div class="matrix-card-header">
+                    <span class="card-meta">VECTOR_CORE // 0x2_BETA</span>
+                    <div class="card-beacon-dot purple-glow"></div>
+                </div>
+                
+                <div class="matrix-svg-holder">
+                    <svg viewBox="0 0 100 100" class="mini-vector-chart" xmlns="http://w3.org">
+                        <polygon points="50,15 85,35 85,75 50,95 15,75 15,35" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+                        <polygon points="50,25 75,40 75,70 50,85 25,70 25,40" fill="none" stroke="#9d4edd" stroke-width="1.5" stroke-dasharray="3,3" class="chart-rotate-node"/>
+                        <circle cx="50" cy="55" r="5" fill="#9d4edd"/>
+                    </svg>
+                </div>
+
+                <div class="matrix-card-body">
+                    <h3>Footprint Obfuscation</h3>
+                    <p>Mutates routing properties dynamically across distributed cloud entry targets, blinding external brute network mapping trackers.</p>
+                </div>
+            </div>
+
+            <!-- Analysis Module Card 03 -->
+            <div class="matrix-vector-card">
+                <div class="matrix-card-header">
+                    <span class="card-meta">VECTOR_CORE // 0x3_GAMMA</span>
+                    <div class="card-beacon-dot green-glow"></div>
+                </div>
+                
+                <div class="matrix-svg-holder">
+                    <svg viewBox="0 0 100 100" class="mini-vector-chart" xmlns="http://w3.org">
+                        <line x1="10" y1="80" x2="90" y2="80" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+                        <path d="M10,80 Q30,20 50,60 T90,30" fill="none" stroke="#00ff88" stroke-width="1.5" class="chart-spline-path"/>
+                        <circle cx="50" cy="60" r="3.5" fill="#00ff88"/>
+                    </svg>
+                </div>
+
+                <div class="matrix-card-body">
+                    <h3>Reflexive Sandboxing</h3>
+                    <p>Instantly deploys isolated temporary compliance containers the millisecond server endpoint activity boundaries deviate.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-success: #00ff88;
+}
+
+/* ==========================================
+   THREAT MATRIX SPACING MANAGEMENT
+========================================== */
+.analytics-threat-matrix {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 50px;        /* Strict 50px top padding layout requirement */
+    padding-bottom: 30px;     /* Strict 30px bottom padding layout requirement */
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.threat-matrix-bg-lines {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.004) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none; z-index: 1;
+}
+
+.threat-matrix-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    z-index: 2;
+}
+
+.threat-matrix-header {
+    width: 100%; margin-bottom: 45px; text-align: left;
+}
+
+.cyber-badge {
+    font-family: monospace; color: var(--neon-cyan); font-size: 0.75rem; letter-spacing: 2px;
+}
+
+.threat-matrix-title {
+    font-size: 2.6rem; font-weight: 800; line-height: 1.2; text-transform: uppercase;
+    letter-spacing: -0.5px; color: var(--text-bright); margin-top: 10px;
+}
+
+/* ==========================================
+   3-COLUMN SCHEMATIC MATRIX CARDS DESIGN
+========================================== */
+.threat-matrix-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
+.matrix-vector-card {
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 14px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.matrix-card-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.03); padding-bottom: 10px;
+}
+
+.card-meta { font-family: monospace; font-size: 0.65rem; color: var(--text-dim); letter-spacing: 1px; }
+
+/* Status indicator beacon bulbs */
+.card-beacon-dot { width: 6px; height: 6px; border-radius: 50%; position: relative; }
+.cyan-glow { background-color: var(--neon-cyan); box-shadow: 0 0 8px var(--neon-cyan); }
+.purple-glow { background-color: var(--neon-purple); box-shadow: 0 0 8px var(--neon-purple); }
+.green-glow { background-color: var(--accent-success); box-shadow: 0 0 8px var(--accent-success); }
+
+/* Integrated Vector Boxes Views */
+.matrix-svg-holder {
+    width: 100%; background-color: rgba(6, 9, 19, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.01);
+    border-radius: 8px; overflow: hidden; padding: 16px; box-sizing: border-box;
+    margin-bottom: 20px; display: flex; justify-content: center; align-items: center;
+}
+
+.mini-vector-chart { width: 100%; height: auto; max-height: 110px; display: block; }
+
+/* Automated hardware vector timeline keyframe hooks */
+.chart-spline-path { stroke-dasharray: 80; stroke-dashoffset: 80; animation: drawChartSpline 3s ease-out forwards; }
+.glowing-target-node { animation: nodeBeaconPulse 1.5s infinite alternate; transform-origin: center; }
+.chart-rotate-node { transform-origin: 50px 55px; animation: nodeClockwiseTurn 20s linear infinite; }
+
+/* Content Details Blocks */
+.matrix-card-body { display: flex; flex-direction: column; text-align: left; }
+.matrix-card-body h3 { font-size: 1.25rem; font-weight: 700; color: var(--text-bright); margin-bottom: 8px; transition: color 0.3s ease, text-shadow 0.3s ease; }
+.matrix-card-body p { font-size: 0.85rem; color: rgba(255, 255, 255, 0.6); line-height: 1.55; margin: 0; }
+
+/* ==========================================
+   HIGH-INTERACTIVE NEON HOVER GLOWS
+========================================== */
+.matrix-vector-card:hover {
+    border-color: rgba(0, 240, 255, 0.2);
+    box-shadow: 0 20px 45px rgba(0, 240, 255, 0.05);
+    transform: translateY(-4px);
+}
+.matrix-vector-card:hover h3 { color: var(--neon-cyan); text-shadow: 0 0 10px rgba(0, 240, 255, 0.4); }
+.matrix-vector-card:hover p { color: var(--text-bright); }
+
+/* Column index target hover differentiators mappings */
+.matrix-threat-matrix-grid .matrix-vector-card:nth-child(2):hover { border-color: rgba(157, 78, 221, 0.2); box-shadow: 0 20px 45px rgba(157, 78, 221, 0.05); }
+.matrix-threat-matrix-grid .matrix-vector-card:nth-child(2):hover h3 { color: var(--neon-purple); text-shadow: 0 0 10px rgba(157, 78, 221, 0.4); }
+
+.matrix-threat-matrix-grid .matrix-vector-card:nth-child(3):hover { border-color: rgba(0, 255, 136, 0.2); box-shadow: 0 20px 45px rgba(0, 255, 136, 0.05); }
+.matrix-threat-matrix-grid .matrix-vector-card:nth-child(3):hover h3 { color: var(--accent-success); text-shadow: 0 0 10px rgba(0, 255, 136, 0.4); }
+
+/* ==========================================
+   HARDWARE ENGINE TIMELINE KEYFRAMES
+========================================== */
+@keyframes drawChartSpline { to { stroke-dashoffset: 0; } }
+@keyframes nodeBeaconPulse { 0% { r: 2; opacity: 0.5; } 100% { r: 5; opacity: 1; filter: drop-shadow(0 0 4px currentColor); } }
+@keyframes nodeClockwiseTurn { 100% { transform: rotate(360deg); } }
+
+/* ==========================================
+   FLUID RESPONSIVE BOUNDARIES
+========================================== */
+@media (max-width: 1024px) {
+    .threat-matrix-grid {
+        grid-template-columns: repeat(2, 1fr); /* Collapses down into crisp double-column modules to safeguard padding */
+        gap: 24px;
+    }
+    .threat-matrix-title { font-size: 2.2rem; }
+    .threat-matrix-container { padding: 0 24px; }
+}
+
+@media (max-width: 640px) {
+    .threat-matrix-grid {
+        grid-template-columns: 1fr; /* Absolute mobile single column linear list flow */
+    }
+    .threat-matrix-title { font-size: 1.8rem; }
+    .threat-matrix-container { padding: 0 16px; }
+    .matrix-vector-card { padding: 16px; }
+}
+
+</style>
+
+<section class="radar-matrix-section" id="intel-radar">
+    <!-- Atmospheric base layout micro-grid backdrop network -->
+    <div class="radar-grid-backdrop"></div>
+
+    <div class="radar-container">
+        
+        <!-- Left Column: High-Contrast Content Hierarchy -->
+        <div class="radar-text-panel">
+            <div class="cyber-badge">// FORENSIC // RADAR_NODE</div>
+            <h2 class="radar-main-title">Asymmetric anomaly route tracking</h2>
+            <p class="radar-subtitle">
+                Stackly cross-references transaction telemetry records instantly across global server nodes, distilling raw data streams into high-fidelity concentric target maps without connection latency degradation.
+            </p>
+            <div class="hud-diagnostic-row">
+                <div class="mini-status-chip">
+                    <span class="chip-num txt-cyan">0.14ms</span>
+                    <span class="chip-label">MITIGATION_SPEED</span>
+                </div>
+                <div class="mini-status-chip">
+                    <span class="chip-num txt-purple">99.99%</span>
+                    <span class="chip-label">IMMUNITY_INDEX</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Interactive Vector SVG Sonar Scope Dashboard -->
+        <div class="radar-visual-panel">
+            <div class="radar-scope-card">
+                <div class="panel-header-tag">
+                    <span class="tag-title">VECTOR_RADAR // FLOW_DETECTION</span>
+                    <svg viewBox="0 0 24 24" class="header-vector-icon"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+
+                <div class="svg-scope-wrapper">
+                    <!-- Crisp Concentric Vector SVG Radar Grid -->
+                    <svg class="radar-sonar-svg" viewBox="0 0 220 220" xmlns="http://w3.org">
+                        <defs>
+                            <linearGradient id="sonarGlowBeam" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="rgba(0, 240, 255, 0.15)" stop-opacity="1"/>
+                                <stop offset="50%" stop-color="rgba(0, 240, 255, 0.02)" stop-opacity="0.3"/>
+                                <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+                            </linearGradient>
+                        </defs>
+
+                        <!-- Crosshair Axes Reticles Lines -->
+                        <line x1="0" y1="110" x2="220" y2="110" stroke="rgba(0, 240, 255, 0.08)" stroke-width="0.75" stroke-dasharray="4, 4" />
+                        <line x1="110" y1="0" x2="110" y2="220" stroke="rgba(0, 240, 255, 0.08)" stroke-width="0.75" stroke-dasharray="4, 4" />
+                        
+                        <!-- Concentric Target Circles -->
+                        <circle cx="110" cy="110" r="95" fill="none" stroke="rgba(0, 240, 255, 0.05)" stroke-width="1" />
+                        <circle cx="110" cy="110" r="70" fill="none" stroke="#9d4edd" stroke-width="1" stroke-dasharray="8, 4" class="radar-inner-ring" />
+                        <circle cx="110" cy="110" r="40" fill="none" stroke="#00f0ff" stroke-width="1.5" />
+                        <circle cx="110" cy="110" r="6" fill="#ffffff" />
+                        
+                        <!-- Tracked Exploit Coordinate Node Pins -->
+                        <circle cx="70" cy="75" r="4" fill="#00f0ff" class="radar-ping-dot" />
+                        <circle cx="155" cy="135" r="4" fill="#9d4edd" class="radar-ping-dot" />
+                        <circle cx="120" cy="50" r="3.5" fill="#00ff88" class="radar-ping-dot" />
+
+                        <!-- Endless Sweeping Visual Laser Beam Overlay Line -->
+                        <path d="M110,110 L220,110 A110,110 0 0,1 110,220 Z" fill="url(#sonarGlowBeam)" class="radar-sweep-beam-path"/>
+                    </svg>
+                </div>
+
+                <!-- Floating Data Detail Chips pinned around the vector scope canvas borders -->
+                <div class="hud-telemetry-tag tag-top">TUNNEL_GATEWAY // MOUNTED</div>
+                <div class="hud-telemetry-tag tag-bottom">THREAT_STATUS // QUARANTINED</div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-success: #00ff88;
+}
+
+/* ==========================================
+   RESTRICTED PADDING SECTION LAYOUTS
+========================================== */
+.radar-matrix-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 50px;        /* Restricts layout strictly to 50px top padding limit */
+    padding-bottom: 30px;     /* Restricts layout strictly to 30px bottom padding layout */
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.radar-grid-backdrop {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.005) 1px, transparent 1px);
+    background-size: 30px 30px;
+    pointer-events: none; z-index: 1;
+}
+
+.radar-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    /* Balanced asymmetric split-screen layout format setup mapping bounds */
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 60px;
+    align-items: center;
+    z-index: 2;
+}
+
+/* ==========================================
+   LEFT ZONE - TYPOGRAPHY HIERARCHY
+========================================== */
+.radar-text-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cyber-badge {
+    font-family: monospace; color: var(--neon-cyan); font-size: 0.75rem; letter-spacing: 2px;
+}
+
+.radar-main-title {
+    font-size: 2.6rem; font-weight: 800; line-height: 1.2; text-transform: uppercase;
+    letter-spacing: -0.5px; color: var(--text-bright); margin-top: 15px; margin-bottom: 20px;
+}
+
+.radar-subtitle {
+    font-size: 0.95rem; color: rgba(255, 255, 255, 0.7); line-height: 1.65;
+    margin-bottom: 30px; text-align: left; max-width: 540px;
+}
+
+/* Sub-Dashboard metrics chip rows layout mapping */
+.hud-diagnostic-row {
+    display: flex; gap: 20px; width: 100%;
+}
+
+.mini-status-chip {
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 8px; padding: 12px 18px;
+    display: flex; flex-direction: column; text-align: left;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.chip-num { font-family: monospace; font-size: 1.35rem; font-weight: 700; margin-bottom: 2px; }
+.txt-cyan { color: var(--neon-cyan); text-shadow: 0 0 6px rgba(0,240,255,0.3); }
+.txt-purple { color: var(--neon-purple); text-shadow: 0 0 6px rgba(157,78,221,0.3); }
+.chip-label { font-family: monospace; font-size: 0.65rem; color: var(--text-dim); letter-spacing: 0.5px; }
+
+/* ==========================================
+   RIGHT ZONE - INTERACTIVE VECTOR SONAR SCOPE
+========================================== */
+.radar-visual-panel {
+    width: 100%; display: flex; justify-content: flex-end;
+}
+
+.radar-scope-card {
+    position: relative; width: 100%; max-width: 380px;
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 16px; padding: 20px; box-sizing: border-box;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.panel-header-tag {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.03); padding-bottom: 10px;
+}
+.tag-title { font-family: monospace; font-size: 0.7rem; color: var(--text-dim); letter-spacing: 1px; }
+.header-vector-icon { width: 14px; height: 14px; fill: none; stroke: var(--text-dim); stroke-width: 2; }
+
+.svg-scope-wrapper {
+    position: relative; width: 100%; background-color: rgba(6, 9, 19, 0.7);
+    border-radius: 12px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.01);
+    display: flex; justify-content: center; align-items: center; padding: 14px; box-sizing: border-box;
+}
+
+.radar-sonar-svg { width: 100%; height: auto; display: block; }
+
+/* Hardware-accelerated continuous rotation timeline engines */
+.radar-sweep-beam-path { transform-origin: 110px 110px; animation: continuousSonarSweep 4s linear infinite; }
+.radar-inner-ring { transform-origin: 110px 110px; animation: continuousSonarSweep 16s linear infinite reverse; }
+.radar-ping-dot { animation: pulseRadarPing 1.5s infinite ease-in-out; transform-origin: center; }
+
+/* Pinned telemetry status tags */
+.hud-telemetry-tag {
+    position: absolute; font-family: monospace; font-size: 0.65rem; color: var(--text-dim);
+    letter-spacing: 1px; background-color: var(--bg-deep); padding: 2px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.04); border-radius: 4px; transition: color 0.3s, border-color 0.3s;
+}
+.tag-top { top: -6px; left: 24px; }
+.tag-bottom { bottom: -6px; right: 24px; }
+
+/* ==========================================
+   INTERACTIVE NEON HOVER GLOW COUPLINGS
+========================================== */
+.radar-matrix-section:hover .radar-subtitle { color: var(--text-bright); }
+
+.mini-status-chip:hover {
+    border-color: rgba(0, 240, 255, 0.2);
+    transform: translateY(-2px);
+}
+.mini-status-chip:nth-child(2):hover { border-color: rgba(157, 78, 221, 0.2); }
+
+.radar-scope-card:hover {
+    border-color: rgba(0, 240, 255, 0.25);
+    box-shadow: 0 20px 50px rgba(0, 240, 255, 0.06);
+}
+.radar-scope-card:hover .hud-telemetry-tag { color: var(--text-bright); border-color: rgba(0, 240, 255, 0.3); }
+
+/* ==========================================
+   ANALOG WAVE TIMELINE KEYFRAMES
+========================================== */
+@keyframes continuousSonarSweep { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes pulseRadarPing { 0%, 100% { transform: scale(1); opacity: 0.4; } 50% { transform: scale(1.3); opacity: 1; filter: drop-shadow(0 0 2px cubic-gradient); } }
+
+/* ==========================================
+   FLUID RESPONSIVE MATRIX OVERRIDES
+========================================== */
+@media (max-width: 992px) {
+    .radar-container {
+        grid-template-columns: 1fr; /* Rearrange column maps cleanly into a linear stack to protect padding layout bounds */
+        padding: 0 24px; gap: 45px;
+    }
+    .radar-text-panel { align-items: center; text-align: center; }
+    .radar-subtitle { max-width: 100%; }
+    .hud-diagnostic-row { justify-content: center; }
+    .radar-visual-panel { justify-content: center; width: 100%; }
+    .radar-scope-card { max-width: 100%; }
+}
+
+@media (max-width: 540px) {
+    .radar-container { padding: 0 16px; }
+    .radar-main-title { font-size: 1.85rem; }
+    .hud-diagnostic-row { flex-direction: column; gap: 12px; }
+    .mini-status-chip { width: 100%; align-items: center; text-align: center; }
+    .radar-scope-card { padding: 16px; }
+    .tag-top { left: 16px; } .tag-bottom { right: 16px; }
+}
+
+</style>
+
+<section class="throughput-core-section" id="bandwidth-mesh">
+    <!-- Base structural blueprint line wireframe decoration backdrop texture -->
+    <div class="throughput-bg-wireframe"></div>
+
+    <div class="throughput-container">
+        
+        <!-- Left Column: Complex Interlocking Vector SVG Diagnostic Core Hub -->
+        <div class="throughput-visual-panel">
+            <div class="vector-hud-scope">
+                <svg class="hud-matrix-svg" viewBox="0 0 200 200" xmlns="http://w3.org">
+                    <defs>
+                        <linearGradient id="matrixGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.85"/>
+                            <stop offset="100%" stop-color="#9d4edd" stop-opacity="0.2"/>
+                        </linearGradient>
+                        <filter id="glowBlur">
+                            <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+
+                    <!-- Concentric Target Telemetry Rings -->
+                    <circle cx="100" cy="100" r="90" fill="none" stroke="rgba(255,255,255,0.02)" stroke-width="1"/>
+                    <circle cx="100" cy="100" r="75" fill="none" stroke="url(#matrixGlow)" stroke-width="1" stroke-dasharray="12, 6" class="radar-outer-ring" />
+                    <circle cx="100" cy="100" r="50" fill="none" stroke="#9d4edd" stroke-width="1.5" stroke-dasharray="4, 4" class="radar-inner-ring" />
+                    
+                    <!-- Isometric Interconnecting Pathway Data Blueprint Nodes -->
+                    <g class="matrix-data-nodes" filter="url(#glowBlur)">
+                        <!-- Central Core -->
+                        <polygon points="100,85 115,93 115,107 100,115 85,107 85,93" fill="rgba(13, 21, 39, 0.9)" stroke="#00f0ff" stroke-width="1.5" class="cube-polygon"/>
+                        <!-- Node Top Left -->
+                        <polygon points="60,55 70,60 70,72 60,67 50,72 50,60" fill="rgba(6,9,19,0.8)" stroke="#9d4edd" stroke-width="1" class="cube-polygon"/>
+                        <!-- Node Bottom Right -->
+                        <polygon points="140,135 150,140 150,152 140,147 130,152 130,140" fill="rgba(6,9,19,0.8)" stroke="#9d4edd" stroke-width="1" class="cube-polygon"/>
+                        
+                        <!-- Connection Vector Live Stream Link Lines -->
+                        <line x1="60" y1="67" x2="100" y2="85" stroke="rgba(0, 240, 255, 0.4)" stroke-width="1" stroke-dasharray="2, 4" class="stream-line-trace"/>
+                        <line x1="140" y1="135" x2="100" y2="115" stroke="rgba(157, 78, 221, 0.4)" stroke-width="1" stroke-dasharray="2, 4" class="stream-line-trace"/>
+                    </g>
+                </svg>
+
+                <div class="hud-telemetry-chip chip-top">FLOW_PIPELINE // RUNNING</div>
+                <div class="hud-telemetry-chip chip-bottom">BANDWIDTH_SCALE // MAX</div>
+            </div>
+        </div>
+
+        <!-- Right Column: Content Header and One-by-One Diagnostic Cards -->
+        <div class="throughput-text-panel">
+            <div class="throughput-section-header">
+                <div class="cyber-badge">// METRIC_INGESTION // HUB_STATUS</div>
+                <h2 class="throughput-main-title">Live Throughput Performance</h2>
+                <p class="throughput-subtitle">
+                    Stackly tracks and cross-references data behavior markers cleanly across all server subsystems, compiling threat profiles before anomalies compromise stability pipelines.
+                </p>
+            </div>
+
+            <!-- Metric Rows -->
+            <div class="throughput-diagnostic-stack">
+                
+                <div class="metric-card-node">
+                    <div class="card-glow-edge cyan-glow"></div>
+                    <div class="card-inner-meta">
+                        <span class="c-label">INGESTION_RATE</span>
+                        <h4>NODE_CLUSTER // 0x1_AMER</h4>
+                    </div>
+                    <span class="card-status-value txt-cyan">2.4M PACKETS/S</span>
+                </div>
+
+                <div class="metric-card-node">
+                    <div class="card-glow-edge purple-glow"></div>
+                    <div class="card-inner-meta">
+                        <span class="c-label">INGESTION_RATE</span>
+                        <h4>NODE_CLUSTER // 0x2_EMEA</h4>
+                    </div>
+                    <span class="card-status-value txt-purple">1.8M PACKETS/S</span>
+                </div>
+
+                <div class="metric-card-node">
+                    <div class="card-glow-edge green-glow"></div>
+                    <div class="card-inner-meta">
+                        <span class="c-label">INGESTION_RATE</span>
+                        <h4>NODE_CLUSTER // 0x3_APAC</h4>
+                    </div>
+                    <span class="card-status-value txt-green">2.1M PACKETS/S</span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-success: #00ff88;
+}
+
+/* ==========================================
+   THROUGHPUT CORE SPACING PARAMETERS
+========================================== */
+.throughput-core-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 50px;        /* Strict 50px top padding limit constraint */
+    padding-bottom: 30px;     /* Strict 30px bottom padding layout constraint */
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.throughput-bg-wireframe {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.005) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none; z-index: 1;
+}
+
+.throughput-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    /* Aligns visual canvas card left and typography list column right */
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 60px;
+    align-items: center;
+    z-index: 2;
+}
+
+/* ==========================================
+   LEFT COLUMN - INTERACTIVE HUD SCOPE
+========================================== */
+.throughput-visual-panel {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.vector-hud-scope {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    aspect-ratio: 1 / 1;
+    background: rgba(13, 21, 39, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hud-matrix-svg { width: 100%; height: auto; display: block; }
+
+/* Continuous vector movement animation properties loops */
+.radar-outer-ring { transform-origin: 100px 100px; animation: continuousRotate 30s linear infinite; }
+.radar-inner-ring { transform-origin: 100px 100px; animation: continuousReverseRotate 15s linear infinite; }
+.matrix-data-nodes { animation: floatingScopeDrift 6s ease-in-out infinite; transform-origin: 100px 100px; }
+.cube-polygon { transition: stroke 0.3s ease, fill 0.3s ease; }
+.stream-line-trace { transition: stroke 0.3s ease; }
+
+/* HUD Labels position layout anchors */
+.hud-telemetry-chip {
+    position: absolute; font-family: monospace; font-size: 0.65rem; color: var(--text-dim);
+    letter-spacing: 1px; background-color: var(--bg-deep); padding: 2px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.04); border-radius: 4px; transition: color 0.3s, border-color 0.3s;
+}
+.chip-top { top: -6px; }
+.chip-bottom { bottom: -6px; }
+
+/* ==========================================
+   RIGHT COLUMN - TYPOGRAPHY CONTENT ROWS
+========================================== */
+.throughput-text-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cyber-badge {
+    font-family: monospace; color: var(--neon-cyan); font-size: 0.75rem; letter-spacing: 2px;
+}
+
+.throughput-main-title {
+    font-size: 2.6rem; font-weight: 800; line-height: 1.2; text-transform: uppercase;
+    letter-spacing: -0.5px; color: var(--text-bright); margin-top: 15px; margin-bottom: 20px;
+}
+
+.throughput-subtitle {
+    font-size: 0.95rem; color: rgba(255, 255, 255, 0.7); line-height: 1.6;
+    margin-bottom: 30px; text-align: left; max-width: 540px;
+}
+
+.throughput-diagnostic-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+}
+
+.metric-card-node {
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+    cursor: default;
+}
+
+/* Sidebar neon accent trim bands */
+.card-glow-edge { position: absolute; left: 0; top: 25%; height: 50%; width: 3px; border-radius: 2px; }
+.cyan-glow { background-color: var(--neon-cyan); box-shadow: 0 0 8px var(--neon-cyan); }
+.purple-glow { background-color: var(--neon-purple); box-shadow: 0 0 8px var(--neon-purple); }
+.green-glow { background-color: var(--accent-success); box-shadow: 0 0 8px var(--accent-success); }
+
+.card-inner-meta { display: flex; flex-direction: column; text-align: left; }
+.c-label { font-family: monospace; font-size: 0.65rem; color: var(--text-dim); letter-spacing: 1px; margin-bottom: 2px; }
+.card-inner-meta h4 { font-size: 1.05rem; font-weight: 700; color: var(--text-bright); margin: 0; transition: color 0.3s; }
+
+.card-status-value { font-family: monospace; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.5px; }
+.txt-cyan { color: var(--neon-cyan); text-shadow: 0 0 6px rgba(0,240,255,0.3); }
+.txt-purple { color: var(--neon-purple); text-shadow: 0 0 6px rgba(157,78,221,0.3); }
+.txt-green { color: var(--accent-success); text-shadow: 0 0 6px rgba(0,255,136,0.3); }
+
+/* ==========================================
+   INTERACTIVE NEON HOVER GLOW COUPLINGS
+========================================== */
+.throughput-core-section:hover .throughput-subtitle { color: var(--text-bright); }
+
+.vector-hud-scope:hover {
+    border-color: rgba(0, 240, 255, 0.2);
+    box-shadow: 0 0 35px rgba(0, 240, 255, 0.1);
+}
+.vector-hud-scope:hover .cube-polygon { stroke: var(--accent-success); }
+.vector-hud-scope:hover .stream-line-trace { stroke: rgba(0, 255, 136, 0.4); }
+.vector-hud-scope:hover .hud-telemetry-chip { color: var(--text-bright); border-color: rgba(0, 240, 255, 0.3); }
+
+.metric-card-node:hover {
+    border-color: rgba(255, 255, 255, 0.06);
+    background-color: rgba(13, 21, 39, 0.7);
+    transform: translateX(4px);
+}
+.metric-card-node:hover h4 { color: var(--neon-cyan); }
+.metric-card-node:nth-child(2):hover h4 { color: var(--neon-purple); }
+.metric-card-node:nth-child(3):hover h4 { color: var(--accent-success); }
+
+/* ==========================================
+   ANALOG SYSTEM TIMELINE KEYFRAMES
+========================================== */
+@keyframes continuousRotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes continuousReverseRotate { 0% { transform: rotate(360deg); } 100% { transform: rotate(0deg); } }
+@keyframes floatingScopeDrift { 0%, 100% { transform: translateY(0px) scale(0.98); } 50% { transform: translateY(-8px) scale(1.02); } }
+
+/* ==========================================
+   FLUID RESPONSIVE DESIGN BOUNDARIES
+========================================== */
+@media (max-width: 992px) {
+    .throughput-container {
+        grid-template-columns: 1fr; /* Switch to clean vertical stack on tablet/mobile screens */
+        padding: 0 24px;
+        gap: 45px;
+    }
+    
+    /* Responsive re-ordering layout drops vector console illustration below right text panel */
+    .throughput-visual-panel { order: 2; justify-content: center; width: 100%; }
+    .throughput-text-panel { order: 1; align-items: center; text-align: center; }
+    
+    .throughput-subtitle { max-width: 100%; }
+    .vector-hud-scope { max-width: 320px; }
+}
+
+@media (max-width: 540px) {
+    .throughput-container { padding: 0 16px; }
+    .throughput-main-title { font-size: 1.85rem; }
+    .metric-card-node { flex-direction: column; gap: 10px; align-items: flex-start; padding: 16px; }
+    .card-status-value { align-self: flex-end; }
+    .card-glow-edge { left: 25%; top: 0; width: 50%; height: 3px; } /* Swaps trim anchor coordinates to top edge paths on mobile */
+}
+
+</style>
+
+<section class="single-line-cta-section">
+    <!-- Atmospheric base layout background image tag -->
+    <img src="https://unsplash.com" alt="Cyber Glow Backdrop" class="cta-banner-bg">
+
+    <div class="cta-banner-container">
+        
+        <!-- Left Side: Content Title Only -->
+        <div class="cta-left-content">
+            <h2 class="scroll-letter-title" id="scrollCtaBannerTitle">
+                Secure your digital matrix today
+            </h2>
+        </div>
+
+        <!-- Right Side: Floating Action Button Only -->
+        <div class="cta-right-action">
+            <div class="floating-btn-wrap">
+                <button class="banner-action-btn" type="button">
+                    <span>Deploy Immediate Guard</span>
+                    <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+}
+
+/* ==========================================
+   CTA BANNER GENERAL LAYOUT SETTINGS
+========================================== */
+.single-line-cta-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 50px;       /* Strict 50px top padding layout limit */
+    padding-bottom: 30px;    /* Strict 30px bottom padding layout footprint */
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(0, 240, 255, 0.05);
+    border-bottom: 1px solid rgba(157, 78, 221, 0.05);
+}
+
+.cta-banner-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; opacity: 0.04; pointer-events: none; z-index: 1;
+}
+
+.cta-banner-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between; /* Perfect horizontal corner-to-corner balance */
+    align-items: center;
+    gap: 40px;
+    z-index: 3;
+}
+
+/* ==========================================
+   LEFT ZONE - TITLE STYLING
+========================================== */
+.cta-left-content {
+    display: flex;
+    max-width: 65%;
+    flex: 1;
+}
+
+.scroll-letter-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    color: var(--text-bright);
+    margin: 0;
+    text-align: left;
+    word-break: keep-all; 
+    overflow-wrap: break-word;
+    width: 100%;
+}
+
+/* Character split node baselines before scrolling viewport intersection */
+.scroll-letter-title .char-unit {
+    display: inline-block;
+    opacity: 0.15;
+    transform: scale(0.95);
+    transition: opacity 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), text-shadow 0.2s ease;
+}
+
+.scroll-letter-title .char-unit.glow-active {
+    opacity: 1;
+    transform: scale(1);
+    color: var(--text-bright);
+    text-shadow: 0 0 15px rgba(0, 240, 255, 0.45);
+}
+
+/* ==========================================
+   RIGHT ZONE - FLOATING BUTTON ACTION
+========================================== */
+.cta-right-action {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.floating-btn-wrap {
+    animation: ctaButtonFloat 4.5s ease-in-out infinite; /* Automated smooth float loop */
+}
+
+.banner-action-btn {
+    padding: 16px 36px;
+    border-radius: 35px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--text-bright);
+    background: linear-gradient(90deg, var(--neon-purple), var(--neon-cyan));
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+}
+
+/* Hover glow illumination effects */
+.banner-action-btn:hover {
+    box-shadow: 0 12px 35px rgba(0, 240, 255, 0.45);
+    transform: scale(1.02);
+}
+
+.banner-action-btn:active {
+    transform: scale(0.98);
+}
+
+.btn-arrow {
+    width: 16px; height: 16px;
+    transition: transform 0.3s ease;
+}
+.banner-action-btn:hover .btn-arrow {
+    transform: translateX(4px);
+}
+
+/* Floating animation timelines */
+@keyframes ctaButtonFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+}
+
+/* ==========================================
+   FLUID RESPONSIVE DESIGN BOUNDARIES
+========================================== */
+@media (max-width: 992px) {
+    .cta-banner-container {
+        flex-direction: column; /* Flips track layout cleanly to columns on tablet/mobile screens */
+        text-align: center;
+        gap: 30px;
+        padding: 0 24px;
+    }
+    
+    .cta-left-content {
+        max-width: 100%;
+    }
+    
+    .scroll-letter-title { font-size: 2.2rem; text-align: center; }
+    .cta-right-action { justify-content: center; width: 100%; }
+}
+
+@media (max-width: 480px) {
+    .cta-banner-container { padding: 0 16px; }
+    .scroll-letter-title { font-size: 1.75rem; }
+    .banner-action-btn { width: 100%; justify-content: center; padding: 14px; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // SCROLL REVEAL: Minimal Single-Line Title Animation Engine
+    const ctaTitleNode = document.getElementById("scrollCtaBannerTitle");
+
+    if (ctaTitleNode) {
+        const structuralTextStr = ctaTitleNode.textContent.trim();
+        ctaTitleNode.textContent = ""; // Clear placeholder text context
+
+        // Split text cleanly into individual character wrapper span nodes
+        const charSpanElements = structuralTextStr.split("").map(character => {
+            const spanNode = document.createElement("span");
+            spanNode.className = "char-unit";
+            // Ensure blank spacing values are rendered as non-breaking entities
+            spanNode.innerHTML = character === " " ? "&nbsp;" : character;
+            ctaTitleNode.appendChild(spanNode);
+            return spanNode;
+        });
+
+        function handleBannerTitleScrollReveal() {
+            const nodeRect = ctaTitleNode.getBoundingClientRect();
+            const browserViewportHeight = window.innerHeight;
+            
+            // Text illuminates progressively once section passes bottom 95% threshold
+            const startScrollRevealLine = browserViewportHeight * 0.95;
+            const endScrollRevealLine = (browserViewportHeight * 0.4) + 100; // Built-in padding buffer
+            
+            let scrollRevealProgress = (startScrollRevealLine - nodeRect.top) / (startScrollRevealLine - endScrollRevealLine);
+            scrollRevealProgress = Math.max(0, Math.min(1, scrollRevealProgress));
+
+            const totalActiveCharsIndex = Math.floor(scrollRevealProgress * charSpanElements.length);
+
+            charSpanElements.forEach((spanNode, index) => {
+                if (index < totalActiveCharsIndex) {
+                    spanNode.classList.add("glow-active");
+                } else {
+                    spanNode.classList.remove("glow-active");
+                }
+            });
+        }
+
+        // Attach lightweight resize and scroll window listener loops
+        window.addEventListener("scroll", handleBannerTitleScrollReveal);
+        window.addEventListener("resize", handleBannerTitleScrollReveal);
+        
+        // Execute an instant baseline run frame immediately on DOM initialization
+        handleBannerTitleScrollReveal(); 
+    }
+});
+
+</script>
+
+<footer class="cyber-footer">
+    <div class="footer-top-grid">
+        
+        <!-- Column 1: Cybersecurity Brand Info & 5 Vector Social Nodes -->
+        <div class="footer-brand-column">
+            <!-- Brand logo triggers scroll back to top of the webpage window -->
+            <div class="footer-logo-wrapper" id="footerLogoBtn" title="Back to Top">
+                <img src="https://placehold.co" alt="Stackly Logo" class="footer-brand-img">
+            </div>
+            <p class="brand-bio-text">
+                Securing enterprise perimeter clusters with automated zero-trust architecture, multi-vector threat mitigation modules, and continuous low-latency network camouflage.
+            </p>
+            
+            <!-- 5 Ordered Social Icons linked to 404 targets -->
+            <div class="social-icon-row">
+                <!-- 1. Instagram -->
+                <a href="404.html" class="social-btn" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" class="social-svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.849.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.125-1.664 4.671-4.919 4.819-1.265.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.82-.058-1.265-.069-1.64-.069-4.849 0-3.204.013-3.583.069-4.849.149-3.125 1.664-4.671 4.919-4.819 1.265-.057 1.644-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.79.073 7.151.014 8.433 0 8.84 0 12c0 3.159.014 3.567.072 4.847.199 4.359 2.62 6.782 6.98 6.981 1.28.058 1.688.072 4.848.072 3.159 0 3.567-.014 4.847-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.848 0-3.159-.014-3.567-.073-4.847-.199-4.359-2.62-6.782-6.979-6.98C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                </a>
+                <!-- 2. LinkedIn -->
+                <a href="404.html" class="social-btn" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" class="social-svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <!-- 3. YouTube -->
+                <a href="404.html" class="social-btn" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" class="social-svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.016 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.86-.502 5.74a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.016 0 0 0 2.122-2.136C24 15.86 24 12 24 12s0-3.86-.502-5.74zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+                <!-- 4. Facebook -->
+                <a href="404.html" class="social-btn" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24" class="social-svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <!-- 5. Twitter / X -->
+                <a href="404.html" class="social-btn" aria-label="Twitter X">
+                    <svg viewBox="0 0 24 24" class="social-svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Links Directory Column 2: Customized Network Links -->
+        <div class="footer-links-column">
+            <h3>Infrastructure</h3>
+            <a href="404.html">Camouflage Grid</a>
+            <a href="404.html">Zero-Trust Node</a>
+            <a href="404.html">Reflex Sandbox</a>
+            <a href="404.html">Key Mutation</a>
+            <a href="404.html">Threat Metrics</a>
+        </div>
+
+        <!-- Links Directory Column 3 -->
+        <div class="footer-links-column">
+            <h3>Intelligence</h3>
+            <a href="404.html">Vulnerability Ops</a>
+            <a href="404.html">Security Blog</a>
+            <a href="404.html">Threat Intel</a>
+            <a href="404.html">Patch Pipeline</a>
+            <a href="404.html">Incident Desk</a>
+        </div>
+
+        <!-- Links Directory Column 4 -->
+        <div class="footer-links-column">
+            <h3>Governance</h3>
+            <a href="404.html">Compliance Vault</a>
+            <a href="404.html">API Reference</a>
+            <a href="404.html">Node Status</a>
+            <a href="404.html">Audit Protocol</a>
+            <a href="404.html">Operator Desk</a>
+        </div>
+
+        <!-- Column 5: Subscription Console Area -->
+        <div class="footer-news-column">
+            <h3>Threat Watch</h3>
+            <p class="news-subtitle">Subscribe to receive system exploit patches and weekly perimeter vulnerability reports.</p>
+            
+            <form id="footerNewsForm" novalidate>
+                <div class="news-input-wrapper">
+                    <input type="email" id="newsEmailInput" placeholder="routing_email@domain.com" autocomplete="off">
+                </div>
+                <button type="submit" class="news-submit-btn">Initialize Sync</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Bottom Legals Bar Container -->
+    <div class="footer-bottom-bar">
+        <div class="bottom-bar-container">
+            <span class="copyright-text">&copy; 2026 Stackly Systems. Perimeter Secured.</span>
+            
+            <div class="legal-links-row">
+                <a href="404.html">Privacy Encryption</a>
+                <a href="404.html">Terms of Deployment</a>
+                <a href="404.html">Cookie Isolation</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Fixed Floating Back-to-Top Scroller -->
+<button class="fixed-top-scroller" id="floatingTopBtn" title="Back to Top" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+</button>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-error: #ff3366;
+}
+
+/* ==========================================
+   GLOBAL FOOTER CUSTOMIZED CYBER PALETTE
+========================================== */
+.cyber-footer {
+    width: 100%;
+    display: block;
+    background-color: #03060c; /* Deep black space layout baseline */
+    border-top: 1px solid rgba(0, 240, 255, 0.15); /* Neon cyan crisp top seam border */
+    padding-top: 60px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.footer-top-grid {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 40px 50px 40px;
+    display: grid;
+    grid-template-columns: 1.35fr repeat(3, 0.7fr) 1.35fr;
+    gap: 40px;
+}
+
+.footer-brand-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-logo-wrapper {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    margin-bottom: 20px;
+}
+.footer-logo-wrapper:hover { transform: scale(1.02); }
+.footer-brand-img { height: 34px; width: auto; display: block; }
+
+.brand-bio-text {
+    font-size: 0.95rem; /* High readability contrast scale */
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.social-icon-row {
+    display: flex;
+    gap: 12px;
+}
+
+.social-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.social-svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--text-bright); /* Forced solid white icon nodes */
+}
+
+/* Cyber network glow filters activated on mouse focus */
+.social-btn:hover {
+    border-color: var(--neon-cyan);
+    background-color: rgba(0, 240, 255, 0.05);
+    transform: translateY(-3px);
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.3);
+}
+.social-btn:hover .social-svg { fill: var(--neon-cyan); }
+
+/* Alternating themed accents to split icon block visuals */
+.social-btn:nth-child(even):hover {
+    border-color: var(--neon-purple);
+    background-color: rgba(157, 78, 221, 0.05);
+    box-shadow: 0 0 12px rgba(157, 78, 221, 0.3);
+}
+.social-btn:nth-child(even):hover .social-svg { fill: var(--neon-purple); }
+
+/* Directory Link Links Grid Column layout sets */
+.footer-links-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.footer-links-column h3, 
+.footer-news-column h3 {
+    font-size: 1.05rem; /* Increased font scale heading */
+    font-weight: 700;
+    color: var(--text-bright); /* Forced white title */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+}
+
+.footer-links-column a {
+    font-size: 0.95rem; /* Increased font scale choices */
+    color: var(--text-dim);
+    text-decoration: none;
+    margin-bottom: 12px;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+.footer-links-column a:hover {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
+}
+
+.footer-news-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.news-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+#footerNewsForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.news-input-wrapper { width: 100%; }
+
+#newsEmailInput {
+    width: 100%;
+    padding: 13px 16px;
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    color: var(--text-bright); /* Forced white input text */
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    transition: border-color 0.25s ease;
+}
+#newsEmailInput:focus {
+    outline: none;
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 8px rgba(0, 240, 255, 0.15);
+}
+
+/* Transmit Sync Button Layout Rules */
+.news-submit-btn {
+    width: 100%;
+    padding: 13px;
+    background: linear-gradient(90deg, var(--neon-purple), var(--neon-cyan));
+    color: var(--text-bright); /* Forced bright readable choice */
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+.news-submit-btn:hover {
+    box-shadow: 0 6px 20px rgba(0, 240, 255, 0.35);
+    transform: translateY(-1px);
+}
+
+/* ==========================================
+   BOTTOM DETAILS LEGALS SECTION
+========================================== */
+.footer-bottom-bar {
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.02);
+    background-color: #020408;
+    padding: 24px 0;
+}
+
+.bottom-bar-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright-text {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+}
+
+.legal-links-row {
+    display: flex;
+    gap: 24px;
+}
+
+.legal-links-row a {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.legal-links-row a:hover { color: var(--text-bright); }
+
+/* ==========================================
+   FLOATING UPWARD ACTION BACK TO TOP SCROLLER
+========================================== */
+.fixed-top-scroller {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--neon-cyan); /* Styled custom cyan ring border */
+    color: var(--neon-cyan);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 240, 255, 0.2);
+    z-index: 990;
+    opacity: 0;
+    transform: translateY(15px);
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.fixed-top-scroller.scroller-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.fixed-top-scroller svg { width: 18px; height: 18px; }
+.fixed-top-scroller:hover { background-color: var(--neon-cyan); color: #03060c; transform: translateY(-3px); }
+
+/* ==========================================
+   MANDATORY RESPONSIVE DESIGN VIEWPORTS
+========================================== */
+@media (max-width: 1024px) {
+    .footer-top-grid {
+        grid-template-columns: 1fr 1fr; /* Rearrange grid column layouts down into dual sets to bypass text overlaps */
+        gap: 40px;
+    }
+    .footer-news-column {
+        grid-column: span 2;
+        max-width: 440px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bottom-bar-container {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+    .legal-links-row { justify-content: center; flex-wrap: wrap; gap: 16px; }
+}
+
+@media (max-width: 540px) {
+    .footer-top-grid {
+        grid-template-columns: 1fr; /* Infallible single column stacks for total mobile protection padding scaling bounds */
+    }
+    .footer-news-column { grid-column: span 1; max-width: 100%; }
+    .footer-top-grid, .bottom-bar-container { padding-left: 24px; padding-right: 24px; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    const footerLogoBtn = document.getElementById("footerLogoBtn");
+    const floatingTopBtn = document.getElementById("floatingTopBtn");
+    const newsForm = document.getElementById("footerNewsForm");
+    const newsEmailInput = document.getElementById("newsEmailInput");
+
+    // 1. Unified Back-to-Top Window Reset Smooth Engine Call
+    function triggerWindowTopReset() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth" 
+        });
+    }
+
+    if (footerLogoBtn) footerLogoBtn.addEventListener("click", triggerWindowTopReset);
+    if (floatingTopBtn) floatingTopBtn.addEventListener("click", triggerWindowTopReset);
+
+    // 2. Observer monitoring viewport scrolling height to show/fade the floating button ring safely
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            floatingTopBtn.classList.add("scroller-visible");
+        } else {
+            floatingTopBtn.classList.remove("scroller-visible");
+        }
+    });
+
+    // 3. Zero-Trust Newsletter Empty Check & 404 Route Interception
+    if (newsForm) {
+        newsForm.addEventListener("submit", (event) => {
+            event.preventDefault(); 
+
+            const emailPayload = newsEmailInput.value.trim();
+
+            // Validate that the field is not empty before transmitting
+            if (!emailPayload) {
+                newsEmailInput.style.borderColor = "var(--accent-error)";
+                alert("Please fill the email field before subscribing.");
+                return;
+            }
+
+            // Route successfully verified submission channels straight into your 404 terminal page
+            window.location.href = "404.html";
+        });
+
+        // Instantly wipe out error border flashes upon subsequent input change triggers
+        if (newsEmailInput) {
+            newsEmailInput.addEventListener("input", () => {
+                newsEmailInput.style.borderColor = "rgba(255, 255, 255, 0.05)";
+            });
+        }
+    }
+});
+
+</script>
+
+</body>

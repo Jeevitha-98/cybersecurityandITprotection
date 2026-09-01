@@ -1,0 +1,2959 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - Cyber Protection</title>
+    <!-- Link External Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CREATIVE PRELOADER LAYER -->
+    <div id="preloader">
+        <div class="cyber-anim-container">
+            <!-- Outer spinning dashed track -->
+            <div class="orbital-ring"></div>
+            <!-- Inner reverse spinning track -->
+            <div class="orbital-ring-inner"></div>
+            <!-- Vector Shield Icon -->
+            <svg class="svg-shield-icon" viewBox="0 0 24 24" xmlns="http://w3.org">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <!-- Branded Preloader Heading -->
+        <div class="loader-title">Stackly</div>
+        <div class="loader-status">Initializing Firewall</div>
+        <div class="progress-timeline">
+            <div class="progress-fill"></div>
+        </div>
+    </div>
+
+    <!-- MAIN UI PAGE (Hidden initially) -->
+    
+
+    <!-- Link External JavaScript Logic -->
+    <script> document.addEventListener("DOMContentLoaded", () => {
+    const preloader = document.getElementById("preloader");
+    const appContent = document.getElementById("appContent");
+    const actionBtn = document.getElementById("actionBtn");
+
+    // Clear and handle the 2-second loading time handover
+    setTimeout(() => {
+        if (preloader) {
+            preloader.classList.add("loaded");
+        }
+        if (appContent) {
+            appContent.classList.add("visible");
+        }
+    }, 2000); 
+
+    if (actionBtn) {
+        actionBtn.addEventListener("click", () => {
+            alert("Stackly Security Protocols updated successfully!");
+        });
+    }
+});
+</script>
+
+<header class="main-header">
+    <div class="header-container">
+        <!-- Brand Logo Container (Tied to JS Window Reload Engine) -->
+        <div class="logo-wrapper" id="brandLogoBtn" title="Refresh Dashboard">
+            <img src="https://placehold.co" alt="Stackly Logo" class="brand-img">
+        </div>
+
+        <!-- Centralized App Menu Navigation Links (Now with Contact Us) -->
+    <nav class="nav-menu" id="navigationDrawer">
+            <a href="index.html" class="nav-link ">Home</a>
+            <a href="firewall.html" class="nav-link ">Firewall</a>
+            <a href="logs.html" class="nav-link active">Threat Logs</a>
+            <a href="analytics.html" class="nav-link">Analytics</a>
+            <a href="settings.html" class="nav-link">Settings</a>
+            <a href="contact.html" class="nav-link">Contact Us</a>
+        </nav>
+
+        <!-- Authorization Action Controls Corner -->
+        <div class="auth-wrapper">
+            <button class="auth-btn">Access Console</button>
+        </div>
+
+        <!-- Adaptive Mobile Hamburger Icon Trigger -->
+        <button class="hamburger-menu" id="hamburgerToggle" aria-label="Toggle Navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </div>
+</header>
+
+<!-- Overlay background asset used to execute backdrop blur behind the open mobile nav menu -->
+<div class="blur-backdrop" id="screenOverlay"></div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const brandLogoBtn = document.getElementById("brandLogoBtn");
+    const hamburgerToggle = document.getElementById("hamburgerToggle");
+    const screenOverlay = document.getElementById("screenOverlay");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    // 1. Core Page Refresh Bind tied to Brand Image element clicks
+    if (brandLogoBtn) {
+        brandLogoBtn.addEventListener("click", () => {
+            window.location.reload();
+        });
+    }
+
+    // 2. Responsive Mobile Navigation Menu & Blurring Layer Toggle Control
+    function toggleMobileMenu() {
+        document.body.classList.toggle("menu-open");
+    }
+
+    if (hamburgerToggle) {
+        hamburgerToggle.addEventListener("click", toggleMobileMenu);
+    }
+
+    // Collapse drawer panel if a user clicks outside the menu boundaries onto the blurred viewport backdrop
+    if (screenOverlay) {
+        screenOverlay.addEventListener("click", toggleMobileMenu);
+    }
+
+    // Auto-collapse mobile navigation dropdown drawer seamlessly when items are selected
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            document.body.classList.remove("menu-open");
+            
+            // Clean active track classes variables 
+            navLinks.forEach(item => item.classList.remove("active"));
+            link.classList.add("active");
+        });
+    });
+});
+
+</script>
+
+<section class="logs-hero-section" id="home">
+    <!-- Atmospheric subtle technical grid backdrop layer -->
+    <img src="https://unsplash.com" alt="Tech Wireframe Matrix" class="logs-hero-bg-mesh">
+
+    <div class="logs-hero-container">
+        
+        <!-- Left Side Column: Sticky Sentence-by-Sentence Content Tracking -->
+        <div class="logs-hero-content">
+            <div class="cyber-badge">// OPERATIONAL TARGET: ACTIVE MONITORING</div>
+            
+            <!-- Complete sentences illuminate one-by-one upon window scroll intersection -->
+            <h1 class="sentence-stream-title" id="scrollLogsHeroTitle">
+                <span class="stream-line first-major-line">Intercepting multi-vector cloud exploits.</span>
+                <span class="stream-line sub-minor-line">Aggregating decentralized infrastructure logs.</span>
+                <span class="stream-line sub-minor-line">Neutralizing runtime port scan traces.</span>
+            </h1>
+            
+            <p class="logs-hero-desc">
+                Stackly coordinates real-time packet extraction honeypots globally, distilling millions of raw server logs into structured, actionable perimeter intelligence telemetry without operational connection degradation.
+            </p>
+
+            <!-- Floating CTA Controls Row -->
+            <div class="floating-btn-wrap">
+                <div class="cta-group">
+                    <button class="cta-btn primary-cta" type="button">Connect Core Terminal</button>
+                    <button class="cta-btn secondary-cta" type="button">
+                        <span>Download Decrypt Keys</span> 
+                        <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side Column: Complex Interlocking Vector SVG Data Matrix -->
+        <div class="logs-hero-visual">
+            <div class="vector-hud-scope">
+                <svg class="hud-matrix-svg" viewBox="0 0 200 200" xmlns="http://w3.org">
+                    <defs>
+                        <linearGradient id="matrixGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.85"/>
+                            <stop offset="100%" stop-color="#9d4edd" stop-opacity="0.2"/>
+                        </linearGradient>
+                        <filter id="glowBlur">
+                            <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+
+                    <!-- Concentric Target Telemetry Rings -->
+                    <circle cx="100" cy="100" r="90" fill="none" stroke="rgba(255,255,255,0.02)" stroke-width="1"/>
+                    <circle cx="100" cy="100" r="75" fill="none" stroke="url(#matrixGlow)" stroke-width="1" stroke-dasharray="12, 6" class="radar-outer-ring" />
+                    <circle cx="100" cy="100" r="50" fill="none" stroke="#9d4edd" stroke-width="1.5" stroke-dasharray="4, 4" class="radar-inner-ring" />
+                    
+                    <!-- Isometric Interconnecting Pathway Node Data Cubes -->
+                    <g class="matrix-data-cubes" filter="url(#glowBlur)">
+                        <!-- Central Core -->
+                        <polygon points="100,85 115,93 115,107 100,115 85,107 85,93" fill="rgba(13,21,39,0.9)" stroke="#00f0ff" stroke-width="1.5" class="cube-polygon"/>
+                        <!-- Node Top Left -->
+                        <polygon points="60,55 70,60 70,72 60,67 50,72 50,60" fill="rgba(6,9,19,0.8)" stroke="#9d4edd" stroke-width="1" class="cube-polygon"/>
+                        <!-- Node Bottom Right -->
+                        <polygon points="140,135 150,140 150,152 140,147 130,152 130,140" fill="rgba(6,9,19,0.8)" stroke="#9d4edd" stroke-width="1" class="cube-polygon"/>
+                        
+                        <!-- Connection Vector Streams Lines -->
+                        <line x1="60" y1="67" x2="100" y2="85" stroke="rgba(0, 240, 255, 0.4)" stroke-width="1" stroke-dasharray="2, 4" class="stream-line-trace"/>
+                        <line x1="140" y1="135" x2="100" y2="115" stroke="rgba(157, 78, 221, 0.4)" stroke-width="1" stroke-dasharray="2, 4" class="stream-line-trace"/>
+                    </g>
+                    
+                    <!-- Crosshair Reticle Axis lines -->
+                    <line x1="100" y1="5" x2="100" y2="195" stroke="rgba(255, 255, 255, 0.03)" stroke-width="0.5" />
+                    <line x1="5" y1="100" x2="195" y2="100" stroke="rgba(255, 255, 255, 0.03)" stroke-width="0.5" />
+                </svg>
+
+                <div class="hud-telemetry-chip chip-top">FEED_STATUS // SYNCED</div>
+                <div class="hud-telemetry-chip chip-bottom">THREAT_LEVEL // CRITICAL</div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-success: #00ff88;
+    --header-height: 70px;
+}
+
+/* ==========================================
+   THREAT LOGS HERO CONTAINER ARRANGEMENT
+========================================== */
+.logs-hero-section {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - var(--header-height));
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 60px 0;
+}
+
+.logs-hero-bg-mesh {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; opacity: 0.015; pointer-events: none; z-index: 1;
+}
+
+.logs-hero-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 60px;
+    align-items: center;
+    z-index: 2;
+}
+
+/* ==========================================
+   LEFT PANEL - HIGH FIRST-SENTENCE HIERARCHY
+========================================== */
+.logs-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cyber-badge {
+    font-family: monospace;
+    color: var(--neon-cyan);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+}
+
+.sentence-stream-title {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    line-height: 1.25;
+    text-transform: uppercase;
+    color: var(--text-bright); /* Forced white typography */
+}
+
+.stream-line {
+    opacity: 0.15;
+    transform: translateY(12px);
+    transition: opacity 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.stream-line.line-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* First Sentence Title: Premium Bold Scale Accent */
+.first-major-line {
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
+    border-left: 3px solid transparent;
+    transition: padding-left 0.4s ease, border-color 0.4s ease;
+}
+.first-major-line.line-revealed {
+    border-left-color: var(--neon-cyan);
+    padding-left: 18px;
+}
+
+/* Lower Sub-Sentences Scale Rules */
+.sub-minor-line {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 8px;
+}
+.sub-minor-line.line-revealed { color: var(--text-bright); }
+
+/* Reduced Paragraph Scales */
+.logs-hero-desc {
+    font-size: 0.95rem; /* Reduced description scale for maximum hierarchy contrast */
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.65;
+    margin-bottom: 35px;
+    max-width: 540px;
+    transition: color 0.3s ease;
+}
+
+/* ==========================================
+   FLOATING ACTION BUTTON CONTROLS ROWS
+========================================== */
+.floating-btn-wrap {
+    animation: actionRowFloat 4.5s ease-in-out infinite; /* Continuous vertical float engine loop */
+    width: 100%;
+}
+
+.cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.cta-btn {
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--text-bright); /* Forced white typography buttons */
+    box-sizing: border-box;
+    white-space: nowrap;
+    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+}
+
+.primary-cta {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+.primary-cta:hover {
+    background-color: var(--text-bright);
+    color: var(--bg-deep) !important;
+    border-color: var(--text-bright);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+.secondary-cta {
+    background: rgba(13, 21, 39, 0.6);
+    border: 1px solid var(--neon-cyan);
+}
+.secondary-cta:hover {
+    background: linear-gradient(90deg, var(--neon-purple), var(--neon-cyan));
+    border-color: transparent;
+    box-shadow: 0 10px 30px rgba(0, 240, 255, 0.35);
+    transform: translateY(-2px);
+}
+
+.btn-arrow { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.5; transition: transform 0.3s ease; }
+.secondary-cta:hover .btn-arrow { transform: translateX(4px); }
+
+/* ==========================================
+   RIGHT PANEL - RESPONSIVE HUD SCOPE VECTOR
+========================================== */
+.logs-hero-visual {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.vector-hud-scope {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    aspect-ratio: 1 / 1;
+    background: rgba(13, 21, 39, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hud-matrix-svg { width: 100%; height: auto; display: block; }
+
+/* Continuous vector movement animation properties loop */
+.radar-outer-ring { transform-origin: 100px 100px; animation: continuousRotate 30s linear infinite; }
+.radar-inner-ring { transform-origin: 100px 100px; animation: continuousReverseRotate 15s linear infinite; }
+.matrix-data-cubes { animation: floatingScopeDrift 6s ease-in-out infinite; transform-origin: 100px 100px; }
+.cube-polygon { transition: stroke 0.3s ease, fill 0.3s ease; }
+.stream-line-trace { transition: stroke 0.3s ease; }
+
+/* Interactive Content Hover Glow mappings */
+.logs-hero-section:hover .logs-hero-desc { color: var(--text-bright); }
+.vector-hud-scope:hover { border-color: rgba(0, 240, 255, 0.2); box-shadow: 0 0 35px rgba(0, 240, 255, 0.1); }
+.vector-hud-scope:hover .cube-polygon { stroke: var(--accent-success); }
+.vector-hud-scope:hover .stream-line-trace { stroke: rgba(0, 255, 136, 0.4); }
+
+/* HUD Labels position layout anchors */
+.hud-telemetry-chip {
+    position: absolute; font-family: monospace; font-size: 0.65rem; color: var(--text-dim);
+    letter-spacing: 1px; background-color: var(--bg-deep); padding: 2px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.04); border-radius: 4px;
+}
+.chip-top { top: -6px; }
+.chip-bottom { bottom: -6px; }
+
+/* ==========================================
+   CORE RUNTIME SYSTEM TIMELINE KEYFRAMES
+========================================== */
+@keyframes continuousRotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes continuousReverseRotate { 0% { transform: rotate(360deg); } 100% { transform: rotate(0deg); } }
+@keyframes actionRowFloat { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-5px); } }
+@keyframes floatingScopeDrift { 0%, 100% { transform: translateY(0px) scale(0.98); } 50% { transform: translateY(-8px) scale(1.02); } }
+
+/* ==========================================
+   FLUID RESPONSIVE MATRIX OVERRIDES
+========================================== */
+@media (max-width: 992px) {
+    .logs-hero-container {
+        grid-template-columns: 1fr; /* Switch to clean vertical stacks to bypass asset overlap text hiding bugs */
+        padding: 0 24px;
+        gap: 50px;
+    }
+    .logs-hero-content { align-items: center; text-align: center; }
+    .sentence-stream-title { align-items: center; }
+    .first-major-line { font-size: 2.2rem; border-left: none; border-bottom: 2px solid transparent; }
+    .first-major-line.line-revealed { padding-left: 0; padding-bottom: 6px; border-bottom-color: var(--neon-cyan); }
+    .sub-minor-line { font-size: 1.25rem; }
+    .logs-hero-desc { max-width: 100%; font-size: 0.9rem; }
+    .cta-group { justify-content: center; }
+    .logs-hero-visual { justify-content: center; width: 100%; }
+    .vector-hud-scope { max-width: 320px; }
+}
+
+@media (max-width: 480px) {
+    .logs-hero-container { padding: 0 16px; }
+    .first-major-line { font-size: 1.75rem; }
+    .cta-group { flex-direction: column; }
+    .cta-btn { width: 100%; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // SCROLL REVEAL: Sentence-by-Sentence Telemetry Line Matrix Activation Engine
+    const logsHeroTitle = document.getElementById("scrollLogsHeroTitle");
+    
+    if (logsHeroTitle) {
+        const structuralLines = logsHeroTitle.querySelectorAll(".stream-line");
+
+        function processHeroSentencesReveal() {
+            structuralLines.forEach(lineNode => {
+                const boundingBox = lineNode.getBoundingClientRect();
+                const displayWindowHeight = window.innerHeight;
+                
+                // Elements illuminate individual sentences when passing the bottom 86% viewport threshold line
+                const activationLineThreshold = displayWindowHeight * 0.86;
+
+                if (boundingBox.top < activationLineThreshold) {
+                    lineNode.classList.add("line-revealed");
+                } else {
+                    lineNode.classList.remove("line-revealed");
+                }
+            });
+        }
+        
+        window.addEventListener("scroll", processHeroSentencesReveal);
+        window.addEventListener("resize", processHeroSentencesReveal);
+        
+        // Execute an instant baseline pass immediately upon DOM asset render
+        processHeroSentencesReveal();
+    }
+});
+
+</script>
+
+<section class="trajectory-section" id="threat-nodes">
+    <div class="trajectory-grid-overlay"></div>
+
+    <div class="trajectory-container">
+        
+        <!-- Center-Aligned Header Block -->
+        <div class="trajectory-header">
+            <div class="cyber-badge">SYSTEM // PERIMETER_MAP</div>
+            <h2 class="trajectory-title">Asymmetric anomaly route tracking</h2>
+        </div>
+
+        <!-- CREATIVE GRAPHIC CARD CONTAINER -->
+        <div class="trajectory-canvas-card">
+            
+            <!-- Real HTML background image tag embedded safely inside box edges -->
+            <img src="https://unsplash.com" alt="Datacenter Mainframe Grid Layer" class="card-embedded-bg-img">
+            
+            <!-- Dark atmospheric glassmorphic blend veil to safeguard typography legibility -->
+            <div class="card-ambient-overlay"></div>
+
+            <!-- Complete Adaptive Vector SVG Topological Map Paths -->
+            <svg class="topological-vector-svg" viewBox="0 0 800 350" xmlns="http://w3.org">
+                <defs>
+                    <linearGradient id="laserGlowCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="rgba(0, 240, 255, 0)"/>
+                        <stop offset="50%" stop-color="rgba(0, 240, 255, 0.7)"/>
+                        <stop offset="100%" stop-color="rgba(0, 240, 255, 0)"/>
+                    </linearGradient>
+                    <linearGradient id="laserGlowPurple" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="rgba(157, 78, 221, 0)"/>
+                        <stop offset="50%" stop-color="rgba(157, 78, 221, 0.7)"/>
+                        <stop offset="100%" stop-color="rgba(157, 78, 221, 0)"/>
+                    </linearGradient>
+                </defs>
+
+                <!-- Perimeter Grid Mesh Vector Lines -->
+                <path d="M50 50 L750 50 M50 175 L750 175 M50 300 L750 300" stroke="rgba(255,255,255,0.04)" stroke-width="0.75"/>
+                <path d="M150 20 L150 330 M400 20 L100 330 M650 20 L650 330" stroke="rgba(255,255,255,0.04)" stroke-width="0.75"/>
+
+                <!-- Active Intercept Signal Waves Lines -->
+                <path d="M100 175 Q 250 50, 400 175 T 700 175" fill="none" stroke="url(#laserGlowCyan)" stroke-width="2.5" class="wave-path-animate-1" />
+                <path d="M100 175 Q 250 300, 400 175 T 700 175" fill="none" stroke="url(#laserGlowPurple)" stroke-width="2.5" class="wave-path-animate-2" />
+
+                <!-- Central Firewall Barrier Node Point -->
+                <g class="interactive-node" transform="translate(400, 175)">
+                    <circle cx="0" cy="0" r="28" fill="rgba(6, 9, 19, 0.9)" stroke="#00f0ff" stroke-width="1.5" class="node-ring-glow"/>
+                    <circle cx="0" cy="0" r="16" fill="none" stroke="#9d4edd" stroke-width="2" stroke-dasharray="4, 2" class="node-inner-spin"/>
+                    <circle cx="0" cy="0" r="5" fill="#ffffff" />
+                </g>
+
+                <!-- Peripheral Threat Inbound Beacons -->
+                <g class="interactive-node" transform="translate(180, 90)">
+                    <circle cx="0" cy="0" r="6" fill="#ff3366" class="ping-beacon-red" />
+                </g>
+                <g class="interactive-node" transform="translate(620, 260)">
+                    <circle cx="0" cy="0" r="6" fill="#00ff88" class="ping-beacon-green" />
+                </g>
+            </svg>
+
+            <!-- Floating Data Detail Chips -->
+            <div class="canvas-floating-chip chip-left">
+                <span class="chip-meta">ENTRY_VECTOR // SOURCE</span>
+                <h4>IP_192.168.84.11</h4>
+                <p>Port scan malicious signature isolated inside isolated staging subsystem sandbox nodes.</p>
+            </div>
+
+            <div class="canvas-floating-chip chip-center">
+                <span class="chip-meta">DEFENSE_CORE // ENFORCING</span>
+                <h4>Polymorphic Firewall</h4>
+                <p>Real-time packet structural camouflage adaptation speed operating at sub-millisecond timelines.</p>
+            </div>
+
+            <div class="canvas-floating-chip chip-right">
+                <span class="chip-meta">SINK_STATUS // ADAPTED</span>
+                <h4>100% Perimeter Integrity</h4>
+                <p>Routing logs synchronized securely with decentralized compliance vaults worldwide.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-error: #ff3366;
+    --accent-success: #00ff88;
+}
+
+/* ==========================================
+   RESTRICTED PADDING MOUNT ARRANGEMENT
+========================================== */
+.trajectory-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 50px;        /* Strict 50px top padding layout requirement */
+    padding-bottom: 30px;     /* Strict 30px bottom padding layout requirement */
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.trajectory-grid-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.008) 1px, transparent 1px);
+    background-size: 24px 24px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.trajectory-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    z-index: 2;
+}
+
+.trajectory-header { width: 100%; margin-bottom: 40px; text-align: left; }
+.cyber-badge { font-family: monospace; color: var(--neon-cyan); font-size: 0.75rem; letter-spacing: 2px; }
+
+.trajectory-title {
+    font-size: 2.6rem; font-weight: 800; line-height: 1.2; text-transform: uppercase;
+    letter-spacing: -0.5px; color: var(--text-bright); margin-top: 10px;
+}
+
+/* ==========================================
+   EMBEDDED IMAGE RECON SHIELD COMPONENT
+========================================== */
+.trajectory-canvas-card {
+    position: relative;
+    width: 100%;
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* Safely clips background elements inside card frame borders */
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+    box-sizing: border-box;
+}
+
+/* Base image embedding layer rules */
+.card-embedded-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.08; /* Blended subtle pattern alpha context */
+    filter: saturate(0.8) contrast(1.1) brightness(0.6);
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.4s ease;
+}
+
+/* Ambient glass layer overlay */
+.card-ambient-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at center, transparent 30%, #0c1424 95%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.topological-vector-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 3; /* Pushes active laser paths cleanly above layout background images */
+}
+
+/* Hardware-tuned animation loops handles */
+.wave-path-animate-1 { stroke-dasharray: 140, 280; animation: signalStreaming 8s linear infinite; }
+.wave-path-animate-2 { stroke-dasharray: 90, 240; animation: signalStreaming 12s linear infinite reverse; }
+.node-inner-spin { transform-origin: 0 0; animation: innerNodeSpin 6s linear infinite; }
+.node-ring-glow { animation: centralNodePulse 3s ease-in-out infinite alternate; }
+.ping-beacon-red { animation: threatPulse var(--accent-error) 2s infinite ease-out; transform-origin: center; }
+.ping-beacon-green { animation: threatPulse var(--accent-success) 2.5s infinite ease-out; transform-origin: center; }
+
+/* ==========================================
+   FLOATING OVERLAY LOGS INTERFACES CHIPS
+========================================== */
+.canvas-floating-chip {
+    background: rgba(13, 21, 39, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 10px;
+    padding: 16px;
+    box-sizing: border-box;
+    max-width: 320px;
+    position: absolute;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+    z-index: 4; /* Floats safely on top of all canvas layers */
+}
+
+.chip-left { top: 10%; left: 4%; }
+.chip-center { bottom: 15px; left: 50%; transform: translateX(-50%); }
+.chip-right { top: 58%; right: 4%; }
+
+.chip-meta { font-family: monospace; font-size: 0.65rem; color: var(--text-dim); letter-spacing: 1px; display: block; margin-bottom: 4px; }
+.canvas-floating-chip h4 { font-size: 1.05rem; font-weight: 700; color: var(--text-bright); margin-bottom: 6px; transition: color 0.3s ease; }
+.canvas-floating-chip p { font-size: 0.8rem; color: var(--text-dim); line-height: 1.5; transition: color 0.3s ease; }
+
+/* ==========================================
+   DYNAMIC INTERACTIVE HOVER GLOWS
+========================================== */
+.trajectory-canvas-card:hover {
+    border-color: rgba(0, 240, 255, 0.2);
+    box-shadow: 0 25px 60px rgba(0, 240, 255, 0.05);
+}
+.trajectory-canvas-card:hover .card-embedded-bg-img {
+    transform: scale(1.03); /* Tiny background parallax drift on mouse hover triggers */
+    opacity: 0.12;
+}
+
+.canvas-floating-chip:hover {
+    border-color: rgba(0, 240, 255, 0.3);
+    box-shadow: 0 15px 35px rgba(0, 240, 255, 0.12);
+}
+.chip-left:hover { transform: translateY(-3px); }
+.chip-center:hover { transform: translate(-50%, -3px); }
+.chip-right:hover { transform: translateY(-3px); border-color: rgba(157, 78, 221, 0.3); box-shadow: 0 15px 35px rgba(157, 78, 221, 0.12); }
+
+.canvas-floating-chip:hover h4 { color: var(--neon-cyan); }
+.chip-right:hover h4 { color: var(--neon-purple); }
+.canvas-floating-chip:hover p { color: var(--text-bright); }
+
+@keyframes signalStreaming { 0% { stroke-dashoffset: 600; } 100% { stroke-dashoffset: 0; } }
+@keyframes innerNodeSpin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes centralNodePulse { 0% { stroke: var(--neon-cyan); } 100% { stroke: var(--neon-purple); } }
+@keyframes threatPulse { 0% { r: 3; opacity: 1; } 100% { r: 14; opacity: 0; } }
+
+/* ==========================================
+   FLUID RESPONSIVE MATRIX OVERRIDES
+========================================== */
+@media (max-width: 992px) {
+    .trajectory-title { font-size: 2.2rem; }
+    .trajectory-container { padding: 0 24px; }
+    
+    /* Collapses spatial overlays to standard rows on mobile viewports to prevent data compression truncation */
+    .trajectory-canvas-card { padding: 16px; background-color: transparent; border: none; box-shadow: none; }
+    .topological-vector-svg, .card-embedded-bg-img, .card-ambient-overlay { display: none; } 
+    
+    .canvas-floating-chip { position: relative; width: 100%; max-width: 100%; top: auto !important; left: auto !important; right: auto !important; bottom: auto !important; margin-bottom: 16px; background-color: var(--bg-surface); transform: none !important; }
+}
+
+@media (max-width: 480px) {
+    .trajectory-title { font-size: 1.7rem; }
+    .trajectory-container { padding: 0 16px; }
+}
+
+</style>
+
+<section class="origin-matrix-section" id="traffic-origin">
+    <div class="origin-container">
+        
+        <!-- Left Side: Interactive World Node Vector Map Mapping Panel -->
+        <div class="origin-visual-panel">
+            <div class="map-vector-card">
+                <div class="panel-header-tag">
+                    <span class="tag-title">GEOLOCATION_RADAR // ACTIVE_PING</span>
+                    <svg viewBox="0 0 24 24" class="header-vector-icon"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+
+                <div class="svg-map-wrapper">
+                    <!-- Clean Vector SVG World Topology Path Matrix Map Layout -->
+                    <svg class="world-radar-svg" viewBox="0 0 400 220" xmlns="http://w3.org">
+                        <!-- Simplified Grid Isolation Crosshairs Lines -->
+                        <line x1="0" y1="110" x2="400" y2="110" stroke="rgba(255,255,255,0.03)" stroke-width="0.75" stroke-dasharray="4, 4"/>
+                        <line x1="200" y1="0" x2="200" y2="220" stroke="rgba(255,255,255,0.03)" stroke-width="0.75" stroke-dasharray="4, 4"/>
+                        
+                        <!-- abstract vector world continental boundaries mapping shapes layout -->
+                        <path d="M50,60 Q80,40 110,50 T140,70 T110,120 Z M280,50 Q320,40 350,70 T320,130 T280,90 Z M180,130 Q220,150 240,180 T190,210 Z" fill="none" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1.5"/>
+                        
+                        <!-- Pulsing Active Geolocation Threat Origin Beacons Overlaid -->
+                        <circle cx="100" cy="75" r="4" fill="#00f0ff" class="map-pulse-dot" />
+                        <circle cx="310" cy="80" r="4" fill="#9d4edd" class="map-pulse-dot" />
+                        <circle cx="210" cy="160" r="4" fill="#ff3366" class="map-pulse-dot" />
+                        
+                        <!-- Laser Sync Tracking Beam vector paths linking nodes together -->
+                        <path d="M100,75 L210,160 L310,80" fill="none" stroke="rgba(0, 240, 255, 0.2)" stroke-dasharray="3, 6" class="map-beam-trace"/>
+                    </svg>
+                    <!-- Visual scanner sweep overlay line overlay -->
+                    <div class="map-radar-sweep"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Content Block & One-by-One Diagnostic Cards -->
+        <div class="origin-content-panel">
+            <div class="cyber-badge">// RECON // PACKET_GEOLOCATION</div>
+            <h2 class="origin-main-title">Attack vector sourcing</h2>
+            <p class="origin-subtitle">
+                Stackly decrypts incoming transaction nodes instantly, tracing malicious package telemetry back to localized server clusters to update automated immune configurations globally.
+            </p>
+
+            <!-- Diagnostic Origin Stack Modules -->
+            <div class="origin-diagnostic-stack">
+                
+                <!-- Card 01 -->
+                <div class="origin-card-node">
+                    <div class="card-glow-edge cyan-glow"></div>
+                    <div class="card-inner-meta">
+                        <span class="c-label">TRAFFIC_ORIGIN</span>
+                        <h4>NODE_US_EAST // CLOUD_VECTOR</h4>
+                    </div>
+                    <span class="card-status-value txt-cyan">REJECTED_ATTEMPT</span>
+                </div>
+
+                <!-- Card 02 -->
+                <div class="origin-card-node">
+                    <div class="card-glow-edge purple-glow"></div>
+                    <div class="card-inner-meta">
+                        <span class="c-label">TRAFFIC_ORIGIN</span>
+                        <h4>NODE_EU_WEST // SUBNET_SCAN</h4>
+                    </div>
+                    <span class="card-status-value txt-purple">ISOLATED_REFLEX</span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-error: #ff3366;
+}
+
+/* ==========================================
+   VERTICAL LAYOUT FLOW & PADDING CONTROLS
+========================================== */
+.origin-matrix-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 50px;        /* Restricts section to requested 50px top padding limit */
+    padding-bottom: 30px;     /* Restricts section to requested 30px bottom padding footprint */
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.origin-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    /* Clean asymmetric visual-left and copy-right balancing format split */
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* ==========================================
+   LEFT ZONE - WORLD RADAR COORDINATE WINDOW
+========================================== */
+.origin-visual-panel {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.map-vector-card {
+    width: 100%;
+    max-width: 460px;
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.panel-header-tag {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.03); padding-bottom: 10px;
+}
+.tag-title { font-family: monospace; font-size: 0.7rem; color: var(--text-dim); letter-spacing: 1px; }
+.header-vector-icon { width: 14px; height: 14px; fill: none; stroke: var(--text-dim); stroke-width: 2; }
+
+.svg-map-wrapper {
+    position: relative; width: 100%; background-color: rgba(6, 9, 19, 0.6);
+    border-radius: 8px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.01);
+}
+
+.world-radar-svg { width: 100%; height: auto; display: block; }
+
+/* Continuous vector keyframe animation engine triggers */
+.map-pulse-dot { animation: pulseRadarPing 1.8s infinite ease-out; transform-origin: center; }
+.map-beam-trace { stroke-dasharray: 6, 12; animation: beamStreaming 10s linear infinite; }
+
+.map-radar-sweep {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(0,240,255,0) 95%, rgba(0,240,255,0.08) 100%);
+    background-size: 100% 8px; pointer-events: none;
+}
+
+/* ==========================================
+   RIGHT ZONE - CONTENT AND METRIC CARDS
+========================================== */
+.origin-content-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cyber-badge {
+    font-family: monospace; color: var(--neon-cyan); font-size: 0.75rem; letter-spacing: 2px;
+}
+
+.origin-main-title {
+    font-size: 2.6rem; font-weight: 800; line-height: 1.2; text-transform: uppercase;
+    letter-spacing: -0.5px; color: var(--text-bright); margin-top: 15px; margin-bottom: 20px;
+}
+
+.origin-subtitle {
+    font-size: 0.95rem; color: rgba(255, 255, 255, 0.7); line-height: 1.6;
+    margin-bottom: 30px; max-width: 520px; text-align: left;
+}
+
+.origin-diagnostic-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+}
+
+.origin-card-node {
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: default;
+}
+
+/* Sidebar neon accent trim bands */
+.card-glow-edge { position: absolute; left: 0; top: 25%; height: 50%; width: 3px; border-radius: 2px; }
+.cyan-glow { background-color: var(--neon-cyan); box-shadow: 0 0 8px var(--neon-cyan); }
+.purple-glow { background-color: var(--neon-purple); box-shadow: 0 0 8px var(--neon-purple); }
+
+.card-inner-meta { display: flex; flex-direction: column; text-align: left; }
+.c-label { font-family: monospace; font-size: 0.65rem; color: var(--text-dim); letter-spacing: 1px; margin-bottom: 2px; }
+.card-inner-meta h4 { font-size: 1.05rem; font-weight: 700; color: var(--text-bright); margin: 0; transition: color 0.3s; }
+
+.card-status-value { font-family: monospace; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.5px; }
+.txt-cyan { color: var(--neon-cyan); text-shadow: 0 0 6px rgba(0,240,255,0.3); }
+.txt-purple { color: var(--neon-purple); text-shadow: 0 0 6px rgba(157,78,221,0.3); }
+
+/* ==========================================
+   DYNAMIC INTERACTIVE HOVER GLOWS
+========================================== */
+.map-vector-card:hover {
+    border-color: rgba(0, 240, 255, 0.2);
+    box-shadow: 0 20px 50px rgba(0, 240, 255, 0.06);
+}
+
+.origin-card-node:hover {
+    border-color: rgba(255, 255, 255, 0.06);
+    background-color: rgba(13, 21, 39, 0.7);
+    transform: translateX(4px);
+}
+.origin-card-node:hover h4 { color: var(--neon-cyan); }
+.origin-card-node:nth-child(2):hover h4 { color: var(--neon-purple); }
+
+/* ==========================================
+   CORE PLATFORM KEYFRAME ENGINES
+========================================== */
+@keyframes pulseRadarPing { 0%, 100% { transform: scale(1); opacity: 0.5; } 50% { transform: scale(1.4); opacity: 1; filter: drop-shadow(0 0 4px cubic-gradient); } }
+@keyframes beamStreaming { 0% { stroke-dashoffset: 200; } 100% { stroke-dashoffset: 0; } }
+
+/* ==========================================
+   FLUID RESPONSIVE MATRIX OVERRIDES
+========================================== */
+@media (max-width: 992px) {
+    .origin-container {
+        grid-template-columns: 1fr; /* Drop asymmetric layers cleanly down to stacked block columns */
+        padding: 0 24px;
+        gap: 45px;
+    }
+    .origin-visual-panel { justify-content: center; width: 100%; }
+    .map-vector-card { max-width: 100%; }
+    .origin-content-panel { align-items: center; text-align: center; }
+    .origin-subtitle { max-width: 100%; }
+}
+
+@media (max-width: 540px) {
+    .origin-container { padding: 0 16px; }
+    .origin-main-title { font-size: 1.85rem; }
+    .origin-card-node { flex-direction: column; gap: 10px; align-items: flex-start; padding: 16px; }
+    .card-status-value { align-self: flex-end; }
+    .card-glow-edge { left: 25%; top: 0; width: 50%; height: 3px; } /* Swaps trim anchor coordinates to top edge paths on mobile */
+}
+
+</style>
+<section class="dual-line-cta-section">
+    <!-- Atmospheric base layout background image tag -->
+    <img src="https://unsplash.com" alt="Cyber Grid Core Backdrop" class="cta-banner-bg">
+
+    <div class="cta-banner-container">
+        
+        <!-- Left Side: Balanced 2-Line Text Content Column -->
+        <div class="cta-content-column">
+            <div class="cyber-badge">// IMMUTABLE DEPLOYMENT MESH</div>
+            <h2 class="cta-main-title">Secure your corporate digital matrix today</h2>
+            <p class="cta-sub-paragraph">
+                Instantiate Stackly zero-trust camouflage infrastructure across your global container clusters in under ten minutes to fully isolate critical cloud architecture footprints.
+            </p>
+        </div>
+
+        <!-- Right Side: Floating Central Action Button Column -->
+        <div class="cta-action-column">
+            <div class="floating-btn-wrap">
+                <button class="banner-action-btn" type="button">
+                    <span>Deploy Immediate Guard</span>
+                    <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+}
+
+/* ==========================================
+   CTA BANNER GENERAL LAYOUT SETTINGS
+========================================== */
+.dual-line-cta-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 50px;       /* Strict 50px top padding layout limit */
+    padding-bottom: 30px;    /* Strict 30px bottom padding layout footprint */
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(0, 240, 255, 0.05);
+    border-bottom: 1px solid rgba(157, 78, 221, 0.05);
+}
+
+.cta-banner-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; opacity: 0.04; pointer-events: none; z-index: 1;
+}
+
+.cta-banner-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    /* Splices container into an asymmetric left content and right button grid */
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 50px;
+    align-items: center;
+    z-index: 3;
+}
+
+/* ==========================================
+   LEFT ZONE - TWO LINE TYPOGRAPHY HIERARCHY
+========================================== */
+.cta-content-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.cyber-badge {
+    font-family: monospace;
+    color: var(--neon-cyan);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+/* First Content Line: Bold Accent Title */
+.cta-main-title {
+    font-size: 2.3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    color: var(--text-bright);
+    margin-bottom: 14px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Second Content Line: Detailed Description Copy */
+.cta-sub-paragraph {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+/* ==========================================
+   RIGHT ZONE - FLOATING BUTTON ACTION
+========================================== */
+.cta-action-column {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.floating-btn-wrap {
+    animation: ctaButtonFloat 4.5s ease-in-out infinite; /* Automated vertical floating loop */
+    flex-shrink: 0;
+}
+
+.banner-action-btn {
+    padding: 16px 36px;
+    border-radius: 35px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--text-bright);
+    background: linear-gradient(90deg, var(--neon-purple), var(--neon-cyan));
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+}
+
+/* ==========================================
+   INTERACTIVE NEON HOVER GLOW COUPLINGS
+========================================== */
+.dual-line-cta-section:hover .cta-main-title {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+}
+
+.dual-line-cta-section:hover .cta-sub-paragraph {
+    color: var(--text-bright);
+}
+
+.banner-action-btn:hover {
+    box-shadow: 0 12px 35px rgba(0, 240, 255, 0.45);
+    transform: scale(1.03);
+}
+
+.banner-action-btn:active {
+    transform: scale(0.98);
+}
+
+.btn-arrow {
+    width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.5;
+    transition: transform 0.3s ease;
+}
+.banner-action-btn:hover .btn-arrow {
+    transform: translateX(5px);
+}
+
+/* Floating animation keyframes */
+@keyframes ctaButtonFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+}
+
+/* ==========================================
+   FLUID RESPONSIVE DESIGN BOUNDARIES
+========================================== */
+@media (max-width: 992px) {
+    .cta-banner-container {
+        grid-template-columns: 1fr; /* Flips side grid elements cleanly to vertical list columns */
+        text-align: center;
+        gap: 35px;
+        padding: 0 24px;
+    }
+    .cta-content-column {
+        align-items: center;
+        text-align: center;
+    }
+    .cta-main-title { font-size: 2rem; text-align: center; }
+    .cta-action-column { justify-content: center; width: 100%; }
+}
+
+@media (max-width: 480px) {
+    .cta-banner-container { padding: 0 16px; }
+    .cta-main-title { font-size: 1.7rem; }
+    .banner-action-btn { width: 100%; justify-content: center; padding: 14px; }
+}
+
+</style>
+
+<section class="detection-stream-section" id="node-matrix">
+    <img src="https://unsplash.com" alt="Tech Net Mesh Grid" class="stream-bg-image">
+
+    <div class="stream-container">
+        
+        <!-- Left Column: Sticky Typography & Magnified Paragraph -->
+        <div class="stream-text-panel">
+            <div class="cyber-badge">// METRIC_LOGS // SYNC_ACTIVE</div>
+            
+            <!-- Complete sentences illuminate one-by-one upon window scroll intersection -->
+            <h2 class="sentence-stream-title" id="scrollLogsSentenceTitle">
+                <span class="stream-line first-major-line">Extracting historical package hashes.</span>
+                <span class="stream-line sub-minor-line">Tracing anomalous endpoint connection routes.</span>
+                <span class="stream-line sub-minor-line">Aggregating compliance forensic footprints.</span>
+            </h2>
+            
+            <!-- Highly magnified typography content copy block -->
+            <p class="stream-large-desc">
+                Stackly cross-references transaction telemetry logs with decentralized infrastructure ledgers instantly, allowing security commanders to map malicious actors and patch zero-day perimeters under microsecond timelines.
+            </p>
+        </div>
+
+        <!-- Right Column: Graphical Diagnostic Node Console Card -->
+        <div class="stream-visual-panel">
+            <div class="terminal-diag-card">
+                <div class="terminal-card-header">
+                    <span class="terminal-meta">VAULT_NODE // LOG_INTEGRITY</span>
+                    <div class="terminal-status-light cyan-beacon"></div>
+                </div>
+
+                <div class="terminal-card-image">
+                    <!-- Inline graphic image overlay standing out cleanly -->
+                    <img src="https://unsplash.com" alt="Active Cyber Security Interface Network" class="terminal-img">
+                    <div class="scan-laser-beam"></div>
+                </div>
+
+                <div class="terminal-card-body">
+                    <div class="telemetry-row">
+                        <span class="row-label">FORENSIC_DECRYPT</span>
+                        <span class="row-value val-cyan">100% SECURE</span>
+                    </div>
+                    <div class="telemetry-row">
+                        <span class="row-label">VAULT_SYNC</span>
+                        <span class="row-value val-purple">REAL_TIME_SINK</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-success: #00ff88;
+}
+
+/* ==========================================
+   RESTRICTED PADDING MOUNT ARRANGEMENT
+========================================== */
+.detection-stream-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 50px;        /* Strict 50px top padding layout requirement */
+    padding-bottom: 30px;     /* Strict 30px bottom padding layout requirement */
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.stream-bg-image {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; opacity: 0.015; pointer-events: none; z-index: 1;
+}
+
+.stream-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 60px;
+    align-items: start;
+    z-index: 2;
+}
+
+/* ==========================================
+   LEFT SIDE - TYPOGRAPHY & LARGE DESCRIPTION
+========================================== */
+.stream-text-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: sticky;
+    top: 120px;
+}
+
+.cyber-badge {
+    font-family: monospace;
+    color: var(--neon-cyan);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+}
+
+.sentence-stream-title {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    line-height: 1.25;
+    text-transform: uppercase;
+    color: var(--text-bright);
+}
+
+.stream-line {
+    opacity: 0.15;
+    transform: translateY(12px);
+    transition: opacity 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.stream-line.line-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* First Sentence Title: Premium Bold Accent Scale */
+.first-major-line {
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
+    border-left: 3px solid transparent;
+    transition: padding-left 0.4s ease, border-color 0.4s ease;
+}
+.first-major-line.line-revealed {
+    border-left-color: var(--neon-cyan);
+    padding-left: 18px;
+}
+
+/* Lower Sub-Sentences Scale Rules */
+.sub-minor-line {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 8px;
+}
+.sub-minor-line.line-revealed { color: var(--text-bright); }
+
+/* MAGNIFIED DESCRIPTION PARAGRAPH CORES */
+.stream-large-desc {
+    font-size: 1.25rem; /* Increased size significantly for high emphasis */
+    color: rgba(255, 255, 255, 0.85); /* Premium light readability index */
+    line-height: 1.7;
+    max-width: 540px;
+    transition: color 0.3s ease;
+}
+
+/* ==========================================
+   RIGHT SIDE - IMAGE HUD CONSOLE CARD
+========================================== */
+.stream-visual-panel {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.terminal-diag-card {
+    width: 100%;
+    max-width: 440px;
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.terminal-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.terminal-meta { font-family: monospace; font-size: 0.65rem; color: var(--text-dim); letter-spacing: 1.5px; }
+.terminal-status-light { width: 6px; height: 6px; border-radius: 50%; }
+.cyan-beacon { background-color: var(--neon-cyan); box-shadow: 0 0 8px var(--neon-cyan); }
+
+.terminal-card-image {
+    position: relative;
+    width: 100%;
+    height: 190px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.01);
+}
+
+.terminal-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.6) brightness(0.65) contrast(1.15);
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.5s ease;
+}
+
+/* Scanning radar sweep bar line overlay */
+.scan-laser-beam {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(0,240,255,0) 95%, rgba(0,240,255,0.12) 100%);
+    background-size: 100% 8px;
+    pointer-events: none;
+}
+
+.terminal-card-body {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.telemetry-row {
+    display: flex;
+    justify-content: space-between;
+    background: rgba(6, 9, 19, 0.5);
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.01);
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.row-label { color: var(--text-dim); }
+.val-cyan { color: var(--neon-cyan); text-shadow: 0 0 6px rgba(0,240,255,0.4); }
+.val-purple { color: var(--neon-purple); text-shadow: 0 0 6px rgba(157,78,221,0.4); }
+
+/* ==========================================
+   INTERACTIVE NEON HOVER GLOWS
+========================================== */
+.detection-stream-section:hover .stream-large-desc {
+    color: var(--text-bright);
+}
+
+.terminal-diag-card:hover {
+    border-color: rgba(0, 240, 255, 0.25);
+    box-shadow: 0 20px 50px rgba(0, 240, 255, 0.08);
+}
+
+.terminal-diag-card:hover .terminal-img {
+    transform: scale(1.04);
+    filter: saturate(0.85) brightness(0.75) contrast(1.2);
+}
+
+.terminal-diag-card:hover .telemetry-row {
+    background: rgba(13, 21, 39, 0.7);
+    border-color: rgba(255, 255, 255, 0.03);
+}
+
+/* ==========================================
+   FLUID RESPONSIVE METRICS
+========================================== */
+@media (max-width: 992px) {
+    .stream-container {
+        grid-template-columns: 1fr; /* Fallback to uniform column layouts to prevent overlapping text */
+        padding: 0 24px;
+        gap: 45px;
+    }
+    .stream-text-panel { position: relative; top: 0; align-items: center; text-align: center; }
+    .sentence-stream-title { align-items: center; }
+    .first-major-line { font-size: 2.2rem; border-left: none; border-bottom: 2px solid transparent; }
+    .first-major-line.line-revealed { padding-left: 0; padding-bottom: 6px; border-bottom-color: var(--neon-cyan); }
+    .sub-minor-line { font-size: 1.25rem; }
+    .stream-large-desc { max-width: 100%; font-size: 1.15rem; }
+    .stream-visual-panel { justify-content: center; width: 100%; }
+    .terminal-diag-card { max-width: 100%; }
+}
+
+@media (max-width: 480px) {
+    .stream-container { padding: 0 16px; }
+    .first-major-line { font-size: 1.75rem; }
+    .terminal-diag-card { padding: 16px; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // SCROLL REVEAL: Sentence-by-Sentence Threshold Intersection Engine
+    const targetSentenceTitle = document.getElementById("scrollLogsSentenceTitle");
+    
+    function processMatrixScrollAnimations() {
+        if (!targetSentenceTitle) return;
+
+        const sentences = targetSentenceTitle.querySelectorAll(".stream-line");
+        sentences.forEach(sentenceNode => {
+            const rect = sentenceNode.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            
+            // Sentences illuminate once their layout borders cross higher than 85% of display height
+            const targetActivationLine = windowHeight * 0.85;
+
+            if (rect.top < targetActivationLine) {
+                sentenceNode.classList.add("line-revealed");
+            } else {
+                sentenceNode.classList.remove("line-revealed");
+            }
+        });
+    }
+    
+    window.addEventListener("scroll", processMatrixScrollAnimations);
+    window.addEventListener("resize", processMatrixScrollAnimations);
+    
+    // Run passivation pass instantly on load to mount any visible starting rows
+    processMatrixScrollAnimations(); 
+});
+
+</script>
+
+<section class="hex-matrix-section" id="threat-matrix">
+    <!-- Ambient micro-circuit wireframe texture behind grid -->
+    <div class="matrix-grid-backdrop"></div>
+
+    <div class="matrix-container">
+        
+        <!-- Header Zone (Reveals Letter-by-Letter on Scroll) -->
+        <div class="matrix-section-header">
+            <div class="cyber-badge">// FORENSIC NODE ARCHITECTURE</div>
+            <h2 class="scroll-letter-header" id="scrollHexMatrixTitle">
+                Decentralized exploit analytics
+            </h2>
+        </div>
+
+        <!-- CASCADING HEX GRID SYSTEM (Cards unlock one-by-one sequentially) -->
+        <div class="hex-mesh-wrapper" id="hexMeshContainer">
+            
+            <!-- Connection Laser Sync Path Lines -->
+            <div class="circuit-link-path path-left"></div>
+            <div class="circuit-link-path path-right"></div>
+
+            <!-- Hex Card 1 -->
+            <div class="hex-mesh-node animate-cascade">
+                <div class="hex-outer-border">
+                    <div class="hex-inner-content">
+                        <!-- Technical layout icon vector overlay -->
+                        <div class="hex-icon-box">
+                            <svg viewBox="0 0 24 24" class="hex-svg-icon"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                        </div>
+                        <div class="hex-body-text">
+                            <span class="hex-meta-code">LOG_NODE // 0A</span>
+                            <h3>Hash Extraction</h3>
+                            <p>Isolates and archives corrupt package hashes into cryptographic storage layers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hex Card 2 (Asymmetric shift element) -->
+            <div class="hex-mesh-node animate-cascade hex-shifted-node">
+                <div class="hex-outer-border border-purple">
+                    <div class="hex-inner-content">
+                        <div class="hex-icon-box">
+                            <svg viewBox="0 0 24 24" class="hex-svg-icon icon-purple"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        </div>
+                        <div class="hex-body-text">
+                            <span class="hex-meta-code">LOG_NODE // 0B</span>
+                            <h3>Route Camouflage</h3>
+                            <p>Obfuscates malicious query paths dynamically to fully blind scanning telemetry.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hex Card 3 -->
+            <div class="hex-mesh-node animate-cascade">
+                <div class="hex-outer-border border-green">
+                    <div class="hex-inner-content">
+                        <div class="hex-icon-box">
+                            <svg viewBox="0 0 24 24" class="hex-svg-icon icon-green"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                        </div>
+                        <div class="hex-body-text">
+                            <span class="hex-meta-code">LOG_NODE // 0C</span>
+                            <h3>Reflexive Mitigation</h3>
+                            <p>Deploys isolated staging containment grids the exact microsecond anomalies track.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-success: #00ff88;
+}
+
+/* ==========================================
+   RESTRICTED PADDING FRAME SETTINGS
+========================================== */
+.hex-matrix-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 50px;        /* Strict 50px top padding limit constraint */
+    padding-bottom: 30px;     /* Strict 30px bottom padding layout constraint */
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.matrix-grid-backdrop {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.003) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.003) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none; z-index: 1;
+}
+
+.matrix-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    z-index: 2;
+}
+
+.matrix-section-header { width: 100%; margin-bottom: 50px; text-align: left; }
+.cyber-badge { font-family: monospace; color: var(--neon-cyan); font-size: 0.75rem; letter-spacing: 2px; }
+
+/* ==========================================
+   SCROLL REVEAL HEADING (LETTER-BY-LETTER)
+========================================== */
+.scroll-letter-header {
+    font-size: 2.6rem; font-weight: 800; line-height: 1.2;
+    text-transform: uppercase; color: var(--text-bright); margin-top: 10px;
+}
+
+.scroll-letter-header .char-node {
+    display: inline-block; opacity: 0.12; transform: translateY(6px);
+    transition: opacity 0.15s ease, transform 0.15s ease, text-shadow 0.15s;
+}
+
+.scroll-letter-header .char-node.illuminated {
+    opacity: 1; transform: translateY(0); color: var(--text-bright);
+    text-shadow: 0 0 12px rgba(0, 240, 255, 0.45);
+}
+
+/* ==========================================
+   HONEYCOMB MATRIX GRID FORMATTING
+========================================== */
+.hex-mesh-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 100%;
+    padding: 30px 0;
+}
+
+/* Intercept Pathway Circuit Trace Vectors */
+.circuit-link-path {
+    position: absolute; height: 1px; 
+    background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.2), transparent);
+    opacity: 0; width: 75%; pointer-events: none; z-index: 1;
+    transition: opacity 0.6s ease;
+}
+.path-left { top: 30%; left: 12%; transform: rotate(-4deg); }
+.path-right { bottom: 35%; right: 12%; transform: rotate(4deg); background: linear-gradient(90deg, transparent, rgba(157, 78, 221, 0.2), transparent); }
+
+.hex-mesh-wrapper.grid-primed .circuit-link-path { opacity: 1; }
+
+/* ==========================================
+   ONE-BY-ONE UNLOCKING CARDS CASCADE
+========================================== */
+.hex-mesh-node {
+    position: relative;
+    width: 290px;
+    aspect-ratio: 1 / 1.15; /* Fluid aspect settings shield text from truncation cutoff bugs */
+    z-index: 3;
+    box-sizing: border-box;
+    
+    /* Inactive scroll reveal default coordinates */
+    opacity: 0;
+    transform: scale(0.85) rotate(-8deg);
+    transition: opacity 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.25), 
+                transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.25);
+}
+
+/* Triggered line-by-line sequentially using JS timer loops */
+.hex-mesh-node.node-synced {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+/* Asymmetric vertical offset shifts center element card inside hive */
+.hex-shifted-node { transform: translateY(35px) scale(0.85) rotate(-8deg); }
+.hex-shifted-node.node-synced { transform: translateY(35px) scale(1) rotate(0deg); }
+
+/* Six-Sided Mathematical Shape Clip Paths */
+.hex-outer-border {
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.25), transparent 50%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    padding: 2px;
+    box-sizing: border-box;
+    transition: background 0.4s ease;
+}
+.border-purple { background: linear-gradient(135deg, rgba(157, 78, 221, 0.25), transparent 50%); }
+.border-green { background: linear-gradient(135deg, rgba(0, 255, 136, 0.25), transparent 50%); }
+
+.hex-inner-content {
+    width: 100%; height: 100%;
+    background-color: var(--bg-surface);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    padding: 35px 24px 24px 24px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Vector SVG Icon Shell Parameters */
+.hex-icon-box {
+    width: 44px; height: 44px; border-radius: 50%;
+    background-color: rgba(6, 9, 19, 0.6);
+    border: 1px dashed rgba(0, 240, 255, 0.2);
+    display: flex; justify-content: center; align-items: center;
+    margin-bottom: 16px;
+    transition: all 0.4s ease;
+}
+
+.hex-svg-icon { width: 18px; height: 18px; fill: none; stroke: var(--neon-cyan); stroke-width: 1.5; }
+.icon-purple { stroke: var(--neon-purple); }
+.icon-green { stroke: var(--accent-success); }
+
+.hex-body-text { display: flex; flex-direction: column; text-align: center; align-items: center; }
+.hex-meta-code { font-family: monospace; font-size: 0.65rem; color: var(--text-dim); letter-spacing: 1px; margin-bottom: 4px; transition: color 0.3s; }
+
+.hex-body-text h3 {
+    font-size: 1.15rem; font-weight: 700; color: var(--text-bright);
+    margin-bottom: 8px; transition: color 0.3s, text-shadow 0.3s;
+}
+
+.hex-body-text p { font-size: 0.8rem; color: rgba(255,255,255,0.55); line-height: 1.5; margin: 0; }
+
+/* ==========================================
+   DYNAMIC INTERACTIVE HOVER GLOWS
+========================================== */
+.hex-mesh-node:hover .hex-outer-border { background: linear-gradient(135deg, var(--neon-cyan), transparent); }
+.hex-mesh-node:nth-child(3):hover .hex-outer-border { background: linear-gradient(135deg, var(--neon-purple), transparent); }
+
+.hex-mesh-node:hover .hex-icon-box {
+    background-color: var(--neon-cyan); border-color: transparent;
+    transform: translateY(-2px); box-shadow: 0 0 12px var(--neon-cyan);
+}
+.hex-mesh-node:hover .hex-svg-icon { stroke: #060913; }
+.hex-mesh-node:hover .hex-meta-code { color: var(--neon-cyan); }
+.hex-mesh-node:hover h3 { color: var(--neon-cyan); text-shadow: 0 0 10px rgba(0, 240, 255, 0.4); }
+.hex-mesh-node:hover p { color: var(--text-bright); }
+
+/* Variant color configurations on secondary shifted block units */
+.hex-mesh-node:nth-child(2):hover .hex-outer-border { background: linear-gradient(135deg, var(--neon-purple), transparent); }
+.hex-mesh-node:nth-child(2):hover .hex-icon-box { background-color: var(--neon-purple); box-shadow: 0 0 12px var(--neon-purple); border-color: transparent; }
+.hex-mesh-node:nth-child(2):hover .hex-meta-code { color: var(--neon-purple); }
+.hex-mesh-node:nth-child(2):hover h3 { color: var(--neon-purple); text-shadow: 0 0 10px rgba(157, 78, 221, 0.4); }
+
+/* ==========================================
+   FLUID RESPONSIVE VIEWPORTS
+========================================== */
+@media (max-width: 1040px) {
+    .hex-mesh-wrapper { gap: 20px; padding-bottom: 40px; }
+    .hex-shifted-node { transform: translateY(0) scale(0.85) rotate(-8deg); }
+    /* Disables grid translate shifts on tablet screens to support linear grid flow wrapping */
+    .hex-shifted-node.node-synced { transform: translateY(0) scale(1) rotate(0deg); }
+    .circuit-link-path { display: none; }
+}
+
+@media (max-width: 768px) {
+    .scroll-letter-header { font-size: 2.2rem; }
+    .matrix-container { padding: 0 24px; }
+}
+
+@media (max-width: 480px) {
+    .scroll-letter-header { font-size: 1.7rem; }
+    .matrix-container { padding: 0 16px; }
+    .hex-mesh-node { width: 270px; }
+    .hex-inner-content { padding: 30px 16px 20px 16px; }
+}
+
+</style>
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. SCROLL REVEAL: Letter-by-Letter Title Calculator
+    const hexMatrixTitle = document.getElementById("scrollHexMatrixTitle");
+    if (hexMatrixTitle) {
+        const textPayload = hexMatrixTitle.textContent.trim();
+        hexMatrixTitle.textContent = "";
+
+        const splitCharsArray = textPayload.split("").map(char => {
+            const span = document.createElement("span");
+            span.className = "char-node";
+            span.innerHTML = char === " " ? "&nbsp;" : char;
+            hexMatrixTitle.appendChild(span);
+            return span;
+        });
+
+        function handleMatrixTitleScrollReveal() {
+            const rect = hexMatrixTitle.getBoundingClientRect();
+            const winHeight = window.innerHeight;
+            
+            const startReveal = winHeight * 0.92;
+            const endReveal = winHeight * 0.4;
+            
+            let ratio = (startReveal - rect.top) / (startReveal - endReveal);
+            ratio = Math.max(0, Math.min(1, ratio));
+
+            const maxIndex = Math.floor(ratio * splitCharsArray.length);
+            splitCharsArray.forEach((span, idx) => {
+                if (idx < maxIndex) span.classList.add("illuminated");
+                else span.classList.remove("illuminated");
+            });
+        }
+        window.addEventListener("scroll", handleMatrixTitleScrollReveal);
+        handleMatrixTitleScrollReveal();
+    }
+
+    // 2. SCROLL TRIGGER: One-by-One Hexagonal Node Unlocking Sequence
+    const hexMeshContainer = document.getElementById("hexMeshContainer");
+    const cascadingHexNodes = document.querySelectorAll(".animate-cascade");
+
+    function handleHoneycombMeshReveal() {
+        if (!hexMeshContainer) return;
+
+        const containerTop = hexMeshContainer.getBoundingClientRect().top;
+        const activationBarrier = window.innerHeight * 0.85;
+
+        // Activate background connecting laser pathways when container enters bounds
+        if (containerTop < activationBarrier) {
+            hexMeshContainer.classList.add("grid-primed");
+
+            // Unlock and load each hexagon structural module node one-by-one sequentially
+            cascadingHexNodes.forEach((node, progressiveIdx) => {
+                if (!node.classList.contains("node-synced")) {
+                    setTimeout(() => {
+                        node.classList.add("node-synced");
+                    }, progressiveIdx * 160); // 160ms delay separation creates step-by-step locking sequence
+                }
+            });
+        }
+    }
+    window.addEventListener("scroll", handleHoneycombMeshReveal);
+    handleHoneycombMeshReveal();
+});
+
+</script>
+
+<section class="testimonial-section" id="reviews">
+    <!-- Atmospheric background image overlay -->
+    <img src="https://unsplash.com" alt="Cyber Grid Backdrop" class="testimonial-bg-overlay">
+
+    <div class="testimonial-container">
+        
+        <div class="testimonial-header">
+            <div class="cyber-badge">// RECON VALIDATION</div>
+            <h2 class="scroll-letter-header" id="scrollReviewTitle">Trusted by perimeter commanders</h2>
+        </div>
+
+        <!-- 3-Column Adaptive Feedback Grid Cascade -->
+        <div class="testimonial-grid">
+            
+            <!-- Card 1 -->
+            <div class="review-card animate-scroll-card">
+                <div class="card-laser-glow cyan-glow"></div>
+                <div class="review-user-block">
+                    <div class="user-avatar-frame">
+                        <img src="https://unsplash.com" alt="Operator Marcus" class="user-avatar-img">
+                    </div>
+                    <div class="user-meta-data">
+                        <h4>Marcus Vance</h4>
+                        <span>SecOps Director // AegisGlobal</span>
+                    </div>
+                </div>
+                
+                <!-- Glowing Vector Star Ratings Grid -->
+                <div class="star-rating-row">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                
+                <p class="review-quote-text">
+                    "Stackly completely blinded our cloud infrastructure footprints. Distributed mapping scans directed at our secondary authentication gateways drop without a trace."
+                </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="review-card animate-scroll-card">
+                <div class="card-laser-glow purple-glow"></div>
+                <div class="review-user-block">
+                    <div class="user-avatar-frame">
+                        <img src="https://unsplash.com" alt="Operator Elena" class="user-avatar-img">
+                    </div>
+                    <div class="user-meta-data">
+                        <h4>Elena Rostova</h4>
+                        <span>Principal Architect // CyberNet</span>
+                    </div>
+                </div>
+                
+                <div class="star-rating-row">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                
+                <p class="review-quote-text">
+                    "The reflexive subnet sandboxing saved our development pipeline last month. The millisecond an endpoint boundary deviated, a sandbox isolated the vector instantly."
+                </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="review-card animate-scroll-card">
+                <div class="card-laser-glow green-glow"></div>
+                <div class="review-user-block">
+                    <div class="user-avatar-frame">
+                        <img src="https://unsplash.com" alt="Operator Dev" class="user-avatar-img">
+                    </div>
+                    <div class="user-meta-data">
+                        <h4>Devon Lane</h4>
+                        <span>Infrastructure Lead // ApexInfra</span>
+                    </div>
+                </div>
+                
+                <div class="star-rating-row">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                
+                <p class="review-quote-text">
+                    "Low-latency zero-trust that actually honors throughput speeds. Our microservices coordinate securely across global container clusters under 10ms."
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-success: #00ff88;
+}
+
+/* ==========================================
+   TESTIMONIAL SECTION CORE AND RESTRICTIONS
+========================================== */
+.testimonial-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 50px;        /* Strict 50px top padding limit constraint */
+    padding-bottom: 30px;     /* Strict 30px bottom padding layout constraint */
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.testimonial-bg-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; opacity: 0.02; pointer-events: none; z-index: 1;
+}
+
+.testimonial-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    z-index: 2;
+}
+
+.testimonial-header {
+    width: 100%; margin-bottom: 40px; text-align: left;
+}
+
+/* ==========================================
+   SCROLL REVEAL TITLE (LETTER-BY-LETTER)
+========================================== */
+.scroll-letter-header {
+    font-size: 2.6rem; font-weight: 800; line-height: 1.2;
+    text-transform: uppercase; color: var(--text-bright); margin-top: 10px;
+}
+.scroll-letter-header .char-node {
+    display: inline-block; opacity: 0.12; transform: translateY(6px);
+    transition: opacity 0.15s ease, transform 0.15s ease, text-shadow 0.15s;
+}
+.scroll-letter-header .char-node.illuminated {
+    opacity: 1; transform: translateY(0); color: var(--text-bright);
+    text-shadow: 0 0 12px rgba(0, 240, 255, 0.45);
+}
+
+/* ==========================================
+   3-COLUMN ADAPTIVE CASCADE MESH GRID
+========================================== */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
+.review-card {
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 14px;
+    padding: 24px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    
+    /* Incremental sequential cascade initial params */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Appended one-by-one sequentially via JS scroll index loops */
+.review-card.card-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ambient laser linear lighting bands atop cards */
+.card-laser-glow {
+    position: absolute; left: 24px; top: 0; width: 40px; height: 2px; border-radius: 2px;
+    transition: width 0.4s ease, box-shadow 0.4s ease;
+}
+.cyan-glow { background-color: var(--neon-cyan); box-shadow: 0 0 8px var(--neon-cyan); }
+.purple-glow { background-color: var(--neon-purple); box-shadow: 0 0 8px var(--neon-purple); }
+.green-glow { background-color: var(--accent-success); box-shadow: 0 0 8px var(--accent-success); }
+
+.review-user-block {
+    display: flex; align-items: center; gap: 16px; margin-bottom: 18px;
+}
+
+.user-avatar-frame {
+    width: 46px; height: 46px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
+    border: 2px solid var(--bg-deep);
+}
+
+.user-avatar-img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: brightness(0.9) contrast(1.05);
+}
+
+.user-meta-data { display: flex; flex-direction: column; text-align: left; }
+.user-meta-data h4 { font-size: 0.95rem; font-weight: 700; color: var(--text-bright); margin-bottom: 2px; }
+.user-meta-data span { font-family: monospace; font-size: 0.65rem; color: var(--text-dim); letter-spacing: 0.5px; }
+
+/* Neon Cyber Star Ratings */
+.star-rating-row {
+    display: flex; gap: 4px; color: var(--text-dim); font-size: 0.95rem; margin-bottom: 16px;
+    cursor: default; transition: color 0.3s ease;
+}
+.star-rating-row span {
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.review-quote-text {
+    font-size: 0.85rem; color: rgba(255, 255, 255, 0.65); line-height: 1.6; text-align: left;
+}
+
+/* ==========================================
+   INTERACTIVE NEON HOVER GLOWS
+========================================== */
+.review-card:hover {
+    border-color: rgba(0, 240, 255, 0.2);
+    box-shadow: 0 20px 50px rgba(0, 240, 255, 0.05);
+}
+.review-card:hover .card-laser-glow { width: calc(100% - 48px); }
+.review-card:hover .star-rating-row { color: var(--neon-cyan); text-shadow: 0 0 8px rgba(0, 240, 255, 0.6); }
+.review-card:hover .star-rating-row span { transform: scale(1.12); }
+.review-card:hover .review-quote-text { color: var(--text-bright); }
+
+/* Alternating themed hover states mapped onto secondary row indices */
+.review-card:nth-child(2):hover { border-color: rgba(157, 78, 221, 0.2); box-shadow: 0 20px 50px rgba(157, 78, 221, 0.05); }
+.review-card:nth-child(2):hover .star-rating-row { color: var(--neon-purple); text-shadow: 0 0 8px rgba(157, 78, 221, 0.6); }
+
+.review-card:nth-child(3):hover { border-color: rgba(0, 255, 136, 0.2); box-shadow: 0 20px 50px rgba(0, 255, 136, 0.05); }
+.review-card:nth-child(3):hover .star-rating-row { color: var(--accent-success); text-shadow: 0 0 8px rgba(0, 255, 136, 0.6); }
+
+/* ==========================================
+   FLUID RESPONSIVE METRICS
+========================================== */
+@media (max-width: 992px) {
+    .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr); /* Collapse down smoothly to dual column layout layouts */
+        gap: 24px;
+    }
+    .scroll-letter-header { font-size: 2.3rem; }
+    .testimonial-container { padding: 0 24px; }
+}
+
+@media (max-width: 640px) {
+    .testimonial-grid {
+        grid-template-columns: 1fr; /* Pure linear stack format for smartphone screen padding comfort */
+    }
+    .scroll-letter-header { font-size: 1.85rem; }
+    .testimonial-container { padding: 0 16px; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. SCROLL REVEAL: Letter-by-Letter Title Calculator
+    const reviewTitle = document.getElementById("scrollReviewTitle");
+    if (reviewTitle) {
+        const textPayload = reviewTitle.textContent.trim();
+        reviewTitle.textContent = "";
+
+        const splitSpansList = textPayload.split("").map(character => {
+            const span = document.createElement("span");
+            span.className = "char-node";
+            span.innerHTML = character === " " ? "&nbsp;" : character;
+            reviewTitle.appendChild(span);
+            return span;
+        });
+
+        function handleReviewTitleReveal() {
+            const rect = reviewTitle.getBoundingClientRect();
+            const viewHeight = window.innerHeight;
+            
+            const startRevealPos = viewHeight * 0.92;
+            const endRevealPos = viewHeight * 0.4;
+            
+            let revealFraction = (startRevealPos - rect.top) / (startRevealPos - endRevealPos);
+            revealFraction = Math.max(0, Math.min(1, revealFraction));
+
+            const maxIndexToLight = Math.floor(revealFraction * splitSpansList.length);
+            splitSpansList.forEach((spanNode, index) => {
+                if (index < maxIndexToLight) spanNode.classList.add("illuminated");
+                else spanNode.classList.remove("illuminated");
+            });
+        }
+        window.addEventListener("scroll", handleReviewTitleReveal);
+        handleReviewTitleReveal();
+    }
+
+    // 2. SCROLL REVEAL: One-by-One Delayed Card Grid Cascades
+    const activeReviewCards = document.querySelectorAll(".review-card");
+
+    function handleReviewCardsCascadeReveal() {
+        activeReviewCards.forEach((card, progressiveIdx) => {
+            const cardTop = card.getBoundingClientRect().top;
+            const screenActivationBarrier = window.innerHeight * 0.88;
+
+            if (cardTop < screenActivationBarrier) {
+                if (!card.classList.contains("card-revealed")) {
+                    // Timeout delay multiplication guarantees clean step-by-step entrances
+                    setTimeout(() => {
+                        card.classList.add("card-revealed");
+                    }, progressiveIdx * 130); // 130ms delay interval forces beautiful chain reactions
+                }
+            }
+        });
+    }
+    window.addEventListener("scroll", handleReviewCardsCascadeReveal);
+    handleReviewCardsCascadeReveal();
+});
+
+</script>
+
+<section class="single-line-cta-section">
+    <!-- Atmospheric base layout background image tag -->
+    <img src="https://unsplash.com" alt="Cyber Glow Backdrop" class="cta-banner-bg">
+
+    <div class="cta-banner-container">
+        
+        <!-- Left Side: Content Title Only -->
+        <div class="cta-left-content">
+            <h2 class="scroll-letter-title" id="scrollCtaBannerTitle">
+                Secure your digital matrix today
+            </h2>
+        </div>
+
+        <!-- Right Side: Floating Action Button Only -->
+        <div class="cta-right-action">
+            <div class="floating-btn-wrap">
+                <button class="banner-action-btn" type="button">
+                    <span>Deploy Immediate Guard</span>
+                    <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+}
+
+/* ==========================================
+   CTA BANNER GENERAL LAYOUT SETTINGS
+========================================== */
+.single-line-cta-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 50px;       /* Strict 50px top padding layout limit */
+    padding-bottom: 30px;    /* Strict 30px bottom padding layout footprint */
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(0, 240, 255, 0.05);
+    border-bottom: 1px solid rgba(157, 78, 221, 0.05);
+}
+
+.cta-banner-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; opacity: 0.04; pointer-events: none; z-index: 1;
+}
+
+.cta-banner-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between; /* Perfect horizontal corner-to-corner balance */
+    align-items: center;
+    gap: 40px;
+    z-index: 3;
+}
+
+/* ==========================================
+   LEFT ZONE - TITLE STYLING
+========================================== */
+.cta-left-content {
+    display: flex;
+    max-width: 65%;
+    flex: 1;
+}
+
+.scroll-letter-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    color: var(--text-bright);
+    margin: 0;
+    text-align: left;
+    word-break: keep-all; 
+    overflow-wrap: break-word;
+    width: 100%;
+}
+
+/* Character split node baselines before scrolling viewport intersection */
+.scroll-letter-title .char-unit {
+    display: inline-block;
+    opacity: 0.15;
+    transform: scale(0.95);
+    transition: opacity 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), text-shadow 0.2s ease;
+}
+
+.scroll-letter-title .char-unit.glow-active {
+    opacity: 1;
+    transform: scale(1);
+    color: var(--text-bright);
+    text-shadow: 0 0 15px rgba(0, 240, 255, 0.45);
+}
+
+/* ==========================================
+   RIGHT ZONE - FLOATING BUTTON ACTION
+========================================== */
+.cta-right-action {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.floating-btn-wrap {
+    animation: ctaButtonFloat 4.5s ease-in-out infinite; /* Automated smooth float loop */
+}
+
+.banner-action-btn {
+    padding: 16px 36px;
+    border-radius: 35px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--text-bright);
+    background: linear-gradient(90deg, var(--neon-purple), var(--neon-cyan));
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+}
+
+/* Hover glow illumination effects */
+.banner-action-btn:hover {
+    box-shadow: 0 12px 35px rgba(0, 240, 255, 0.45);
+    transform: scale(1.02);
+}
+
+.banner-action-btn:active {
+    transform: scale(0.98);
+}
+
+.btn-arrow {
+    width: 16px; height: 16px;
+    transition: transform 0.3s ease;
+}
+.banner-action-btn:hover .btn-arrow {
+    transform: translateX(4px);
+}
+
+/* Floating animation timelines */
+@keyframes ctaButtonFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+}
+
+/* ==========================================
+   FLUID RESPONSIVE DESIGN BOUNDARIES
+========================================== */
+@media (max-width: 992px) {
+    .cta-banner-container {
+        flex-direction: column; /* Flips track layout cleanly to columns on tablet/mobile screens */
+        text-align: center;
+        gap: 30px;
+        padding: 0 24px;
+    }
+    
+    .cta-left-content {
+        max-width: 100%;
+    }
+    
+    .scroll-letter-title { font-size: 2.2rem; text-align: center; }
+    .cta-right-action { justify-content: center; width: 100%; }
+}
+
+@media (max-width: 480px) {
+    .cta-banner-container { padding: 0 16px; }
+    .scroll-letter-title { font-size: 1.75rem; }
+    .banner-action-btn { width: 100%; justify-content: center; padding: 14px; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // SCROLL REVEAL: Minimal Single-Line Title Animation Engine
+    const ctaTitleNode = document.getElementById("scrollCtaBannerTitle");
+
+    if (ctaTitleNode) {
+        const structuralTextStr = ctaTitleNode.textContent.trim();
+        ctaTitleNode.textContent = ""; // Clear placeholder text context
+
+        // Split text cleanly into individual character wrapper span nodes
+        const charSpanElements = structuralTextStr.split("").map(character => {
+            const spanNode = document.createElement("span");
+            spanNode.className = "char-unit";
+            // Ensure blank spacing values are rendered as non-breaking entities
+            spanNode.innerHTML = character === " " ? "&nbsp;" : character;
+            ctaTitleNode.appendChild(spanNode);
+            return spanNode;
+        });
+
+        function handleBannerTitleScrollReveal() {
+            const nodeRect = ctaTitleNode.getBoundingClientRect();
+            const browserViewportHeight = window.innerHeight;
+            
+            // Text illuminates progressively once section passes bottom 95% threshold
+            const startScrollRevealLine = browserViewportHeight * 0.95;
+            const endScrollRevealLine = (browserViewportHeight * 0.4) + 100; // Built-in padding buffer
+            
+            let scrollRevealProgress = (startScrollRevealLine - nodeRect.top) / (startScrollRevealLine - endScrollRevealLine);
+            scrollRevealProgress = Math.max(0, Math.min(1, scrollRevealProgress));
+
+            const totalActiveCharsIndex = Math.floor(scrollRevealProgress * charSpanElements.length);
+
+            charSpanElements.forEach((spanNode, index) => {
+                if (index < totalActiveCharsIndex) {
+                    spanNode.classList.add("glow-active");
+                } else {
+                    spanNode.classList.remove("glow-active");
+                }
+            });
+        }
+
+        // Attach lightweight resize and scroll window listener loops
+        window.addEventListener("scroll", handleBannerTitleScrollReveal);
+        window.addEventListener("resize", handleBannerTitleScrollReveal);
+        
+        // Execute an instant baseline run frame immediately on DOM initialization
+        handleBannerTitleScrollReveal(); 
+    }
+});
+
+</script>
+
+<footer class="cyber-footer">
+    <div class="footer-top-grid">
+        
+        <!-- Column 1: Cybersecurity Brand Info & 5 Vector Social Nodes -->
+        <div class="footer-brand-column">
+            <!-- Brand logo triggers scroll back to top of the webpage window -->
+            <div class="footer-logo-wrapper" id="footerLogoBtn" title="Back to Top">
+                <img src="https://placehold.co" alt="Stackly Logo" class="footer-brand-img">
+            </div>
+            <p class="brand-bio-text">
+                Securing enterprise perimeter clusters with automated zero-trust architecture, multi-vector threat mitigation modules, and continuous low-latency network camouflage.
+            </p>
+            
+            <!-- 5 Ordered Social Icons linked to 404 targets -->
+            <div class="social-icon-row">
+                <!-- 1. Instagram -->
+                <a href="404.html" class="social-btn" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" class="social-svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.849.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.125-1.664 4.671-4.919 4.819-1.265.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.82-.058-1.265-.069-1.64-.069-4.849 0-3.204.013-3.583.069-4.849.149-3.125 1.664-4.671 4.919-4.819 1.265-.057 1.644-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.79.073 7.151.014 8.433 0 8.84 0 12c0 3.159.014 3.567.072 4.847.199 4.359 2.62 6.782 6.98 6.981 1.28.058 1.688.072 4.848.072 3.159 0 3.567-.014 4.847-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.848 0-3.159-.014-3.567-.073-4.847-.199-4.359-2.62-6.782-6.979-6.98C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                </a>
+                <!-- 2. LinkedIn -->
+                <a href="404.html" class="social-btn" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" class="social-svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <!-- 3. YouTube -->
+                <a href="404.html" class="social-btn" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" class="social-svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.016 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.86-.502 5.74a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.016 0 0 0 2.122-2.136C24 15.86 24 12 24 12s0-3.86-.502-5.74zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+                <!-- 4. Facebook -->
+                <a href="404.html" class="social-btn" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24" class="social-svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <!-- 5. Twitter / X -->
+                <a href="404.html" class="social-btn" aria-label="Twitter X">
+                    <svg viewBox="0 0 24 24" class="social-svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Links Directory Column 2: Customized Network Links -->
+        <div class="footer-links-column">
+            <h3>Infrastructure</h3>
+            <a href="404.html">Camouflage Grid</a>
+            <a href="404.html">Zero-Trust Node</a>
+            <a href="404.html">Reflex Sandbox</a>
+            <a href="404.html">Key Mutation</a>
+            <a href="404.html">Threat Metrics</a>
+        </div>
+
+        <!-- Links Directory Column 3 -->
+        <div class="footer-links-column">
+            <h3>Intelligence</h3>
+            <a href="404.html">Vulnerability Ops</a>
+            <a href="404.html">Security Blog</a>
+            <a href="404.html">Threat Intel</a>
+            <a href="404.html">Patch Pipeline</a>
+            <a href="404.html">Incident Desk</a>
+        </div>
+
+        <!-- Links Directory Column 4 -->
+        <div class="footer-links-column">
+            <h3>Governance</h3>
+            <a href="404.html">Compliance Vault</a>
+            <a href="404.html">API Reference</a>
+            <a href="404.html">Node Status</a>
+            <a href="404.html">Audit Protocol</a>
+            <a href="404.html">Operator Desk</a>
+        </div>
+
+        <!-- Column 5: Subscription Console Area -->
+        <div class="footer-news-column">
+            <h3>Threat Watch</h3>
+            <p class="news-subtitle">Subscribe to receive system exploit patches and weekly perimeter vulnerability reports.</p>
+            
+            <form id="footerNewsForm" novalidate>
+                <div class="news-input-wrapper">
+                    <input type="email" id="newsEmailInput" placeholder="routing_email@domain.com" autocomplete="off">
+                </div>
+                <button type="submit" class="news-submit-btn">Initialize Sync</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Bottom Legals Bar Container -->
+    <div class="footer-bottom-bar">
+        <div class="bottom-bar-container">
+            <span class="copyright-text">&copy; 2026 Stackly Systems. Perimeter Secured.</span>
+            
+            <div class="legal-links-row">
+                <a href="404.html">Privacy Encryption</a>
+                <a href="404.html">Terms of Deployment</a>
+                <a href="404.html">Cookie Isolation</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Fixed Floating Back-to-Top Scroller -->
+<button class="fixed-top-scroller" id="floatingTopBtn" title="Back to Top" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+</button>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-error: #ff3366;
+}
+
+/* ==========================================
+   GLOBAL FOOTER CUSTOMIZED CYBER PALETTE
+========================================== */
+.cyber-footer {
+    width: 100%;
+    display: block;
+    background-color: #03060c; /* Deep black space layout baseline */
+    border-top: 1px solid rgba(0, 240, 255, 0.15); /* Neon cyan crisp top seam border */
+    padding-top: 60px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.footer-top-grid {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 40px 50px 40px;
+    display: grid;
+    grid-template-columns: 1.35fr repeat(3, 0.7fr) 1.35fr;
+    gap: 40px;
+}
+
+.footer-brand-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-logo-wrapper {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    margin-bottom: 20px;
+}
+.footer-logo-wrapper:hover { transform: scale(1.02); }
+.footer-brand-img { height: 34px; width: auto; display: block; }
+
+.brand-bio-text {
+    font-size: 0.95rem; /* High readability contrast scale */
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.social-icon-row {
+    display: flex;
+    gap: 12px;
+}
+
+.social-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.social-svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--text-bright); /* Forced solid white icon nodes */
+}
+
+/* Cyber network glow filters activated on mouse focus */
+.social-btn:hover {
+    border-color: var(--neon-cyan);
+    background-color: rgba(0, 240, 255, 0.05);
+    transform: translateY(-3px);
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.3);
+}
+.social-btn:hover .social-svg { fill: var(--neon-cyan); }
+
+/* Alternating themed accents to split icon block visuals */
+.social-btn:nth-child(even):hover {
+    border-color: var(--neon-purple);
+    background-color: rgba(157, 78, 221, 0.05);
+    box-shadow: 0 0 12px rgba(157, 78, 221, 0.3);
+}
+.social-btn:nth-child(even):hover .social-svg { fill: var(--neon-purple); }
+
+/* Directory Link Links Grid Column layout sets */
+.footer-links-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.footer-links-column h3, 
+.footer-news-column h3 {
+    font-size: 1.05rem; /* Increased font scale heading */
+    font-weight: 700;
+    color: var(--text-bright); /* Forced white title */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+}
+
+.footer-links-column a {
+    font-size: 0.95rem; /* Increased font scale choices */
+    color: var(--text-dim);
+    text-decoration: none;
+    margin-bottom: 12px;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+.footer-links-column a:hover {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
+}
+
+.footer-news-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.news-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+#footerNewsForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.news-input-wrapper { width: 100%; }
+
+#newsEmailInput {
+    width: 100%;
+    padding: 13px 16px;
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    color: var(--text-bright); /* Forced white input text */
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    transition: border-color 0.25s ease;
+}
+#newsEmailInput:focus {
+    outline: none;
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 8px rgba(0, 240, 255, 0.15);
+}
+
+/* Transmit Sync Button Layout Rules */
+.news-submit-btn {
+    width: 100%;
+    padding: 13px;
+    background: linear-gradient(90deg, var(--neon-purple), var(--neon-cyan));
+    color: var(--text-bright); /* Forced bright readable choice */
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+.news-submit-btn:hover {
+    box-shadow: 0 6px 20px rgba(0, 240, 255, 0.35);
+    transform: translateY(-1px);
+}
+
+/* ==========================================
+   BOTTOM DETAILS LEGALS SECTION
+========================================== */
+.footer-bottom-bar {
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.02);
+    background-color: #020408;
+    padding: 24px 0;
+}
+
+.bottom-bar-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright-text {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+}
+
+.legal-links-row {
+    display: flex;
+    gap: 24px;
+}
+
+.legal-links-row a {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.legal-links-row a:hover { color: var(--text-bright); }
+
+/* ==========================================
+   FLOATING UPWARD ACTION BACK TO TOP SCROLLER
+========================================== */
+.fixed-top-scroller {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--neon-cyan); /* Styled custom cyan ring border */
+    color: var(--neon-cyan);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 240, 255, 0.2);
+    z-index: 990;
+    opacity: 0;
+    transform: translateY(15px);
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.fixed-top-scroller.scroller-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.fixed-top-scroller svg { width: 18px; height: 18px; }
+.fixed-top-scroller:hover { background-color: var(--neon-cyan); color: #03060c; transform: translateY(-3px); }
+
+/* ==========================================
+   MANDATORY RESPONSIVE DESIGN VIEWPORTS
+========================================== */
+@media (max-width: 1024px) {
+    .footer-top-grid {
+        grid-template-columns: 1fr 1fr; /* Rearrange grid column layouts down into dual sets to bypass text overlaps */
+        gap: 40px;
+    }
+    .footer-news-column {
+        grid-column: span 2;
+        max-width: 440px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bottom-bar-container {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+    .legal-links-row { justify-content: center; flex-wrap: wrap; gap: 16px; }
+}
+
+@media (max-width: 540px) {
+    .footer-top-grid {
+        grid-template-columns: 1fr; /* Infallible single column stacks for total mobile protection padding scaling bounds */
+    }
+    .footer-news-column { grid-column: span 1; max-width: 100%; }
+    .footer-top-grid, .bottom-bar-container { padding-left: 24px; padding-right: 24px; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    const footerLogoBtn = document.getElementById("footerLogoBtn");
+    const floatingTopBtn = document.getElementById("floatingTopBtn");
+    const newsForm = document.getElementById("footerNewsForm");
+    const newsEmailInput = document.getElementById("newsEmailInput");
+
+    // 1. Unified Back-to-Top Window Reset Smooth Engine Call
+    function triggerWindowTopReset() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth" 
+        });
+    }
+
+    if (footerLogoBtn) footerLogoBtn.addEventListener("click", triggerWindowTopReset);
+    if (floatingTopBtn) floatingTopBtn.addEventListener("click", triggerWindowTopReset);
+
+    // 2. Observer monitoring viewport scrolling height to show/fade the floating button ring safely
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            floatingTopBtn.classList.add("scroller-visible");
+        } else {
+            floatingTopBtn.classList.remove("scroller-visible");
+        }
+    });
+
+    // 3. Zero-Trust Newsletter Empty Check & 404 Route Interception
+    if (newsForm) {
+        newsForm.addEventListener("submit", (event) => {
+            event.preventDefault(); 
+
+            const emailPayload = newsEmailInput.value.trim();
+
+            // Validate that the field is not empty before transmitting
+            if (!emailPayload) {
+                newsEmailInput.style.borderColor = "var(--accent-error)";
+                alert("Please fill the email field before subscribing.");
+                return;
+            }
+
+            // Route successfully verified submission channels straight into your 404 terminal page
+            window.location.href = "404.html";
+        });
+
+        // Instantly wipe out error border flashes upon subsequent input change triggers
+        if (newsEmailInput) {
+            newsEmailInput.addEventListener("input", () => {
+                newsEmailInput.style.borderColor = "rgba(255, 255, 255, 0.05)";
+            });
+        }
+    }
+});
+
+</script>
+
+</body>

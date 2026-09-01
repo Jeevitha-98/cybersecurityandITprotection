@@ -1,0 +1,1837 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - Cyber Protection</title>
+    <!-- Link External Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CREATIVE PRELOADER LAYER -->
+    <div id="preloader">
+        <div class="cyber-anim-container">
+            <!-- Outer spinning dashed track -->
+            <div class="orbital-ring"></div>
+            <!-- Inner reverse spinning track -->
+            <div class="orbital-ring-inner"></div>
+            <!-- Vector Shield Icon -->
+            <svg class="svg-shield-icon" viewBox="0 0 24 24" xmlns="http://w3.org">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <!-- Branded Preloader Heading -->
+        <div class="loader-title">Stackly</div>
+        <div class="loader-status">Initializing Firewall</div>
+        <div class="progress-timeline">
+            <div class="progress-fill"></div>
+        </div>
+    </div>
+
+    <!-- MAIN UI PAGE (Hidden initially) -->
+    
+
+    <!-- Link External JavaScript Logic -->
+    <script> document.addEventListener("DOMContentLoaded", () => {
+    const preloader = document.getElementById("preloader");
+    const appContent = document.getElementById("appContent");
+    const actionBtn = document.getElementById("actionBtn");
+
+    // Clear and handle the 2-second loading time handover
+    setTimeout(() => {
+        if (preloader) {
+            preloader.classList.add("loaded");
+        }
+        if (appContent) {
+            appContent.classList.add("visible");
+        }
+    }, 2000); 
+
+    if (actionBtn) {
+        actionBtn.addEventListener("click", () => {
+            alert("Stackly Security Protocols updated successfully!");
+        });
+    }
+});
+</script>
+
+<header class="main-header">
+    <div class="header-container">
+        <!-- Brand Logo Container (Tied to JS Window Reload Engine) -->
+        <div class="logo-wrapper" id="brandLogoBtn" title="Refresh Dashboard">
+            <img src="https://placehold.co" alt="Stackly Logo" class="brand-img">
+        </div>
+
+        <!-- Centralized App Menu Navigation Links (Now with Contact Us) -->
+        <nav class="nav-menu" id="navigationDrawer">
+            <a href="index.html" class="nav-link ">Home</a>
+            <a href="firewall.html" class="nav-link">Firewall</a>
+            <a href="logs.html" class="nav-link">Threat Logs</a>
+            <a href="analytics.html" class="nav-link ">Analytics</a>
+            <a href="blogs.html" class="nav-link ">Blogs</a>
+            <a href="contact.html" class="nav-link active">Contact Us</a>
+        </nav>
+
+        <!-- Authorization Action Controls Corner -->
+        <div class="auth-wrapper">
+      <button class="auth-btn" onclick="window.location.href='login.html'">
+    Access Console
+</button>
+        </div>
+
+        <!-- Adaptive Mobile Hamburger Icon Trigger -->
+        <button class="hamburger-menu" id="hamburgerToggle" aria-label="Toggle Navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </div>
+</header>
+
+<!-- Overlay background asset used to execute backdrop blur behind the open mobile nav menu -->
+<div class="blur-backdrop" id="screenOverlay"></div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const brandLogoBtn = document.getElementById("brandLogoBtn");
+    const hamburgerToggle = document.getElementById("hamburgerToggle");
+    const screenOverlay = document.getElementById("screenOverlay");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    // 1. Core Page Refresh Bind tied to Brand Image element clicks
+    if (brandLogoBtn) {
+        brandLogoBtn.addEventListener("click", () => {
+            window.location.reload();
+        });
+    }
+
+    // 2. Responsive Mobile Navigation Menu & Blurring Layer Toggle Control
+    function toggleMobileMenu() {
+        document.body.classList.toggle("menu-open");
+    }
+
+    if (hamburgerToggle) {
+        hamburgerToggle.addEventListener("click", toggleMobileMenu);
+    }
+
+    // Collapse drawer panel if a user clicks outside the menu boundaries onto the blurred viewport backdrop
+    if (screenOverlay) {
+        screenOverlay.addEventListener("click", toggleMobileMenu);
+    }
+
+    // Auto-collapse mobile navigation dropdown drawer seamlessly when items are selected
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            document.body.classList.remove("menu-open");
+            
+            // Clean active track classes variables 
+            navLinks.forEach(item => item.classList.remove("active"));
+            link.classList.add("active");
+        });
+    });
+});
+
+</script>
+
+<section class="contact-hero-section" id="contact-uplink">
+    <!-- Atmospheric blueprint coordinate wireframe overlay -->
+    <div class="contact-hero-grid-mask"></div>
+
+    <div class="contact-hero-container">
+        
+        <!-- Left Side Column: Text Content Block Matrix -->
+        <div class="contact-hero-content">
+            <div class="cyber-badge">// SECURE_SIGNAL_UPLINK // GATEWAY_ACTIVE</div>
+            <h1 class="contact-hero-title">Establish Secure Perimeter Link</h1>
+            <p class="contact-hero-desc">
+                Connect directly with Stackly security operations commanders. Initialize encrypted communication channels to report network perimeter vulnerability vectors, request enterprise zero-trust deployments, or audit cloud staging camouflage profiles.
+            </p>
+
+            <!-- Floating CTA Controls Row -->
+            <div class="floating-btn-wrap">
+                <div class="cta-group">
+                    <button class="cta-btn primary-cta" type="button" onclick="document.getElementById('contact-form').scrollIntoView({behavior: 'smooth'})">Initialize Link</button>
+                    <button class="cta-btn secondary-cta" type="button">
+                        <span>View Node Status</span> 
+                        <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side Column: Interactive 3D Satellite Uplink Vector SVG Diagram -->
+        <div class="contact-hero-visual">
+            <div class="vector-hud-scope">
+                <svg class="hud-matrix-svg" viewBox="0 0 220 220" xmlns="http://w3.org">
+                    <defs>
+                        <linearGradient id="uplinkBeamGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="rgba(0, 240, 255, 0.18)" stop-opacity="1"/>
+                            <stop offset="60%" stop-color="rgba(157, 78, 221, 0.03)" stop-opacity="0.4"/>
+                            <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+                        </linearGradient>
+                        <filter id="neonGlow">
+                            <feGaussianBlur stdDeviation="4" result="blur"/>
+                            <feMerge>
+                                <feMergeNode in="blur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+
+                    <!-- Concentric Target Reticle Lines Grid -->
+                    <circle cx="110" cy="110" r="95" fill="none" stroke="rgba(0, 240, 255, 0.04)" stroke-width="1" />
+                    <circle cx="110" cy="110" r="70" fill="none" stroke="#9d4edd" stroke-width="1" stroke-dasharray="6, 4" class="radar-inner-ring" />
+                    <circle cx="110" cy="110" r="45" fill="none" stroke="#00f0ff" stroke-width="1.5" />
+                    <circle cx="110" cy="110" r="6" fill="#ffffff" filter="url(#neonGlow)"/>
+                    
+                    <!-- Global Uplink Nodes Alignment -->
+                    <g class="satellite-orbit-group">
+                        <!-- Orbit Path 1 -->
+                        <ellipse cx="110" cy="110" rx="80" ry="25" fill="none" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" transform="rotate(-30 110 110)" />
+                        <!-- Orbit Path 2 -->
+                        <ellipse cx="110" cy="110" rx="80" ry="25" fill="none" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" transform="rotate(30 110 110)" />
+                        
+                        <!-- Transmitting Beacon Signals -->
+                        <circle cx="40" cy="70" r="4.5" fill="#00f0ff" class="radar-ping-dot" filter="url(#neonGlow)" />
+                        <circle cx="180" cy="150" r="4.5" fill="#9d4edd" class="radar-ping-dot" filter="url(#neonGlow)" />
+                        <circle cx="110" cy="25" r="3.5" fill="#00ff88" class="radar-ping-dot" filter="url(#neonGlow)" />
+                    </g>
+
+                    <!-- Endless Sweeping Visual Laser Beam Overlay Line -->
+                    <path d="M110,110 L220,110 A110,110 0 0,1 110,220 Z" fill="url(#uplinkBeamGlow)" class="radar-sweep-beam-path"/>
+                </svg>
+
+                <div class="hud-telemetry-chip chip-top">UPLINK // ESTABLISHED</div>
+                <div class="hud-telemetry-chip chip-bottom">ENC_LEVEL // AES_256</div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-success: #00ff88;
+    --header-height: 70px;
+}
+
+/* ==========================================
+   RESTRICTED PADDING HERO ARRANGEMENT
+========================================== */
+.contact-hero-section {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - var(--header-height));
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+    padding-top: 100px;        /* Strict 50px top padding limit constraint */
+    padding-bottom: 30px;     /* Strict 30px bottom padding footprint layout */
+}
+
+.contact-hero-grid-mask {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.006) 1px, transparent 1px);
+    background-size: 26px 28px;
+    pointer-events: none; z-index: 1;
+}
+
+.contact-hero-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    /* Asymmetric column splitting format avoids layout text overlapping */
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 60px;
+    align-items: center;
+    z-index: 2;
+}
+
+/* ==========================================
+   LEFT PANEL - TYPOGRAPHY & INTRO CORES
+========================================== */
+.contact-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cyber-badge {
+    font-family: monospace;
+    color: var(--neon-cyan);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+}
+
+.contact-hero-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1.15;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    color: var(--text-bright); /* Forced crisp white text color system */
+    margin-top: 15px;
+    margin-bottom: 25px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.contact-hero-desc {
+    font-size: 1.05rem;
+    color: var(--text-bright); /* Forced bright white paragraph color */
+    line-height: 1.65;
+    margin-bottom: 35px;
+    opacity: 0.95;
+    text-align: left;
+    transition: color 0.3s ease;
+}
+
+/* ==========================================
+   FLOATING ACTION BUTTON CONTROLS ROW
+========================================== */
+.floating-btn-wrap {
+    animation: actionRowFloat 4.5s ease-in-out infinite; /* Automated vertical float engine loop */
+    width: 100%;
+}
+
+.cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.cta-btn {
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--text-bright); /* Forced white typography buttons */
+    box-sizing: border-box;
+    white-space: nowrap;
+    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+}
+
+.primary-cta {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+.primary-cta:hover {
+    background-color: var(--text-bright);
+    color: var(--bg-deep) !important;
+    border-color: var(--text-bright);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+.secondary-cta {
+    background: rgba(13, 21, 39, 0.6);
+    border: 1px solid var(--neon-cyan);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
+}
+.secondary-cta:hover {
+    background: linear-gradient(90deg, var(--neon-purple), var(--neon-cyan));
+    border-color: transparent;
+    box-shadow: 0 10px 30px rgba(0, 240, 255, 0.35);
+    transform: translateY(-2px);
+}
+
+.btn-arrow { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.5; transition: transform 0.3s ease; }
+.secondary-cta:hover .btn-arrow { transform: translateX(4px); }
+
+/* ==========================================
+   RIGHT PANEL - RESPONSIVE HUD SATELLITE
+========================================== */
+.contact-hero-visual {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.vector-hud-scope {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    aspect-ratio: 1 / 1;
+    background: rgba(13, 21, 39, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hud-matrix-svg { width: 100%; height: auto; display: block; }
+
+/* Continuous vector movement animation loops */
+.radar-sweep-beam-path { transform-origin: 110px 110px; animation: continuousSonarSweep 4s linear infinite; }
+.radar-inner-ring { transform-origin: 110px 110px; animation: continuousSonarSweep 16s linear infinite reverse; }
+.satellite-orbit-group { transform-origin: 110px 110px; animation: continuousSonarSweep 25s linear infinite; }
+.radar-ping-dot { animation: pulseRadarPing 1.5s infinite ease-in-out; transform-origin: center; }
+
+/* Interactive Hover Content Glows mappings */
+.contact-hero-section:hover .contact-hero-title { color: var(--neon-cyan); text-shadow: 0 0 15px rgba(0, 240, 255, 0.5); }
+.contact-hero-section:hover .contact-hero-desc { color: var(--text-bright); }
+
+.vector-hud-scope:hover {
+    border-color: rgba(0, 240, 255, 0.25);
+    box-shadow: 0 20px 50px rgba(0, 240, 255, 0.06);
+}
+.vector-hud-scope:hover .hud-telemetry-chip { color: var(--text-bright); border-color: rgba(0, 240, 255, 0.3); }
+
+/* HUD Labels absolute position anchors */
+.hud-telemetry-chip {
+    position: absolute; font-family: monospace; font-size: 0.65rem; color: var(--text-dim);
+    letter-spacing: 1px; background-color: var(--bg-deep); padding: 2px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.04); border-radius: 4px; transition: color 0.3s, border-color 0.3s;
+}
+.chip-top { top: -6px; }
+.chip-bottom { bottom: -6px; }
+
+/* ==========================================
+   CORE RUNTIME SYSTEM KEYFRAME ENGINES
+========================================== */
+@keyframes continuousSonarSweep { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes pulseRadarPing { 0%, 100% { transform: scale(1); opacity: 0.5; } 50% { transform: scale(1.3); opacity: 1; } }
+@keyframes actionRowFloat { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-5px); } }
+
+/* ==========================================
+   FLUID RESPONSIVE VIEWPORT BOUNDS
+========================================== */
+@media (max-width: 992px) {
+    .contact-hero-container {
+        grid-template-columns: 1fr; /* Switch to clean single-column row stack layouts to avoid text collisions */
+        padding: 0 24px;
+        gap: 50px;
+    }
+    .contact-hero-content { align-items: center; text-align: center; }
+    .contact-hero-title { font-size: 2.6rem; text-align: center; }
+    .contact-hero-desc { max-width: 100%; font-size: 0.95rem; }
+    .cta-group { justify-content: center; }
+    .contact-hero-visual { justify-content: center; width: 100%; }
+    .vector-hud-scope { max-width: 320px; }
+}
+
+@media (max-width: 480px) {
+    .contact-hero-container { padding: 0 16px; }
+    .contact-hero-title { font-size: 2.1rem; }
+    .cta-group { flex-direction: column; }
+    .cta-btn { width: 100%; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // UTILITY SCROLL: Triggers fluid anchor jumps without page layout layout flashes
+    const primaryLinkBtn = document.querySelector(".primary-cta");
+
+    if (primaryLinkBtn) {
+        primaryLinkBtn.addEventListener("click", (event) => {
+            event.preventDefault();
+            
+            // Looks down the stacked DOM for your dedicated forms console segment
+            const targetFormNode = document.getElementById("contact-form");
+            
+            if (targetFormNode) {
+                targetFormNode.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            } else {
+                // Secondary backup buffer logs error code parameters onto console matrix lines safely
+                console.warn("UPLINK_ALERT // Target node [contact-form] missing from current stack blueprint.");
+            }
+        });
+    }
+});
+
+</script>
+
+<section class="contact-form-section" id="contact-form">
+    <div class="contact-form-container">
+        
+        <!-- Left Side Column: Head Office Terminal Directory Row Stack -->
+        <div class="contact-info-panel">
+            <div class="head-office-badge">
+                <span class="badge-dot"></span> SECURE NOC DESK
+            </div>
+            <h2 class="info-panel-title">Reach Our Security Team</h2>
+
+            <div class="directory-cards-stack">
+                <!-- Card 1: SOC Physical Coordinates -->
+                <div class="directory-card">
+                    <div class="card-icon-wrap bg-cyan-dim">
+                        <svg viewBox="0 0 24 24" class="card-icon"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-12-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    </div>
+                    <div class="card-text-block">
+                        <span class="card-meta">VISIT OUR COMMAND NODE</span>
+                        <address>Stackly SOC Core, MMR Complex, Periyakollappatty, Salem, Tamil Nadu 636008</address>
+                    </div>
+                </div>
+
+                <!-- Card 2: Secure Phone Phone Lines -->
+                <div class="directory-card">
+                    <div class="card-icon-wrap bg-purple-dim">
+                        <svg viewBox="0 0 24 24" class="card-icon"><path d="M6.62 10.79c1.44 2.83 3.76 5.21 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-16.8-7.61-16.8-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    </div>
+                    <div class="card-text-block">
+                        <span class="card-meta">DIRECT SECURE LINES</span>
+                        <a href="tel:+917010792745" class="telephony-link">+91 7010792745</a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Mail ID Launching Native Outlook Link -->
+                <div class="directory-card">
+                    <div class="card-icon-wrap bg-cyan-dim">
+                        <svg viewBox="0 0 24 24" class="card-icon"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    </div>
+                    <div class="card-text-block">
+                        <span class="card-meta">ELECTRONIC MAIL UPLINK</span>
+                        <a href="mailto:design@stacklystudio.com" class="electronic-mail-link">design@stacklystudio.com</a>
+                    </div>
+                </div>
+
+                <!-- Card 4: Operating Frame Availability -->
+                <div class="directory-card">
+                    <div class="card-icon-wrap bg-purple-dim">
+                        <svg viewBox="0 0 24 24" class="card-icon"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </div>
+                    <div class="card-text-block">
+                        <span class="card-meta">COMMAND DESK AVAILABILITY</span>
+                        <p class="availability-schedule">Mon - Sat: 9:00 AM - 7:00 PM <span class="closed-tag">(Continuous Automated Monitoring)</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side Column: Message Ingestion Card Shield Console -->
+        <div class="contact-form-panel">
+            <div class="secure-form-card">
+                <h3 class="form-card-title">Send Us A Threat Log 📥</h3>
+                
+                <form id="secureContactForm" novalidate>
+                    <!-- Input 1: Full Name / Callsign -->
+                    <div class="console-form-group">
+                        <label for="inputFullName">Full Name / Operator Identity</label>
+                        <input type="text" id="inputFullName" class="cyber-console-input" placeholder="Your full name or operator callsign" autocomplete="off">
+                    </div>
+
+                    <!-- Input 2: Email Address -->
+                    <div class="console-form-group">
+                        <label for="inputEmailAddress">Secure Email Address</label>
+                        <input type="email" id="inputEmailAddress" class="cyber-console-input" placeholder="name@domain.com" autocomplete="off">
+                    </div>
+
+                    <!-- Input 3: Phone Number -->
+                    <div class="console-form-group">
+                        <label for="inputPhoneNumber">Comms Phone Number</label>
+                        <input type="tel" id="inputPhoneNumber" class="cyber-console-input" placeholder="10-digit secure mobile line" autocomplete="off">
+                    </div>
+
+                    <!-- Input 4: Threat Vector Classification Dropdown -->
+                    <div class="console-form-group">
+                        <label for="selectDiscipline">Threat Vector Vector</label>
+                        <div class="dropdown-select-wrapper">
+                            <select id="selectDiscipline" class="cyber-console-input select-node">
+                                <option value="" disabled selected hidden>Select anomaly classification...</option>
+                                <option value="zero-trust">Zero-Trust Network Perimeter Deployment</option>
+                                <option value="camouflage">Cloud Staging Camouflage Profile</option>
+                                <option value="vulnerability">Perimeter Penetration Auditing</option>
+                                <option value="microservice">Autonomous Microservice Sandboxing</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Input 5: Project Narrative Text Area -->
+                    <div class="console-form-group">
+                        <label for="textareaNarrative">Exploit Diagnostic Narrative</label>
+                        <textarea id="textareaNarrative" class="cyber-console-input textarea-node" placeholder="Detail anomalous packet footprint metrics, payload sizes, and observed system anomalies..."></textarea>
+                    </div>
+
+                    <!-- Ingestion Submit Action Button -->
+                    <button type="submit" class="transmit-submit-btn">
+                        <span>Transmit Specifications</span>
+                        <svg viewBox="0 0 24 24" class="btn-arrow-svg"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0a0f1d; /* Snug slate-obsidian shade derived from the source image */
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff; /* Explicitly forced crisp white typography requirement */
+    --text-dim: #55657e;
+    --accent-error: #ff3366;
+}
+
+/* ==========================================
+   FORM CONTAINER PADDING MANAGEMENT
+========================================== */
+.contact-form-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 50px;        /* Strict 50px top padding limit constraint */
+    padding-bottom: 30px;     /* Strict 30px bottom padding layout constraint */
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.contact-form-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    /* Precise side-by-side symmetric layout layout matches source capture */
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* ==========================================
+   LEFT ZONE - TERMINAL DIRECTORY STACK
+========================================== */
+.contact-info-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.head-office-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(0, 240, 255, 0.08);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--neon-cyan);
+    letter-spacing: 1px;
+}
+
+.badge-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background-color: var(--neon-cyan); box-shadow: 0 0 6px var(--neon-cyan);
+}
+
+.info-panel-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--text-bright); /* Forced white title typography rules */
+    margin-top: 15px;
+    margin-bottom: 30px;
+    letter-spacing: -0.5px;
+    text-align: left;
+}
+
+.directory-cards-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.directory-card {
+    background-color: rgba(10, 15, 29, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.card-icon-wrap {
+    width: 44px; height: 44px; border-radius: 50%;
+    display: flex; justify-content: center; align-items: center;
+    flex-shrink: 0;
+}
+.bg-cyan-dim { background-color: rgba(0, 240, 255, 0.06); border: 1px solid rgba(0, 240, 255, 0.1); }
+.bg-purple-dim { background-color: rgba(157, 78, 221, 0.06); border: 1px solid rgba(157, 78, 221, 0.1); }
+
+.card-icon { width: 18px; height: 18px; fill: var(--neon-cyan); }
+.bg-purple-dim .card-icon { fill: var(--neon-purple); }
+
+.card-text-block {
+    display: flex; flex-direction: column; align-items: flex-start; text-align: left;
+}
+
+.card-meta {
+    font-family: monospace; font-size: 0.65rem; color: var(--text-dim);
+    letter-spacing: 1.5px; margin-bottom: 4px;
+}
+
+.directory-card address,
+.directory-card p,
+.directory-card a {
+    font-size: 0.95rem; font-style: normal; line-height: 1.5;
+    color: var(--text-bright); /* Forced white card content text strings block */
+    text-decoration: none; margin: 0; transition: color 0.2s;
+}
+
+.electronic-mail-link, .telephony-link { font-weight: 700; cursor: pointer; }
+.electronic-mail-link:hover { color: var(--neon-cyan); text-shadow: 0 0 8px rgba(0,240,255,0.3); }
+.telephony-link:hover { color: var(--neon-purple); }
+.closed-tag { color: var(--neon-purple); font-weight: 700; margin-left: 4px; }
+
+/* Interactive hovering glows on Left Directory rows modules */
+.directory-card:hover {
+    border-color: rgba(0, 240, 255, 0.15);
+    background-color: rgba(10, 15, 29, 0.7);
+}
+
+/* ==========================================
+   RIGHT SIDE - MESSAGE INGESTION CARD
+========================================== */
+.contact-form-panel {
+    width: 100%; display: flex; justify-content: flex-end;
+}
+
+.secure-form-card {
+    width: 100%; max-width: 540px;
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    border-radius: 16px; padding: 35px 30px;
+    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.45);
+    box-sizing: border-box;
+}
+
+.form-card-title {
+    font-size: 1.25rem; font-weight: 800; text-transform: uppercase;
+    color: var(--text-bright); /* Forced white console card heading */
+    letter-spacing: 0.5px; margin-bottom: 30px; text-align: left;
+}
+
+#secureContactForm {
+    display: flex; flex-direction: column; gap: 20px; width: 100%;
+}
+
+.console-form-group {
+    display: flex; flex-direction: column; align-items: flex-start; width: 100%;
+}
+
+.console-form-group label {
+    font-family: monospace; font-size: 0.7rem; font-weight: 700;
+    text-transform: uppercase; color: var(--text-dim);
+    letter-spacing: 1.5px; margin-bottom: 8px;
+}
+
+/* Custom styled inputs text properties matched from source reference blueprint */
+.cyber-console-input {
+    width: 100%; padding: 13px 16px;
+    background-color: rgba(6, 9, 19, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    color: var(--text-bright); /* Forced white input string streams */
+    font-size: 0.95rem; box-sizing: border-box;
+    transition: border-color 0.25s, background-color 0.25s, box-shadow 0.25s;
+}
+
+.cyber-console-input:focus {
+    outline: none; border-color: rgba(0, 240, 255, 0.4);
+    background-color: rgba(6, 9, 19, 0.6);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.1);
+}
+
+/* Custom Select Dropdown wrapper fixes */
+.dropdown-select-wrapper { width: 100%; position: relative; }
+.select-node {
+    appearance: none; -webkit-appearance: none; cursor: pointer;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://w3.org' viewBox='0 0 24 24' fill='none' stroke='%2355657e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat; background-position: right 16px center; background-size: 14px;
+    padding-right: 40px;
+}
+.select-node option { background-color: #060913; color: var(--text-bright); }
+
+.textarea-node { height: 110px; resize: none; font-family: inherit; line-height: 1.5; }
+
+/* Cybersecurity Blue-Cyan Gradient Submission Button matching image sample */
+.transmit-submit-btn {
+    width: 100%; padding: 14px; margin-top: 10px;
+    background: linear-gradient(90deg, #1fa2ff, #12c2e9, #00f0ff);
+    color: #03060c; border: none; border-radius: 25px;
+    font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+    cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 8px;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.transmit-submit-btn:hover {
+    box-shadow: 0 8px 25px rgba(0, 240, 255, 0.4);
+    transform: translateY(-1px);
+}
+.transmit-submit-btn:active { transform: translateY(0); }
+
+.btn-arrow-svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 3; transition: transform 0.3s ease; }
+.transmit-submit-btn:hover .btn-arrow-svg { transform: translateX(4px); }
+
+/* Blinking error frame animation loop hooks */
+.input-alert-flash { animation: boundaryErrorFlash 0.3s ease infinite alternate; }
+@keyframes boundaryErrorFlash { 0% { box-shadow: 0 0 4px rgba(255, 51, 102, 0.2); } 100% { box-shadow: 0 0 10px rgba(255, 51, 102, 0.5); } }
+
+/* ==========================================
+   FLUID RESPONSIVE DESIGN VIEWPORTS
+========================================== */
+@media (max-width: 992px) {
+    .contact-form-container {
+        grid-template-columns: 1fr; /* Stack columns vertically on touch display monitors */
+        gap: 45px; padding: 0 24px;
+    }
+    .info-panel-title { font-size: 2.1rem; }
+    .contact-form-panel { justify-content: center; }
+    .secure-form-card { max-width: 100%; }
+}
+
+@media (max-width: 480px) {
+    .contact-form-container { padding: 0 16px; gap: 35px; }
+    .info-panel-title { font-size: 1.7rem; }
+    .directory-card { padding: 16px; gap: 14px; }
+    .secure-form-card { padding: 24px 16px; }
+    .transmit-submit-btn { border-radius: 8px; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    const secureForm = document.getElementById("secureContactForm");
+    const requiredInputs = document.querySelectorAll(".cyber-console-input");
+
+    if (secureForm) {
+        secureForm.addEventListener("submit", (event) => {
+            event.preventDefault(); // Intercept browser default action properties
+
+            let dataValidationFlag = true;
+            let firstEmptyElement = null;
+
+            // Audit text inputs inside layout elements array to confirm they are populated
+            requiredInputs.forEach(inputNode => {
+                const checkedPayload = inputNode.value.trim();
+
+                if (!checkedPayload) {
+                    dataValidationFlag = false;
+                    inputNode.style.borderColor = "var(--accent-error)";
+                    inputNode.classList.add("input-alert-flash");
+                    
+                    if (!firstEmptyElement) {
+                        firstEmptyElement = inputNode;
+                    }
+                }
+            });
+
+            // If empty fields exist, throw alerts to the operator desk before any page redirection routes
+            if (!dataValidationFlag) {
+                alert("CRITICAL TRANSMISSION STATUS: Please fill all secure fields before transmitting specifications.");
+                if (firstEmptyElement) firstEmptyElement.focus();
+                return;
+            }
+
+            // Route securely authenticated communications stream to the 404 terminal page loop
+            window.location.href = "404.html";
+        });
+
+        // Wipes out error red border flashes immediately upon subsequent key inputs triggers
+        requiredInputs.forEach(inputNode => {
+            inputNode.addEventListener("input", () => {
+                inputNode.style.borderColor = "rgba(255, 255, 255, 0.05)";
+                inputNode.classList.remove("input-alert-flash");
+            });
+        });
+    }
+});
+
+</script>
+
+<section class="ops-map-section" id="perimeter-map">
+    <!-- Subtle architectural background pattern grid lines -->
+    <div class="map-bg-grid-mesh"></div>
+
+    <div class="map-section-container">
+        
+        <!-- Left Side: Facility Coordinate Information Console -->
+        <div class="map-content-panel">
+            <div class="cyber-badge">// GEOLOCATION // NODE_TRACKING</div>
+            <h2 class="map-main-title">Perimeter Command Node</h2>
+            <p class="map-description">
+                Stackly coordinates physical incident response deployments from our primary Security Operations Center (SOC). Our facility maps ongoing multi-vector infrastructure audits globally to safeguard client networks.
+            </p>
+
+            <div class="facility-telemetry-box">
+                <div class="telemetry-item">
+                    <span class="t-label">FACILITY_ID</span>
+                    <span class="t-val txt-cyan">SOC_CORE_IN_636</span>
+                </div>
+                <div class="telemetry-item">
+                    <span class="t-label">COORDINATES</span>
+                    <span class="t-val txt-purple">11.6961° N, 78.1712° E</span>
+                </div>
+            </div>
+
+            <!-- Redirection trigger maps directly onto real Google Maps coordinates link -->
+            <a href="https://google.com" target="_blank" rel="noopener noreferrer" class="open-map-action-btn">
+                <span>Open Map Node</span>
+                <svg viewBox="0 0 24 24" class="btn-map-vector-icon"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon><line x1="9" y1="3" x2="9" y2="18"></line><line x1="15" y1="6" x2="15" y2="21"></line></svg>
+            </a>
+        </div>
+
+        <!-- Right Side: High-Contrast Satellite Imagery Canvas Grid -->
+        <div class="map-visual-panel">
+            <div class="map-canvas-frame">
+                <!-- Laser line trim border overlay handle -->
+                <div class="card-laser-trim cyan-trim"></div>
+                
+                <!-- Real HTML layout img tag to house your custom radar map artwork asset -->
+                <img src="https://unsplash.com" alt="Command Satellite Radar Tracking Map Layer" class="map-display-img-node">
+                
+                <!-- Advanced scanning beam matrix crosshair radar filters overlay -->
+                <div class="map-laser-sweep-beam"></div>
+                <div class="radar-crosshair-reticle"></div>
+                
+                <div class="hud-map-tag tag-top-right">RADAR_TARGET // LOCKED</div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-success: #00ff88;
+}
+
+/* ==========================================
+   RESTRICTED PADDING MAP GRID ARRAY
+========================================== */
+.ops-map-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 50px;        /* Restricts section to requested 50px top padding limit */
+    padding-bottom: 30px;     /* Restricts section to requested 30px bottom padding layout */
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.map-bg-grid-mesh {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.004) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none; z-index: 1;
+}
+
+.map-section-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    /* Clean asymmetric visual-left and copy-right balancing format split layout */
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 60px;
+    align-items: center;
+    z-index: 2;
+}
+
+/* ==========================================
+   LEFT ZONE - CONSOLE METRICS INFORMATION
+========================================== */
+.map-content-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cyber-badge {
+    font-family: monospace; color: var(--neon-cyan); font-size: 0.75rem; letter-spacing: 2px;
+}
+
+.map-main-title {
+    font-size: 2.6rem; font-weight: 800; line-height: 1.2; text-transform: uppercase;
+    letter-spacing: -0.5px; color: var(--text-bright); margin-top: 15px; margin-bottom: 20px;
+}
+
+.map-description {
+    font-size: 0.95rem; color: rgba(255, 255, 255, 0.7); line-height: 1.65;
+    margin-bottom: 25px; text-align: left; max-width: 540px;
+}
+
+.facility-telemetry-box {
+    display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 440px;
+    margin-bottom: 30px;
+}
+
+.telemetry-item {
+    display: flex; justify-content: space-between; background: rgba(13, 21, 39, 0.45);
+    padding: 10px 14px; border-radius: 6px; font-family: monospace; font-size: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.01); transition: background 0.3s, border-color 0.3s;
+}
+.row-label { color: var(--text-dim); }
+.txt-cyan { color: var(--neon-cyan); text-shadow: 0 0 6px rgba(0,240,255,0.3); }
+.txt-purple { color: var(--neon-purple); text-shadow: 0 0 6px rgba(157,78,221,0.3); }
+
+/* Interactive Map Launcher Action Button (Outlook/Google Match rules) */
+.open-map-action-btn {
+    padding: 14px 32px; border-radius: 30px; font-size: 0.95rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.5px; text-decoration: none;
+    color: var(--text-bright); background: linear-gradient(90deg, var(--neon-purple), var(--neon-cyan));
+    border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 10px;
+    box-sizing: border-box; white-space: nowrap;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
+    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+}
+
+.open-map-action-btn:hover {
+    box-shadow: 0 10px 25px rgba(0, 240, 255, 0.4);
+    transform: translateY(-2px);
+}
+.btn-map-vector-icon { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.5; transition: transform 0.3s ease; }
+.open-map-action-btn:hover .btn-map-vector-icon { transform: scale(1.1) rotate(4deg); }
+
+/* ==========================================
+   RIGHT ZONE - HIGH-CONTRAST SATELLITE CANVAS
+========================================== */
+.map-visual-panel {
+    width: 100%; display: flex; justify-content: flex-end;
+}
+
+.map-canvas-frame {
+    position: relative; width: 100%; max-width: 460px;
+    aspect-ratio: 1.3 / 1; /* Premium widescreen tracking proportions */
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 16px; overflow: hidden; /* Clips blueprint laser layers snuggly inside card box */
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.cyan-trim {
+    position: absolute; left: 20px; top: 0; width: 35px; height: 2px; border-radius: 2px;
+    background-color: var(--neon-cyan); box-shadow: 0 0 8px var(--neon-cyan);
+    transition: width 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); z-index: 4;
+}
+
+.map-display-img-node {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: saturate(0.6) contrast(1.15) brightness(0.65);
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.5s ease;
+}
+
+/* Continuous lateral scanning sweep bar line overlay */
+.map-laser-sweep-beam {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(0,240,255,0) 95%, rgba(0,240,255,0.08) 100%);
+    background-size: 100% 8px; pointer-events: none; z-index: 2;
+}
+
+/* Crosshair Reticle Center Overlay target graphics */
+.radar-crosshair-reticle {
+    position: absolute; top: 50%; left: 50%; width: 30px; height: 30px;
+    transform: translate(-50%, -50%); pointer-events: none; z-index: 3;
+    border: 1px dashed var(--neon-cyan); border-radius: 50%; opacity: 0.4;
+    transition: transform 0.4s ease, opacity 0.4s ease, border-color 0.4s;
+}
+.radar-crosshair-reticle::before,
+.radar-crosshair-reticle::after {
+    content: ''; position: absolute; background-color: var(--neon-cyan);
+}
+.radar-crosshair-reticle::before { top: 50%; left: -6px; width: 42px; height: 1px; transform: translateY(-50%); }
+.radar-crosshair-reticle::after { left: 50%; top: -6px; height: 42px; width: 1px; transform: translateX(-50%); }
+
+/* Absolute layout tags anchors */
+.hud-map-tag {
+    position: absolute; font-family: monospace; font-size: 0.65rem; color: var(--text-dim);
+    letter-spacing: 1px; background-color: var(--bg-deep); padding: 2px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.04); border-radius: 4px; z-index: 3;
+    transition: color 0.3s, border-color 0.3s;
+}
+.tag-top-right { top: 12px; right: 12px; }
+
+/* ==========================================
+   INTERACTIVE NEON HOVER GLOWS
+========================================== */
+.ops-map-section:hover .map-description { color: var(--text-bright); }
+.ops-map-section:hover .telemetry-item { background: rgba(13, 21, 39, 0.7); border-color: rgba(255, 255, 255, 0.02); }
+
+.map-canvas-frame:hover {
+    border-color: rgba(0, 240, 255, 0.25);
+    box-shadow: 0 20px 50px rgba(0, 240, 255, 0.06);
+}
+.map-canvas-frame:hover .cyan-trim { width: calc(100% - 40px); }
+.map-canvas-frame:hover .map-display-img-node { transform: scale(1.03); filter: saturate(0.8) contrast(1.2) brightness(0.7); }
+.map-canvas-frame:hover .radar-crosshair-reticle { transform: translate(-50%, -50%) rotate(90deg) scale(1.1); border-color: var(--accent-success); border-style: stroke; opacity: 0.85; }
+.map-canvas-frame:hover .hud-map-tag { color: var(--text-bright); border-color: rgba(0, 240, 255, 0.3); }
+
+/* ==========================================
+   FLUID RESPONSIVE DESIGN BREAKPOINTS
+========================================== */
+@media (max-width: 992px) {
+    .map-section-container {
+        grid-template-columns: 1fr; /* Switch to column stacks format to bypass layout clipping bugs */
+        padding: 0 24px; gap: 45px;
+    }
+    .map-content-panel { align-items: center; text-align: center; }
+    .map-description { max-width: 100%; }
+    .map-visual-panel { justify-content: center; width: 100%; }
+    .map-canvas-frame { max-width: 100%; }
+}
+
+@media (max-width: 540px) {
+    .map-section-container { padding: 0 16px; gap: 35px; }
+    .map-main-title { font-size: 1.85rem; }
+    .telemetry-item { flex-direction: column; gap: 4px; align-items: flex-start; }
+    .open-map-action-btn { width: 100%; justify-content: center; border-radius: 8px; } /* Blockier touch layout buttons */
+    .map-canvas-frame { padding: 0; aspect-ratio: 1.2 / 1; }
+}
+
+</style>
+
+<section class="single-line-cta-section">
+    <!-- Atmospheric base layout background image tag -->
+    <img src="https://unsplash.com" alt="Cyber Glow Backdrop" class="cta-banner-bg">
+
+    <div class="cta-banner-container">
+        
+        <!-- Left Side: Content Title Only -->
+        <div class="cta-left-content">
+            <h2 class="scroll-letter-title" id="scrollCtaBannerTitle">
+                Secure your digital matrix today
+            </h2>
+        </div>
+
+        <!-- Right Side: Floating Action Button Only -->
+        <div class="cta-right-action">
+            <div class="floating-btn-wrap">
+                <button class="banner-action-btn" type="button">
+                    <span>Deploy Immediate Guard</span>
+                    <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+}
+
+/* ==========================================
+   CTA BANNER GENERAL LAYOUT SETTINGS
+========================================== */
+.single-line-cta-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 50px;       /* Strict 50px top padding layout limit */
+    padding-bottom: 30px;    /* Strict 30px bottom padding layout footprint */
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(0, 240, 255, 0.05);
+    border-bottom: 1px solid rgba(157, 78, 221, 0.05);
+}
+
+.cta-banner-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; opacity: 0.04; pointer-events: none; z-index: 1;
+}
+
+.cta-banner-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between; /* Perfect horizontal corner-to-corner balance */
+    align-items: center;
+    gap: 40px;
+    z-index: 3;
+}
+
+/* ==========================================
+   LEFT ZONE - TITLE STYLING
+========================================== */
+.cta-left-content {
+    display: flex;
+    max-width: 65%;
+    flex: 1;
+}
+
+.scroll-letter-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    color: var(--text-bright);
+    margin: 0;
+    text-align: left;
+    word-break: keep-all; 
+    overflow-wrap: break-word;
+    width: 100%;
+}
+
+/* Character split node baselines before scrolling viewport intersection */
+.scroll-letter-title .char-unit {
+    display: inline-block;
+    opacity: 0.15;
+    transform: scale(0.95);
+    transition: opacity 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), text-shadow 0.2s ease;
+}
+
+.scroll-letter-title .char-unit.glow-active {
+    opacity: 1;
+    transform: scale(1);
+    color: var(--text-bright);
+    text-shadow: 0 0 15px rgba(0, 240, 255, 0.45);
+}
+
+/* ==========================================
+   RIGHT ZONE - FLOATING BUTTON ACTION
+========================================== */
+.cta-right-action {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.floating-btn-wrap {
+    animation: ctaButtonFloat 4.5s ease-in-out infinite; /* Automated smooth float loop */
+}
+
+.banner-action-btn {
+    padding: 16px 36px;
+    border-radius: 35px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--text-bright);
+    background: linear-gradient(90deg, var(--neon-purple), var(--neon-cyan));
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+}
+
+/* Hover glow illumination effects */
+.banner-action-btn:hover {
+    box-shadow: 0 12px 35px rgba(0, 240, 255, 0.45);
+    transform: scale(1.02);
+}
+
+.banner-action-btn:active {
+    transform: scale(0.98);
+}
+
+.btn-arrow {
+    width: 16px; height: 16px;
+    transition: transform 0.3s ease;
+}
+.banner-action-btn:hover .btn-arrow {
+    transform: translateX(4px);
+}
+
+/* Floating animation timelines */
+@keyframes ctaButtonFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+}
+
+/* ==========================================
+   FLUID RESPONSIVE DESIGN BOUNDARIES
+========================================== */
+@media (max-width: 992px) {
+    .cta-banner-container {
+        flex-direction: column; /* Flips track layout cleanly to columns on tablet/mobile screens */
+        text-align: center;
+        gap: 30px;
+        padding: 0 24px;
+    }
+    
+    .cta-left-content {
+        max-width: 100%;
+    }
+    
+    .scroll-letter-title { font-size: 2.2rem; text-align: center; }
+    .cta-right-action { justify-content: center; width: 100%; }
+}
+
+@media (max-width: 480px) {
+    .cta-banner-container { padding: 0 16px; }
+    .scroll-letter-title { font-size: 1.75rem; }
+    .banner-action-btn { width: 100%; justify-content: center; padding: 14px; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // SCROLL REVEAL: Minimal Single-Line Title Animation Engine
+    const ctaTitleNode = document.getElementById("scrollCtaBannerTitle");
+
+    if (ctaTitleNode) {
+        const structuralTextStr = ctaTitleNode.textContent.trim();
+        ctaTitleNode.textContent = ""; // Clear placeholder text context
+
+        // Split text cleanly into individual character wrapper span nodes
+        const charSpanElements = structuralTextStr.split("").map(character => {
+            const spanNode = document.createElement("span");
+            spanNode.className = "char-unit";
+            // Ensure blank spacing values are rendered as non-breaking entities
+            spanNode.innerHTML = character === " " ? "&nbsp;" : character;
+            ctaTitleNode.appendChild(spanNode);
+            return spanNode;
+        });
+
+        function handleBannerTitleScrollReveal() {
+            const nodeRect = ctaTitleNode.getBoundingClientRect();
+            const browserViewportHeight = window.innerHeight;
+            
+            // Text illuminates progressively once section passes bottom 95% threshold
+            const startScrollRevealLine = browserViewportHeight * 0.95;
+            const endScrollRevealLine = (browserViewportHeight * 0.4) + 100; // Built-in padding buffer
+            
+            let scrollRevealProgress = (startScrollRevealLine - nodeRect.top) / (startScrollRevealLine - endScrollRevealLine);
+            scrollRevealProgress = Math.max(0, Math.min(1, scrollRevealProgress));
+
+            const totalActiveCharsIndex = Math.floor(scrollRevealProgress * charSpanElements.length);
+
+            charSpanElements.forEach((spanNode, index) => {
+                if (index < totalActiveCharsIndex) {
+                    spanNode.classList.add("glow-active");
+                } else {
+                    spanNode.classList.remove("glow-active");
+                }
+            });
+        }
+
+        // Attach lightweight resize and scroll window listener loops
+        window.addEventListener("scroll", handleBannerTitleScrollReveal);
+        window.addEventListener("resize", handleBannerTitleScrollReveal);
+        
+        // Execute an instant baseline run frame immediately on DOM initialization
+        handleBannerTitleScrollReveal(); 
+    }
+});
+
+</script>
+
+<footer class="cyber-footer">
+    <div class="footer-top-grid">
+        
+        <!-- Column 1: Cybersecurity Brand Info & 5 Vector Social Nodes -->
+        <div class="footer-brand-column">
+            <!-- Brand logo triggers scroll back to top of the webpage window -->
+            <div class="footer-logo-wrapper" id="footerLogoBtn" title="Back to Top">
+                <img src="https://placehold.co" alt="Stackly Logo" class="footer-brand-img">
+            </div>
+            <p class="brand-bio-text">
+                Securing enterprise perimeter clusters with automated zero-trust architecture, multi-vector threat mitigation modules, and continuous low-latency network camouflage.
+            </p>
+            
+            <!-- 5 Ordered Social Icons linked to 404 targets -->
+            <div class="social-icon-row">
+                <!-- 1. Instagram -->
+                <a href="404.html" class="social-btn" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" class="social-svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.849.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.125-1.664 4.671-4.919 4.819-1.265.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.82-.058-1.265-.069-1.64-.069-4.849 0-3.204.013-3.583.069-4.849.149-3.125 1.664-4.671 4.919-4.819 1.265-.057 1.644-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.79.073 7.151.014 8.433 0 8.84 0 12c0 3.159.014 3.567.072 4.847.199 4.359 2.62 6.782 6.98 6.981 1.28.058 1.688.072 4.848.072 3.159 0 3.567-.014 4.847-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.848 0-3.159-.014-3.567-.073-4.847-.199-4.359-2.62-6.782-6.979-6.98C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                </a>
+                <!-- 2. LinkedIn -->
+                <a href="404.html" class="social-btn" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" class="social-svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <!-- 3. YouTube -->
+                <a href="404.html" class="social-btn" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" class="social-svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.016 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.86-.502 5.74a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.016 0 0 0 2.122-2.136C24 15.86 24 12 24 12s0-3.86-.502-5.74zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+                <!-- 4. Facebook -->
+                <a href="404.html" class="social-btn" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24" class="social-svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <!-- 5. Twitter / X -->
+                <a href="404.html" class="social-btn" aria-label="Twitter X">
+                    <svg viewBox="0 0 24 24" class="social-svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Links Directory Column 2: Customized Network Links -->
+        <div class="footer-links-column">
+            <h3>Infrastructure</h3>
+            <a href="404.html">Camouflage Grid</a>
+            <a href="404.html">Zero-Trust Node</a>
+            <a href="404.html">Reflex Sandbox</a>
+            <a href="404.html">Key Mutation</a>
+            <a href="404.html">Threat Metrics</a>
+        </div>
+
+        <!-- Links Directory Column 3 -->
+        <div class="footer-links-column">
+            <h3>Intelligence</h3>
+            <a href="404.html">Vulnerability Ops</a>
+            <a href="404.html">Security Blog</a>
+            <a href="404.html">Threat Intel</a>
+            <a href="404.html">Patch Pipeline</a>
+            <a href="404.html">Incident Desk</a>
+        </div>
+
+        <!-- Links Directory Column 4 -->
+        <div class="footer-links-column">
+            <h3>Governance</h3>
+            <a href="404.html">Compliance Vault</a>
+            <a href="404.html">API Reference</a>
+            <a href="404.html">Node Status</a>
+            <a href="404.html">Audit Protocol</a>
+            <a href="404.html">Operator Desk</a>
+        </div>
+
+        <!-- Column 5: Subscription Console Area -->
+        <div class="footer-news-column">
+            <h3>Threat Watch</h3>
+            <p class="news-subtitle">Subscribe to receive system exploit patches and weekly perimeter vulnerability reports.</p>
+            
+            <form id="footerNewsForm" novalidate>
+                <div class="news-input-wrapper">
+                    <input type="email" id="newsEmailInput" placeholder="routing_email@domain.com" autocomplete="off">
+                </div>
+                <button type="submit" class="news-submit-btn">Initialize Sync</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Bottom Legals Bar Container -->
+    <div class="footer-bottom-bar">
+        <div class="bottom-bar-container">
+            <span class="copyright-text">&copy; 2026 Stackly Systems. Perimeter Secured.</span>
+            
+            <div class="legal-links-row">
+                <a href="404.html">Privacy Encryption</a>
+                <a href="404.html">Terms of Deployment</a>
+                <a href="404.html">Cookie Isolation</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Fixed Floating Back-to-Top Scroller -->
+<button class="fixed-top-scroller" id="floatingTopBtn" title="Back to Top" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+</button>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-error: #ff3366;
+}
+
+/* ==========================================
+   GLOBAL FOOTER CUSTOMIZED CYBER PALETTE
+========================================== */
+.cyber-footer {
+    width: 100%;
+    display: block;
+    background-color: #03060c; /* Deep black space layout baseline */
+    border-top: 1px solid rgba(0, 240, 255, 0.15); /* Neon cyan crisp top seam border */
+    padding-top: 60px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.footer-top-grid {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 40px 50px 40px;
+    display: grid;
+    grid-template-columns: 1.35fr repeat(3, 0.7fr) 1.35fr;
+    gap: 40px;
+}
+
+.footer-brand-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-logo-wrapper {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    margin-bottom: 20px;
+}
+.footer-logo-wrapper:hover { transform: scale(1.02); }
+.footer-brand-img { height: 34px; width: auto; display: block; }
+
+.brand-bio-text {
+    font-size: 0.95rem; /* High readability contrast scale */
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.social-icon-row {
+    display: flex;
+    gap: 12px;
+}
+
+.social-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.social-svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--text-bright); /* Forced solid white icon nodes */
+}
+
+/* Cyber network glow filters activated on mouse focus */
+.social-btn:hover {
+    border-color: var(--neon-cyan);
+    background-color: rgba(0, 240, 255, 0.05);
+    transform: translateY(-3px);
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.3);
+}
+.social-btn:hover .social-svg { fill: var(--neon-cyan); }
+
+/* Alternating themed accents to split icon block visuals */
+.social-btn:nth-child(even):hover {
+    border-color: var(--neon-purple);
+    background-color: rgba(157, 78, 221, 0.05);
+    box-shadow: 0 0 12px rgba(157, 78, 221, 0.3);
+}
+.social-btn:nth-child(even):hover .social-svg { fill: var(--neon-purple); }
+
+/* Directory Link Links Grid Column layout sets */
+.footer-links-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.footer-links-column h3, 
+.footer-news-column h3 {
+    font-size: 1.05rem; /* Increased font scale heading */
+    font-weight: 700;
+    color: var(--text-bright); /* Forced white title */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+}
+
+.footer-links-column a {
+    font-size: 0.95rem; /* Increased font scale choices */
+    color: var(--text-dim);
+    text-decoration: none;
+    margin-bottom: 12px;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+.footer-links-column a:hover {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
+}
+
+.footer-news-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.news-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+#footerNewsForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.news-input-wrapper { width: 100%; }
+
+#newsEmailInput {
+    width: 100%;
+    padding: 13px 16px;
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    color: var(--text-bright); /* Forced white input text */
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    transition: border-color 0.25s ease;
+}
+#newsEmailInput:focus {
+    outline: none;
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 8px rgba(0, 240, 255, 0.15);
+}
+
+/* Transmit Sync Button Layout Rules */
+.news-submit-btn {
+    width: 100%;
+    padding: 13px;
+    background: linear-gradient(90deg, var(--neon-purple), var(--neon-cyan));
+    color: var(--text-bright); /* Forced bright readable choice */
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+.news-submit-btn:hover {
+    box-shadow: 0 6px 20px rgba(0, 240, 255, 0.35);
+    transform: translateY(-1px);
+}
+
+/* ==========================================
+   BOTTOM DETAILS LEGALS SECTION
+========================================== */
+.footer-bottom-bar {
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.02);
+    background-color: #020408;
+    padding: 24px 0;
+}
+
+.bottom-bar-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright-text {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+}
+
+.legal-links-row {
+    display: flex;
+    gap: 24px;
+}
+
+.legal-links-row a {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.legal-links-row a:hover { color: var(--text-bright); }
+
+/* ==========================================
+   FLOATING UPWARD ACTION BACK TO TOP SCROLLER
+========================================== */
+.fixed-top-scroller {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--neon-cyan); /* Styled custom cyan ring border */
+    color: var(--neon-cyan);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 240, 255, 0.2);
+    z-index: 990;
+    opacity: 0;
+    transform: translateY(15px);
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.fixed-top-scroller.scroller-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.fixed-top-scroller svg { width: 18px; height: 18px; }
+.fixed-top-scroller:hover { background-color: var(--neon-cyan); color: #03060c; transform: translateY(-3px); }
+
+/* ==========================================
+   MANDATORY RESPONSIVE DESIGN VIEWPORTS
+========================================== */
+@media (max-width: 1024px) {
+    .footer-top-grid {
+        grid-template-columns: 1fr 1fr; /* Rearrange grid column layouts down into dual sets to bypass text overlaps */
+        gap: 40px;
+    }
+    .footer-news-column {
+        grid-column: span 2;
+        max-width: 440px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bottom-bar-container {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+    .legal-links-row { justify-content: center; flex-wrap: wrap; gap: 16px; }
+}
+
+@media (max-width: 540px) {
+    .footer-top-grid {
+        grid-template-columns: 1fr; /* Infallible single column stacks for total mobile protection padding scaling bounds */
+    }
+    .footer-news-column { grid-column: span 1; max-width: 100%; }
+    .footer-top-grid, .bottom-bar-container { padding-left: 24px; padding-right: 24px; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    const footerLogoBtn = document.getElementById("footerLogoBtn");
+    const floatingTopBtn = document.getElementById("floatingTopBtn");
+    const newsForm = document.getElementById("footerNewsForm");
+    const newsEmailInput = document.getElementById("newsEmailInput");
+
+    // 1. Unified Back-to-Top Window Reset Smooth Engine Call
+    function triggerWindowTopReset() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth" 
+        });
+    }
+
+    if (footerLogoBtn) footerLogoBtn.addEventListener("click", triggerWindowTopReset);
+    if (floatingTopBtn) floatingTopBtn.addEventListener("click", triggerWindowTopReset);
+
+    // 2. Observer monitoring viewport scrolling height to show/fade the floating button ring safely
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            floatingTopBtn.classList.add("scroller-visible");
+        } else {
+            floatingTopBtn.classList.remove("scroller-visible");
+        }
+    });
+
+    // 3. Zero-Trust Newsletter Empty Check & 404 Route Interception
+    if (newsForm) {
+        newsForm.addEventListener("submit", (event) => {
+            event.preventDefault(); 
+
+            const emailPayload = newsEmailInput.value.trim();
+
+            // Validate that the field is not empty before transmitting
+            if (!emailPayload) {
+                newsEmailInput.style.borderColor = "var(--accent-error)";
+                alert("Please fill the email field before subscribing.");
+                return;
+            }
+
+            // Route successfully verified submission channels straight into your 404 terminal page
+            window.location.href = "404.html";
+        });
+
+        // Instantly wipe out error border flashes upon subsequent input change triggers
+        if (newsEmailInput) {
+            newsEmailInput.addEventListener("input", () => {
+                newsEmailInput.style.borderColor = "rgba(255, 255, 255, 0.05)";
+            });
+        }
+    }
+});
+
+</script>
+
+</body>

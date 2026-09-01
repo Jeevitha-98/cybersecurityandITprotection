@@ -1,0 +1,1850 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Client Security Cockpit // Stackly Enterprise Systems</title>
+    <link rel="stylesheet" href="client-style.css">
+</head>
+<body class="fullscreen-portal-body">
+
+    <div class="dashboard-root-wrapper">
+        
+        <!-- ==========================================
+           GLOBAL INTEGRATED NAVIGATION HEADER
+        ========================================== -->
+        <header class="global-dash-header">
+            <div class="header-left-brand-block">
+                <!-- Hamburger Trigger Button Node -->
+                <button class="sidebar-toggle-hamburger" id="hamburgerMenuBtn" aria-label="Toggle Menu Panel">
+                    <svg viewBox="0 0 24 24" class="hamburger-svg"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+                
+                <!-- Refresh Function Link wrapper -->
+                <a onclick="window.location.reload();" class="brand-refresh-link" title="Refresh Client Dashboard Terminal">
+                    <!-- Brand logo image tag -->
+                    <img src="./assests/automotive logo.webp" alt="Stackly Secure Grid Network Node Logo" class="brand-logo-img">
+                   
+                </a>
+            </div>
+
+            <div class="header-right-action-block">
+                <!-- Notifications Alert Target Icon -->
+            <button 
+    class="notifications-bell-btn" 
+    aria-label="Client Security Advisory Board Alerts"
+    onclick="window.location.href='404.html';"
+>
+    <svg viewBox="0 0 24 24" class="bell-svg">
+        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+    </svg>
+    <span class="bell-active-indicator-dot"></span>
+</button>
+
+                <!-- Session Profiler Identification Badge -->
+                <div class="user-profile-badge">
+                    <div class="profile-icon-circle" id="profileVisualAvatar">C</div>
+                    <span class="parsed-username-display" id="profileUserStringHandle">Loading...</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- ==========================================
+           COLLAPSIBLE SIDEBAR MENU NAVIGATION DRAWER
+        ========================================== -->
+        <aside class="global-dash-sidebar" id="dashboardSidebarDrawer">
+            <nav class="sidebar-navigation-menu-stack">
+                
+                <div class="menu-category-tag">Security Sentinel</div>
+                <!-- Path Node 1 -->
+                <a class="menu-navigation-route-link active-route-node" data-target-panel="client-overview">
+                    <svg viewBox="0 0 24 24" class="menu-vector-icon-shell"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                    <span class="menu-route-title">Client Desk</span>
+                </a>
+                <!-- Path Node 2 -->
+                <a class="menu-navigation-route-link" data-target-panel="client-perimeter">
+                    <svg viewBox="0 0 24 24" class="menu-vector-icon-shell"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    <span class="menu-route-title">Perimeter Shield</span>
+                </a>
+
+                <div class="menu-category-tag">System Audits</div>
+                <!-- Path Node 3 -->
+                <a class="menu-navigation-route-link" data-target-panel="client-vulnerabilities">
+                    <svg viewBox="0 0 24 24" class="menu-vector-icon-shell"><circle cx="12" cy="12" r="10"></circle><line x1="22" y1="12" x2="18" y2="12"></line><line x1="6" y1="12" x2="2" y2="12"></line><line x1="12" y1="6" x2="12" y2="2"></line><line x1="12" y1="22" x2="12" y2="18"></line></svg>
+                    <span class="menu-route-title">Exploit Scans</span>
+                </a>
+                <!-- Path Node 4 -->
+                <a class="menu-navigation-route-link" data-target-panel="client-compliance">
+                    <svg viewBox="0 0 24 24" class="menu-vector-icon-shell"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    <span class="menu-route-title">Compliance Reports</span>
+                </a>
+
+            </nav>
+
+            <!-- Disconnect System Action Path Button -->
+            <button class="sidebar-logout-button-node" id="consoleSessionLogoutBtn">
+                <svg viewBox="0 0 24 24" class="menu-vector-icon-shell"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                <span class="menu-route-title">Disconnect Session</span>
+            </button>
+        </aside>
+
+        <!-- GLASSMORPHIC BACKDROP COMPONENT -->
+        <div class="viewport-blur-backdrop" id="viewportBlurBackdrop"></div>
+
+        <!-- ==========================================
+           MAIN CENTER DISPLAY VIEWPORT CONSOLE
+        ========================================== -->
+        <main class="dashboard-main-viewport-view">
+            
+            <!-- PANEL BLOCK 1: CLIENT OVERVIEW GRID -->
+            <!-- ELABORATE MODULE: ENHANCED CLIENT DESK OVERVIEW METRICS -->
+<div class="console-display-section-view active-view-panel" id="client-overview">
+    <div class="panel-section-header">
+        <h1 class="section-headline-header">Client Desk Overview</h1>
+        <p class="section-intel-subphrase">Centralized visualization mapping infrastructure health ratings, subscription bandwidth properties, and ongoing deployment statistics.</p>
+    </div>
+
+    <!-- Tier 1: 4-Column Corporate Client KPI Matrix -->
+    <div class="client-kpi-matrix-grid">
+        
+        <!-- KPI Card 01 -->
+        <div class="client-kpi-card">
+            <div class="client-laser-trim purple-glow-edge"></div>
+            <div class="client-kpi-header">
+                <span class="client-code-tag">OVERALL_HEALTH // INDEX</span>
+                <div class="client-icon-shell">
+                    <svg viewBox="0 0 24 24" class="client-kpi-svg"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                </div>
+            </div>
+            <div class="client-value-row">
+                <h2 class="client-big-num txt-purple">99.8%</h2>
+                <span class="client-status-pill status-positive">OPTIMAL</span>
+            </div>
+            <p class="client-footer-meta">Perimeter integrity health score</p>
+        </div>
+
+        <!-- KPI Card 02 -->
+        <div class="client-kpi-card">
+            <div class="client-laser-trim cyan-glow-edge"></div>
+            <div class="client-kpi-header">
+                <span class="client-code-tag">BANDWIDTH // ALLOCATED</span>
+                <div class="client-icon-shell">
+                    <svg viewBox="0 0 24 24" class="client-kpi-svg"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                </div>
+            </div>
+            <div class="client-value-row">
+                <h2 class="client-big-num txt-cyan">4.2 TB/S</h2>
+                <span class="client-status-pill status-neutral">82% LOAD</span>
+            </div>
+            <p class="client-footer-meta">Active data ingestion pipelines</p>
+        </div>
+
+        <!-- KPI Card 03 -->
+        <div class="client-kpi-card">
+            <div class="client-laser-trim green-glow-edge"></div>
+            <div class="client-kpi-header">
+                <span class="client-code-tag">INCIDENTS // OPEN</span>
+                <div class="client-icon-shell">
+                    <svg viewBox="0 0 24 24" class="client-kpi-svg"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg>
+                </div>
+            </div>
+            <div class="client-value-row">
+                <h2 class="client-big-num txt-green">00</h2>
+                <span class="client-status-pill status-positive">SECURE</span>
+            </div>
+            <p class="client-footer-meta">Unresolved security alerts queue</p>
+        </div>
+
+        <!-- KPI Card 04 -->
+        <div class="client-kpi-card">
+            <div class="client-laser-trim error-glow-edge"></div>
+            <div class="client-kpi-header">
+                <span class="client-code-tag">COMPLIANCE // AUDIT</span>
+                <div class="client-icon-shell">
+                    <svg viewBox="0 0 24 24" class="client-kpi-svg"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+            </div>
+            <div class="client-value-row">
+                <h2 class="client-big-num txt-error">PASSED</h2>
+                <span class="client-status-pill status-negative">SEC_LOG</span>
+            </div>
+            <p class="client-footer-meta">Multi-region framework alignment</p>
+        </div>
+
+    </div>
+
+    <!-- Tier 2: Asymmetric Split Monitor Console & SLA Architecture Progress -->
+    <div class="client-split-telemetry-panel">
+        
+        <!-- Left Sub-Block: Interactive Vector SVG Data Ingestion Topological Mesh -->
+        <div class="client-monitor-box">
+            <h3 class="client-block-title">Data Camouflage Topological Core</h3>
+            
+            <div class="client-vector-canvas">
+                <svg viewBox="0 0 320 140" class="client-mesh-svg" xmlns="http://w3.org">
+                    <!-- Concentric Structural Reticle Axis Lines -->
+                    <circle cx="160" cy="70" r="55" fill="none" stroke="rgba(157, 78, 221, 0.05)" stroke-width="1"/>
+                    <circle cx="160" cy="70" r="30" fill="none" stroke="rgba(0, 240, 255, 0.05)" stroke-width="1"/>
+                    
+                    <!-- Interconnecting Endpoint Wireframe Paths -->
+                    <line x1="80" y1="35" x2="160" y2="70" stroke="rgba(255, 255, 255, 0.02)" stroke-width="1" stroke-dasharray="3, 3"/>
+                    <line x1="240" y1="105" x2="160" y2="70" stroke="rgba(255, 255, 255, 0.02)" stroke-width="1" stroke-dasharray="3, 3"/>
+                    <line x1="160" y1="15" x2="160" y2="70" stroke="rgba(255, 255, 255, 0.02)" stroke-width="1"/>
+                    
+                    <!-- Pulsing Telemetry Node Hubs -->
+                    <circle cx="160" cy="70" r="6" fill="#9d4edd" class="client-pulsing-node"/>
+                    <circle cx="80" cy="35" r="4.5" fill="#00f0ff" class="client-pulsing-node"/>
+                    <circle cx="240" cy="105" r="4.5" fill="#00ff88" class="client-pulsing-node"/>
+                    <circle cx="160" cy="15" r="3.5" fill="#ff3366" class="client-pulsing-node"/>
+                </svg>
+            </div>
+            <div class="client-canvas-footer-tag">ACTIVE ZERO-TRUST ENDPOINT MUTATION SCANNER</div>
+        </div>
+
+        <!-- Right Sub-Block: Corporate Infrastructure SLA Progress Bars -->
+        <div class="client-monitor-box">
+            <h3 class="client-block-title">Infrastructure SLA Thresholds</h3>
+            
+            <div class="client-progress-stack">
+                
+                <!-- Progress Line 01 -->
+                <div class="client-progress-item">
+                    <div class="progress-meta-row">
+                        <span class="p-name-label">SUBNET_IMMUNITY_INDEX</span>
+                        <span class="p-percentage-val txt-purple">99.99% Guarded</span>
+                    </div>
+                    <div class="progress-track-base">
+                        <div class="progress-fill-line bg-purple-glow" style="width: 99.99%"></div>
+                    </div>
+                </div>
+
+                <!-- Progress Line 02 -->
+                <div class="client-progress-item">
+                    <div class="progress-meta-row">
+                        <span class="p-name-label">PACKET_MUTATION_EFFICIENCY</span>
+                        <span class="p-percentage-val txt-cyan">74% Synchronized</span>
+                    </div>
+                    <div class="progress-track-base">
+                        <div class="progress-fill-line bg-cyan-glow" style="width: 74%"></div>
+                    </div>
+                </div>
+
+                <!-- Progress Line 03 -->
+                <div class="client-progress-item">
+                    <div class="progress-meta-row">
+                        <span class="p-name-label">EPHEMERAL_SANDBOX_STABILITY</span>
+                        <span class="p-percentage-val txt-green">100% Operational</span>
+                    </div>
+                    <div class="progress-track-base">
+                        <div class="progress-fill-line bg-green-glow" style="width: 100%"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<style>
+    :root {
+    --bg-surface: #0a0f1d;
+    --bg-card: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-error: #ff3366;
+    --accent-success: #00ff88;
+}
+
+/* ==========================================
+   EXECUTIVE 4-COLUMN KPI MONITORING GRID
+========================================== */
+.client-kpi-matrix-grid {
+    display: grid;
+    /* Grid splitting blueprint wraps cleanly over responsive viewport contractions */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+}
+
+.client-kpi-card {
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+/* Top linear laser border bars */
+.client-laser-trim { position: absolute; left: 20px; top: 0; width: 30px; height: 2px; border-radius: 2px; }
+.purple-glow-edge { background-color: var(--neon-purple); box-shadow: 0 0 8px var(--neon-purple); }
+.cyan-glow-edge { background-color: var(--neon-cyan); box-shadow: 0 0 8px var(--neon-cyan); }
+.green-glow-edge { background-color: var(--accent-success); box-shadow: 0 0 8px var(--accent-success); }
+.error-glow-edge { background-color: var(--accent-error); box-shadow: 0 0 8px var(--accent-error); }
+
+.client-kpi-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.client-code-tag { font-family: monospace; font-size: 0.65rem; color: var(--text-dim); letter-spacing: 1px; font-weight: 700; }
+.client-icon-shell { color: var(--text-dim); display: flex; align-items: center; }
+.client-kpi-svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.5; }
+
+.client-value-row { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 8px; }
+.client-big-num { font-size: 1.8rem; font-weight: 800; margin: 0; line-height: 1; letter-spacing: -0.5px; }
+
+/* Status meta indicators labels */
+.client-status-pill { font-family: monospace; font-size: 0.65rem; font-weight: 700; padding: 2px 6px; border-radius: 4px; }
+.status-positive { background-color: rgba(0, 255, 136, 0.08); color: var(--accent-success); border: 1px solid rgba(0, 255, 136, 0.15); }
+.status-neutral { background-color: rgba(0, 240, 255, 0.08); color: var(--neon-cyan); border: 1px solid rgba(0, 240, 255, 0.15); }
+.status-negative { background-color: rgba(157, 78, 221, 0.08); color: var(--neon-purple); border: 1px solid rgba(157, 78, 221, 0.15); }
+
+.client-footer-meta { font-size: 0.8rem; color: rgba(255, 255, 255, 0.5); margin: 0; text-align: left; }
+
+.client-kpi-card:hover { transform: translateY(-2px); border-color: rgba(255, 255, 255, 0.06); }
+
+/* ==========================================
+   TIER 2: ASYMMETRIC RESPONSIVE SPLIT PANEL
+========================================== */
+.client-split-telemetry-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.client-monitor-box {
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+}
+
+.client-block-title {
+    font-size: 1.05rem; font-weight: 800; text-transform: uppercase; color: var(--text-bright);
+    margin: 0 0 20px 0; text-align: left; letter-spacing: 0.5px;
+}
+
+/* Left Zone: Vector Canvas Oscillation Layout Handles */
+.client-vector-canvas {
+    width: 100%; background-color: rgba(6, 9, 19, 0.5); border-radius: 8px;
+    padding: 16px; box-sizing: border-box; display: flex; justify-content: center; align-items: center;
+}
+.client-mesh-svg { width: 100%; height: auto; display: block; overflow: hidden; }
+.client-pulsing-node { animation: nodeDriftGlow 1.8s infinite ease-in-out alternate; transform-origin: center; }
+.client-pulsing-node:nth-child(even) { animation-delay: 0.9s; }
+.client-canvas-footer-tag { font-family: monospace; font-size: 0.6rem; color: var(--text-dim); letter-spacing: 1px; margin-top: 10px; }
+
+/* Right Zone: Progress SLA Tracks Bars */
+.client-progress-stack { display: flex; flex-direction: column; gap: 18px; }
+.client-progress-item { display: flex; flex-direction: column; width: 100%; }
+.progress-meta-row { display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 700; margin-bottom: 6px; }
+.p-name-label { color: rgba(255, 255, 255, 0.6); }
+
+.progress-track-base { width: 100%; height: 6px; background-color: rgba(6, 9, 19, 0.6); border-radius: 3px; overflow: hidden; }
+.progress-fill-line { height: 100%; border-radius: 3px; }
+.bg-purple-glow { background-color: var(--neon-purple); box-shadow: 0 0 6px var(--neon-purple); }
+.bg-cyan-glow { background-color: var(--neon-cyan); box-shadow: 0 0 6px var(--neon-cyan); }
+.bg-green-glow { background-color: var(--accent-success); box-shadow: 0 0 6px var(--accent-success); }
+
+/* Color classes mappings handles */
+.txt-purple { color: var(--neon-purple); text-shadow: 0 0 6px rgba(157,78,221,0.2); }
+.txt-cyan { color: var(--neon-cyan); text-shadow: 0 0 6px rgba(0,240,255,0.2); }
+.txt-green { color: var(--accent-success); text-shadow: 0 0 6px rgba(0,255,136,0.2); }
+.txt-error { color: var(--accent-error); text-shadow: 0 0 6px rgba(255,51,102,0.2); }
+
+/* ==========================================
+   ANALOG RUNTIME COMPONENT ANIMATIONS TIMELINES
+========================================== */
+@keyframes nodeDriftGlow { 0% { r: 3.5; opacity: 0.5; filter: drop-shadow(0 0 2px currentColor); } 100% { r: 6.5; opacity: 1; filter: drop-shadow(0 0 5px currentColor); } }
+
+/* ==========================================
+   FLUID RESPONSIVE BOUNDARIES OVERRIDES
+========================================== */
+@media (max-width: 1200px) {
+    .client-kpi-matrix-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .client-split-telemetry-panel { grid-template-columns: 1fr; gap: 20px; }
+}
+
+@media (max-width: 520px) {
+    .client-kpi-matrix-grid { grid-template-columns: 1fr; }
+    .client-big-num { font-size: 1.6rem; }
+    .client-monitor-box { padding: 16px; }
+}
+
+</style>
+
+
+            <!-- PANEL BLOCK 2: PERIMETER SHIELD MONITORING -->
+         <!-- ELABORATE MODULE: ENHANCED CLIENT PERIMETER SHIELD MONITORING -->
+<div class="console-display-section-view" id="client-perimeter">
+    <div class="panel-section-header">
+        <h1 class="section-headline-header">Perimeter Shield Controls</h1>
+        <p class="section-intel-subphrase">Audit your enterprise zero-trust firewall nodes, inspect network gateway traffic curves, and manage camouflage routing profiles.</p>
+    </div>
+
+    <!-- Dual-Zone Asymmetric Perimeter Workspace Split Frame -->
+    <div class="client-perimeter-workspace-split">
+        
+        <!-- Left Zone: Gateway Integrity Matrix Card -->
+        <div class="client-perimeter-panel-card">
+            <h3 class="client-perimeter-block-title">Gateway Mutation Matrix</h3>
+            
+            <div class="client-perimeter-status-banner-row">
+                <div class="client-shield-radar-status">
+                    <span class="client-pulse-beacon beacon-active"></span>
+                    <span class="client-status-headline txt-purple">ZERO-TRUST ACTIVE PROTECTION</span>
+                </div>
+                <div class="client-mutation-timer-pill">
+                    <span class="client-timer-label">ROTATION // </span>
+                    <span class="client-timer-clock txt-cyan" id="clientPerimeterTimer">30s</span>
+                </div>
+            </div>
+
+            <!-- Operational Technical Fields Mini Grid -->
+            <div class="client-perimeter-metrics-mini-grid">
+                <div class="client-mini-metric-cell">
+                    <span class="client-m-cell-label">TUNNEL_CIPHER</span>
+                    <h4 class="client-m-cell-value">CHA_CHA_20_POLY</h4>
+                </div>
+                <div class="client-mini-metric-cell">
+                    <span class="client-m-cell-label">DATA_MUTATION_RATE</span>
+                    <h4 class="client-m-cell-value txt-purple">4.2 TB / S</h4>
+                </div>
+                <div class="client-mini-metric-cell">
+                    <span class="client-m-cell-label">BYPASS_ATTEMPTS</span>
+                    <h4 class="client-m-cell-value txt-green">00 DETECTED</h4>
+                </div>
+                <div class="client-mini-metric-cell">
+                    <span class="client-m-cell-label">DECOY_GRID_SYNC</span>
+                    <h4 class="client-m-cell-value txt-cyan">ACTIVE // 100%</h4>
+                </div>
+            </div>
+
+            <!-- Integrated Visual Curve Wave Graph Vector Viewbox -->
+            <div class="client-perimeter-vector-chart-box">
+                <svg viewBox="0 0 300 80" class="client-perimeter-wave-svg" xmlns="http://w3.org">
+                    <path d="M0,40 Q25,70 50,20 T100,50 T150,15 T200,65 T250,30 T300,40" fill="none" stroke="#9d4edd" stroke-width="2" class="client-anim-wave-1"/>
+                    <path d="M0,40 Q35,15 70,65 T140,25 T210,55 T280,20 T300,40" fill="none" stroke="#00f0ff" stroke-width="1.5" stroke-dasharray="4,4" class="client-anim-wave-2"/>
+                    <line x1="0" y1="40" x2="300" y2="40" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+                </svg>
+                <div class="client-chart-footer-label">REAL-TIME INTRUSION INTERCEPT CURVE MATRIX RATIO</div>
+            </div>
+        </div>
+
+        <!-- Right Zone: Traffic Camouflage Configuration Ledger Toggles -->
+        <div class="client-perimeter-panel-card">
+            <h3 class="client-perimeter-block-title">Camouflage Routing Controls</h3>
+            
+            <div class="client-perimeter-interactive-rules-list">
+                
+                <!-- Rule Toggles Block 01 -->
+                <div class="client-perimeter-rule-row-item">
+                    <div class="client-rule-meta-left">
+                        <span class="client-rule-code-tag">PORT_SHIELD // STST_01</span>
+                        <h4>Strict Perimeter Isolation</h4>
+                        <p class="client-rule-description">Enforces automated drop protocols on inbound packets failing zero-trust certificate handshakes.</p>
+                    </div>
+                    <label class="client-cyber-switch-container">
+                        <input type="checkbox" checked class="client-toggle-checkbox-trigger">
+                        <span class="client-cyber-switch-slider"></span>
+                    </label>
+                </div>
+
+                <!-- Rule Toggles Block 02 -->
+                <div class="client-perimeter-rule-row-item">
+                    <div class="client-rule-meta-left">
+                        <span class="client-rule-code-tag">CAMOUFLAGE // HASH_02</span>
+                        <h4>Dynamic Subnet Camouflage</h4>
+                        <p class="client-rule-description">Shuffles target staging repository IP signatures sequentially to fully blind external vulnerability scanners.</p>
+                    </div>
+                    <label class="client-cyber-switch-container">
+                        <input type="checkbox" checked class="client-toggle-checkbox-trigger">
+                        <span class="client-cyber-switch-slider"></span>
+                    </label>
+                </div>
+
+                <!-- Rule Toggles Block 03 -->
+                <div class="client-perimeter-rule-row-item">
+                    <div class="client-rule-meta-left">
+                        <span class="client-rule-code-tag">SANDBOXING // CONF_03</span>
+                        <h4>Reflexive Sandbox Ingestion</h4>
+                        <p class="client-rule-description">Automatically spins up isolated cloud container partitions when cluster anomalies exceed 0.05% drift parameters.</p>
+                    </div>
+                    <label class="client-cyber-switch-container">
+                        <input type="checkbox" class="client-toggle-checkbox-trigger">
+                        <span class="client-cyber-switch-slider"></span>
+                    </label>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<style>
+    :root {
+    --bg-surface: #0a0f1d;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-error: #ff3366;
+    --accent-success: #00ff88;
+}
+
+/* ==========================================
+   ASYMMETRIC CORE SHIELD WORKSPACE SPLIT
+========================================== */
+.client-perimeter-workspace-split {
+    display: grid;
+    /* Split balance parameters match your custom corporate card geometries perfectly */
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 24px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.client-perimeter-panel-card {
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+}
+
+.client-perimeter-block-title {
+    font-size: 1.05rem; font-weight: 800; text-transform: uppercase; color: var(--text-bright);
+    margin: 0 0 24px 0; text-align: left; letter-spacing: 0.5px;
+}
+
+/* ==========================================
+   LEFT ZONE - GATEWAY MATRIX CONSOLE 
+========================================== */
+.client-perimeter-status-banner-row {
+    display: flex; justify-content: space-between; align-items: center;
+    background-color: rgba(6, 9, 19, 0.5); padding: 12px 16px; border-radius: 8px;
+    margin-bottom: 24px; box-sizing: border-box; width: 100%;
+}
+
+.client-shield-radar-status { display: flex; align-items: center; gap: 10px; }
+.client-pulse-beacon { width: 8px; height: 8px; border-radius: 50%; display: block; }
+.client-pulse-beacon.beacon-active { background-color: var(--neon-purple); box-shadow: 0 0 8px var(--neon-purple); animation: clientBeaconPulse 1.6s infinite alternate; }
+
+.client-status-headline { font-family: monospace; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.5px; }
+.client-mutation-timer-pill { font-family: monospace; font-size: 0.8rem; font-weight: 700; color: var(--text-dim); }
+
+.client-perimeter-metrics-mini-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 24px; width: 100%;
+}
+.client-mini-metric-cell {
+    background-color: rgba(13, 21, 39, 0.3); border: 1px solid rgba(255,255,255,0.01);
+    border-radius: 6px; padding: 12px; display: flex; flex-direction: column; align-items: flex-start; text-align: left;
+}
+.client-m-cell-label { font-family: monospace; font-size: 0.65rem; color: var(--text-dim); letter-spacing: 0.5px; margin-bottom: 4px; }
+.client-m-cell-value { font-size: 1.05rem; font-weight: 700; color: var(--text-bright); margin: 0; }
+
+.client-perimeter-vector-chart-box {
+    width: 100%; background-color: rgba(6, 9, 19, 0.5); border-radius: 8px; padding: 16px; box-sizing: border-box;
+}
+.client-perimeter-wave-svg { width: 100%; height: auto; display: block; overflow: hidden; }
+.client-chart-footer-label { font-family: monospace; font-size: 0.6rem; color: var(--text-dim); letter-spacing: 1px; margin-top: 10px; }
+
+/* Continuous vector path shifting animations */
+.client-anim-wave-1 { animation: clientWaveDrift 5s linear infinite; }
+.client-anim-wave-2 { animation: clientWaveDrift 9s linear infinite reverse; }
+
+/* ==========================================
+   RIGHT ZONE - COMPLIANCE RULE INTERACTIVES
+========================================== */
+.client-perimeter-interactive-rules-list { display: flex; flex-direction: column; gap: 14px; width: 100%; }
+
+.client-perimeter-rule-row-item {
+    background-color: rgba(13, 21, 39, 0.3); border: 1px solid rgba(255, 255, 255, 0.01);
+    border-radius: 8px; padding: 16px; display: flex; justify-content: space-between;
+    align-items: center; gap: 20px; box-sizing: border-box; width: 100%;
+}
+.client-rule-meta-left { display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
+.client-rule-code-tag { font-family: monospace; font-size: 0.65rem; color: var(--text-dim); letter-spacing: 0.5px; font-weight: 700; margin-bottom: 4px; }
+.client-rule-meta-left h4 { font-size: 1.05rem; font-weight: 700; color: var(--text-bright); margin: 0 0 4px 0; }
+.client-rule-description { font-size: 0.8rem; color: rgba(255, 255, 255, 0.5); margin: 0; line-height: 1.4; max-width: 360px; }
+
+/* Premium Cyber purple Toggle Slider Elements */
+.client-cyber-switch-container {
+    position: relative; display: inline-block; width: 42px; height: 22px; flex-shrink: 0; cursor: pointer;
+}
+.client-toggle-checkbox-trigger { opacity: 0; width: 0; height: 0; }
+.client-cyber-switch-slider {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(6, 9, 19, 0.8); border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 34px; transition: 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.client-cyber-switch-slider:before {
+    content: ""; position: absolute; height: 14px; width: 14px; left: 3px; bottom: 3px;
+    background-color: var(--text-dim); border-radius: 50%; transition: 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.client-toggle-checkbox-trigger:checked + .client-cyber-switch-slider { background-color: rgba(157, 78, 221, 0.1); border-color: var(--neon-purple); }
+.client-toggle-checkbox-trigger:checked + .client-cyber-switch-slider:before { transform: translateX(20px); background-color: var(--neon-purple); box-shadow: 0 0 6px var(--neon-purple); }
+
+/* ==========================================
+   ANALOG SYSTEM ENGINE CORE ANIMATIONS KEYFRAMES
+========================================== */
+@keyframes clientBeaconPulse { 0% { opacity: 0.4; transform: scale(0.95); } 100% { opacity: 1; transform: scale(1.1); } }
+@keyframes clientWaveDrift { 0% { transform: translateX(0); } 100% { transform: translateX(12px); } }
+
+/* ==========================================
+   FLUID RESPONSIVE VIEWPORT CONSTRAINTS
+========================================== */
+@media (max-width: 1200px) {
+    .client-perimeter-workspace-split {
+        grid-template-columns: 1fr; /* Switch into layout stack columns on tablet display matrices views */
+        gap: 20px;
+    }
+}
+
+@media (max-width: 520px) {
+    .client-perimeter-panel-card { padding: 16px; }
+    .client-perimeter-status-banner-row { flex-direction: column; gap: 8px; align-items: flex-start; }
+    .client-perimeter-rule-row-item { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .client-cyber-switch-container { align-self: flex-end; } /* Re-anchors positions sliders toggles on smartphones screens */
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // CLIENT PERIMETER SHIELD COUNTDOWN ROTATOR TIMER ENGINE
+    const clientTimerDisplay = document.getElementById("clientPerimeterTimer");
+    let keyRotationCountdownSeconds = 30;
+
+    if (clientTimerDisplay) {
+        setInterval(() => {
+            keyRotationCountdownSeconds--;
+            
+            if (keyRotationCountdownSeconds < 0) {
+                keyRotationCountdownSeconds = 30; // Reset loop profile boundaries seamlessly
+                console.log("CLIENT_PERIMETER // Cryptographic zero-trust boundary keys successfully shuffled.");
+            }
+            
+            clientTimerDisplay.textContent = keyRotationCountdownSeconds + "s";
+        }, 1000); // Ticks precisely on standard 1-second metric intervals
+    }
+});
+
+</script>
+
+            <!-- PANEL BLOCK 3: EXPLOIT SCANS LOGS -->
+           <!-- ELABORATE MODULE: ENHANCED EXPLOIT SCANS & DIAGNOSTICS CONSOLE -->
+<div class="console-display-section-view" id="client-vulnerabilities">
+    <div class="panel-section-header">
+        <h1 class="section-headline-header">Exploit Scans & Diagnostics</h1>
+        <p class="section-intel-subphrase">Review automated infrastructure port scans, trace lateral metadata intrusion signals, and trigger emergency subnet sandboxing.</p>
+    </div>
+
+    <!-- Dual-Zone Core Surveillance Monitor Splitting Frame -->
+    <div class="scans-workspace-split">
+        
+        <!-- Left Sub-Zone: Vulnerability Distribution Graph Graphic Layout -->
+        <div class="scans-analytics-panel-card">
+            <h3 class="scans-block-title">Vulnerability Density distribution</h3>
+            
+            <div class="scans-chart-holder">
+                <svg viewBox="0 0 200 200" class="radial-scans-density-svg" xmlns="http://w3.org">
+                    <!-- Concentric Grid Target Wireframes Base Layout -->
+                    <circle cx="100" cy="100" r="85" fill="none" stroke="rgba(255, 255, 255, 0.02)" stroke-width="1"/>
+                    <circle cx="100" cy="100" r="60" fill="none" stroke="rgba(255, 255, 255, 0.02)" stroke-width="1"/>
+                    <circle cx="100" cy="100" r="35" fill="none" stroke="rgba(255, 255, 255, 0.02)" stroke-width="1"/>
+                    
+                    <!-- Segment A: Critical Bypass Ports (Electric Error Red Arc Vector) -->
+                    <circle cx="100" cy="100" r="60" fill="none" stroke="#ff3366" stroke-width="8" stroke-dasharray="75, 376" stroke-dashoffset="0" class="scans-anim-ring-segment"/>
+                    <!-- Segment B: Anomalous Drifts (Corporate Purple Arc Vector) -->
+                    <circle cx="100" cy="100" r="60" fill="none" stroke="#9d4edd" stroke-width="8" stroke-dasharray="188, 376" stroke-dashoffset="-75" class="scans-anim-ring-segment"/>
+                    <!-- Segment C: Monitored Port Audits (Neon Cyan Arc Vector) -->
+                    <circle cx="100" cy="100" r="60" fill="none" stroke="#00f0ff" stroke-width="8" stroke-dasharray="113, 376" stroke-dashoffset="-263" class="scans-anim-ring-segment"/>
+                    
+                    <circle cx="100" cy="100" r="10" fill="#060913" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1"/>
+                </svg>
+            </div>
+
+            <!-- Severity Indicators Categories Summary Legends -->
+            <div class="scans-legend-stack">
+                <div class="scans-legend-row-item">
+                    <div class="scans-legend-meta-left"><span class="scans-legend-bullet bullet-error"></span><span>CRITICAL_EXPLOITS</span></div>
+                    <span class="scans-legend-value font-mono-bold">20%</span>
+                </div>
+                <div class="scans-legend-row-item">
+                    <div class="scans-legend-meta-left"><span class="scans-legend-bullet bullet-purple"></span><span>ANOMALOUS_DRIFT</span></div>
+                    <span class="scans-legend-value font-mono-bold">50%</span>
+                </div>
+                <div class="scans-legend-row-item">
+                    <div class="scans-legend-meta-left"><span class="scans-legend-bullet bullet-cyan"></span><span>ROUTINE_AUDITS</span></div>
+                    <span class="scans-legend-value font-mono-bold">30%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Sub-Zone: Staggered Incident Ingestion Ledger Table -->
+        <div class="scans-ledger-panel-card">
+            <h3 class="scans-block-title">Distributed Attack Log Ingestion</h3>
+            
+            <div class="scans-incident-table-wrapper">
+                <table class="scans-incident-table">
+                    <thead>
+                        <tr>
+                            <th>TIMESTAMP</th>
+                            <th>SOURCE_IP</th>
+                            <th>VECTOR_CLASSIFICATION</th>
+                            <th>SEVERITY</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Record Row 01 -->
+                        <tr class="scans-incident-record-row">
+                            <td class="font-mono-dim">18:54:32</td>
+                            <td class="font-mono-bold">192.168.10.42</td>
+                            <td>Zero-Trust Header Bypass</td>
+                            <td><span class="scans-severity-badge-pill label-error">CRITICAL</span></td>
+                            <td><a href="404.html" class="scans-action-link-btn txt-btn-error">SANDBOX</a></td>
+                        </tr>
+                        <!-- Record Row 02 -->
+                        <tr class="scans-incident-record-row">
+                            <td class="font-mono-dim">18:51:19</td>
+                            <td class="font-mono-bold">45.22.114.8</td>
+                            <td>Polymorphic Port Scan</td>
+                            <td><span class="scans-severity-badge-pill label-purple">WARNING</span></td>
+                            <td><a href="404.html" class="scans-action-link-btn txt-btn-purple">MONITOR</a></td>
+                        </tr>
+                        <!-- Record Row 03 -->
+                        <tr class="scans-incident-record-row">
+                            <td class="font-mono-dim">18:44:07</td>
+                            <td class="font-mono-bold">102.1.84.16</td>
+                            <td>Microservice Drift Anomaly</td>
+                            <td><span class="scans-severity-badge-pill label-cyan">INFO</span></td>
+                            <td><a href="404.html" class="scans-action-link-btn txt-btn-cyan">IGNORE</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+<style>
+    :root {
+    --bg-surface: #0a0f1d;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-error: #ff3366;
+}
+
+/* ==========================================
+   SURVEILLANCE WORKSPACE INTERFACE SPLIT
+========================================== */
+.scans-workspace-split {
+    display: grid;
+    /* Grid alignment variables enforce widescreen desktop side-by-side splits */
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 24px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.scans-analytics-panel-card,
+.scans-ledger-panel-card {
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+}
+
+.scans-block-title {
+    font-size: 1.05rem; font-weight: 800; text-transform: uppercase; color: var(--text-bright);
+    margin: 0 0 24px 0; text-align: left; letter-spacing: 0.5px;
+}
+
+/* ==========================================
+   LEFT ZONE - RADIAL EXPANSIONS VECTOR GRAPHS
+========================================== */
+.scans-chart-holder {
+    width: 100%; display: flex; justify-content: center; align-items: center;
+    margin-bottom: 24px; min-height: 160px;
+}
+.radial-scans-density-svg { width: 100%; max-width: 160px; height: auto; display: block; overflow: hidden; }
+
+.scans-anim-ring-segment {
+    transform-origin: 100px 100px;
+    transform: rotate(-90deg);
+    transition: stroke-dashoffset 0.4s ease;
+}
+
+.scans-legend-stack { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+.scans-legend-row-item { display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; }
+.scans-legend-meta-left { display: flex; align-items: center; gap: 8px; font-family: monospace; color: rgba(255,255,255,0.6); }
+
+.scans-legend-bullet { width: 6px; height: 6px; border-radius: 50%; display: block; }
+.bullet-error { background-color: var(--accent-error); box-shadow: 0 0 6px var(--accent-error); }
+.bullet-purple { background-color: var(--neon-purple); box-shadow: 0 0 6px var(--neon-purple); }
+.bullet-cyan { background-color: var(--neon-cyan); box-shadow: 0 0 6px var(--neon-cyan); }
+.font-mono-bold { font-family: monospace; font-weight: 700; color: var(--text-bright); }
+
+/* ==========================================
+   RIGHT ZONE - LEDGER DATA TABLE STACK
+========================================== */
+.scans-incident-table-wrapper {
+    width: 100%; overflow-x: auto; border-radius: 8px;
+    background-color: rgba(6, 9, 19, 0.4); border: 1px solid rgba(255, 255, 255, 0.01);
+}
+
+.scans-incident-table {
+    width: 100%; border-collapse: collapse; border-spacing: 0; text-align: left;
+}
+
+.scans-incident-table th {
+    background-color: rgba(13, 21, 39, 0.5); font-family: monospace; font-size: 0.7rem;
+    font-weight: 700; color: var(--text-dim); padding: 14px 16px; letter-spacing: 0.5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.scans-incident-table td {
+    padding: 14px 16px; font-size: 0.85rem; color: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02); white-space: nowrap;
+}
+
+.scans-incident-record-row { transition: background-color 0.2s ease; }
+.scans-incident-record-row:hover { background-color: rgba(255, 255, 255, 0.01); }
+.scans-incident-record-row:last-child td { border-bottom: none; }
+
+.font-mono-bold { font-family: monospace; font-weight: 700; color: var(--text-bright); }
+.font-mono-dim { font-family: monospace; color: var(--text-dim); }
+
+/* Table Severity Badges Indicators Labels */
+.scans-severity-badge-pill {
+    font-family: monospace; font-size: 0.65rem; font-weight: 700; padding: 2px 6px; border-radius: 4px;
+}
+.label-error { background-color: rgba(255, 51, 102, 0.08); color: var(--accent-error); border: 1px solid rgba(255, 51, 102, 0.15); }
+.label-purple { background-color: rgba(157, 78, 221, 0.08); color: var(--neon-purple); border: 1px solid rgba(157, 78, 221, 0.15); }
+.label-cyan { background-color: rgba(0, 240, 255, 0.08); color: var(--neon-cyan); border: 1px solid rgba(0, 240, 255, 0.15); }
+
+/* Action Links Button Triggers (404 Terminals Target Routing) */
+.scans-action-link-btn {
+    font-family: monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;
+    letter-spacing: 0.5px; padding: 4px 10px; border-radius: 4px; border: 1px solid currentColor;
+    background-color: transparent; display: inline-block; transition: background-color 0.2s, box-shadow 0.2s;
+}
+.scans-action-link-btn.txt-btn-error { color: var(--accent-error); }
+.scans-action-link-btn.txt-btn-purple { color: var(--neon-purple); }
+.scans-action-link-btn.txt-btn-cyan { color: var(--neon-cyan); }
+
+.scans-action-link-btn.txt-btn-error:hover { background-color: var(--accent-error); color: #060913; box-shadow: 0 0 10px rgba(255, 51, 102, 0.3); }
+.scans-action-link-btn.txt-btn-purple:hover { background-color: var(--neon-purple); color: var(--text-bright); box-shadow: 0 0 10px rgba(157, 78, 221, 0.3); }
+.scans-action-link-btn.txt-btn-cyan:hover { background-color: var(--neon-cyan); color: #060913; box-shadow: 0 0 10px rgba(0, 240, 255, 0.3); }
+
+/* ==========================================
+   FLUID RESPONSIVE VIEWPORT CONSTRAINTS
+========================================== */
+@media (max-width: 1200px) {
+    .scans-workspace-split {
+        grid-template-columns: 1fr; /* Switch cleanly to single column vertical linear blocks layout stacks */
+        gap: 20px;
+    }
+}
+
+@media (max-width: 520px) {
+    .scans-analytics-panel-card, .scans-ledger-panel-card { padding: 16px; }
+    .scans-incident-table th, .scans-incident-table td { padding: 12px; }
+}
+
+</style>
+<!-- ELABORATE MODULE: ENHANCED CORPORATE COMPLIANCE AUDITING DESK -->
+<div class="console-display-section-view" id="client-compliance">
+    <div class="panel-section-header">
+        <h1 class="section-headline-header">Compliance Documentation</h1>
+        <p class="section-intel-subphrase">Download certified multi-region security status files, data privacy framework logs, and system audit logs.</p>
+    </div>
+
+    <!-- Symmetrical Dual-Zone Auditing Panel Splitting Grid Framework -->
+    <div class="compliance-workspace-split">
+        
+        <!-- Left Zone: Machine Learning Framework Score Vector Graphic -->
+        <div class="compliance-graph-panel-card">
+            <h3 class="compliance-block-title">Continuous Framework Audit</h3>
+            
+            <div class="compliance-vector-chart-viewport">
+                <!-- Advanced Multi-Spline SVG Vector Auditing Timeline Status Lines -->
+                <svg viewBox="0 0 400 160" class="compliance-trend-svg" xmlns="http://w3.org">
+                    <!-- Background Grid Baseline Reference Bars -->
+                    <line x1="20" y1="140" x2="380" y2="140" stroke="rgba(255,255,255,0.02)" stroke-width="1"/>
+                    <line x1="20" y1="90" x2="380" y2="90" stroke="rgba(255,255,255,0.01)" stroke-width="0.5" stroke-dasharray="4, 4"/>
+                    <line x1="20" y1="40" x2="380" y2="40" stroke="rgba(255,255,255,0.01)" stroke-width="0.5" stroke-dasharray="4, 4"/>
+                    
+                    <!-- Spline A: Ongoing Privacy Alignment Threshold Curve (Corporate Purple Line) -->
+                    <path d="M20,120 Q100,105 180,50 T340,25 T380,10" fill="none" stroke="#9d4edd" stroke-width="2.5" class="compliance-trend-spline"/>
+                    <!-- Spline B: System SLA Buffer Minimum Metrics Baseline (Neon Cyan Line) -->
+                    <path d="M20,135 Q80,130 160,115 T280,95 T380,75" fill="none" stroke="#00f0ff" stroke-width="1.5" stroke-dasharray="3, 3" class="compliance-trend-spline"/>
+                    
+                    <!-- Glowing Intersection Forecast Intercept Target Pin Indicators -->
+                    <circle cx="180" cy="50" r="4.5" fill="#00f0ff" class="compliance-intercept-beacon"/>
+                    <circle cx="340" cy="25" r="4" fill="#9d4edd" class="compliance-intercept-beacon"/>
+                </svg>
+            </div>
+            
+            <!-- Graphic Meta Timeline Indicator Tags -->
+            <div class="compliance-timeline-axis-row">
+                <span class="comp-axis-tag">Q1_AUDIT</span>
+                <span class="comp-axis-tag">Q2_AUDIT</span>
+                <span class="comp-axis-tag">Q3_AUDIT</span>
+                <span class="comp-axis-tag">Q4_CURRENT // STABLE</span>
+            </div>
+        </div>
+
+        <!-- Right Zone: Certified Multi-Region Security Files Sheet Registry -->
+        <div class="compliance-registry-panel-card">
+            <h3 class="compliance-block-title">Certified Security Sheets</h3>
+            
+            <div class="compliance-risk-blocks-stack">
+                
+                <!-- Certified File Item 01 -->
+                <div class="compliance-matrix-item-row">
+                    <div class="compliance-meta-left-block">
+                        <span class="compliance-index-tag txt-purple">[CERTIFIED // ISO_27001]</span>
+                        <h4>Information Security Management</h4>
+                        <p class="compliance-details-text">Formal corporate framework audit logging access credential policies and network layer sandboxing validation loops.</p>
+                    </div>
+                    <div class="compliance-download-trigger">
+                        <span class="comp-size-label">SIZE // PDF</span>
+                        <a href="404.html" class="comp-download-btn txt-purple">DOWNLOAD</a>
+                    </div>
+                </div>
+
+                <!-- Certified File Item 02 -->
+                <div class="compliance-matrix-item-row">
+                    <div class="compliance-meta-left-block">
+                        <span class="compliance-index-tag txt-cyan">[CERTIFIED // SOC2_TYPE_II]</span>
+                        <h4>Trust Services Operational Audit</h4>
+                        <p class="compliance-details-text">Continuous continuous audit verifying packet filtration matrix efficiency curves and system camouflage router integrity.</p>
+                    </div>
+                    <div class="compliance-download-trigger">
+                        <span class="comp-size-label">SIZE // PDF</span>
+                        <a href="404.html" class="comp-download-btn txt-cyan">DOWNLOAD</a>
+                    </div>
+                </div>
+
+                <!-- Certified File Item 03 -->
+                <div class="compliance-matrix-item-row">
+                    <div class="compliance-meta-left-block">
+                        <span class="compliance-index-tag txt-success">[CERTIFIED // GDPR_PRIVACY]</span>
+                        <h4>Multi-Region Data Protection Sheet</h4>
+                        <p class="compliance-details-text">Privacy architecture verification tracing absolute lateral metadata isolation maps and log retention parameters loops.</p>
+                    </div>
+                    <div class="compliance-download-trigger">
+                        <span class="comp-size-label">SIZE // PDF</span>
+                        <a href="404.html" class="comp-download-btn txt-success">DOWNLOAD</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<style>
+    :root {
+    --bg-surface: #0a0f1d;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-success: #00ff88;
+}
+
+/* ==========================================
+   SOMETRIC FRAMEWORK ALIGNING LAYOUT SPLIT
+========================================== */
+.compliance-workspace-split {
+    display: grid;
+    /* Clean asymmetric grid properties align timeline curves with registries fields columns */
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 24px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.compliance-graph-panel-card,
+.compliance-registry-panel-card {
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+}
+
+.compliance-block-title {
+    font-size: 1.05rem; font-weight: 800; text-transform: uppercase; color: var(--text-bright);
+    margin: 0 0 24px 0; text-align: left; letter-spacing: 0.5px;
+}
+
+/* ==========================================
+   LEFT ZONE - AUDIT TIMELINE SPLINE GRAPH
+========================================== */
+.compliance-vector-chart-viewport {
+    width: 100%; background-color: rgba(6, 9, 19, 0.5); border-radius: 8px;
+    padding: 16px; box-sizing: border-box; display: flex; justify-content: center; align-items: center;
+}
+.compliance-trend-svg { width: 100%; height: auto; display: block; overflow: hidden; }
+
+/* Continuous radar tracking beacon pulses styles handles */
+.compliance-intercept-beacon {
+    animation: complianceBeaconPulse 1.6s infinite ease-in-out alternate;
+    transform-origin: center;
+}
+.compliance-intercept-beacon:nth-child(even) { animation-delay: 0.8s; }
+
+.compliance-timeline-axis-row {
+    display: flex; justify-content: space-between; width: 100%; padding: 0 10px;
+    margin-top: 14px; box-sizing: border-box;
+}
+.comp-axis-tag { font-family: monospace; font-size: 0.65rem; color: var(--text-dim); font-weight: 700; letter-spacing: 0.5px; }
+
+/* ==========================================
+   RIGHT ZONE - DOWNLOADING SECURITY MATRIX
+========================================== */
+.compliance-risk-blocks-stack { display: flex; flex-direction: column; gap: 14px; width: 100%; }
+
+.compliance-matrix-item-row {
+    background-color: rgba(13, 21, 39, 0.3); border: 1px solid rgba(255, 255, 255, 0.01);
+    border-radius: 8px; padding: 16px; display: flex; justify-content: space-between;
+    align-items: center; gap: 24px; box-sizing: border-box; width: 100%;
+    transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.compliance-meta-left-block { display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
+.compliance-index-tag { font-family: monospace; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 4px; }
+.compliance-meta-left-block h4 { font-size: 1.05rem; font-weight: 700; color: var(--text-bright); margin: 0 0 4px 0; }
+.compliance-details-text { font-size: 0.8rem; color: rgba(255, 255, 255, 0.5); margin: 0; line-height: 1.4; max-width: 320px; }
+
+.compliance-download-trigger { display: flex; flex-direction: column; align-items: flex-end; flex-shrink: 0; }
+.comp-size-label { font-family: monospace; font-size: 0.6rem; color: var(--text-dim); font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; }
+
+/* High-Contrast Corporate File Download Button Triggers */
+.comp-download-btn {
+    font-family: monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;
+    letter-spacing: 0.5px; padding: 6px 12px; border-radius: 4px; border: 1px solid currentColor;
+    background-color: transparent; display: inline-block; transition: background-color 0.2s, box-shadow 0.2s;
+}
+.comp-download-btn.txt-purple:hover { background-color: var(--neon-purple); color: var(--text-bright); box-shadow: 0 0 10px rgba(157, 78, 221, 0.3); }
+.comp-download-btn.txt-cyan:hover { background-color: var(--neon-cyan); color: #060913; box-shadow: 0 0 10px rgba(0, 240, 255, 0.3); }
+.comp-download-btn.txt-success:hover { background-color: var(--accent-success); color: #060913; box-shadow: 0 0 10px rgba(0, 255, 136, 0.3); }
+
+/* Programmatic text status colors classes mapping hooks */
+.txt-purple { color: var(--neon-purple); text-shadow: 0 0 6px rgba(157,78,221,0.2); }
+.txt-cyan { color: var(--neon-cyan); text-shadow: 0 0 6px rgba(0,240,255,0.2); }
+.txt-success { color: var(--accent-success); text-shadow: 0 0 6px rgba(0,255,136,0.2); }
+
+/* Interactive row highlighting loops */
+.compliance-matrix-item-row:hover {
+    border-color: rgba(255, 255, 255, 0.04);
+    background-color: rgba(13, 21, 39, 0.55);
+}
+
+/* ==========================================
+   ANALOG SYSTEM CORE KEYFRAME TIMELINES
+========================================== */
+@keyframes complianceBeaconPulse { 0% { r: 3; opacity: 0.4; } 100% { r: 6; opacity: 1; filter: drop-shadow(0 0 4px currentColor); } }
+
+/* ==========================================
+   FLUID RESPONSIVE DESIGN BOUNDARIES
+========================================== */
+@media (max-width: 1200px) {
+    .compliance-workspace-split {
+        grid-template-columns: 1fr; /* Switch cleanly to a single vertical linear stack layout on mobile viewport bounds */
+        gap: 20px;
+    }
+}
+
+@media (max-width: 520px) {
+    .compliance-graph-panel-card, .compliance-registry-panel-card { padding: 16px; }
+    .compliance-matrix-item-row { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .compliance-download-trigger { align-self: flex-end; } /* Re-anchors download indicators positions to the bottom edge on mobile screens */
+}
+
+</style>
+
+        </main>
+
+    </div>
+<style>
+    /* ==========================================================================
+   1. RESET ENGINE & CANVASES CONFIGURATIONS
+   ========================================================================== */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: #060913;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #ffffff;
+}
+
+:root {
+    --bg-deep: #060913;
+    --bg-surface: #0a0f1d;
+    --bg-card: #11192e;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-error: #ff3366;
+    --accent-success: #00ff88;
+    --sidebar-width: 260px;
+    --header-height: 70px;
+}
+
+.dashboard-root-wrapper {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* ==========================================================================
+   2. DYNAMIC NAVIGATION BAR TOP HEADER 
+   ========================================================================== */
+.global-dash-header {
+    position: absolute;
+    top: 0; left: 0; width: 100%;
+    height: var(--header-height);
+    background-color: var(--bg-surface);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 24px; box-sizing: border-box;
+    z-index: 10;
+}
+
+.header-left-brand-block {
+    display: flex; align-items: center; gap: 14px;
+}
+
+.sidebar-toggle-hamburger {
+    display: none; background: none; border: none; cursor: pointer; padding: 4px;
+}
+.hamburger-svg { width: 24px; height: 24px; fill: none; stroke: var(--text-bright); stroke-width: 2; }
+
+.brand-refresh-link {
+    display: flex; align-items: center; gap: 10px; text-decoration: none; cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.brand-refresh-link:active { transform: scale(0.98); }
+
+.brand-logo-img {
+    width: 155px; height: 80px; object-fit: contain;
+    filter: drop-shadow(0 0 6px var(--neon-purple)); /* Client dashboard identity uses a purple visual anchor */
+}
+
+.brand-text-label {
+    font-size: 1.2rem; font-weight: 900; letter-spacing: -0.5px;
+    text-transform: uppercase; color: var(--text-bright);
+}
+.brand-text-label span { color: var(--neon-purple); }
+
+.header-right-action-block {
+    display: flex; align-items: center; gap: 20px;
+}
+
+.notifications-bell-btn {
+    background: none; border: none; cursor: pointer; position: relative; padding: 6px;
+    display: flex; justify-content: center; align-items: center;
+}
+.bell-svg { width: 20px; height: 20px; fill: none; stroke: var(--text-dim); stroke-width: 2; transition: stroke 0.2s; }
+.notifications-bell-btn:hover .bell-svg { stroke: var(--neon-purple); filter: drop-shadow(0 0 4px var(--neon-purple)); }
+.bell-active-indicator-dot { position: absolute; top: 6px; right: 6px; width: 6px; height: 6px; background-color: var(--accent-error); border-radius: 50%; box-shadow: 0 0 6px var(--accent-error); }
+
+.user-profile-badge {
+    display: flex; align-items: center; gap: 12px;
+    background-color: rgba(6, 9, 19, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 6px 14px; border-radius: 20px;
+}
+
+.profile-icon-circle {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+    display: flex; justify-content: center; align-items: center;
+    font-family: monospace; font-weight: 900; font-size: 0.85rem; color: #060913;
+}
+
+.parsed-username-display {
+    font-size: 0.9rem; font-weight: 700; color: var(--text-bright);
+}
+
+/* ==========================================================================
+   3. COLLAPSIBLE OPERATIONS MENU SIDEBAR DRAWER
+   ========================================================================== */
+.global-dash-sidebar {
+    position: absolute;
+    top: var(--header-height); left: 0;
+    width: var(--sidebar-width);
+    height: calc(100vh - var(--header-height));
+    background-color: var(--bg-surface);
+    border-right: 1px solid rgba(255, 255, 255, 0.03);
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 24px 16px; box-sizing: border-box;
+    z-index: 9; transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.sidebar-navigation-menu-stack {
+    display: flex; flex-direction: column; gap: 6px; width: 100%;
+}
+
+.menu-category-tag {
+    font-family: monospace; font-size: 0.65rem; font-weight: 700;
+    color: var(--text-dim); letter-spacing: 1.5px; text-transform: uppercase;
+    padding-left: 12px; margin-bottom: 6px; margin-top: 14px;
+}
+.sidebar-navigation-menu-stack .menu-category-tag:first-child { margin-top: 0; }
+
+.menu-navigation-route-link {
+    display: flex; align-items: center; gap: 14px;
+    padding: 12px; border-radius: 8px; text-decoration: none;
+    color: var(--text-dim); cursor: pointer; box-sizing: border-box;
+    transition: background-color 0.25s, color 0.25s;
+}
+
+.menu-vector-icon-shell {
+    width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; flex-shrink: 0;
+}
+
+.menu-route-title { font-size: 0.95rem; font-weight: 600; }
+
+.menu-navigation-route-link:hover {
+    background-color: rgba(255, 255, 255, 0.015);
+    color: var(--text-bright);
+}
+
+.menu-navigation-route-link.active-route-node {
+    background-color: rgba(157, 78, 221, 0.06);
+    color: var(--neon-purple);
+    border: 1px solid rgba(157, 78, 221, 0.1);
+}
+
+.sidebar-logout-button-node {
+    display: flex; align-items: center; gap: 14px; width: 100%;
+    padding: 12px; border-radius: 8px; background: none;
+    border: 1px solid rgba(255, 51, 102, 0.15); color: var(--accent-error);
+    cursor: pointer; box-sizing: border-box; font-family: inherit;
+    transition: background-color 0.25s, box-shadow 0.25s;
+}
+.sidebar-logout-button-node:hover {
+    background-color: rgba(255, 51, 102, 0.08);
+    box-shadow: 0 0 15px rgba(255, 51, 102, 0.1);
+}
+
+/* ==========================================================================
+   4. HARDWARE-ACCELERATED GLASSMORPHIC DRAWER BACKDROP BLUR
+   ========================================================================== */
+.viewport-blur-backdrop {
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - var(--header-height));
+    background-color: rgba(6, 9, 19, 0.4);
+    
+    /* Advanced backdrop filter implementation */
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    
+    opacity: 0;
+    pointer-events: none;
+    z-index: 8;
+    
+    transition: opacity 0.3s ease, 
+                backdrop-filter 0.3s ease, 
+                -webkit-backdrop-filter 0.3s ease;
+}
+
+.viewport-blur-backdrop.backdrop-active {
+    opacity: 1;
+    pointer-events: auto;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* ==========================================
+   5. CENTER WORKSPACE CONSOLE VIEWS
+========================================== */
+.dashboard-main-viewport-view {
+    margin-left: var(--sidebar-width);
+    margin-top: var(--header-height);
+    width: calc(100vw - var(--sidebar-width));
+    height: calc(100vh - var(--header-height));
+    overflow-y: auto; box-sizing: border-box;
+    padding: 40px; background-color: var(--bg-deep);
+    position: relative;
+}
+
+.console-display-section-view {
+    display: none; width: 100%; height: auto;
+    animation: consoleViewFade 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.console-display-section-view.active-view-panel {
+    display: block;
+}
+
+.section-headline-header {
+    font-size: 2.2rem; font-weight: 900; text-transform: uppercase;
+    letter-spacing: -0.5px; color: var(--text-bright); margin: 0 0 10px 0;
+    border-left: 3px solid var(--neon-purple); /* Color maps onto corporate color themes */
+    padding-left: 16px;
+}
+
+.section-intel-subphrase {
+    font-size: 1.05rem; color: var(--text-dim); line-height: 1.6; margin: 0 0 35px 0; max-width: 680px;
+}
+
+.workspace-placeholder-blueprint-card {
+    width: 100%; min-height: 380px;
+    background-color: var(--bg-surface);
+    border: 1px dashed rgba(255, 255, 255, 0.04);
+    border-radius: 12px; display: flex; flex-direction: column;
+    justify-content: center; align-items: center; padding: 40px; box-sizing: border-box;
+}
+.blueprint-wireframe-svg { width: 48px; height: 48px; stroke: rgba(255, 255, 255, 0.03); stroke-dasharray: 4, 4; margin-bottom: 16px; }
+.blueprint-card-label { font-family: monospace; font-size: 0.8rem; color: rgba(255, 255, 255, 0.2); letter-spacing: 1px; }
+
+@keyframes consoleViewFade { 0% { opacity: 0; transform: translateY(8px); } 100% { opacity: 1; transform: translateY(0); } }
+
+/* ==========================================================================
+   6. RESPONSIVE MEDIA QUERIES BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 992px) {
+    .sidebar-toggle-hamburger { display: inline-flex; }
+    .viewport-blur-backdrop { display: block; }
+    
+    .global-dash-sidebar {
+        transform: translate3d(-100%, 0, 0);
+        box-shadow: 25px 0 50px rgba(0,0,0,0.8);
+    }
+    .global-dash-sidebar.sidebar-drawer-open {
+        transform: translate3d(0, 0, 0);
+    }
+
+    .dashboard-main-viewport-view {
+        margin-left: 0; width: 100vw; padding: 24px;
+    }
+}
+
+@media (min-width: 993px) {
+    .viewport-blur-backdrop { display: none !important; opacity: 0 !important; pointer-events: none !important; }
+}
+
+@media (max-width: 480px) {
+    .global-dash-header { padding: 0 16px; }
+    .brand-text-label { display: none; }
+    .section-headline-header { font-size: 1.7rem; }
+    .dashboard-main-viewport-view { padding: 20px 16px; }
+}
+
+</style>
+```html
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+
+    /* =========================================================
+       1. DYNAMIC USER INFORMATION
+       
+       Login page saves:
+       activeUserMailToken = "test@gmail.com"
+       
+       Dashboard displays:
+       test
+       
+       Avatar:
+       T
+       ========================================================= */
+
+    const usernameDisplayNode =
+        document.getElementById(
+            "profileUserStringHandle"
+        );
+
+    const visualAvatarNode =
+        document.getElementById(
+            "profileVisualAvatar"
+        );
+
+
+    const activeUserEmail =
+        localStorage.getItem(
+            "activeUserMailToken"
+        );
+
+
+    if (activeUserEmail) {
+
+        /*
+           Extract only the username part.
+
+           test@gmail.com
+                  ↓
+               test
+        */
+
+        const cleanUsername =
+            activeUserEmail
+                .split("@")[0]
+                .trim();
+
+
+        if (usernameDisplayNode) {
+
+            usernameDisplayNode.textContent =
+                cleanUsername;
+
+        }
+
+
+        if (visualAvatarNode) {
+
+            visualAvatarNode.textContent =
+                cleanUsername
+                    .charAt(0)
+                    .toUpperCase();
+
+        }
+
+    }
+
+    else {
+
+        /*
+           No login email found.
+        */
+
+        if (usernameDisplayNode) {
+
+            usernameDisplayNode.textContent =
+                "Client_Node";
+
+        }
+
+
+        if (visualAvatarNode) {
+
+            visualAvatarNode.textContent =
+                "C";
+
+        }
+
+    }
+
+
+    /* =========================================================
+       2. MOBILE SIDEBAR ELEMENTS
+    ========================================================= */
+
+    const globalSidebarDrawer =
+        document.getElementById(
+            "dashboardSidebarDrawer"
+        );
+
+
+    const hamburgerMenuBtn =
+        document.getElementById(
+            "hamburgerMenuBtn"
+        );
+
+
+    const viewportBlurBackdrop =
+        document.getElementById(
+            "viewportBlurBackdrop"
+        );
+
+
+    /* =========================================================
+       CLOSE MOBILE SIDEBAR
+    ========================================================= */
+
+    function closeMobileSidebarDrawer() {
+
+        if (globalSidebarDrawer) {
+
+            globalSidebarDrawer.classList.remove(
+                "sidebar-drawer-open"
+            );
+
+        }
+
+
+        if (viewportBlurBackdrop) {
+
+            viewportBlurBackdrop.classList.remove(
+                "backdrop-active"
+            );
+
+        }
+
+    }
+
+
+    /* =========================================================
+       OPEN MOBILE SIDEBAR
+    ========================================================= */
+
+    function openMobileSidebarDrawer() {
+
+        if (globalSidebarDrawer) {
+
+            globalSidebarDrawer.classList.add(
+                "sidebar-drawer-open"
+            );
+
+        }
+
+
+        if (viewportBlurBackdrop) {
+
+            viewportBlurBackdrop.classList.add(
+                "backdrop-active"
+            );
+
+        }
+
+    }
+
+
+    /* =========================================================
+       HAMBURGER BUTTON
+    ========================================================= */
+
+    if (hamburgerMenuBtn) {
+
+        hamburgerMenuBtn.addEventListener(
+            "click",
+            (event) => {
+
+                event.stopPropagation();
+
+
+                const isOpen =
+                    globalSidebarDrawer &&
+                    globalSidebarDrawer.classList.contains(
+                        "sidebar-drawer-open"
+                    );
+
+
+                if (isOpen) {
+
+                    closeMobileSidebarDrawer();
+
+                }
+
+                else {
+
+                    openMobileSidebarDrawer();
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =========================================================
+       CLICK BACKDROP TO CLOSE SIDEBAR
+    ========================================================= */
+
+    if (viewportBlurBackdrop) {
+
+        viewportBlurBackdrop.addEventListener(
+            "click",
+            () => {
+
+                closeMobileSidebarDrawer();
+
+            }
+        );
+
+    }
+
+
+    /* =========================================================
+       3. DASHBOARD SIDEBAR NAVIGATION
+    ========================================================= */
+
+    const navigationRoutesArray =
+        document.querySelectorAll(
+            ".menu-navigation-route-link"
+        );
+
+
+    const consoleDisplayPanelsArray =
+        document.querySelectorAll(
+            ".console-display-section-view"
+        );
+
+
+    /* =========================================================
+       ACTIVATE DASHBOARD PANEL
+    ========================================================= */
+
+    function activateDashboardPanel(panelId) {
+
+        if (!panelId) {
+            return;
+        }
+
+
+        /* ---------------------------------------------
+           CHECK PANEL EXISTS
+        --------------------------------------------- */
+
+        const targetPanel =
+            document.getElementById(panelId);
+
+
+        if (!targetPanel) {
+            return;
+        }
+
+
+        /* ---------------------------------------------
+           SAVE ACTIVE PANEL
+        --------------------------------------------- */
+
+        localStorage.setItem(
+            "stackly_active_panel",
+            panelId
+        );
+
+
+        /* ---------------------------------------------
+           UPDATE SIDEBAR ACTIVE STATE
+        --------------------------------------------- */
+
+        navigationRoutesArray.forEach(
+            (link) => {
+
+                const linkTarget =
+                    link.getAttribute(
+                        "data-target-panel"
+                    );
+
+
+                if (linkTarget === panelId) {
+
+                    link.classList.add(
+                        "active-route-node"
+                    );
+
+                }
+
+                else {
+
+                    link.classList.remove(
+                        "active-route-node"
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* ---------------------------------------------
+           SHOW SELECTED PANEL ONLY
+        --------------------------------------------- */
+
+        consoleDisplayPanelsArray.forEach(
+            (panel) => {
+
+                if (panel.id === panelId) {
+
+                    panel.classList.add(
+                        "active-view-panel"
+                    );
+
+                }
+
+                else {
+
+                    panel.classList.remove(
+                        "active-view-panel"
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* ---------------------------------------------
+           CLOSE MOBILE SIDEBAR
+        --------------------------------------------- */
+
+        if (window.innerWidth <= 992) {
+
+            closeMobileSidebarDrawer();
+
+        }
+
+    }
+
+
+    /* =========================================================
+       4. SIDEBAR CLICK EVENTS
+    ========================================================= */
+
+    navigationRoutesArray.forEach(
+        (routeNode) => {
+
+            routeNode.addEventListener(
+                "click",
+                (event) => {
+
+                    event.preventDefault();
+
+
+                    const requestedPanelId =
+                        routeNode.getAttribute(
+                            "data-target-panel"
+                        );
+
+
+                    activateDashboardPanel(
+                        requestedPanelId
+                    );
+
+                }
+            );
+
+        }
+    );
+
+
+    /* =========================================================
+       5. RESTORE LAST SIDEBAR PANEL AFTER REFRESH
+       
+       Example:
+       
+       User selects:
+       Perimeter Shield
+       
+       saved:
+       stackly_active_panel = "client-perimeter"
+       
+       Refresh:
+       client-perimeter opens again.
+       ========================================================= */
+
+    const savedPanel =
+        localStorage.getItem(
+            "stackly_active_panel"
+        );
+
+
+    if (
+        savedPanel &&
+        document.getElementById(savedPanel)
+    ) {
+
+        activateDashboardPanel(
+            savedPanel
+        );
+
+    }
+
+    else {
+
+        /*
+           First dashboard visit.
+        */
+
+        activateDashboardPanel(
+            "client-overview"
+        );
+
+    }
+
+
+    /* =========================================================
+       6. DISCONNECT / LOGOUT
+    ========================================================= */
+
+    const consoleSessionLogoutBtn =
+        document.getElementById(
+            "consoleSessionLogoutBtn"
+        );
+
+
+    if (consoleSessionLogoutBtn) {
+
+        consoleSessionLogoutBtn.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+
+
+                /* ---------------------------------------------
+                   REMOVE USER LOGIN SESSION
+                --------------------------------------------- */
+
+                localStorage.removeItem(
+                    "activeUserMailToken"
+                );
+
+
+                /* ---------------------------------------------
+                   REMOVE REMEMBERED DASHBOARD PANEL
+                --------------------------------------------- */
+
+                localStorage.removeItem(
+                    "stackly_active_panel"
+                );
+
+
+                /* ---------------------------------------------
+                   RETURN TO LOGIN PAGE
+                --------------------------------------------- */
+
+                window.location.href =
+                    "login.html";
+
+            }
+        );
+
+    }
+
+
+});
+</script>
+```
+
+</body>
+</html>

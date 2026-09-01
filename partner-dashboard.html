@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Partner Command Cockpit // Stackly Enterprise Systems</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="fullscreen-portal-body">
+
+    <div class="dashboard-root-wrapper">
+        
+        <!-- ==========================================
+           GLOBAL INTEGRATED NAVIGATION HEADER
+        ========================================== -->
+        <header class="global-dash-header">
+            <div class="header-left-brand-block">
+                <!-- Hamburger Trigger Button Node -->
+                <button class="sidebar-toggle-hamburger" id="hamburgerMenuBtn" aria-label="Toggle Menu Panel">
+                    <svg viewBox="0 0 24 24" class="hamburger-svg"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+                
+                <!-- Refresh Function Link wrapper -->
+                <a onclick="window.location.reload();" class="brand-refresh-link" title="Refresh Dashboard Console Terminal">
+                    <img src="./assests/automotive logo.webp" alt="Stackly Network Grid Core Node Logo" class="brand-logo-img">
+                   
+                </a>
+            </div>
+
+            <div class="header-right-action-block">
+                <!-- Notifications Alert Target Icon -->
+                <button class="notifications-bell-btn" aria-label="Operational Notifications Intel Desk">
+                    <svg viewBox="0 0 24 24" class="bell-svg"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                    <span class="bell-active-indicator-dot"></span>
+                </button>
+
+                <!-- Session Profiler Identification Badge -->
+                <div class="user-profile-badge">
+                    <div class="profile-icon-circle" id="profileVisualAvatar">P</div>
+                    <span class="parsed-username-display" id="profileUserStringHandle">Loading...</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- ==========================================
+           COLLAPSIBLE SIDEBAR MENU TRACKS DRAWER
+        ========================================== -->
+        <aside class="global-dash-sidebar" id="dashboardSidebarDrawer">
+            <nav class="sidebar-navigation-menu-stack">
+                
+                <div class="menu-category-tag">Operations Desk</div>
+                <a class="menu-navigation-route-link active-route-node" data-target-panel="panel-metrics">
+                    <svg viewBox="0 0 24 24" class="menu-vector-icon-shell"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    <span class="menu-route-title">Overview Grid</span>
+                </a>
+                <a class="menu-navigation-route-link" data-target-panel="panel-firewall">
+                    <svg viewBox="0 0 24 24" class="menu-vector-icon-shell"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    <span class="menu-route-title">Firewall Node</span>
+                </a>
+
+                <div class="menu-category-tag">Diagnostic Logs</div>
+                <a class="menu-navigation-route-link" data-target-panel="panel-threats">
+                    <svg viewBox="0 0 24 24" class="menu-vector-icon-shell"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    <span class="menu-route-title">Threat Streams</span>
+                </a>
+                <a class="menu-navigation-route-link" data-target-panel="panel-analytics">
+                    <svg viewBox="0 0 24 24" class="menu-vector-icon-shell"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                    <span class="menu-route-title">Predictive Intel</span>
+                </a>
+
+            </nav>
+
+            <button class="sidebar-logout-button-node" id="consoleSessionLogoutBtn">
+                <svg viewBox="0 0 24 24" class="menu-vector-icon-shell"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                <span class="menu-route-title">Disconnect Session</span>
+            </button>
+        </aside>
+
+        <!-- GLASSMORPHIC BACKDROP COMPONENT -->
+        <div class="viewport-blur-backdrop" id="viewportBlurBackdrop"></div>
+
+        <!-- ==========================================
+           MAIN CENTER DISPLAY VIEWPORT CONSOLE
+        ========================================== -->
+        <main class="dashboard-main-viewport-view">
+            
+          <!-- ELABORATE MODULE: ENHANCED OPERATIONAL OVERVIEW DESK -->
+<div class="console-display-section-view active-view-panel" id="panel-metrics">
+    <div class="panel-section-header">
+        <h1 class="section-headline-header">Partner Overview Grid</h1>
+        <p class="section-intel-subphrase">Real-time status updates cross-referencing active pipeline nodes, transaction speeds, and localized partner profile verification indexes.</p>
+    </div>
+
+    <!-- Tier 1: 4-Column Tactical Counter Grid Network -->
+    <div class="tactical-kpi-grid">
+        
+        <!-- KPI Box 01 -->
+        <div class="kpi-metric-card">
+            <div class="kpi-laser-trim cyan-trim"></div>
+            <div class="kpi-card-header">
+                <span class="kpi-code-tag">SYS_INGEST // RATE</span>
+                <div class="kpi-icon-shell">
+                    <svg viewBox="0 0 24 24" class="kpi-svg"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                </div>
+            </div>
+            <div class="kpi-value-row">
+                <h2 class="kpi-big-num txt-cyan">2.44M</h2>
+                <span class="kpi-trend-pill positive-trend">+12.4%</span>
+            </div>
+            <p class="kpi-footer-meta">Packets processed per second</p>
+        </div>
+
+        <!-- KPI Box 02 -->
+        <div class="kpi-metric-card">
+            <div class="kpi-laser-trim purple-trim"></div>
+            <div class="kpi-card-header">
+                <span class="kpi-code-tag">ACTIVE_TUNNELS // SECURE</span>
+                <div class="kpi-icon-shell">
+                    <svg viewBox="0 0 24 24" class="kpi-svg"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                </div>
+            </div>
+            <div class="kpi-value-row">
+                <h2 class="kpi-big-num txt-purple">1,482</h2>
+                <span class="kpi-trend-pill positive-trend">ONLINE</span>
+            </div>
+            <p class="kpi-footer-meta">Encrypted edge nodes synchronized</p>
+        </div>
+
+        <!-- KPI Box 03 -->
+        <div class="kpi-metric-card">
+            <div class="kpi-laser-trim green-trim"></div>
+            <div class="kpi-card-header">
+                <span class="kpi-code-tag">LATENCY // COCKPIT</span>
+                <div class="kpi-icon-shell">
+                    <svg viewBox="0 0 24 24" class="kpi-svg"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+            </div>
+            <div class="kpi-value-row">
+                <h2 class="kpi-big-num txt-green">0.14ms</h2>
+                <span class="kpi-trend-pill neutral-trend">STABLE</span>
+            </div>
+            <p class="kpi-footer-meta">Sub-millisecond transit timeline</p>
+        </div>
+
+        <!-- KPI Box 04 -->
+        <div class="kpi-metric-card">
+            <div class="kpi-laser-trim error-trim"></div>
+            <div class="kpi-card-header">
+                <span class="kpi-code-tag">THREATS // MITIGATED</span>
+                <div class="kpi-icon-shell">
+                    <svg viewBox="0 0 24 24" class="kpi-svg"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                </div>
+            </div>
+            <div class="kpi-value-row">
+                <h2 class="kpi-big-num txt-error">42</h2>
+                <span class="kpi-trend-pill negative-trend">BLOCKED</span>
+            </div>
+            <p class="kpi-footer-meta">Malicious bypass scans dropped</p>
+        </div>
+
+    </div>
+
+    <!-- Tier 2: Split Telemetry Monitor & Threat Streaming Ledger Layout -->
+    <div class="telemetry-split-monitor">
+        
+        <!-- Left Sub-Block: Core Network Flow Progress Monitors -->
+        <div class="monitor-card-console">
+            <h3 class="monitor-block-title">Subsystem Bandwidth Load</h3>
+            <div class="monitor-progress-stack">
+                
+                <div class="progress-bar-item">
+                    <div class="progress-meta-row">
+                        <span class="p-node-name">AMER_CLUSTER_GATEWAY</span>
+                        <span class="p-node-val txt-cyan">84% Capacity</span>
+                    </div>
+                    <div class="progress-track-base">
+                        <div class="progress-fill-line bg-cyan" style="width: 84%"></div>
+                    </div>
+                </div>
+
+                <div class="progress-bar-item">
+                    <div class="progress-meta-row">
+                        <span class="p-node-name">EMEA_CAMOUFLAGE_ROUTING</span>
+                        <span class="p-node-val txt-purple">61% Capacity</span>
+                    </div>
+                    <div class="progress-track-base">
+                        <div class="progress-fill-line bg-purple" style="width: 61%"></div>
+                    </div>
+                </div>
+
+                <div class="progress-bar-item">
+                    <div class="progress-meta-row">
+                        <span class="p-node-name">APAC_REFLEXIVE_SANDBOXING</span>
+                        <span class="p-node-val txt-green">39% Capacity</span>
+                    </div>
+                    <div class="progress-track-base">
+                        <div class="progress-fill-line bg-green" style="width: 39%"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Right Sub-Block: Forensic Security Log Tracking Terminal -->
+        <div class="monitor-card-console">
+            <h3 class="monitor-block-title">Live Security Log Stream</h3>
+            <div class="live-threat-feed-terminal">
+                <div class="feed-log-entry">
+                    <span class="log-time">[18:34:02]</span>
+                    <span class="log-status stat-success">SUBNET_SECURED</span>
+                    <p class="log-text">Sandbox partition configured safely for node 0x7F.</p>
+                </div>
+                <div class="feed-log-entry">
+                    <span class="log-time">[18:31:15]</span>
+                    <span class="log-status stat-warn">SCAN_DETECTED</span>
+                    <p class="log-text">External proxy scanning port 443 on AMER gateway matrix.</p>
+                </div>
+                <div class="feed-log-entry">
+                    <span class="log-time">[18:24:59]</span>
+                    <span class="log-status stat-success">CIPHER_MUTATED</span>
+                    <p class="log-text">Polymorphic key rotate loop executed cleanly across tunnels.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<style>
+    :root {
+    --bg-surface: #0a0f1d;
+    --bg-card: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-error: #ff3366;
+    --accent-success: #00ff88;
+}
+
+/* ==========================================
+   4-COLUMN TACTICAL KPI OVERVIEW GRID
+========================================== */
+.tactical-kpi-grid {
+    display: grid;
+    /* Grid splitting architecture scales directly to fill layout voids */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+}
+
+.kpi-metric-card {
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+/* Top bounding neon glow line accents */
+.kpi-laser-trim {
+    position: absolute; left: 20px; top: 0; width: 30px; height: 2px; border-radius: 2px;
+}
+.cyan-trim { background-color: var(--neon-cyan); box-shadow: 0 0 8px var(--neon-cyan); }
+.purple-trim { background-color: var(--neon-purple); box-shadow: 0 0 8px var(--neon-purple); }
+.green-trim { background-color: var(--accent-success); box-shadow: 0 0 8px var(--accent-success); }
+.error-trim { background-color: var(--accent-error); box-shadow: 0 0 8px var(--accent-error); }
+
+.kpi-card-header {
+    display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;
+}
+.kpi-code-tag { font-family: monospace; font-size: 0.65rem; color: var(--text-dim); letter-spacing: 1px; font-weight: 700; }
+.kpi-icon-shell { color: var(--text-dim); display: flex; align-items: center; }
+.kpi-svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.5; }
+
+.kpi-value-row {
+    display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 8px;
+}
+.kpi-big-num { font-size: 1.8rem; font-weight: 800; margin: 0; line-height: 1; letter-spacing: -0.5px; }
+
+.kpi-trend-pill {
+    font-family: monospace; font-size: 0.65rem; font-weight: 700; padding: 2px 6px; border-radius: 4px;
+}
+.positive-trend { background-color: rgba(0, 255, 136, 0.08); color: var(--accent-success); border: 1px solid rgba(0, 255, 136, 0.15); }
+.neutral-trend { background-color: rgba(0, 240, 255, 0.08); color: var(--neon-cyan); border: 1px solid rgba(0, 240, 255, 0.15); }
+.negative-trend { background-color: rgba(255, 51, 102, 0.08); color: var(--accent-error); border: 1px solid rgba(255, 51, 102, 0.15); }
+
+.kpi-footer-meta { font-size: 0.8rem; color: rgba(255, 255, 255, 0.5); margin: 0; text-align: left; }
+
+/* Interactive hovering halos */
+.kpi-metric-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.06);
+}
+
+/* ==========================================
+   TIER 2: ASYMMETRIC METRICS SPLIT FRAME
+========================================== */
+.telemetry-split-monitor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.monitor-card-console {
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+}
+
+.monitor-block-title {
+    font-size: 1.05rem; font-weight: 800; text-transform: uppercase; color: var(--text-bright);
+    margin: 0 0 20px 0; text-align: left; letter-spacing: 0.5px;
+}
+
+/* Subsystem Progress monitor line sets */
+.monitor-progress-stack { display: flex; flex-direction: column; gap: 18px; }
+.progress-bar-item { display: flex; flex-direction: column; width: 100%; }
+.progress-meta-row { display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 700; margin-bottom: 6px; }
+.p-node-name { color: rgba(255, 255, 255, 0.6); }
+
+.progress-track-base {
+    width: 100%; height: 6px; background-color: rgba(6, 9, 19, 0.6); border-radius: 3px; overflow: hidden;
+}
+.progress-fill-line { height: 100%; border-radius: 3px; }
+.bg-cyan { background-color: var(--neon-cyan); box-shadow: 0 0 6px var(--neon-cyan); }
+.bg-purple { background-color: var(--neon-purple); box-shadow: 0 0 6px var(--neon-purple); }
+.bg-green { background-color: var(--accent-success); box-shadow: 0 0 6px var(--accent-success); }
+
+/* Forensic Activity feed logs rows console setup mapping */
+.live-threat-feed-terminal {
+    width: 100%; background-color: rgba(6, 9, 19, 0.5); border-radius: 8px;
+    padding: 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 12px;
+    min-height: 154px;
+}
+.feed-log-entry { display: flex; align-items: center; gap: 10px; font-size: 0.8rem; text-align: left; }
+.log-time { font-family: monospace; color: var(--text-dim); }
+.log-status { font-family: monospace; font-size: 0.65rem; font-weight: 700; padding: 1px 4px; border-radius: 2px; }
+.stat-success { color: var(--accent-success); background-color: rgba(0, 255, 136, 0.05); }
+.stat-warn { color: var(--accent-error); background-color: rgba(255, 51, 102, 0.05); }
+.feed-log-entry p { margin: 0; color: rgba(255, 255, 255, 0.7); }
+
+/* ==========================================
+   FLUID BREAKPOINTS OVERRIDES LOGIC MAPS
+========================================== */
+@media (max-width: 1200px) {
+    .tactical-kpi-grid {
+        grid-template-columns: repeat(2, 1fr); /* Collapses smoothly into clean dual rows sets layout bounds */
+    }
+}
+
+@media (max-width: 768px) {
+    .telemetry-split-monitor {
+        grid-template-columns: 1fr; /* Switch to full text linear block stacks on small monitors views */
+    }
+}
+
+@media (max-width: 520px) {
+    .tactical-kpi-grid {
+        grid-template-columns: 1fr; /* absolute single column listing format for tiny touch display rows */
+    }
+    .kpi-big-num { font-size: 1.6rem; }
+    .monitor-card-console { padding: 16px; }
+}
+
+</style>
+
+           <!-- ELABORATE MODULE: ENHANCED POLYMORPHIC FIREWALL DESK -->
+<div class="console-display-section-view" id="panel-firewall">
+    <div class="panel-section-header">
+        <h1 class="section-headline-header">Polymorphic Firewall Control</h1>
+        <p class="section-intel-subphrase">Manage active packet filtering configurations, evaluate perimeter bypass alerts, and configure entry point camouflages.</p>
+    </div>
+
+    <!-- Dual-Zone Asymmetric Dashboard Split Split-Screen Layer -->
+    <div class="firewall-workspace-split">
+        
+        <!-- Left Zone: Firewall Status Console Matrix Controls -->
+        <div class="firewall-control-panel-card">
+            <h3 class="firewall-block-title">Core Mutation Shield Status</h3>
+            
+            <div class="firewall-status-banner-row">
+                <div class="shield-radar-status">
+                    <span class="pulse-beacon-ring beacon-active"></span>
+                    <span class="status-headline txt-green">ACTIVE INTRUSION MESH</span>
+                </div>
+                <div class="mutation-timer-pill">
+                    <span class="timer-label">NEXT_MUTATION //</span>
+                    <span class="timer-clock txt-cyan" id="firewallMutationTimer">45s</span>
+                </div>
+            </div>
+
+            <!-- Operational Metric Grid Fields -->
+            <div class="firewall-metrics-mini-grid">
+                <div class="mini-metric-cell">
+                    <span class="m-cell-label">CIPHER_STRENGTH</span>
+                    <h4 class="m-cell-value">AES_XTS_512</h4>
+                </div>
+                <div class="mini-metric-cell">
+                    <span class="m-cell-label">PACKETS_MUTATED</span>
+                    <h4 class="m-cell-value txt-purple">14.8M / HR</h4>
+                </div>
+                <div class="mini-metric-cell">
+                    <span class="m-cell-label">FALSE_ALERTS</span>
+                    <h4 class="m-cell-value">0.002%</h4>
+                </div>
+                <div class="mini-metric-cell">
+                    <span class="m-cell-label">MESH_SYNC</span>
+                    <h4 class="m-cell-value txt-cyan">100%</h4>
+                </div>
+            </div>
+
+            <!-- Integrated Visual Micro-Graph Vector Viewbox -->
+            <div class="firewall-vector-chart-box">
+                <svg viewBox="0 0 300 80" class="firewall-wave-svg" xmlns="http://w3.org">
+                    <path d="M0,40 Q30,10 60,60 T120,20 T180,70 T240,30 T300,40" fill="none" stroke="#00f0ff" stroke-width="2" class="anim-wave-line-1"/>
+                    <path d="M0,40 Q40,70 80,30 T160,60 T240,10 T300,40" fill="none" stroke="#9d4edd" stroke-width="1.5" stroke-dasharray="4,4" class="anim-wave-line-2"/>
+                    <line x1="0" y1="40" x2="300" y2="40" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+                </svg>
+                <div class="chart-footer-label">REAL-TIME FIELD FILTER DISTORTION RATIO</div>
+            </div>
+        </div>
+
+        <!-- Right Zone: Traffic Rule Ledger Settings & Toggles -->
+        <div class="firewall-rules-panel-card">
+            <h3 class="firewall-block-title">Packet Filtering Architecture</h3>
+            
+            <div class="firewall-interactive-rules-list">
+                
+                <!-- Rule Row 01 -->
+                <div class="firewall-rule-row-item">
+                    <div class="rule-meta-left">
+                        <span class="rule-code-tag">RULE_0x9A // SECURITY</span>
+                        <h4>Zero-Trust Strict Ingestion</h4>
+                        <p class="rule-description">Enforces sub-millisecond footprint isolation parameters across unknown subnet entry headers.</p>
+                    </div>
+                    <label class="cyber-switch-container">
+                        <input type="checkbox" checked class="cyber-toggle-checkbox-trigger">
+                        <span class="cyber-switch-slider"></span>
+                    </label>
+                </div>
+
+                <!-- Rule Row 02 -->
+                <div class="firewall-rule-row-item">
+                    <div class="rule-meta-left">
+                        <span class="rule-code-tag">RULE_0x2B // PRIVACY</span>
+                        <h4>Camouflage Endpoint Re-Routing</h4>
+                        <p class="rule-description">Mutates destination endpoint hash variables continuously to hide core cluster staging arrays.</p>
+                    </div>
+                    <label class="cyber-switch-container">
+                        <input type="checkbox" checked class="cyber-toggle-checkbox-trigger">
+                        <span class="cyber-switch-slider"></span>
+                    </label>
+                </div>
+
+                <!-- Rule Row 03 -->
+                <div class="firewall-rule-row-item">
+                    <div class="rule-meta-left">
+                        <span class="rule-code-tag">RULE_0x6E // FORENSIC</span>
+                        <h4>Reflexive Sandbox Deployment</h4>
+                        <p class="rule-description">Instantly isolates suspicious transaction server parameters into secure container staging zones.</p>
+                    </div>
+                    <label class="cyber-switch-container">
+                        <input type="checkbox" class="cyber-toggle-checkbox-trigger">
+                        <span class="cyber-switch-slider"></span>
+                    </label>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<style>
+    :root {
+    --bg-surface: #0a0f1d;
+    --bg-card: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-error: #ff3366;
+    --accent-success: #00ff88;
+}
+
+/* ==========================================
+   ASYMMETRIC CORE WORKSPACE LAYOUT SPLIT
+========================================== */
+.firewall-workspace-split {
+    display: grid;
+    /* Split allocation balancing handles desktop proportions perfectly */
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 24px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.firewall-control-panel-card,
+.firewall-rules-panel-card {
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+}
+
+.firewall-block-title {
+    font-size: 1.05rem; font-weight: 800; text-transform: uppercase; color: var(--text-bright);
+    margin: 0 0 24px 0; text-align: left; letter-spacing: 0.5px;
+}
+
+/* ==========================================
+   LEFT ZONE - FIREWALL MATRIX TERMINAL
+========================================== */
+.firewall-status-banner-row {
+    display: flex; justify-content: space-between; align-items: center;
+    background-color: rgba(6, 9, 19, 0.5); padding: 12px 16px; border-radius: 8px;
+    margin-bottom: 24px; box-sizing: border-box; width: 100%;
+}
+
+.shield-radar-status { display: flex; align-items: center; gap: 10px; }
+.pulse-beacon-ring { width: 8px; height: 8px; border-radius: 50%; display: block; }
+.pulse-beacon-ring.beacon-active { background-color: var(--accent-success); box-shadow: 0 0 8px var(--accent-success); animation: beaconPulse 1.6s infinite alternate; }
+
+.status-headline { font-family: monospace; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.5px; }
+.mutation-timer-pill { font-family: monospace; font-size: 0.8rem; font-weight: 700; color: var(--text-dim); }
+
+.firewall-metrics-mini-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 24px; width: 100%;
+}
+.mini-metric-cell {
+    background-color: rgba(13, 21, 39, 0.3); border: 1px solid rgba(255,255,255,0.01);
+    border-radius: 6px; padding: 12px; display: flex; flex-direction: column; align-items: flex-start; text-align: left;
+}
+.m-cell-label { font-family: monospace; font-size: 0.65rem; color: var(--text-dim); letter-spacing: 0.5px; margin-bottom: 4px; }
+.m-cell-value { font-size: 1.05rem; font-weight: 700; color: var(--text-bright); margin: 0; }
+
+.firewall-vector-chart-box {
+    width: 100%; background-color: rgba(6, 9, 19, 0.5); border-radius: 8px; padding: 16px; box-sizing: border-box;
+}
+.firewall-wave-svg { width: 100%; height: auto; display: block; overflow: hidden; }
+.chart-footer-label { font-family: monospace; font-size: 0.6rem; color: var(--text-dim); letter-spacing: 1px; margin-top: 10px; }
+
+/* Continuous vector oscillation line sweeps animations */
+.anim-wave-line-1 { animation: waveDrift 4s linear infinite; }
+.anim-wave-line-2 { animation: waveDrift 8s linear infinite reverse; }
+
+/* ==========================================
+   RIGHT ZONE - INTERACTIVE TOGGLES RULES LEDGER
+========================================== */
+.firewall-interactive-rules-list { display: flex; flex-direction: column; gap: 14px; width: 100%; }
+
+.firewall-rule-row-item {
+    background-color: rgba(13, 21, 39, 0.3); border: 1px solid rgba(255, 255, 255, 0.01);
+    border-radius: 8px; padding: 16px; display: flex; justify-content: space-between;
+    align-items: center; gap: 20px; box-sizing: border-box; width: 100%;
+}
+.rule-meta-left { display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
+.rule-code-tag { font-family: monospace; font-size: 0.65rem; color: var(--text-dim); letter-spacing: 0.5px; font-weight: 700; margin-bottom: 4px; }
+.rule-meta-left h4 { font-size: 1.05rem; font-weight: 700; color: var(--text-bright); margin: 0 0 4px 0; }
+.rule-description { font-size: 0.8rem; color: rgba(255, 255, 255, 0.5); margin: 0; line-height: 1.4; max-width: 360px; }
+
+/* Premium Cyan Cybersecurity Toggle Switches Engines */
+.cyber-switch-container {
+    position: relative; display: inline-block; width: 42px; height: 22px; flex-shrink: 0; cursor: pointer;
+}
+.cyber-toggle-checkbox-trigger { opacity: 0; width: 0; height: 0; }
+.cyber-switch-slider {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(6, 9, 19, 0.8); border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 34px; transition: 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.cyber-switch-slider:before {
+    content: ""; position: absolute; height: 14px; width: 14px; left: 3px; bottom: 3px;
+    background-color: var(--text-dim); border-radius: 50%; transition: 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.cyber-toggle-checkbox-trigger:checked + .cyber-switch-slider { background-color: rgba(0, 240, 255, 0.1); border-color: var(--neon-cyan); }
+.cyber-toggle-checkbox-trigger:checked + .cyber-switch-slider:before { transform: translateX(20px); background-color: var(--neon-cyan); box-shadow: 0 0 6px var(--neon-cyan); }
+
+/* ==========================================
+   ANALOG SYSTEM CORE KEYFRAME TIMELINES
+========================================== */
+@keyframes beaconPulse { 0% { opacity: 0.4; transform: scale(0.95); } 100% { opacity: 1; transform: scale(1.1); } }
+@keyframes waveDrift { 0% { transform: translateX(0); } 100% { transform: translateX(10px); } }
+
+/* ==========================================
+   FLUID RESPONSIVE DESIGN BOUNDARIES
+========================================== */
+@media (max-width: 1200px) {
+    .firewall-workspace-split {
+        grid-template-columns: 1fr; /* Rearrange column maps cleanly into a linear stack to protect padding layout bounds */
+        gap: 20px;
+    }
+}
+
+@media (max-width: 520px) {
+    .firewall-control-panel-card, .firewall-rules-panel-card { padding: 16px; }
+    .firewall-status-banner-row { flex-direction: column; gap: 8px; align-items: flex-start; }
+    .firewall-rule-row-item { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .cyber-switch-container { align-self: flex-end; } /* Repositions slider toggles on mobile rows list */
+}
+
+</style>
+<!-- ELABORATE MODULE: ENHANCED ACTIVE THREATS SURVEILLANCE CONSOLE -->
+<div class="console-display-section-view" id="panel-threats">
+    <div class="panel-section-header">
+        <h1 class="section-headline-header">Active Threat Intercepts</h1>
+        <p class="section-intel-subphrase">Review deep packet signature anomalies, trace malicious payload footprints, and view automated staging sandboxes.</p>
+    </div>
+
+    <!-- Dual-Zone Core Surveillance Monitor Splitting Frame -->
+    <div class="threats-workspace-split">
+        
+        <!-- Left Sub-Zone: Geolocation Severity Map Summary Graphic -->
+        <div class="threats-analytics-panel-card">
+            <h3 class="threats-block-title">Vector Density Distribution</h3>
+            
+            <div class="threats-chart-holder">
+                <svg viewBox="0 0 200 200" class="radial-density-svg" xmlns="http://w3.org">
+                    <!-- Concentric Grid Target Wireframes -->
+                    <circle cx="100" cy="100" r="85" fill="none" stroke="rgba(255, 255, 255, 0.02)" stroke-width="1"/>
+                    <circle cx="100" cy="100" r="60" fill="none" stroke="rgba(255, 255, 255, 0.02)" stroke-width="1"/>
+                    <circle cx="100" cy="100" r="35" fill="none" stroke="rgba(255, 255, 255, 0.02)" stroke-width="1"/>
+                    
+                    <!-- Segment A: Critical Exploits (Electric Error Red Arc Vector) -->
+                    <circle cx="100" cy="100" r="60" fill="none" stroke="#ff3366" stroke-width="8" stroke-dasharray="113, 376" stroke-dashoffset="0" class="anim-ring-segment"/>
+                    <!-- Segment B: Warnings (Electric Purple Arc Vector) -->
+                    <circle cx="100" cy="100" r="60" fill="none" stroke="#9d4edd" stroke-width="8" stroke-dasharray="150, 376" stroke-dashoffset="-113" class="anim-ring-segment"/>
+                    <!-- Segment C: Monitored Ingestion (Neon Cyan Arc Vector) -->
+                    <circle cx="100" cy="100" r="60" fill="none" stroke="#00f0ff" stroke-width="8" stroke-dasharray="113, 376" stroke-dashoffset="-263" class="anim-ring-segment"/>
+                    
+                    <circle cx="100" cy="100" r="10" fill="#060913" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1"/>
+                </svg>
+            </div>
+
+            <!-- Severity Indicators Categories Summary Legends -->
+            <div class="severity-legend-stack">
+                <div class="legend-row-item">
+                    <div class="legend-meta-left"><span class="legend-bullet bg-error"></span><span>CRITICAL_EXPLOITS</span></div>
+                    <span class="legend-value font-mono">30%</span>
+                </div>
+                <div class="legend-row-item">
+                    <div class="legend-meta-left"><span class="legend-bullet bg-purple"></span><span>ANOMALOUS_TRAFFIC</span></div>
+                    <span class="legend-value font-mono">40%</span>
+                </div>
+                <div class="legend-row-item">
+                    <div class="legend-meta-left"><span class="legend-bullet bg-cyan"></span><span>ROUTINE_AUDITS</span></div>
+                    <span class="legend-value font-mono">30%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Sub-Zone: Staggered Incident Ingestion Ledger Table -->
+        <div class="threats-ledger-panel-card">
+            <h3 class="threats-block-title">Incident Queue Ledger</h3>
+            
+            <div class="cyber-incident-table-wrapper">
+                <table class="cyber-incident-table">
+                    <thead>
+                        <tr>
+                            <th>TIMESTAMP</th>
+                            <th>SOURCE_IP</th>
+                            <th>VECTOR_CLASSIFICATION</th>
+                            <th>SEVERITY</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Record Row 01 -->
+                        <tr class="incident-record-row">
+                            <td class="font-mono text-dim">18:42:11</td>
+                            <td class="font-mono font-bold">192.168.42.105</td>
+                            <td>Zero-Trust Header Bypass</td>
+                            <td><span class="severity-badge-pill badge-error">CRITICAL</span></td>
+                            <td><a href="404.html" class="table-action-link-btn text-error">SANDBOX</a></td>
+                        </tr>
+                        <!-- Record Row 02 -->
+                        <tr class="incident-record-row">
+                            <td class="font-mono text-dim">18:39:54</td>
+                            <td class="font-mono font-bold">45.221.12.89</td>
+                            <td>Polymorphic Port Scan</td>
+                            <td><span class="severity-badge-pill badge-purple">WARNING</span></td>
+                            <td><a href="404.html" class="table-action-link-btn text-purple">MONITOR</a></td>
+                        </tr>
+                        <!-- Record Row 03 -->
+                        <tr class="incident-record-row">
+                            <td class="font-mono text-dim">18:31:02</td>
+                            <td class="font-mono font-bold">102.16.84.22</td>
+                            <td>Microservice Drift Anomaly</td>
+                            <td><span class="severity-badge-pill badge-cyan">INFO</span></td>
+                            <td><a href="404.html" class="table-action-link-btn text-cyan">IGNORE</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+<style>
+    :root {
+    --bg-surface: #0a0f1d;
+    --bg-card: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-error: #ff3366;
+}
+
+/* ==========================================
+   SURVEILLANCE WORKSPACE INTERFACE SPLIT
+========================================== */
+.threats-workspace-split {
+    display: grid;
+    /* Grid system layout format balances asymmetric graphics and ledgers */
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 24px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.threats-analytics-panel-card,
+.threats-ledger-panel-card {
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+}
+
+.threats-block-title {
+    font-size: 1.05rem; font-weight: 800; text-transform: uppercase; color: var(--text-bright);
+    margin: 0 0 24px 0; text-align: left; letter-spacing: 0.5px;
+}
+
+/* ==========================================
+   LEFT ZONE - RADIAL DENSITY SVG GRAPHICS
+========================================== */
+.threats-chart-holder {
+    width: 100%; display: flex; justify-content: center; align-items: center;
+    margin-bottom: 24px; min-height: 160px;
+}
+.radial-density-svg { width: 100%; max-width: 160px; height: auto; display: block; overflow: hidden; }
+
+/* Staggered vector path rotational animations */
+.anim-ring-segment {
+    transform-origin: 100px 100px;
+    transform: rotate(-90deg);
+    transition: stroke-dashoffset 0.4s ease;
+}
+
+.severity-legend-stack { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+.legend-row-item { display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; }
+.legend-meta-left { display: flex; align-items: center; gap: 8px; font-family: monospace; color: rgba(255,255,255,0.6); }
+
+.legend-bullet { width: 6px; height: 6px; border-radius: 50%; display: block; }
+.bg-error { background-color: var(--accent-error); box-shadow: 0 0 6px var(--accent-error); }
+.bg-purple { background-color: var(--neon-purple); box-shadow: 0 0 6px var(--neon-purple); }
+.bg-cyan { background-color: var(--neon-cyan); box-shadow: 0 0 6px var(--neon-cyan); }
+.font-mono { font-family: monospace; font-weight: 700; color: var(--text-bright); }
+
+/* ==========================================
+   RIGHT ZONE - INCIDENT QUEUE TABLE LEDGER
+========================================== */
+.cyber-incident-table-wrapper {
+    width: 100%; overflow-x: auto; border-radius: 8px;
+    background-color: rgba(6, 9, 19, 0.4); border: 1px solid rgba(255, 255, 255, 0.01);
+}
+
+.cyber-incident-table {
+    width: 100%; border-collapse: collapse; border-spacing: 0; text-align: left;
+}
+
+.cyber-incident-table th {
+    background-color: rgba(13, 21, 39, 0.5); font-family: monospace; font-size: 0.7rem;
+    font-weight: 700; color: var(--text-dim); padding: 14px 16px; letter-spacing: 0.5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.cyber-incident-table td {
+    padding: 14px 16px; font-size: 0.85rem; color: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02); white-space: nowrap;
+}
+
+.incident-record-row { transition: background-color 0.2s ease; }
+.incident-record-row:hover { background-color: rgba(255, 255, 255, 0.01); }
+.incident-record-row:last-child td { border-bottom: none; }
+
+.font-bold { font-weight: 700; color: var(--text-bright); }
+.text-dim { color: var(--text-dim); }
+
+/* Security Severity Status Badges */
+.severity-badge-pill {
+    font-family: monospace; font-size: 0.65rem; font-weight: 700; padding: 2px 6px; border-radius: 4px;
+}
+.badge-error { background-color: rgba(255, 51, 102, 0.08); color: var(--accent-error); border: 1px solid rgba(255, 51, 102, 0.15); }
+.badge-purple { background-color: rgba(157, 78, 221, 0.08); color: var(--neon-purple); border: 1px solid rgba(157, 78, 221, 0.15); }
+.badge-cyan { background-color: rgba(0, 240, 255, 0.08); color: var(--neon-cyan); border: 1px solid rgba(0, 240, 255, 0.15); }
+
+/* Table Action Buttons Link Overlays (404 Runs) */
+.table-action-link-btn {
+    font-family: monospace; font-size: 0.75rem; font-weight: 700; text-decoration: none;
+    letter-spacing: 0.5px; padding: 4px 10px; border-radius: 4px; border: 1px solid currentColor;
+    background-color: transparent; display: inline-block; transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.table-action-link-btn.text-error:hover { background-color: var(--accent-error); color: #060913; box-shadow: 0 0 10px rgba(255, 51, 102, 0.3); }
+.table-action-link-btn.text-purple:hover { background-color: var(--neon-purple); color: var(--text-bright); box-shadow: 0 0 10px rgba(157, 78, 221, 0.3); }
+.table-action-link-btn.text-cyan:hover { background-color: var(--neon-cyan); color: #060913; box-shadow: 0 0 10px rgba(0, 240, 255, 0.3); }
+
+/* ==========================================
+   FLUID RESPONSIVE DESIGN BREAKPOINTS
+========================================== */
+@media (max-width: 1200px) {
+    .threats-workspace-split {
+        grid-template-columns: 1fr; /* Instantly flat stacks grid columns on mobile screen splits */
+        gap: 20px;
+    }
+}
+
+@media (max-width: 520px) {
+    .threats-analytics-panel-card, .threats-ledger-panel-card { padding: 16px; }
+    .cyber-incident-table th, .cyber-incident-table td { padding: 12px; }
+}
+
+</style>
+
+       <!-- ELABORATE MODULE: ENHANCED PREDICTIVE TREND INTELLIGENCE CONSOLE -->
+<div class="console-display-section-view" id="panel-analytics">
+    <div class="panel-section-header">
+        <h1 class="section-headline-header">Predictive Trend Intelligence</h1>
+        <p class="section-intel-subphrase">Machine-learning forecast matrices mapping out future throughput bottlenecks, infrastructure drifts, and zero-day exposure models.</p>
+    </div>
+
+    <!-- Predictive Workspace Asymmetric 2-Column Split-Screen Grid -->
+    <div class="analytics-workspace-split">
+        
+        <!-- Left Zone: Machine Learning Forecast Graph Matrix Box -->
+        <div class="analytics-graph-panel-card">
+            <h3 class="analytics-block-title">Zero-Day Exposure Modeling</h3>
+            
+            <div class="analytics-vector-chart-viewport">
+                <!-- Advanced Multi-Spline SVG Vector Forecasting Trendlines -->
+                <svg viewBox="0 0 400 160" class="predictive-trend-svg" xmlns="http://w3.org">
+                    <!-- Background Grid Baseline Reference Bars -->
+                    <line x1="20" y1="140" x2="380" y2="140" stroke="rgba(255,255,255,0.02)" stroke-width="1"/>
+                    <line x1="20" y1="90" x2="380" y2="90" stroke="rgba(255,255,255,0.01)" stroke-width="0.5" stroke-dasharray="4, 4"/>
+                    <line x1="20" y1="40" x2="380" y2="40" stroke="rgba(255,255,255,0.01)" stroke-width="0.5" stroke-dasharray="4, 4"/>
+                    
+                    <!-- Spline A: Projected Threat Scaling Vector (Electric Error Red Line) -->
+                    <path d="M20,130 Q100,110 180,60 T340,30 T380,15" fill="none" stroke="#ff3366" stroke-width="2.5" class="chart-trend-spline"/>
+                    <!-- Spline B: System Mitigated Target Buffer Baseline (Neon Cyan Line) -->
+                    <path d="M20,130 Q80,125 160,110 T280,85 T380,70" fill="none" stroke="#00f0ff" stroke-width="1.5" stroke-dasharray="3, 3" class="chart-trend-spline"/>
+                    
+                    <!-- Glowing Intersection Forecast Intercept Target Pin -->
+                    <circle cx="180" cy="60" r="4.5" fill="#9d4edd" class="forecast-intercept-beacon"/>
+                    <circle cx="340" cy="30" r="4" fill="#ff3366" class="forecast-intercept-beacon"/>
+                </svg>
+            </div>
+            
+            <!-- Graphic Meta Timeline Indicator Tags -->
+            <div class="chart-timeline-axis-row">
+                <span class="axis-node-tag">T_CURRENT</span>
+                <span class="axis-node-tag">+24HRS</span>
+                <span class="axis-node-tag">+48HRS</span>
+                <span class="axis-node-tag">+72HRS // PROJECTED</span>
+            </div>
+        </div>
+
+        <!-- Right Zone: Attack Surface Threat Risk Registry Ledger -->
+        <div class="analytics-risk-panel-card">
+            <h3 class="analytics-block-title">Attack Surface Risk Registry</h3>
+            
+            <div class="analytics-risk-blocks-stack">
+                
+                <!-- Risk Block 01 -->
+                <div class="risk-matrix-item-row">
+                    <div class="risk-meta-left-block">
+                        <span class="risk-index-tag txt-error">[HIGH_CRITICAL]</span>
+                        <h4>API Gateway Infrastructure Drift</h4>
+                        <p class="risk-details-text">Anomalous routing configuration profiles matching distributed zero-day spray parameters.</p>
+                    </div>
+                    <div class="risk-probability-rating">
+                        <span class="prob-label">PROBABILITY</span>
+                        <h5 class="prob-percentage txt-error">88%</h5>
+                    </div>
+                </div>
+
+                <!-- Risk Block 02 -->
+                <div class="risk-matrix-item-row">
+                    <div class="risk-meta-left-block">
+                        <span class="risk-index-tag txt-purple">[MED_WARNING]</span>
+                        <h4>Subnet Camouflage Packet Leak</h4>
+                        <p class="risk-details-text">Minor configuration entropy reported across edge transaction logging tunnels.</p>
+                    </div>
+                    <div class="risk-probability-rating">
+                        <span class="prob-label">PROBABILITY</span>
+                        <h5 class="prob-percentage txt-purple">42%</h5>
+                    </div>
+                </div>
+
+                <!-- Risk Block 03 -->
+                <div class="risk-matrix-item-row">
+                    <div class="risk-meta-left-block">
+                        <span class="risk-index-tag txt-cyan">[LOW_MONITOR]</span>
+                        <h4>Ephemeral Sandbox Ingestion Load</h4>
+                        <p class="risk-details-text">Container cluster memory bounds tracking slightly upward due to sandbox triggers.</p>
+                    </div>
+                    <div class="risk-probability-rating">
+                        <span class="prob-label">PROBABILITY</span>
+                        <h5 class="prob-percentage txt-cyan">19%</h5>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<style>
+    :root {
+    --bg-surface: #0a0f1d;
+    --bg-card: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-error: #ff3366;
+}
+
+/* ==========================================
+   ANALYTICS INTERFACE BALANCING GRID
+========================================== */
+.analytics-workspace-split {
+    display: grid;
+    /* Clean asymmetric grid properties align forecast timelines with registries columns */
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 24px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.analytics-graph-panel-card,
+.analytics-risk-panel-card {
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+}
+
+.analytics-block-title {
+    font-size: 1.05rem; font-weight: 800; text-transform: uppercase; color: var(--text-bright);
+    margin: 0 0 24px 0; text-align: left; letter-spacing: 0.5px;
+}
+
+/* ==========================================
+   LEFT ZONE - MODELING FORECAST GRAPH ENGINE
+========================================== */
+.analytics-vector-chart-viewport {
+    width: 100%; background-color: rgba(6, 9, 19, 0.5); border-radius: 8px;
+    padding: 16px; box-sizing: border-box; display: flex; justify-content: center; align-items: center;
+}
+.predictive-trend-svg { width: 100%; height: auto; display: block; overflow: hidden; }
+
+/* Continuous radar tracking beacon pulses styles handles */
+.forecast-intercept-beacon {
+    animation: analyticsBeaconGlow 1.6s infinite ease-in-out alternate;
+    transform-origin: center;
+}
+.forecast-intercept-beacon:nth-child(even) { animation-delay: 0.8s; }
+
+.chart-timeline-axis-row {
+    display: flex; justify-content: space-between; width: 100%; padding: 0 10px;
+    margin-top: 14px; box-sizing: border-box;
+}
+.axis-node-tag { font-family: monospace; font-size: 0.65rem; color: var(--text-dim); font-weight: 700; letter-spacing: 0.5px; }
+
+/* ==========================================
+   RIGHT ZONE - ATTACK SURFACE RISK REGISTRY
+========================================== */
+.analytics-risk-blocks-stack { display: flex; flex-direction: column; gap: 14px; width: 100%; }
+
+.risk-matrix-item-row {
+    background-color: rgba(13, 21, 39, 0.3); border: 1px solid rgba(255, 255, 255, 0.01);
+    border-radius: 8px; padding: 16px; display: flex; justify-content: space-between;
+    align-items: center; gap: 24px; box-sizing: border-box; width: 100%;
+    transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.risk-meta-left-block { display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
+.risk-index-tag { font-family: monospace; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 4px; }
+.risk-meta-left-block h4 { font-size: 1.05rem; font-weight: 700; color: var(--text-bright); margin: 0 0 4px 0; }
+.risk-details-text { font-size: 0.8rem; color: rgba(255, 255, 255, 0.5); margin: 0; line-height: 1.4; max-width: 320px; }
+
+.risk-probability-rating { display: flex; flex-direction: column; align-items: flex-end; flex-shrink: 0; }
+.prob-label { font-family: monospace; font-size: 0.6rem; color: var(--text-dim); font-weight: 700; letter-spacing: 0.5px; margin-bottom: 2px; }
+.prob-percentage { font-size: 1.4rem; font-weight: 900; margin: 0; line-height: 1; }
+
+/* Custom programmatic text color mappings */
+.txt-error { color: var(--accent-error); text-shadow: 0 0 6px rgba(255,51,102,0.2); }
+.txt-purple { color: var(--neon-purple); text-shadow: 0 0 6px rgba(157,78,221,0.2); }
+.txt-cyan { color: var(--neon-cyan); text-shadow: 0 0 6px rgba(0,240,255,0.2); }
+
+/* Interactive row highlighting halos loops */
+.risk-matrix-item-row:hover {
+    border-color: rgba(255, 255, 255, 0.04);
+    background-color: rgba(13, 21, 39, 0.55);
+}
+
+/* ==========================================
+   ANALOG RUNTIME CORE SYSTEM ENGINES KEYFRAMES
+========================================== */
+@keyframes analyticsBeaconGlow { 0% { r: 3; opacity: 0.4; } 100% { r: 6; opacity: 1; filter: drop-shadow(0 0 4px currentColor); } }
+
+/* ==========================================
+   FLUID RESPONSIVE DESIGN BOUNDARIES
+========================================== */
+@media (max-width: 1200px) {
+    .analytics-workspace-split {
+        grid-template-columns: 1fr; /* Switch to a clean flat layout stack on tablet screen metrics */
+        gap: 20px;
+    }
+}
+
+@media (max-width: 520px) {
+    .analytics-graph-panel-card, .analytics-risk-panel-card { padding: 16px; }
+    .risk-matrix-item-row { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .risk-probability-rating { align-self: flex-end; } /* Re-anchors metrics positions to the bottom edge on smartphones */
+}
+
+</style>
+
+        </main>
+
+    </div>
+
+  <style>
+    /* ==========================================================================
+   1. RESET ENGINE & SYSTEM CANVAS CONFIGURATIONS
+   ========================================================================== */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: #060913;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #ffffff;
+}
+
+:root {
+    --bg-deep: #060913;
+    --bg-surface: #0a0f1d;
+    --bg-card: #11192e;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-error: #ff3366;
+    --accent-success: #00ff88;
+    --sidebar-width: 260px;
+    --header-height: 70px;
+}
+
+.dashboard-root-wrapper {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* ==========================================================================
+   2. DYNAMIC NAVIGATION BAR TOP HEADER 
+   ========================================================================== */
+.global-dash-header {
+    position: absolute;
+    top: 0; left: 0; width: 100%;
+    height: var(--header-height);
+    background-color: var(--bg-surface);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 24px; box-sizing: border-box;
+    z-index: 10;
+}
+
+.header-left-brand-block {
+    display: flex; align-items: center; gap: 14px;
+}
+
+.sidebar-toggle-hamburger {
+    display: none; background: none; border: none; cursor: pointer; padding: 4px;
+}
+.hamburger-svg { width: 24px; height: 24px; fill: none; stroke: var(--text-bright); stroke-width: 2; }
+
+.brand-refresh-link {
+    display: flex; align-items: center; gap: 10px; text-decoration: none; cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.brand-refresh-link:active { transform: scale(0.98); }
+
+.brand-logo-img {
+    width: 130px; height: 70px; object-fit: contain;
+    filter: drop-shadow(0 0 6px var(--neon-cyan));
+}
+
+.brand-text-label {
+    font-size: 1.2rem; font-weight: 900; letter-spacing: -0.5px;
+    text-transform: uppercase; color: var(--text-bright);
+}
+.brand-text-label span { color: var(--neon-cyan); }
+
+.header-right-action-block {
+    display: flex; align-items: center; gap: 20px;
+}
+
+.notifications-bell-btn {
+    background: none; border: none; cursor: pointer; position: relative; padding: 6px;
+    display: flex; justify-content: center; align-items: center;
+}
+.bell-svg { width: 20px; height: 20px; fill: none; stroke: var(--text-dim); stroke-width: 2; transition: stroke 0.2s; }
+.notifications-bell-btn:hover .bell-svg { stroke: var(--neon-cyan); filter: drop-shadow(0 0 4px var(--neon-cyan)); }
+.bell-active-indicator-dot { position: absolute; top: 6px; right: 6px; width: 6px; height: 6px; background-color: var(--accent-error); border-radius: 50%; box-shadow: 0 0 6px var(--accent-error); }
+
+.user-profile-badge {
+    display: flex; align-items: center; gap: 12px;
+    background-color: rgba(6, 9, 19, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 6px 14px; border-radius: 20px;
+}
+
+.profile-icon-circle {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--neon-purple), var(--neon-cyan));
+    display: flex; justify-content: center; align-items: center;
+    font-family: monospace; font-weight: 900; font-size: 0.85rem; color: #060913;
+}
+
+.parsed-username-display {
+    font-size: 0.9rem; font-weight: 700; color: var(--text-bright);
+}
+
+/* ==========================================================================
+   3. COLLAPSIBLE OPERATIONS MENU SIDEBAR DRAWER
+   ========================================================================== */
+.global-dash-sidebar {
+    position: absolute;
+    top: var(--header-height); left: 0;
+    width: var(--sidebar-width);
+    height: calc(100vh - var(--header-height));
+    background-color: var(--bg-surface);
+    border-right: 1px solid rgba(255, 255, 255, 0.03);
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 24px 16px; box-sizing: border-box;
+    z-index: 9; transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.sidebar-navigation-menu-stack {
+    display: flex; flex-direction: column; gap: 6px; width: 100%;
+}
+
+.menu-category-tag {
+    font-family: monospace; font-size: 0.65rem; font-weight: 700;
+    color: var(--text-dim); letter-spacing: 1.5px; text-transform: uppercase;
+    padding-left: 12px; margin-bottom: 6px; margin-top: 14px;
+}
+.sidebar-navigation-menu-stack .menu-category-tag:first-child { margin-top: 0; }
+
+.menu-navigation-route-link {
+    display: flex; align-items: center; gap: 14px;
+    padding: 12px; border-radius: 8px; text-decoration: none;
+    color: var(--text-dim); cursor: pointer; box-sizing: border-box;
+    transition: background-color 0.25s, color 0.25s;
+}
+
+.menu-vector-icon-shell {
+    width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; flex-shrink: 0;
+}
+
+.menu-route-title { font-size: 0.95rem; font-weight: 600; }
+
+.menu-navigation-route-link:hover {
+    background-color: rgba(255, 255, 255, 0.015);
+    color: var(--text-bright);
+}
+
+.menu-navigation-route-link.active-route-node {
+    background-color: rgba(0, 240, 255, 0.06);
+    color: var(--neon-cyan);
+    border: 1px solid rgba(0, 240, 255, 0.1);
+}
+
+.sidebar-logout-button-node {
+    display: flex; align-items: center; gap: 14px; width: 100%;
+    padding: 12px; border-radius: 8px; background: none;
+    border: 1px solid rgba(255, 51, 102, 0.15); color: var(--accent-error);
+    cursor: pointer; box-sizing: border-box; font-family: inherit;
+    transition: background-color 0.25s, box-shadow 0.25s;
+}
+.sidebar-logout-button-node:hover {
+    background-color: rgba(255, 51, 102, 0.08);
+    box-shadow: 0 0 15px rgba(255, 51, 102, 0.1);
+}
+
+/* ==========================================================================
+   4. MOBILE GLASSMORPHIC FROST BLUR BACKDROP OVERLAY
+   ========================================================================== */
+.viewport-blur-backdrop {
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - var(--header-height));
+    background-color: rgba(6, 9, 19, 0.4);
+    
+    /* High-fidelity hardware blur triggers */
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    
+    opacity: 0;
+    pointer-events: none;
+    z-index: 8; /* Sandwiched right under sidebar nav (z-index 9) */
+    
+    transition: opacity 0.3s ease, 
+                backdrop-filter 0.3s ease, 
+                -webkit-backdrop-filter 0.3s ease;
+}
+
+.viewport-blur-backdrop.backdrop-active {
+    opacity: 1;
+    pointer-events: auto;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* ==========================================================================
+   5. CENTER WORKSPACE CONSOLE DISPLAY VIEWPORT
+   ========================================================================== */
+.dashboard-main-viewport-view {
+    margin-left: var(--sidebar-width);
+    margin-top: var(--header-height);
+    width: calc(100vw - var(--sidebar-width));
+    height: calc(100vh - var(--header-height));
+    overflow-y: auto; box-sizing: border-box;
+    padding: 40px; background-color: var(--bg-deep);
+    position: relative;
+}
+
+.console-display-section-view {
+    display: none; width: 100%; height: auto;
+    animation: consoleViewFade 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.console-display-section-view.active-view-panel {
+    display: block;
+}
+
+.section-headline-header {
+    font-size: 2.2rem; font-weight: 900; text-transform: uppercase;
+    letter-spacing: -0.5px; color: var(--text-bright); margin: 0 0 10px 0;
+    border-left: 3px solid var(--neon-cyan); padding-left: 16px;
+}
+
+.section-intel-subphrase {
+    font-size: 1.05rem; color: var(--text-dim); line-height: 1.6; margin: 0 0 35px 0; max-width: 680px;
+}
+
+.workspace-placeholder-blueprint-card {
+    width: 100%; min-height: 380px;
+    background-color: var(--bg-surface);
+    border: 1px dashed rgba(255, 255, 255, 0.04);
+    border-radius: 12px; display: flex; flex-direction: column;
+    justify-content: center; align-items: center; padding: 40px; box-sizing: border-box;
+}
+.blueprint-wireframe-svg { width: 48px; height: 48px; stroke: rgba(255, 255, 255, 0.03); stroke-dasharray: 4, 4; margin-bottom: 16px; }
+.blueprint-card-label { font-family: monospace; font-size: 0.8rem; color: rgba(255, 255, 255, 0.2); letter-spacing: 1px; }
+
+@keyframes consoleViewFade { 0% { opacity: 0; transform: translateY(8px); } 100% { opacity: 1; transform: translateY(0); } }
+
+/* ==========================================================================
+   6. RESPONSIVE MEDIA QUERIES BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 992px) {
+    .sidebar-toggle-hamburger { display: inline-flex; }
+    .viewport-blur-backdrop { display: block; }
+    
+    .global-dash-sidebar {
+        transform: translate3d(-100%, 0, 0);
+        box-shadow: 25px 0 50px rgba(0,0,0,0.8);
+    }
+    .global-dash-sidebar.sidebar-drawer-open {
+        transform: translate3d(0, 0, 0);
+    }
+
+    .dashboard-main-viewport-view {
+        margin-left: 0; width: 100vw; padding: 24px;
+    }
+}
+
+@media (min-width: 993px) {
+    .viewport-blur-backdrop { display: none !important; opacity: 0 !important; pointer-events: none !important; }
+}
+
+@media (max-width: 480px) {
+    .global-dash-header { padding: 0 16px; }
+    .brand-text-label { display: none; }
+    .section-headline-header { font-size: 1.7rem; }
+    .dashboard-main-viewport-view { padding: 20px 16px; }
+}
+
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // --- 1. DYNAMIC USER EMAIL PARSER ---
+    const usernameDisplayNode = document.getElementById("profileUserStringHandle");
+    const visualAvatarNode = document.getElementById("profileVisualAvatar");
+
+    // Extract email state securely from storage or load system fallback default
+    let simulatedActiveUserSession = localStorage.getItem("activeUserMailToken") || "jeevi@gmail.com";
+    
+    if (simulatedActiveUserSession) {
+        // Isolate prefix username chunk up until character '@' intersect boundary rules
+        const cleanPrefixHandle = simulatedActiveUserSession.split("@")[0];
+        
+        // Mount textual and avatar strings values onto DOM headers targets
+        usernameDisplayNode.textContent = cleanPrefixHandle;
+        visualAvatarNode.textContent = cleanPrefixHandle.charAt(0).toUpperCase();
+    } else {
+        usernameDisplayNode.textContent = "Partner_Node";
+        visualAvatarNode.textContent = "P";
+    }
+
+    // --- 2. SIDEBAR DRAWER AND FROST BACKDROP TRACKERS ---
+    const globalSidebarDrawer = document.getElementById("dashboardSidebarDrawer");
+    const hamburgerMenuBtn = document.getElementById("hamburgerMenuBtn");
+    const viewportBlurBackdrop = document.getElementById("viewportBlurBackdrop");
+    
+    const navigationRoutesArray = document.querySelectorAll(".menu-navigation-route-link");
+    const consoleDisplayPanelsArray = document.querySelectorAll(".console-display-section-view");
+
+    function closeMobileSidebarDrawer() {
+        if (globalSidebarDrawer && viewportBlurBackdrop) {
+            globalSidebarDrawer.classList.remove("sidebar-drawer-open");
+            viewportBlurBackdrop.classList.remove("backdrop-active");
+        }
+    }
+
+    function openMobileSidebarDrawer() {
+        if (globalSidebarDrawer && viewportBlurBackdrop) {
+            globalSidebarDrawer.classList.add("sidebar-drawer-open");
+            viewportBlurBackdrop.classList.add("backdrop-active");
+        }
+    }
+
+    if (hamburgerMenuBtn) {
+        hamburgerMenuBtn.addEventListener("click", (event) => {
+            event.stopPropagation(); // Shield layout bubble triggers
+            const isOpen = globalSidebarDrawer.classList.contains("sidebar-drawer-open");
+            if (isOpen) closeMobileSidebarDrawer(); else openMobileSidebarDrawer();
+        });
+    }
+
+    if (viewportBlurBackdrop) {
+        viewportBlurBackdrop.addEventListener("click", () => {
+            closeMobileSidebarDrawer();
+        });
+    }
+
+    // --- 3. ZERO-DELAY REGISTRY TAB SWAPPING TRACKS ---
+    navigationRoutesArray.forEach(routeNode => {
+        routeNode.addEventListener("click", () => {
+            const requestedPanelId = routeNode.getAttribute("data-target-panel");
+            if (!requestedPanelId) return;
+
+            // Flash active styles across link elements nodes
+            navigationRoutesArray.forEach(link => link.classList.remove("active-route-node"));
+            routeNode.classList.add("active-route-node");
+
+            // Toggle center content panels parameters inside viewport console
+            consoleDisplayPanelsArray.forEach(panel => {
+                if (panel.id === requestedPanelId) {
+                    panel.classList.add("active-view-panel");
+                } else {
+                    panel.classList.remove("active-view-panel");
+                }
+            });
+
+            // Collapse dashboard sidebar panel drawer if wide layout breakpoints contract
+            if (window.innerWidth <= 992) {
+                closeMobileSidebarDrawer();
+            }
+        });
+    });
+
+    // --- 4. SECURE DISCONNECT DISPATCH PERIMETER ROUTE ---
+    const consoleSessionLogoutBtn = document.getElementById("consoleSessionLogoutBtn");
+    if (consoleSessionLogoutBtn) {
+        consoleSessionLogoutBtn.addEventListener("click", () => {
+            // Clean active runtime memory variables allocations
+            localStorage.removeItem("activeUserMailToken");
+            window.location.href = "login.html";
+        });
+    }
+});
+
+  </script>
+</body>
+</html>
