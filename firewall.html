@@ -133,3 +133,3324 @@
 });
 
 </script>
+
+<section class="firewall-hero" id="firewall">
+    <!-- Atmospheric base layout grid backdrop -->
+    <img src="https://unsplash.com" alt="Tech Grid Overlay" class="firewall-bg-image">
+
+    <div class="firewall-container">
+        
+        <!-- Left Side: Interactive Content aligned to the left corner -->
+        <div class="firewall-content">
+            <div class="cyber-badge">// DEFENSIVE PERIMETER ACTIVATE</div>
+            
+            <!-- This title triggers character-by-character purely on viewport scroll -->
+            <h1 class="scroll-letter-title" id="scrollFirewallTitle">
+                Polymorphic perimeter barrier protection
+            </h1>
+            
+            <p class="firewall-description">
+                Stackly instantiates multi-layered adaptive packet filters at the absolute edge of your container topology, isolating inbound state exploits before malicious vectors intersect with internal microservices.
+            </p>
+            
+            <!-- Floating CTA Buttons with hover scaling mechanics -->
+            <div class="cta-group">
+                <button class="cta-btn primary-cta" type="button">Deploy Immediate Guard</button>
+                <button class="cta-btn secondary-cta" type="button">
+                    <span>Inspect Firewall Logs</span> 
+                    <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Right Side: Complex Field of Floating & Moving Vector SVG Graphics -->
+        <div class="firewall-visual">
+            <div class="vector-mesh-wrapper">
+                
+                <!-- Main Core SVG Graphic -->
+                <svg class="firewall-core-svg" viewBox="0 0 400 400" xmlns="http://w3.org">
+                    <defs>
+                        <linearGradient id="firewallGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.9"/>
+                            <stop offset="100%" stop-color="#9d4edd" stop-opacity="0.3"/>
+                        </linearGradient>
+                        <filter id="neonBlur">
+                            <feGaussianBlur stdDeviation="8" result="blur"/>
+                            <feMerge>
+                                <feMergeNode in="blur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    
+                    <!-- Pulsing & Moving Shield Mesh Ring layers -->
+                    <g class="moving-shield-group">
+                        <path d="M200 40 L320 90 L320 230 C320 310 200 360 200 360 C200 360 80 310 80 230 L80 90 Z" fill="url(#firewallGlow)" stroke="#00f0ff" stroke-width="2" filter="url(#neonBlur)" class="main-shield-path"/>
+                        
+                        <!-- Concentric Internal Radar Matrix Lines -->
+                        <circle cx="200" cy="190" r="60" fill="none" stroke="#9d4edd" stroke-width="1.5" stroke-dasharray="10, 5" class="inner-radar-ring"/>
+                        <circle cx="200" cy="190" r="30" fill="none" stroke="#00f0ff" stroke-width="2" />
+                        <circle cx="200" cy="190" r="6" fill="#00f0ff" />
+                        
+                        <!-- Crosshair Axes -->
+                        <line x1="200" y1="100" x2="200" y2="280" stroke="rgba(255, 255, 255, 0.08)" stroke-dasharray="4, 4" />
+                        <line x1="110" y1="190" x2="290" y2="190" stroke="rgba(255, 255, 255, 0.08)" stroke-dasharray="4, 4" />
+                    </g>
+                </svg>
+
+                <!-- Pinned Telemetry Labels -->
+                <div class="hud-label top-left-tag">FILTER_STATUS // ENFORCING</div>
+                <div class="hud-label bottom-right-tag">SHIELD_CAP // 100%</div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-success: #00ff88;
+    --header-height: 70px;
+}
+
+/* ==========================================
+   FIREWALL HERO CONTAINER BLOCK SETTINGS
+========================================== */
+.firewall-hero {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - var(--header-height));
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 130px 0;
+}
+
+.firewall-bg-image {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; opacity: 0.03; pointer-events: none; z-index: 1;
+}
+
+.firewall-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 50px;
+    align-items: center;
+    z-index: 2;
+}
+
+.firewall-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cyber-badge {
+    font-family: monospace;
+    color: var(--neon-cyan);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+/* ==========================================
+   SCROLL REGISTERED TITLE LOGIC
+========================================== */
+.scroll-letter-title {
+    font-size: 3.4rem;
+    font-weight: 800;
+    line-height: 1.15;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    color: var(--text-bright); /* Forced white typography system */
+    margin-bottom: 25px;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    width: 100%;
+}
+
+.scroll-letter-title .char-unit {
+    display: inline-block;
+    opacity: 0.15;
+    transform: scale(0.95) translateY(6px);
+    transition: opacity 0.15s ease, transform 0.15s ease, text-shadow 0.15s ease;
+}
+
+.scroll-letter-title .char-unit.glow-active {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    color: var(--text-bright);
+    text-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+}
+
+.firewall-description {
+    font-size: 1.05rem;
+    color: var(--text-bright); /* Forced bright clean white text color */
+    line-height: 1.65;
+    margin-bottom: 35px;
+    opacity: 0.95;
+}
+
+/* ==========================================
+   FLOATING ACTION CTA BUTTON DESIGN 
+========================================== */
+.cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    animation: ctaButtonsFloat 4s ease-in-out infinite; /* Automated float loop engine */
+}
+
+.cta-btn {
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--text-bright); /* Forced crisp white text color system */
+    box-sizing: border-box;
+    white-space: nowrap;
+    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+}
+
+.primary-cta {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+.primary-cta:hover {
+    background-color: var(--text-bright);
+    color: var(--bg-deep) !important;
+    border-color: var(--text-bright);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.25);
+    transform: translateY(-3px);
+}
+
+.secondary-cta {
+    background: rgba(13, 21, 39, 0.6);
+    border: 1px solid var(--neon-cyan);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
+}
+.secondary-cta:hover {
+    background: linear-gradient(90deg, var(--neon-purple), var(--neon-cyan));
+    border-color: transparent;
+    box-shadow: 0 10px 30px rgba(0, 240, 255, 0.4);
+    transform: translateY(-3px);
+}
+
+.btn-arrow { width: 16px; height: 16px; transition: transform 0.3s; }
+.secondary-cta:hover .btn-arrow { transform: translateX(4px); }
+
+/* ==========================================
+   MOVING VECTOR SVG SHIELD CORE DESIGN 
+========================================== */
+.firewall-visual {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.vector-mesh-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+}
+
+.firewall-core-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Continuous moving/floating visual animation properties */
+.moving-shield-group {
+    animation: shieldFlowDrift 6s ease-in-out infinite;
+    transform-origin: 200px 190px;
+}
+
+.main-shield-path {
+    transition: stroke 0.3s, filter 0.3s;
+}
+
+.inner-radar-ring {
+    transform-origin: 200px 190px;
+    animation: continuousRadarRotate 20s linear infinite;
+}
+
+/* Dynamic container content glows on hover triggers */
+.vector-mesh-wrapper:hover .main-shield-path {
+    stroke: var(--accent-success);
+    filter: drop-shadow(0 0 12px var(--accent-success));
+}
+.vector-mesh-wrapper:hover .hud-label {
+    color: var(--text-bright);
+    border-color: rgba(0, 240, 255, 0.4);
+}
+
+/* HUD Labels position layout anchors */
+.hud-label {
+    position: absolute;
+    font-family: monospace;
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+    background-color: var(--bg-deep);
+    padding: 2px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 4px;
+    transition: color 0.3s, border-color 0.3s;
+}
+.top-left-tag { top: 8%; left: -4%; }
+.bottom-right-tag { bottom: 8%; right: -4%; }
+
+/* ==========================================
+   CORE RUNTIME KEYFRAME ENGINES
+========================================== */
+@keyframes continuousRadarRotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes shieldFlowDrift { 0%, 100% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-12px) rotate(2deg); } }
+@keyframes ctaButtonsFloat { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-5px); } }
+
+/* ==========================================
+   FLUID RESPONSIVE MATRIX OVERRIDES
+========================================== */
+@media (max-width: 992px) {
+    .firewall-container {
+        grid-template-columns: 1fr; /* Snap columns to direct row flow block stacking to avoid overlays */
+        padding: 0 24px;
+        gap: 45px;
+    }
+    .firewall-content { align-items: center; text-align: center; }
+    .scroll-letter-title { font-size: 2.8rem; }
+    .cta-group { justify-content: center; }
+    .firewall-visual { justify-content: center; width: 100%; }
+}
+
+@media (max-width: 480px) {
+    .firewall-container { padding: 0 16px; }
+    .scroll-letter-title { font-size: 2.1rem; }
+    .cta-group { flex-direction: column; }
+    .cta-btn { width: 100%; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // SCROLL REVEAL: Letter-by-Letter Title Splitting and Calculation Engine
+    const firewallTitleNode = document.getElementById("scrollFirewallTitle");
+
+    if (firewallTitleNode) {
+        const structuralTextStr = firewallTitleNode.textContent.trim();
+        firewallTitleNode.textContent = ""; 
+
+        // Split text cleanly into individual character wrapper span elements
+        const charSpanElements = structuralTextStr.split("").map(character => {
+            const spanNode = document.createElement("span");
+            spanNode.className = "char-unit";
+            spanNode.innerHTML = character === " " ? "&nbsp;" : character;
+            firewallTitleNode.appendChild(spanNode);
+            return spanNode;
+        });
+
+        function handleFirewallTitleScrollReveal() {
+            const nodeRect = firewallTitleNode.getBoundingClientRect();
+            const browserViewportHeight = window.innerHeight;
+            
+            // Text matrix illuminates progressively once section passes bottom 92% threshold
+            const startScrollRevealLine = browserViewportHeight * 0.92;
+            const endScrollRevealLine = (browserViewportHeight * 0.4) + 100; // Built-in safety buffer
+            
+            let scrollRevealProgress = (startScrollRevealLine - nodeRect.top) / (startScrollRevealLine - endScrollRevealLine);
+            scrollRevealProgress = Math.max(0, Math.min(1, scrollRevealProgress));
+
+            const totalActiveCharsIndex = Math.floor(scrollRevealProgress * charSpanElements.length);
+
+            charSpanElements.forEach((spanNode, index) => {
+                if (index < totalActiveCharsIndex) {
+                    spanNode.classList.add("glow-active");
+                } else {
+                    spanNode.classList.remove("glow-active");
+                }
+            });
+        }
+
+        // Attach lightweight resize and scroll window listener loops
+        window.addEventListener("scroll", handleFirewallTitleScrollReveal);
+        window.addEventListener("resize", handleFirewallTitleScrollReveal);
+        
+        // Execute an instant baseline run frame immediately on DOM initialization
+        handleFirewallTitleScrollReveal(); 
+    }
+});
+
+</script>
+
+<section class="firewall-ops-section" id="diagnostics">
+    <img src="https://unsplash.com" alt="Tech Wireframe Backdrop" class="ops-bg-mesh">
+
+    <div class="ops-matrix-container">
+        
+        <!-- Left Column: High-Utility Interactive Technical Vector HUD -->
+        <div class="ops-visual-panel">
+            <div class="hud-diagram-card">
+                <div class="hud-card-header">
+                    <span class="hud-term-text">RADAR_NODE // TRAFFIC_STREAM</span>
+                    <div class="hud-beacons"><span></span><span></span><span></span></div>
+                </div>
+
+                <div class="svg-diagram-wrapper">
+                    <!-- Crisp Vector SVG Diagram Grid -->
+                    <svg class="diagnostic-svg" viewBox="0 0 200 200" xmlns="http://w3.org">
+                        <line x1="0" y1="50" x2="200" y2="50" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/>
+                        <line x1="0" y1="100" x2="200" y2="100" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/>
+                        <line x1="0" y1="150" x2="200" y2="150" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/>
+                        <line x1="50" y1="0" x2="50" y2="200" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/>
+                        <line x1="100" y1="0" x2="100" y2="200" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/>
+                        <line x1="150" y1="0" x2="150" y2="200" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/>
+
+                        <g class="pulsing-circuit-group">
+                            <path d="M20,100 L60,100 L90,50 L140,50 L180,100" fill="none" stroke="#00f0ff" stroke-width="1.5" stroke-linecap="round" class="circuit-path-cyan"/>
+                            <path d="M20,100 L60,100 L90,150 L140,150 L180,100" fill="none" stroke="#9d4edd" stroke-width="1.5" stroke-linecap="round" class="circuit-path-purple"/>
+                            
+                            <circle cx="90" cy="50" r="4" fill="#00f0ff" class="radar-ping-dot"/>
+                            <circle cx="140" cy="150" r="4" fill="#9d4edd" class="radar-ping-dot"/>
+                            <circle cx="60" cy="100" r="5" fill="#ffffff" />
+                        </g>
+                    </svg>
+                    <div class="hud-radar-sweep"></div>
+                </div>
+
+                <div class="hud-telemetry-rows">
+                    <div class="telemetry-row">
+                        <span class="row-label">VECTOR_NODE</span>
+                        <span class="row-value val-cyan">INBOUND_SECURED</span>
+                    </div>
+                    <div class="telemetry-row">
+                        <span class="row-label">MITIGATION_SPEED</span>
+                        <span class="row-value val-purple">&lt; 0.2ms</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Massive Header with Reduced Lower Text Copy -->
+        <div class="ops-text-panel">
+            <div class="cyber-badge">// NETWORK TELEMETRY CORE</div>
+            
+            <!-- Structural line items split for high first-sentence prominence -->
+            <h2 class="sentence-stream-title" id="scrollSentenceTitle">
+                <span class="stream-line first-major-line">Deep packet inspection matrices.</span>
+                <span class="stream-line sub-minor-line">Real-time vector interception mapping.</span>
+                <span class="stream-line sub-minor-line">Continuous cloud footprint isolation.</span>
+            </h2>
+            
+            <div class="sentence-reveal-desc" id="scrollSentenceDesc">
+                <p class="reveal-line">Stackly coordinates hardware-isolated network blocks globally to capture emerging server exploit signatures.</p>
+                <p class="reveal-line">Our perimeter fabric mutates traffic profiles instantly, defending internal systems from runtime anomalies.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-success: #00ff88;
+}
+
+.firewall-ops-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 50px;        /* Restricts layout to requested 50px top padding limit */
+    padding-bottom: 30px;     /* Restricts layout to requested 30px bottom padding layout */
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.ops-bg-mesh {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; opacity: 0.012; pointer-events: none; z-index: 1;
+}
+
+.ops-matrix-container {
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    /* Aligns visual canvas on the left and typography column copy on the right */
+    grid-template-columns: 0.85fr 1.15fr; 
+    gap: 60px;
+    align-items: center;
+    z-index: 2;
+}
+
+/* ==========================================
+   LEFT SIDE - GLASSMORPHIC DIAGRAM HUD
+========================================== */
+.ops-visual-panel {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.hud-diagram-card {
+    width: 100%;
+    max-width: 440px;
+    background: rgba(13, 21, 39, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 16px;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hud-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    padding-bottom: 10px;
+}
+
+.hud-term-text { font-family: monospace; font-size: 0.7rem; color: var(--text-dim); letter-spacing: 1px; }
+.hud-beacons { display: flex; gap: 6px; }
+.hud-beacons span { width: 6px; height: 6px; border-radius: 50%; background-color: var(--text-dim); }
+
+.svg-diagram-wrapper {
+    position: relative;
+    width: 100%;
+    background-color: rgba(6, 9, 19, 0.6);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.01);
+}
+
+.diagnostic-svg { width: 100%; height: auto; display: block; }
+
+.hud-radar-sweep {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(0,240,255,0) 95%, rgba(0,240,255,0.1) 100%);
+    background-size: 100% 8px;
+    pointer-events: none;
+}
+
+.circuit-path-cyan { stroke-dasharray: 20, 20; animation: traceCircuit 4s linear infinite; }
+.circuit-path-purple { stroke-dasharray: 15, 15; animation: traceCircuit 6s linear reverse infinite; }
+.radar-ping-dot { animation: pulseRadarBeacon 1.5s infinite ease-in-out; transform-origin: center; }
+
+.hud-telemetry-rows {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.telemetry-row {
+    display: flex;
+    justify-content: space-between;
+    background: rgba(6, 9, 19, 0.5);
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.01);
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.row-label { color: var(--text-dim); }
+.val-cyan { color: var(--neon-cyan); text-shadow: 0 0 6px rgba(0,240,255,0.4); }
+.val-purple { color: var(--neon-purple); text-shadow: 0 0 6px rgba(157,78,221,0.4); }
+
+.hud-diagram-card:hover { border-color: rgba(0, 240, 255, 0.2); box-shadow: 0 20px 50px rgba(0, 240, 255, 0.08); }
+.hud-diagram-card:hover .telemetry-row { background: rgba(13, 21, 39, 0.7); border-color: rgba(255, 255, 255, 0.03); }
+
+/* ==========================================
+   RIGHT SIDE - HIGH FIRST-SENTENCE HIERARCHY
+========================================== */
+.ops-text-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px; /* Provides layout clearance from the visual asset box */
+}
+
+.cyber-badge {
+    font-family: monospace;
+    color: var(--neon-cyan);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+}
+
+.sentence-stream-title {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    line-height: 1.25;
+    text-transform: uppercase;
+    color: var(--text-bright);
+}
+
+.stream-line {
+    opacity: 0.15;
+    transform: translateY(12px);
+    transition: opacity 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.stream-line.line-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* First Title Sentence: High-Density Bold Accent Scale */
+.first-major-line {
+    font-size: 2.8rem; /* High size emphasis */
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
+    border-left: 3px solid transparent;
+    transition: padding-left 0.4s ease, border-color 0.4s ease;
+}
+.first-major-line.line-revealed {
+    border-left-color: var(--neon-cyan);
+    padding-left: 18px;
+}
+
+/* Remaining Title Sentences: Reduced Scale */
+.sub-minor-line {
+    font-size: 1.4rem; /* Reduced font size to create hierarchy contrast */
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 8px;
+}
+.sub-minor-line.line-revealed {
+    color: var(--text-bright);
+}
+
+/* Reduced Paragraph Scales */
+.sentence-reveal-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 540px;
+}
+
+.reveal-line {
+    font-size: 0.9rem; /* Reduced paragraph font size */
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.65;
+    margin: 0;
+    opacity: 0.15;
+    transform: translateY(10px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal-line.line-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes traceCircuit { 0% { stroke-dashoffset: 40; } 100% { stroke-dashoffset: 0; } }
+@keyframes pulseRadarBeacon { 0%, 100% { transform: scale(1); opacity: 0.6; } 50% { transform: scale(1.3); opacity: 1; } }
+
+/* ==========================================
+   MANDATORY RESPONSIVE DESIGN BOUNDARIES
+========================================== */
+@media (max-width: 992px) {
+    .ops-matrix-container {
+        grid-template-columns: 1fr; /* Switch to column lists to avoid intersection bugs */
+        padding: 0 24px;
+        gap: 40px;
+    }
+    
+    /* Responsive re-ordering drops vector console illustration below right text panel */
+    .ops-visual-panel { order: 2; justify-content: center; width: 100%; }
+    .ops-text-panel { order: 1; align-items: center; text-align: center; padding-left: 0; }
+    
+    .sentence-stream-title { align-items: center; }
+    .first-major-line { font-size: 2.2rem; border-left: none; border-bottom: 2px solid transparent; }
+    .first-major-line.line-revealed { padding-left: 0; padding-bottom: 6px; border-bottom-color: var(--neon-cyan); }
+    .sub-minor-line { font-size: 1.25rem; }
+    .hud-diagram-card { max-width: 100%; }
+}
+
+@media (max-width: 480px) {
+    .ops-matrix-container { padding: 0 16px; }
+    .first-major-line { font-size: 1.75rem; }
+    .hud-diagram-card { padding: 16px; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    const streamTitleNode = document.getElementById("scrollSentenceTitle");
+    const operationalParagraphs = document.querySelectorAll(".reveal-line");
+
+    function processAsymmetricScrollReveals() {
+        // 1. Scroll Handler for the Title Sentences
+        if (streamTitleNode) {
+            const lines = streamTitleNode.querySelectorAll(".stream-line");
+            lines.forEach(line => {
+                if (line.getBoundingClientRect().top < window.innerHeight * 0.85) {
+                    line.classList.add("line-revealed");
+                } else {
+                    line.classList.remove("line-revealed");
+                }
+            });
+        }
+
+        // 2. Scroll Handler for the Reduced Description Paragraphs
+        operationalParagraphs.forEach(paraNode => {
+            if (paraNode.getBoundingClientRect().top < window.innerHeight * 0.88) {
+                paraNode.classList.add("line-active");
+            } else {
+                paraNode.classList.remove("line-active");
+            }
+        });
+    }
+
+    // Bind event hooks to window activities
+    window.addEventListener("scroll", processAsymmetricScrollReveals);
+    window.addEventListener("resize", processAsymmetricScrollReveals);
+    
+    // Initial runtime scan to calibrate assets instantly on view initialization
+    processAsymmetricScrollReveals(); 
+});
+
+</script>
+
+<section class="enforcement-section" id="strategy">
+    <!-- Base atmospheric background image tag -->
+    <img src="https://unsplash.com" alt="Server Mesh Backdrop" class="enforcement-bg-backdrop">
+
+    <div class="enforcement-container">
+        
+        <!-- Left Side: Interactive Text Engine with Sentence Mapping -->
+        <div class="enforcement-content">
+            <div class="cyber-badge">// PREVENTATIVE INTEL</div>
+            
+            <!-- This title triggers complete sentences individually upon viewport scroll intersection -->
+            <h2 class="sentence-stream-title" id="scrollStrategyTitle">
+                <span class="stream-line">Absolute network packet isolation.</span>
+                <span class="stream-line">Zero exploitation vulnerability tolerances.</span>
+                <span class="stream-line">Autonomous edge shielding deployment.</span>
+            </h2>
+            
+            <p class="enforcement-desc">
+                By decoupling traffic routes completely from core application logic threads, Stackly ensures unexpected boundary anomalies evaporate before compromising primary databases.
+            </p>
+
+            <!-- Floating CTA Button Container -->
+            <div class="floating-btn-wrap">
+                <button class="enforcement-action-btn" type="button">
+                    <span>Deploy Edge Profile</span>
+                    <svg viewBox="0 0 24 24" class="btn-arrow-icon"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Right Side: Complex Concentric Circuit Vector SVG Graphic -->
+        <div class="enforcement-visual">
+            <div class="vector-scope-card">
+                <svg class="scope-svg" viewBox="0 0 200 200" xmlns="http://w3.org">
+                    <defs>
+                        <linearGradient id="shieldGlowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.8"/>
+                            <stop offset="100%" stop-color="#9d4edd" stop-opacity="0.2"/>
+                        </linearGradient>
+                    </defs>
+                    
+                    <circle cx="100" cy="100" r="85" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+                    <circle cx="100" cy="100" r="65" fill="none" stroke="url(#shieldGlowGradient)" stroke-width="1.5" class="radar-spinning-ring"/>
+                    <circle cx="100" cy="100" r="40" fill="none" stroke="#9d4edd" stroke-width="1" stroke-dasharray="6, 4" class="radar-reverse-ring"/>
+                    
+                    <polygon points="100,75 125,85 125,115 100,130 75,115 75,85" fill="rgba(13,21,39,0.8)" stroke="#00f0ff" stroke-width="2" class="central-shield-polygon"/>
+                    <circle cx="100" cy="100" r="4" fill="#00f0ff" />
+                </svg>
+                
+                <div class="hud-telemetry-tag tag-top">TUNNEL // ESTABLISHED</div>
+                <div class="hud-telemetry-tag tag-bottom">LATENCY // 0.14ms</div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-success: #00ff88;
+}
+
+.enforcement-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.enforcement-bg-backdrop {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; opacity: 0.02; pointer-events: none; z-index: 1;
+}
+
+.enforcement-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+    z-index: 2;
+}
+
+/* ==========================================
+   SENTENCE-BY-SENTENCE TIMELINE STREAMS
+========================================== */
+.enforcement-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cyber-badge {
+    font-family: monospace;
+    color: var(--neon-cyan);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+}
+
+.sentence-stream-title {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 1.35;
+    text-transform: uppercase;
+    color: var(--text-bright);
+}
+
+/* Complete sentences triggered through window scroll metrics */
+.stream-line {
+    opacity: 0.15; /* Dull resting opacity state */
+    transform: translateY(12px);
+    transition: opacity 0.65s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1);
+    border-left: 3px solid transparent;
+}
+
+.stream-line.line-revealed {
+    opacity: 1;
+    transform: translateY(0);
+    border-left-color: var(--neon-cyan);
+    padding-left: 20px; /* Modern layout push shift on activation */
+}
+
+.stream-line:nth-child(2).line-revealed { border-left-color: var(--neon-purple); }
+.stream-line:nth-child(3).line-revealed { border-left-color: var(--accent-success); }
+
+.enforcement-desc {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.65;
+    margin-bottom: 35px;
+    max-width: 520px;
+}
+
+/* ==========================================
+   FLOATING ACTION BUTTON MECHANICS
+========================================== */
+.floating-btn-wrap {
+    animation: actionButtonFloat 4.5s ease-in-out infinite;
+}
+
+.enforcement-action-btn {
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--text-bright);
+    background: linear-gradient(90deg, var(--neon-purple), var(--neon-cyan));
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    transition: transform 0.25s ease, box-shadow 0.3s ease;
+}
+
+.enforcement-action-btn:hover {
+    box-shadow: 0 10px 25px rgba(0, 240, 255, 0.4);
+    transform: scale(1.02);
+}
+
+.btn-arrow-icon {
+    width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.5;
+    transition: transform 0.3s ease;
+}
+.enforcement-action-btn:hover .btn-arrow-icon { transform: translateX(4px); }
+
+/* ==========================================
+   COMPLEX VECTOR HUB RADAR OVERLAYS
+========================================== */
+.enforcement-visual {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.vector-scope-card {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    aspect-ratio: 1 / 1;
+    background: rgba(13, 21, 39, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.scope-svg { width: 100%; height: auto; display: block; }
+
+.radar-spinning-ring { transform-origin: 100px 100px; animation: continuousRotate 24s linear infinite; }
+.radar-reverse-ring { transform-origin: 100px 100px; animation: continuousReverseRotate 12s linear infinite; }
+.central-shield-polygon { transform-origin: 100px 100px; animation: shieldPulseFloat 4s ease-in-out infinite alternate; transition: stroke 0.3s ease; }
+
+.vector-scope-card:hover {
+    border-color: rgba(0, 240, 255, 0.2);
+    box-shadow: 0 0 35px rgba(0, 240, 255, 0.1);
+}
+.vector-scope-card:hover .central-shield-polygon {
+    stroke: var(--accent-success);
+    filter: drop-shadow(0 0 6px var(--accent-success));
+}
+
+.hud-telemetry-tag {
+    position: absolute; font-family: monospace; font-size: 0.65rem; color: var(--text-dim);
+    letter-spacing: 1px; background-color: var(--bg-deep); padding: 2px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.04); border-radius: 4px;
+}
+.tag-top { top: -6px; }
+.tag-bottom { bottom: -6px; }
+
+/* ==========================================
+   CORE RUNTIME KEYFRAME ENGINE SYSTEMS
+========================================== */
+@keyframes continuousRotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes continuousReverseRotate { 0% { transform: rotate(360deg); } 100% { transform: rotate(0deg); } }
+@keyframes actionButtonFloat { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-6px); } }
+@keyframes shieldPulseFloat { 0% { transform: scale(0.96); opacity: 0.8; } 100% { transform: scale(1.04); opacity: 1; } }
+
+/* ==========================================
+   FLUID RESPONSIVE DESIGN BOUNDARIES
+========================================== */
+@media (max-width: 992px) {
+    .enforcement-container {
+        grid-template-columns: 1fr;
+        padding: 0 24px;
+        gap: 50px;
+    }
+    .enforcement-content { align-items: center; text-align: center; }
+    .sentence-stream-title { font-size: 2.1rem; align-items: center; }
+    .stream-line { border-left: none; border-bottom: 2px solid transparent; }
+    .stream-line.line-revealed { padding-left: 0; padding-bottom: 8px; border-bottom-color: var(--neon-cyan); }
+    .stream-line:nth-child(2).line-revealed { border-bottom-color: var(--neon-purple); }
+    .stream-line:nth-child(3).line-revealed { border-bottom-color: var(--accent-success); }
+    .enforcement-visual { justify-content: center; width: 100%; }
+    .vector-scope-card { max-width: 320px; }
+}
+
+@media (max-width: 480px) {
+    .enforcement-container { padding: 0 16px; }
+    .sentence-stream-title { font-size: 1.65rem; }
+    .enforcement-action-btn { width: 100%; justify-content: center; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // SCROLL REVEAL: Sentence-by-Sentence Layout Activation Engine
+    const strategyTitle = document.getElementById("scrollStrategyTitle");
+    
+    if (strategyTitle) {
+        const streamLines = strategyTitle.querySelectorAll(".stream-line");
+
+        function processStrategySentencesReveal() {
+            streamLines.forEach(lineNode => {
+                const boundingBox = lineNode.getBoundingClientRect();
+                const displayWindowHeight = window.innerHeight;
+                
+                // Elements illuminate individual sentences when passing the bottom 86% view line
+                const activationLineThreshold = displayWindowHeight * 0.86;
+
+                if (boundingBox.top < activationLineThreshold) {
+                    lineNode.classList.add("line-revealed");
+                } else {
+                    lineNode.classList.remove("line-revealed");
+                }
+            });
+        }
+        
+        window.addEventListener("scroll", processStrategySentencesReveal);
+        window.addEventListener("resize", processStrategySentencesReveal);
+        
+        // Execute an instant baseline pass immediately upon DOM asset load
+        processStrategySentencesReveal();
+    }
+});
+
+</script>
+
+<section class="dual-line-cta-section">
+    <!-- Atmospheric base layout background image tag -->
+    <img src="https://unsplash.com" alt="Cyber Grid Core Backdrop" class="cta-banner-bg">
+
+    <div class="cta-banner-container">
+        
+        <!-- Left Side: Balanced 2-Line Text Content Column -->
+        <div class="cta-content-column">
+            <div class="cyber-badge">// IMMUTABLE DEPLOYMENT MESH</div>
+            <h2 class="cta-main-title">Secure your corporate digital matrix today</h2>
+            <p class="cta-sub-paragraph">
+                Instantiate Stackly zero-trust camouflage infrastructure across your global container clusters in under ten minutes to fully isolate critical cloud architecture footprints.
+            </p>
+        </div>
+
+        <!-- Right Side: Floating Central Action Button Column -->
+        <div class="cta-action-column">
+            <div class="floating-btn-wrap">
+                <button class="banner-action-btn" type="button">
+                    <span>Deploy Immediate Guard</span>
+                    <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+}
+
+/* ==========================================
+   CTA BANNER GENERAL LAYOUT SETTINGS
+========================================== */
+.dual-line-cta-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 50px;       /* Strict 50px top padding layout limit */
+    padding-bottom: 30px;    /* Strict 30px bottom padding layout footprint */
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(0, 240, 255, 0.05);
+    border-bottom: 1px solid rgba(157, 78, 221, 0.05);
+}
+
+.cta-banner-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; opacity: 0.04; pointer-events: none; z-index: 1;
+}
+
+.cta-banner-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    /* Splices container into an asymmetric left content and right button grid */
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 50px;
+    align-items: center;
+    z-index: 3;
+}
+
+/* ==========================================
+   LEFT ZONE - TWO LINE TYPOGRAPHY HIERARCHY
+========================================== */
+.cta-content-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.cyber-badge {
+    font-family: monospace;
+    color: var(--neon-cyan);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+/* First Content Line: Bold Accent Title */
+.cta-main-title {
+    font-size: 2.3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    color: var(--text-bright);
+    margin-bottom: 14px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Second Content Line: Detailed Description Copy */
+.cta-sub-paragraph {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+/* ==========================================
+   RIGHT ZONE - FLOATING BUTTON ACTION
+========================================== */
+.cta-action-column {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.floating-btn-wrap {
+    animation: ctaButtonFloat 4.5s ease-in-out infinite; /* Automated vertical floating loop */
+    flex-shrink: 0;
+}
+
+.banner-action-btn {
+    padding: 16px 36px;
+    border-radius: 35px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--text-bright);
+    background: linear-gradient(90deg, var(--neon-purple), var(--neon-cyan));
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+}
+
+/* ==========================================
+   INTERACTIVE NEON HOVER GLOW COUPLINGS
+========================================== */
+.dual-line-cta-section:hover .cta-main-title {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+}
+
+.dual-line-cta-section:hover .cta-sub-paragraph {
+    color: var(--text-bright);
+}
+
+.banner-action-btn:hover {
+    box-shadow: 0 12px 35px rgba(0, 240, 255, 0.45);
+    transform: scale(1.03);
+}
+
+.banner-action-btn:active {
+    transform: scale(0.98);
+}
+
+.btn-arrow {
+    width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.5;
+    transition: transform 0.3s ease;
+}
+.banner-action-btn:hover .btn-arrow {
+    transform: translateX(5px);
+}
+
+/* Floating animation keyframes */
+@keyframes ctaButtonFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+}
+
+/* ==========================================
+   FLUID RESPONSIVE DESIGN BOUNDARIES
+========================================== */
+@media (max-width: 992px) {
+    .cta-banner-container {
+        grid-template-columns: 1fr; /* Flips side grid elements cleanly to vertical list columns */
+        text-align: center;
+        gap: 35px;
+        padding: 0 24px;
+    }
+    .cta-content-column {
+        align-items: center;
+        text-align: center;
+    }
+    .cta-main-title { font-size: 2rem; text-align: center; }
+    .cta-action-column { justify-content: center; width: 100%; }
+}
+
+@media (max-width: 480px) {
+    .cta-banner-container { padding: 0 16px; }
+    .cta-main-title { font-size: 1.7rem; }
+    .banner-action-btn { width: 100%; justify-content: center; padding: 14px; }
+}
+
+</style>
+
+<section class="firewall-logs-section" id="logs">
+    <!-- Subtle architectural background pattern grid line -->
+    <div class="logs-bg-wireframe"></div>
+
+    <div class="logs-container">
+        
+        <!-- Header Zone (Reveals on Scroll) -->
+        <div class="logs-section-header scroll-reveal-node">
+            <div class="cyber-badge">// LIVE MONITORING TERMINAL</div>
+            <h2 class="logs-main-title">Continuous threat vector telemetry</h2>
+        </div>
+
+        <!-- Asymmetric Creative Grid Matrix Area (Cascades on Scroll) -->
+        <div class="logs-matrix-layout">
+            
+            <!-- Left Panel: Interactive Real-Time Terminal Shell -->
+            <div class="logs-panel terminal-panel scroll-reveal-node">
+                <div class="panel-header-tag">
+                    <span class="tag-title">TERMINAL_FEED // SINK_ACTIVE</span>
+                    <!-- Integrated System Vector Icon -->
+                    <svg viewBox="0 0 24 24" class="header-vector-icon"><polyline points="4 17 10 11 12 13 18 7"></polyline><polyline points="14 7 18 7 18 11"></polyline></svg>
+                </div>
+                
+                <div class="terminal-shell-box">
+                    <div class="shell-line txt-cyan">[OK] PERIMETER_SHIELD_INITIALIZED...</div>
+                    <div class="shell-line txt-purple">[BLOCK] EDGE_EXPLOIT // VECTOR: INBOUND_IP_192.168.12.8</div>
+                    <div class="shell-line txt-green">[STEALTH] MASQUERADE_UPSTREAM_ROUTING // ADAPT_SUCCESS</div>
+                    <div class="shell-line txt-purple">[BLOCK] AUTOMATED_DDOS_PACKETS_MITIGATED // LATENCY: 0.1ms</div>
+                    <div class="shell-line txt-cyan">[SCAN] CORE_INTEGRITY_CHECK // NO_LEAKS_DETECTED</div>
+                </div>
+
+                <div class="panel-interactive-content">
+                    <span class="panel-meta-code">PERIMETER_STABILIZATION</span>
+                    <h3>Automated Subnet Containment</h3>
+                    <p>Stackly isolates infected network blocks instantly, running traffic payloads inside virtual containers to prevent lateral movement.</p>
+                </div>
+            </div>
+
+            <!-- Right Panel: High-Utility Holographic Network Radar Map -->
+            <div class="logs-panel radar-panel scroll-reveal-node">
+                <div class="panel-header-tag">
+                    <span class="tag-title">VECTOR_RADAR // NODE_STABILITY</span>
+                    <svg viewBox="0 0 24 24" class="header-vector-icon"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+                
+                <div class="radar-viewport">
+                    <!-- Crisp Concentric Vector Radar SVGs Grid Overlay -->
+                    <svg class="radar-scope-svg" viewBox="0 0 200 200" xmlns="http://w3.org">
+                        <!-- Crosshair Axes -->
+                        <line x1="0" y1="100" x2="200" y2="100" stroke="rgba(0, 240, 255, 0.08)" stroke-width="0.75" stroke-dasharray="4, 4" />
+                        <line x1="100" y1="0" x2="100" y2="200" stroke="rgba(0, 240, 255, 0.08)" stroke-width="0.75" stroke-dasharray="4, 4" />
+                        
+                        <!-- Concentric Target Circles -->
+                        <circle cx="100" cy="100" r="80" fill="none" stroke="rgba(0, 240, 255, 0.1)" stroke-width="1" />
+                        <circle cx="100" cy="100" r="55" fill="none" stroke="#9d4edd" stroke-width="1" stroke-dasharray="8, 4" class="radar-inner-ring" />
+                        <circle cx="100" cy="100" r="30" fill="none" stroke="#00f0ff" stroke-width="1.5" />
+                        
+                        <!-- Threat Tracker Coordinates Pins -->
+                        <circle cx="65" cy="70" r="4" fill="#00f0ff" class="radar-ping-dot" />
+                        <circle cx="140" cy="120" r="4" fill="#9d4edd" class="radar-ping-dot" />
+                    </svg>
+                    <!-- Sweeping visual beam element overlay -->
+                    <div class="radar-sweep-beam"></div>
+                </div>
+
+                <div class="panel-interactive-content">
+                    <span class="panel-meta-code">QUANTUM_TOPOLOGY</span>
+                    <h3>Global Fabric Footprint Shifting</h3>
+                    <p>By constantly morphing server gateway coordinates across distributed cloud regions, Stackly renders infrastructure invisible to port scanners.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-success: #00ff88;
+}
+
+/* ==========================================
+   RESTRICTED PADDING SECTION LAYOUT
+========================================== */
+.firewall-logs-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 50px;        /* Restricts layout strictly to 50px top padding limit */
+    padding-bottom: 30px;     /* Restricts layout strictly to 30px bottom padding layout */
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.logs-bg-wireframe {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.005) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.005) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.logs-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    z-index: 2;
+}
+
+.logs-section-header {
+    width: 100%; margin-bottom: 40px; text-align: left;
+}
+
+.cyber-badge {
+    font-family: monospace; color: var(--neon-cyan); font-size: 0.75rem; letter-spacing: 2px;
+}
+
+.logs-main-title {
+    font-size: 2.6rem; font-weight: 800; line-height: 1.2; text-transform: uppercase;
+    letter-spacing: -0.5px; color: var(--text-bright); margin-top: 10px;
+}
+
+/* ==========================================
+   SCROLL REVEAL TIMELINE ANIMATIONS Engine
+========================================== */
+.scroll-reveal-node {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+    transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Appended instantly into classes on viewport intersect */
+.scroll-reveal-node.revealed-active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* ==========================================
+   ASYMMETRIC TELEMETRY FEED GRIDS
+========================================== */
+.logs-matrix-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    width: 100%;
+}
+
+.logs-panel {
+    background: rgba(13, 21, 39, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    padding: 24px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.panel-header-tag {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.03); padding-bottom: 8px;
+}
+
+.tag-title { font-family: monospace; font-size: 0.7rem; color: var(--text-dim); letter-spacing: 1px; }
+.header-vector-icon { width: 14px; height: 14px; fill: none; stroke: var(--text-dim); stroke-width: 2; }
+
+/* Left Terminal Box styling */
+.terminal-shell-box {
+    background-color: rgba(6, 9, 19, 0.7);
+    border-radius: 8px; padding: 16px;
+    font-family: monospace; font-size: 0.75rem; line-height: 1.8;
+    height: 180px; overflow: hidden; text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.01);
+}
+.shell-line { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.txt-cyan { color: var(--neon-cyan); }
+.txt-purple { color: var(--neon-purple); }
+.txt-green { color: var(--accent-success); }
+
+/* Right Vector Radar Box styling */
+.radar-viewport {
+    position: relative; width: 100%; height: 180px;
+    border-radius: 8px; overflow: hidden; background-color: rgba(6, 9, 19, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.01);
+    display: flex; justify-content: center; align-items: center;
+}
+
+.radar-scope-svg { width: auto; height: 90%; display: block; }
+.radar-inner-ring { transform-origin: 100px 100px; animation: loopRotate 16s linear infinite; }
+.radar-ping-dot { animation: pulseRadarPing 1.5s infinite ease-in-out; transform-origin: center; }
+
+/* Sweeping visual beam vector lines */
+.radar-sweep-beam {
+    position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+    background: conic-gradient(from 0deg, rgba(0, 240, 255, 0.12) 0%, transparent 40%);
+    animation: loopRotate 4s linear infinite;
+    transform-origin: center center; pointer-events: none;
+}
+
+/* Card content details typography handles */
+.panel-interactive-content {
+    margin-top: 20px; display: flex; flex-direction: column; text-align: left;
+}
+
+.panel-meta-code { font-family: monospace; font-size: 0.65rem; color: var(--text-dim); letter-spacing: 1px; margin-bottom: 6px; transition: color 0.3s ease; }
+.panel-interactive-content h3 { font-size: 1.25rem; font-weight: 700; color: var(--text-bright); margin-bottom: 10px; transition: color 0.3s, text-shadow 0.3s ease; }
+.panel-interactive-content p { font-size: 0.85rem; color: rgba(255, 255, 255, 0.7); line-height: 1.6; }
+
+/* ==========================================
+   INTERACTIVE NEON HOVER GLOWS
+========================================== */
+.logs-panel:hover {
+    border-color: rgba(0, 240, 255, 0.2);
+    box-shadow: 0 20px 50px rgba(0, 240, 255, 0.05);
+}
+.logs-panel:hover .panel-meta-code { color: var(--neon-cyan); }
+.logs-panel:hover h3 { color: var(--neon-cyan); text-shadow: 0 0 10px rgba(0, 240, 255, 0.4); }
+
+.logs-matrix-layout .logs-panel:nth-child(2):hover {
+    border-color: rgba(157, 78, 221, 0.2);
+    box-shadow: 0 20px 50px rgba(157, 78, 221, 0.05);
+}
+.logs-matrix-layout .logs-panel:nth-child(2):hover .panel-meta-code { color: var(--neon-purple); }
+.logs-matrix-layout .logs-panel:nth-child(2):hover h3 { color: var(--neon-purple); text-shadow: 0 0 10px rgba(157, 78, 221, 0.4); }
+
+@keyframes loopRotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes pulseRadarPing { 0%, 100% { transform: scale(1); opacity: 0.5; } 50% { transform: scale(1.3); opacity: 1; } }
+
+/* ==========================================
+   FLUID RESPONSIVE MATRIX OVERRIDES
+========================================== */
+@media (max-width: 992px) {
+    .logs-matrix-layout {
+        grid-template-columns: 1fr; /* Switch to column stacks format to bypass layout clipping bugs */
+        gap: 24px;
+    }
+    .logs-main-title { font-size: 2.2rem; }
+    .logs-container { padding: 0 24px; }
+}
+
+@media (max-width: 480px) {
+    .logs-main-title { font-size: 1.7rem; }
+    .logs-container { padding: 0 16px; }
+    .terminal-shell-box, .radar-viewport { height: 160px; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // SCROLL REVEAL: Structural Components Intersection Window Tracker
+    const revealElementsNodes = document.querySelectorAll(".scroll-reveal-node");
+
+    function processScrollRevealMatrix() {
+        revealElementsNodes.forEach((nodeItem, itemIndex) => {
+            const nodeTopCoordinate = nodeItem.getBoundingClientRect().top;
+            const scrollActivationBarrier = window.innerHeight * 0.88; // Triggers slightly before entry bounds
+
+            if (nodeTopCoordinate < scrollActivationBarrier) {
+                if (!nodeItem.classList.contains("revealed-active")) {
+                    // Stagger array indices sequentially if items are nested together inside matrices
+                    setTimeout(() => {
+                        nodeItem.classList.add("revealed-active");
+                    }, itemIndex * 60); 
+                }
+            }
+        });
+    }
+
+    // Attach passive scrolling loops
+    window.addEventListener("scroll", processScrollRevealMatrix);
+    window.addEventListener("resize", processScrollRevealMatrix);
+    
+    // Execute frame scan pass immediately on boot to mount existing onscreen view elements
+    processScrollRevealMatrix(); 
+});
+
+</script>
+
+<section class="reflex-matrix-section" id="mitigations">
+    <img src="https://unsplash.com" alt="Cyber Grid Texture" class="matrix-bg-spline">
+
+    <div class="matrix-container">
+        
+        <!-- Left Column: Sticky Typography & Magnified Paragraph -->
+        <div class="matrix-text-panel" id="leftTextContentPanel">
+            <div class="cyber-badge">// SYSTEM ARCHITECTURE MATRIX</div>
+            
+            <h2 class="sentence-stream-title" id="sentenceStreamTitle">
+                <span class="stream-line first-major-line">Isolating microservice entry fields.</span>
+                <span class="stream-line sub-minor-line">Deploying ephemeral honeypot subnets.</span>
+                <span class="stream-line sub-minor-line">Neutralizing zero-day transit signatures.</span>
+            </h2>
+            
+            <p class="matrix-large-desc">
+                Stackly coordinates with remote containerized network barriers worldwide, intercepting active exploit attempts and instantly updating client configurations to establish structural network immunity.
+            </p>
+        </div>
+
+        <!-- Right Column: Height-Synced and Centered Dashboard Console -->
+        <div class="matrix-visual-panel">
+            <div class="diag-node-card" id="proportionalDiagCard">
+                <div class="diag-card-inner-flex">
+                    
+                    <div class="diag-card-header">
+                        <span class="diag-meta">CORE_NODE // FLOW_DETECTION</span>
+                        <div class="diag-status-light cyan-beacon"></div>
+                    </div>
+
+                    <div class="diag-card-image">
+                        <img src="https://unsplash.com" alt="Active Cyber Security Interface Network" class="diag-img">
+                        <div class="scan-laser-beam"></div>
+                    </div>
+
+                    <div class="diag-card-body">
+                        <div class="telemetry-row">
+                            <span class="row-label">BARRIER_ENFORCEMENT</span>
+                            <span class="row-value val-cyan">100% COMPLIANT</span>
+                        </div>
+                        <div class="telemetry-row">
+                            <span class="row-label">THREAT_REFLEX</span>
+                            <span class="row-value val-purple">AUTOMATED_SANDBOX</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-success: #00ff88;
+}
+
+.reflex-matrix-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.matrix-bg-spline {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; opacity: 0.015; pointer-events: none; z-index: 1;
+}
+
+.matrix-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 60px;
+    align-items: center; /* Aligns left and right grid cells symmetrically * [INDEX] */
+    z-index: 2;
+}
+
+/* ==========================================
+   LEFT SIDE - STICKY BALANCED COPY
+========================================== */
+.matrix-text-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 0;
+}
+
+.cyber-badge {
+    font-family: monospace;
+    color: var(--neon-cyan);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+}
+
+.sentence-stream-title {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    line-height: 1.25;
+    text-transform: uppercase;
+    color: var(--text-bright);
+}
+
+.stream-line {
+    opacity: 0.15;
+    transform: translateY(12px);
+    transition: opacity 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.stream-line.line-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.first-major-line {
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
+    border-left: 3px solid transparent;
+    transition: padding-left 0.4s ease, border-color 0.4s ease;
+}
+.first-major-line.line-revealed {
+    border-left-color: var(--neon-cyan);
+    padding-left: 18px;
+}
+
+.sub-minor-line {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 8px;
+}
+.sub-minor-line.line-revealed { color: var(--text-bright); }
+
+.matrix-large-desc {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.7;
+    max-width: 540px;
+    transition: color 0.3s ease;
+}
+
+/* ==========================================
+   RIGHT SIDE - EXACTLY SYNCED RADAR CARD
+========================================== */
+.matrix-visual-panel {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; /* Symmetrical baseline centering * [INDEX] */
+    height: 100%;
+}
+
+.diag-node-card {
+    width: 100%;
+    max-width: 440px;
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease, height 0.3s ease;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically centers internal card child bundles * [INDEX] */
+}
+
+/* Internal proportional spacer card wrapper flex limits */
+.diag-card-inner-flex {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.diag-card-header { display: flex; justify-content: space-between; align-items: center; }
+.diag-meta { font-family: monospace; font-size: 0.65rem; color: var(--text-dim); letter-spacing: 1.5px; }
+.diag-status-light { width: 6px; height: 6px; border-radius: 50%; }
+.cyan-beacon { background-color: var(--neon-cyan); box-shadow: 0 0 8px var(--neon-cyan); }
+
+.diag-card-image {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    min-height: 180px; /* Adapts dynamically based on synced parental values */
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.01);
+}
+
+.diag-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0; left: 0;
+    filter: saturate(0.6) brightness(0.65) contrast(1.15);
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.5s ease;
+}
+
+.scan-laser-beam {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(0,240,255,0) 95%, rgba(0,240,255,0.12) 100%);
+    background-size: 100% 8px; pointer-events: none; z-index: 2;
+}
+
+.diag-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.telemetry-row {
+    display: flex;
+    justify-content: space-between;
+    background: rgba(6, 9, 19, 0.5);
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.01);
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.row-label { color: var(--text-dim); }
+.val-cyan { color: var(--neon-cyan); text-shadow: 0 0 6px rgba(0,240,255,0.4); }
+.val-purple { color: var(--neon-purple); text-shadow: 0 0 6px rgba(157,78,221,0.4); }
+
+/* Hover effects configuration overlays */
+.reflex-matrix-section:hover .matrix-large-desc { color: var(--text-bright); }
+.diag-node-card:hover { border-color: rgba(0, 240, 255, 0.25); box-shadow: 0 20px 50px rgba(0, 240, 255, 0.08); }
+.diag-node-card:hover .diag-img { transform: scale(1.03); filter: saturate(0.85) brightness(0.75) contrast(1.2); }
+.diag-node-card:hover .telemetry-row { background: rgba(13, 21, 39, 0.7); border-color: rgba(255, 255, 255, 0.03); }
+
+/* ==========================================
+   FLUID RESPONSIVE MATRIX OVERRIDES
+========================================== */
+@media (max-width: 992px) {
+    .matrix-container { grid-template-columns: 1fr; padding: 0 24px; gap: 40px; }
+    .matrix-text-panel { align-items: center; text-align: center; }
+    .sentence-stream-title { align-items: center; }
+    .first-major-line { font-size: 2.2rem; border-left: none; border-bottom: 2px solid transparent; }
+    .first-major-line.line-revealed { padding-left: 0; padding-bottom: 6px; border-bottom-color: var(--neon-cyan); }
+    .sub-minor-line { font-size: 1.25rem; }
+    .matrix-large-desc { max-width: 100%; font-size: 1.15rem; }
+    .matrix-visual-panel { justify-content: center; width: 100%; height: auto !important; }
+    .diag-node-card { max-width: 100%; height: auto !important; } /* Clears dynamic height bindings on mobile wrap */
+    .diag-card-image { min-height: 200px; }
+}
+
+@media (max-width: 480px) {
+    .matrix-container { padding: 0 16px; }
+    .first-major-line { font-size: 1.75rem; }
+    .diag-node-card { padding: 16px; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    const leftTextContentPanel = document.getElementById("leftTextContentPanel");
+    const proportionalDiagCard = document.getElementById("proportionalDiagCard");
+    const targetSentenceTitle = document.getElementById("sentenceStreamTitle");
+    
+    // 1. DYNAMIC SYNC: Calculates left clientHeight metrics and binds them onto the right element panel card
+    function syncAsymmetricPanelHeights() {
+        if (!leftTextContentPanel || !proportionalDiagCard || window.innerWidth <= 992) {
+            if (proportionalDiagCard) proportionalDiagCard.style.height = "auto"; // Clean wrapper rules on wraps
+            return;
+        }
+        const leftTargetHeight = leftTextContentPanel.clientHeight;
+        proportionalDiagCard.style.height = `${leftTargetHeight}px`;
+    }
+
+    // Attach listeners and execute instant frame scan pass
+    window.addEventListener("resize", syncAsymmetricPanelHeights);
+    setTimeout(syncAsymmetricPanelHeights, 60); // Timeout buffer grants typography engines full render margin bounds
+
+    // 2. SCROLL REVEAL VIEWPORT HANDLER
+    function processMatrixScrollAnimations() {
+        if (!targetSentenceTitle) return;
+
+        const sentences = targetSentenceTitle.querySelectorAll(".stream-line");
+        sentences.forEach(sentenceNode => {
+            const rect = sentenceNode.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.85) {
+                sentenceNode.classList.add("line-revealed");
+            } else {
+                sentenceNode.classList.remove("line-revealed");
+            }
+        });
+    }
+    
+    window.addEventListener("scroll", processMatrixScrollAnimations);
+    window.addEventListener("scroll", syncAsymmetricPanelHeights); // Updates constraints dynamically on reveal text size shifts
+    
+    processMatrixScrollAnimations(); 
+});
+
+</script>
+
+<section class="firewall-services-section" id="services">
+    <!-- Base layout atmospheric background mesh image tag -->
+    <img src="https://unsplash.com" alt="Tech Background Texture" class="services-bg-mesh">
+
+    <div class="services-container">
+        
+        <!-- RESTORED: Header Section with Title (Fades in smoothly on scroll viewport entrance) -->
+        <div class="services-section-header scroll-reveal-header" id="carouselHeader">
+            <div class="cyber-badge">// IMMUTABLE DEPLOYMENT MATRIX</div>
+            <h2 class="services-main-title">Enforcing hardware edge security</h2>
+        </div>
+
+        <!-- INFINITE AUTOMATIC CAROUSEL VIEWPORT -->
+        <div class="services-carousel-viewport">
+            <div class="services-carousel-track">
+                
+                <!-- Original Set of 4 Service Profiles -->
+                <!-- Card 01 -->
+                <div class="service-card">
+                    <div class="card-laser-trim cyan-laser"></div>
+                    <div class="service-card-image-box">
+                        <img src="https://unsplash.com" alt="Quantum Shielding Core" class="card-display-img">
+                    </div>
+                    <div class="service-card-body">
+                        <span class="service-meta">MODULE_01 // SECURE</span>
+                        <h3>Quantum Shielding</h3>
+                        <p>Enforces hardware-isolated polymorphic keys mid-transit, rendering all packet routes unreadable to active interception sniffers.</p>
+                    </div>
+                </div>
+
+                <!-- Card 02 -->
+                <div class="service-card">
+                    <div class="card-laser-trim purple-laser"></div>
+                    <div class="service-card-image-box">
+                        <img src="https://unsplash.com" alt="Subnet Camouflage Grid" class="card-display-img">
+                    </div>
+                    <div class="service-card-body">
+                        <span class="service-meta">MODULE_02 // CAMOUFLAGE</span>
+                        <h3>Subnet Camouflage</h3>
+                        <p>Masks outgoing network server traffic signatures dynamically to camouflage corporate cloud storage perimeters entirely.</p>
+                    </div>
+                </div>
+
+                <!-- Card 03 -->
+                <div class="service-card">
+                    <div class="card-laser-trim green-laser"></div>
+                    <div class="service-card-image-box">
+                        <img src="https://unsplash.com" alt="Reflexive Sandboxing Subnet" class="card-display-img">
+                    </div>
+                    <div class="service-card-body">
+                        <span class="service-meta">MODULE_03 // KINETIC_AI</span>
+                        <h3>Reflexive Sandbox</h3>
+                        <p>Instantly deploys ephemeral subnets to isolate security network anomalies the millisecond unexpected vector deviations are mapped.</p>
+                    </div>
+                </div>
+
+                <!-- Card 04 -->
+                <div class="service-card">
+                    <div class="card-laser-trim cyan-laser"></div>
+                    <div class="service-card-image-box">
+                        <img src="https://unsplash.com" alt="Deep Packet Analysis" class="card-display-img">
+                    </div>
+                    <div class="service-card-body">
+                        <span class="service-meta">MODULE_04 // DEEP_INSPECT</span>
+                        <h3>Deep Inspection</h3>
+                        <p>Decodes and authenticates encrypted application-layer payloads on the microsecond scale without connection state drops.</p>
+                    </div>
+                </div>
+
+                <!-- Identical Cloned Set to ensure an uninterrupted visual looping point -->
+                <!-- Card 01 Duplicate -->
+                <div class="service-card">
+                    <div class="card-laser-trim cyan-laser"></div>
+                    <div class="service-card-image-box">
+                        <img src="https://unsplash.com" alt="Quantum Shielding Core" class="card-display-img">
+                    </div>
+                    <div class="service-card-body">
+                        <span class="service-meta">MODULE_01 // SECURE</span>
+                        <h3>Quantum Shielding</h3>
+                        <p>Enforces hardware-isolated polymorphic keys mid-transit, rendering all packet routes unreadable to active interception sniffers.</p>
+                    </div>
+                </div>
+
+                <!-- Card 02 Duplicate -->
+                <div class="service-card">
+                    <div class="card-laser-trim purple-laser"></div>
+                    <div class="service-card-image-box">
+                        <img src="https://unsplash.com" alt="Subnet Camouflage Grid" class="card-display-img">
+                    </div>
+                    <div class="service-card-body">
+                        <span class="service-meta">MODULE_02 // CAMOUFLAGE</span>
+                        <h3>Subnet Camouflage</h3>
+                        <p>Masks outgoing network server traffic signatures dynamically to camouflage corporate cloud storage perimeters entirely.</p>
+                    </div>
+                </div>
+
+                <!-- Card 03 Duplicate -->
+                <div class="service-card">
+                    <div class="card-laser-trim green-laser"></div>
+                    <div class="service-card-image-box">
+                        <img src="https://unsplash.com" alt="Reflexive Sandboxing Subnet" class="card-display-img">
+                    </div>
+                    <div class="service-card-body">
+                        <span class="service-meta">MODULE_03 // KINETIC_AI</span>
+                        <h3>Reflexive Sandbox</h3>
+                        <p>Instantly deploys ephemeral subnets to isolate security network anomalies the millisecond unexpected vector deviations are mapped.</p>
+                    </div>
+                </div>
+
+                <!-- Card 04 Duplicate -->
+                <div class="service-card">
+                    <div class="card-laser-trim cyan-laser"></div>
+                    <div class="service-card-image-box">
+                        <img src="https://unsplash.com" alt="Deep Packet Analysis" class="card-display-img">
+                    </div>
+                    <div class="service-card-body">
+                        <span class="service-meta">MODULE_04 // DEEP_INSPECT</span>
+                        <h3>Deep Inspection</h3>
+                        <p>Decodes and authenticates encrypted application-layer payloads on the microsecond scale without connection state drops.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-success: #00ff88;
+}
+
+/* ==========================================
+   RESTRICTED PADDING SECTION LAYOUTS
+========================================== */
+.firewall-services-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 50px;        /* Restricts layout strictly to 50px top padding limit */
+    padding-bottom: 30px;     /* Restricts layout strictly to 30px bottom padding layout */
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.services-bg-mesh {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; opacity: 0.02; pointer-events: none; z-index: 1;
+}
+
+.services-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    z-index: 2;
+}
+
+/* ==========================================
+   RESTORED: HEADER SLIDE/FADE STYLE INJECTION
+========================================== */
+.services-section-header {
+    width: 100%; 
+    margin-bottom: 45px; 
+    text-align: left;
+    opacity: 0; 
+    transform: translateY(20px);
+    transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.services-section-header.header-triggered { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+.cyber-badge {
+    font-family: monospace; color: var(--neon-cyan); font-size: 0.75rem; letter-spacing: 2px;
+}
+
+.services-main-title {
+    font-size: 2.6rem; font-weight: 800; line-height: 1.2; text-transform: uppercase;
+    letter-spacing: -0.5px; color: var(--text-bright); margin-top: 10px;
+}
+
+/* ==========================================
+   INFINITE AUTOMATIC TIMELINE TRACK
+========================================== */
+.services-carousel-viewport {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+    padding: 20px 0;
+}
+
+.services-carousel-track {
+    display: inline-flex;
+    align-items: stretch;
+    gap: 30px; 
+    padding-right: 30px;
+    animation: autoStreamTrack 35s linear infinite; 
+    will-change: transform;
+}
+
+.services-carousel-viewport:hover .services-carousel-track {
+    animation-play-state: paused;
+}
+
+/* ==========================================
+   PROPORTIONAL LAYOUT CARDS DESIGN
+========================================== */
+.service-card {
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 14px;
+    padding: 16px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    
+    /* Proportional size parameters prevent text clipping bugs */
+    width: 310px;
+    aspect-ratio: 1 / 1.32; 
+    flex-shrink: 0;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card-laser-trim {
+    position: absolute; left: 16px; top: 0; width: 30px; height: 2px; border-radius: 2px;
+    transition: width 0.4s ease;
+}
+.cyan-laser { background-color: var(--neon-cyan); box-shadow: 0 0 8px var(--neon-cyan); }
+.purple-laser { background-color: var(--neon-purple); box-shadow: 0 0 8px var(--neon-purple); }
+.green-laser { background-color: var(--accent-success); box-shadow: 0 0 8px var(--accent-success); }
+
+.service-card-image-box {
+    position: relative;
+    width: 100%; height: 160px;
+    border-radius: 8px; overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.01);
+}
+
+.card-display-img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: saturate(0.5) brightness(0.65) contrast(1.1);
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.service-card-body {
+    margin-top: 18px; display: flex; flex-direction: column; text-align: left;
+    flex: 1;
+}
+
+.service-meta { font-family: monospace; font-size: 0.65rem; color: var(--text-dim); letter-spacing: 1px; margin-bottom: 6px; transition: color 0.3s; }
+.service-card-body h3 { font-size: 1.2rem; font-weight: 700; color: var(--text-bright); margin-bottom: 8px; transition: color 0.3s, text-shadow 0.3s; }
+.service-card-body p { font-size: 0.85rem; color: rgba(255, 255, 255, 0.6); line-height: 1.55; margin: 0; }
+
+/* ==========================================
+   INTERACTIVE NEON HOVER GLOW COUPLINGS
+========================================== */
+.service-card:hover {
+    border-color: rgba(0, 240, 255, 0.25);
+    box-shadow: 0 15px 40px rgba(0, 240, 255, 0.05);
+    transform: translateY(-4px);
+}
+.service-card:hover .card-laser-trim { width: calc(100% - 32px); }
+.service-card:hover .card-display-img { transform: scale(1.04); filter: saturate(0.85) brightness(0.75) contrast(1.15); }
+.service-card:hover .service-meta { color: var(--neon-cyan); }
+.service-card:hover h3 { color: var(--neon-cyan); text-shadow: 0 0 10px rgba(0, 240, 255, 0.4); }
+.service-card:hover p { color: var(--text-bright); }
+
+.service-card:nth-child(2):hover, .service-card:nth-child(6):hover { border-color: rgba(157, 78, 221, 0.25); }
+.service-card:nth-child(2):hover .service-meta, .service-card:nth-child(6):hover .service-meta { color: var(--neon-purple); }
+.service-card:nth-child(2):hover h3, .service-card:nth-child(6):hover h3 { color: var(--neon-purple); text-shadow: 0 0 10px rgba(157, 78, 221, 0.4); }
+
+.service-card:nth-child(3):hover, .service-card:nth-child(7):hover { border-color: rgba(0, 255, 136, 0.25); }
+.service-card:nth-child(3):hover .service-meta, .service-card:nth-child(7):hover .service-meta { color: var(--accent-success); }
+.service-card:nth-child(3):hover h3, .service-card:nth-child(7):hover h3 { color: var(--accent-success); text-shadow: 0 0 10px rgba(0, 255, 136, 0.4); }
+
+@keyframes autoStreamTrack {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(calc(-50% - 15px), 0, 0); }
+}
+
+/* ==========================================
+   FLUID RESPONSIVE VIEWPORTS
+========================================== */
+@media (max-width: 992px) {
+    .services-main-title { font-size: 2.3rem; }
+    .services-container { padding: 0 24px; }
+}
+
+@media (max-width: 640px) {
+    .services-main-title { font-size: 1.8rem; }
+    .services-container { padding: 0 16px; }
+    .service-card { width: 280px; aspect-ratio: 1 / 1.38; } 
+    .services-carousel-track { gap: 20px; padding-right: 20px; animation-duration: 25s; } 
+    @keyframes autoStreamTrack { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(calc(-50% - 10px), 0, 0); } }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // RESTORED: Dynamic Viewport Scroll Trigger tracking the Carousel Section Title
+    const carouselHeader = document.getElementById("carouselHeader");
+
+    function observeCarouselHeaderEntrance() {
+        if (carouselHeader) {
+            const headerTop = carouselHeader.getBoundingClientRect().top;
+            const windowDisplayHeight = window.innerHeight;
+            
+            // Unlocks visibility once the title boundary rolls past 90% display height
+            if (headerTop < windowDisplayHeight * 0.9) {
+                carouselHeader.classList.add("header-triggered");
+            }
+        }
+    }
+
+    // Bind passive windows action listeners
+    window.addEventListener("scroll", observeCarouselHeaderEntrance);
+    window.addEventListener("resize", observeCarouselHeaderEntrance);
+    
+    // Fire pass instantly on compile load to check starting onscreen elements
+    observeCarouselHeaderEntrance(); 
+});
+
+</script>
+
+<section class="faq-section" id="faq">
+    <!-- Atmospheric background network grid layer -->
+    <img src="https://unsplash.com" alt="Tech Wireframe Matrix" class="faq-bg-mesh">
+
+    <div class="faq-container">
+        
+        <!-- FAQ Section Header Block -->
+        <div class="faq-header">
+            <div class="cyber-badge">// CENTRAL KNOWLEDGE NODE</div>
+            <!-- Main Title triggered cleanly letter-by-letter via window scrolling checks -->
+            <h2 class="scroll-letter-header" id="scrollFaqTitle">
+                System decrypt & operational protocols
+            </h2>
+        </div>
+
+        <!-- Accordion Interface Column -->
+        <div class="faq-accordion-stack">
+            
+            <!-- FAQ Item 1 -->
+            <div class="faq-item animate-scroll-node">
+                <button class="faq-trigger-btn" type="button" aria-expanded="false">
+                    <div class="trigger-meta-block">
+                        <span class="faq-index">Q_01</span>
+                        <h3>How does Stackly cloak outgoing server traffic?</h3>
+                    </div>
+                    <div class="trigger-icon-wrap">
+                        <span class="icon-line horizontal"></span>
+                        <span class="icon-line vertical"></span>
+                    </div>
+                </button>
+                <div class="faq-content-wrapper">
+                    <div class="faq-inner-body">
+                        <div class="diagnostic-grid-glow"></div>
+                        <p>Stackly abstracts network traffic completely. By dynamically mutating packet header routes on a microsecond scale across decentralized secure nodes, we disguise corporate server signatures and keep physical data center locations hidden from automated port scanners.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="faq-item animate-scroll-node">
+                <button class="faq-trigger-btn" type="button" aria-expanded="false">
+                    <div class="trigger-meta-block">
+                        <span class="faq-index">Q_02</span>
+                        <h3>Will zero-trust architectures impact application latency?</h3>
+                    </div>
+                    <div class="trigger-icon-wrap">
+                        <span class="icon-line horizontal"></span>
+                        <span class="icon-line vertical"></span>
+                    </div>
+                </button>
+                <div class="faq-content-wrapper">
+                    <div class="faq-inner-body">
+                        <div class="diagnostic-grid-glow purple-grid"></div>
+                        <p>No. Our edge infrastructure operates on low-latency protocols engineered explicitly for high-throughput microservices. Security processing tokens coordinate seamlessly with active global container networks, keeping end-to-end endpoint authentication delays under 10ms.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="faq-item animate-scroll-node">
+                <button class="faq-trigger-btn" type="button" aria-expanded="false">
+                    <div class="trigger-meta-block">
+                        <span class="faq-index">Q_03</span>
+                        <h3>What happens the millisecond a perimeter breach is logged?</h3>
+                    </div>
+                    <div class="trigger-icon-wrap">
+                        <span class="icon-line horizontal"></span>
+                        <span class="icon-line vertical"></span>
+                    </div>
+                </button>
+                <div class="faq-content-wrapper">
+                    <div class="faq-inner-body">
+                        <div class="diagnostic-grid-glow green-grid"></div>
+                        <p>Our autonomous firewall deploys a reflexive sandbox routine instantly. The compromised subnet is isolated within a hardware-fenced virtual environment while fake metadata payloads are fed to the entry vector, neutralizing the exploit threat without interrupting primary cluster operations.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-success: #00ff88;
+}
+
+/* ==========================================
+   FAQ CONTAINER CONFIGURATIONS
+========================================== */
+.faq-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.faq-bg-mesh {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; opacity: 0.015; pointer-events: none; z-index: 1;
+}
+
+.faq-container {
+    position: relative;
+    max-width: 1100px; /* Expanded for proper multi-line reading comfort */
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    z-index: 2;
+}
+
+.faq-header {
+    width: 100%; 
+    margin-bottom: 50px; 
+    text-align: left;
+}
+
+.cyber-badge {
+    font-family: monospace;
+    color: var(--neon-cyan);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+/* ==========================================
+   BUG RECON: RESOLVED WORD BREAK CRASH
+========================================== */
+.scroll-letter-header {
+    font-size: 3rem; /* Increased size significantly for sharp prominence */
+    font-weight: 800; 
+    line-height: 1.25; /* Expanded to clean up glow metrics overlapping lines */
+    text-transform: uppercase; 
+    color: var(--text-bright); 
+    margin-top: 15px;
+    word-break: keep-all; /* Fixed: Prevents words like PROTOCOLS from breaking midway */
+    overflow-wrap: break-word;
+    width: 100%;
+}
+
+.scroll-letter-header .char-node {
+    display: inline-block; 
+    opacity: 0.15; 
+    transform: translateY(6px);
+    transition: opacity 0.2s ease, transform 0.2s ease, text-shadow 0.2s;
+}
+
+.scroll-letter-header .char-node.illuminated {
+    opacity: 1; 
+    transform: translateY(0); 
+    color: var(--text-bright);
+    text-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+}
+
+/* ==========================================
+   HIGH-UTILITY ACCORDION STRUCTURES
+========================================== */
+.faq-accordion-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Increased separation footprint */
+    width: 100%;
+}
+
+.faq-item {
+    background-color: rgba(13, 21, 39, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-item.node-synced {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.faq-trigger-btn {
+    width: 100%;
+    padding: 28px 30px; /* Increased internal cell breathing bounds */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+.trigger-meta-block {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    text-align: left;
+}
+
+.faq-index {
+    font-family: monospace;
+    font-size: 0.9rem; /* Increased index typography size */
+    font-weight: 700;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+/* Increased Question Heading Size */
+.trigger-meta-block h3 {
+    font-size: 1.35rem; /* Increased size significantly for heavy prominence */
+    font-weight: 700;
+    color: var(--text-bright);
+    line-height: 1.4;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.trigger-icon-wrap {
+    position: relative;
+    width: 16px; height: 16px;
+    flex-shrink: 0;
+}
+
+.icon-line {
+    position: absolute; background-color: var(--text-dim);
+    border-radius: 2px; transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.3s ease;
+}
+.horizontal { top: 7px; left: 0; width: 100%; height: 2px; }
+.vertical { top: 0; left: 7px; width: 2px; height: 100%; }
+
+.faq-content-wrapper {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.faq-inner-body {
+    padding: 0 30px 30px 86px; /* Aligns description cleanly under expanded columns */
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Increased Description Paragraph Size */
+.faq-inner-body p {
+    font-size: 1.05rem; /* Increased from 0.9rem for prominent readability contrast */
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.7;
+    text-align: left;
+    margin: 0;
+    z-index: 3;
+    position: relative;
+}
+
+/* Background grid glow textures */
+.diagnostic-grid-glow {
+    position: absolute;
+    bottom: 0; left: 0; width: 100%; height: 100%;
+    background-image: linear-gradient(rgba(0, 240, 255, 0.02) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(0, 240, 255, 0.02) 1px, transparent 1px);
+    background-size: 16px 16px;
+    mask-image: linear-gradient(to top, #000 20%, transparent);
+    -webkit-mask-image: linear-gradient(to top, #000 20%, transparent);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+.purple-grid { background-image: linear-gradient(rgba(157, 78, 221, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(157, 78, 221, 0.02) 1px, transparent 1px); }
+.green-grid { background-image: linear-gradient(rgba(0, 255, 136, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 136, 0.02) 1px, transparent 1px); }
+
+/* ==========================================
+   INTERACTIVE NEON HOVER GLOWS
+========================================== */
+.faq-item:hover { border-color: rgba(0, 240, 255, 0.2); box-shadow: 0 12px 35px rgba(0, 240, 255, 0.05); }
+.faq-item:hover .faq-index { color: var(--neon-cyan); }
+.faq-item:hover .trigger-meta-block h3 { color: var(--neon-cyan); }
+.faq-item:hover .icon-line { background-color: var(--neon-cyan); }
+
+.faq-item:nth-child(2):hover { border-color: rgba(157, 78, 221, 0.2); box-shadow: 0 12px 35px rgba(157, 78, 221, 0.05); }
+.faq-item:nth-child(2):hover .faq-index { color: var(--neon-purple); }
+.faq-item:nth-child(2):hover .trigger-meta-block h3 { color: var(--neon-purple); }
+.faq-item:nth-child(2):hover .icon-line { background-color: var(--neon-purple); }
+
+.faq-item:nth-child(3):hover { border-color: rgba(0, 255, 136, 0.2); box-shadow: 0 12px 35px rgba(0, 255, 136, 0.05); }
+.faq-item:nth-child(3):hover .faq-index { color: var(--accent-success); }
+.faq-item:nth-child(3):hover .trigger-meta-block h3 { color: var(--accent-success); }
+.faq-item:nth-child(3):hover .icon-line { background-color: var(--accent-success); }
+
+.faq-item.accordion-active { border-color: rgba(0, 240, 255, 0.3) !important; background-color: rgba(13, 21, 39, 0.6); }
+.faq-item:nth-child(2).accordion-active { border-color: rgba(157, 78, 221, 0.3) !important; }
+.faq-item:nth-child(3).accordion-active { border-color: rgba(0, 255, 136, 0.3) !important; }
+
+.faq-item.accordion-active .trigger-meta-block h3 { color: var(--text-bright); text-shadow: 0 0 10px rgba(255, 255, 255, 0.2); }
+.faq-item.accordion-active .diagnostic-grid-glow { opacity: 1; }
+.faq-item.accordion-active .vertical { transform: rotate(90deg); opacity: 0; }
+.faq-item.accordion-active .horizontal { transform: rotate(180deg); }
+
+/* ==========================================
+   FLUID RESPONSIVE DESIGN BOUNDARIES
+========================================== */
+@media (max-width: 992px) {
+    .scroll-letter-header { font-size: 2.5rem; }
+    .faq-container { padding: 0 24px; }
+    .faq-trigger-btn { padding: 22px 24px; }
+    .trigger-meta-block h3 { font-size: 1.2rem; }
+    .faq-inner-body { padding: 0 24px 24px 76px; }
+}
+
+@media (max-width: 768px) {
+    .scroll-letter-header { font-size: 2rem; }
+    .trigger-meta-block { gap: 16px; align-items: flex-start; flex-direction: column; }
+    .faq-index { line-height: 1; }
+    .faq-inner-body { padding: 0 20px 24px 20px; } /* Correctly aligns paragraph on tight viewports */
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. SCROLL REVEAL: Letter-by-Letter Title Calculator
+    const faqTitleNode = document.getElementById("scrollFaqTitle");
+    if (faqTitleNode) {
+        const textPayloadStr = faqTitleNode.textContent.trim();
+        faqTitleNode.textContent = "";
+
+        const letterSpans = textPayloadStr.split("").map(character => {
+            const span = document.createElement("span");
+            span.className = "char-node";
+            span.innerHTML = character === " " ? "&nbsp;" : character;
+            faqTitleNode.appendChild(span);
+            return span;
+        });
+
+        function handleFaqTitleScrollReveal() {
+            const rect = faqTitleNode.getBoundingClientRect();
+            const viewHeight = window.innerHeight;
+            
+            const startReveal = viewHeight * 0.92;
+            const endReveal = viewHeight * 0.4;
+            
+            let progress = (startReveal - rect.top) / (startReveal - endReveal);
+            progress = Math.max(0, Math.min(1, progress));
+
+            const maxIndex = Math.floor(progress * letterSpans.length);
+            letterSpans.forEach((spanNode, index) => {
+                if (index < maxIndex) spanNode.classList.add("illuminated");
+                else spanNode.classList.remove("illuminated");
+            });
+        }
+        window.addEventListener("scroll", handleFaqTitleScrollReveal);
+        handleFaqTitleScrollReveal();
+    }
+
+    // 2. SCROLL REVEAL: One-by-One Delayed Column Cascade Accents
+    const cascadingFaqItems = document.querySelectorAll(".faq-item");
+    function handleFaqItemsCascadeReveal() {
+        cascadingFaqItems.forEach((itemNode, progressiveIdx) => {
+            if (itemNode.getBoundingClientRect().top < window.innerHeight * 0.88) {
+                if (!itemNode.classList.contains("node-synced")) {
+                    setTimeout(() => {
+                        itemNode.classList.add("node-synced");
+                    }, progressiveIdx * 120); 
+                }
+            }
+        });
+    }
+    window.addEventListener("scroll", handleFaqItemsCascadeReveal);
+    handleFaqItemsCascadeReveal();
+
+    // 3. HIGH-UTILITY INTERACTION: Height-Calibrated Accordion Drawer Toggles
+    cascadingFaqItems.forEach(item => {
+        const triggerBtn = item.querySelector(".faq-trigger-btn");
+        const contentWrapper = item.querySelector(".faq-content-wrapper");
+
+        if (triggerBtn && contentWrapper) {
+            triggerBtn.addEventListener("click", () => {
+                const isActive = item.classList.contains("accordion-active");
+
+                // Auto-collapse other open FAQ panels first to maintain clean terminal viewports
+                cascadingFaqItems.forEach(otherItem => {
+                    otherItem.classList.remove("accordion-active");
+                    const otherWrapper = otherItem.querySelector(".faq-content-wrapper");
+                    if (otherWrapper) {
+                        otherWrapper.style.height = "0px";
+                        otherItem.querySelector(".faq-trigger-btn").setAttribute("aria-expanded", "false");
+                    }
+                });
+
+                // Toggle current element node parameters cleanly
+                if (!isActive) {
+                    item.classList.add("accordion-active");
+                    triggerBtn.setAttribute("aria-expanded", "true");
+                    // Collect actual calculated DOM content layout pixel requirements dynamically
+                    const internalHeight = contentWrapper.querySelector(".faq-inner-body").scrollHeight;
+                    contentWrapper.style.height = `${internalHeight}px`;
+                }
+            });
+        }
+    });
+
+    // Optional recalculation engine to adjust open drawer heights if screen scales flip sizes
+    window.addEventListener("resize", () => {
+        const activeItem = document.querySelector(".faq-item.accordion-active");
+        if (activeItem) {
+            const contentWrapper = activeItem.querySelector(".faq-content-wrapper");
+            const internalHeight = contentWrapper.querySelector(".faq-inner-body").scrollHeight;
+            contentWrapper.style.height = `${internalHeight}px`;
+        }
+    });
+});
+
+</script>
+
+<section class="single-line-cta-section">
+    <!-- Atmospheric base layout background image tag -->
+    <img src="https://unsplash.com" alt="Cyber Glow Backdrop" class="cta-banner-bg">
+
+    <div class="cta-banner-container">
+        
+        <!-- Left Side: Content Title Only -->
+        <div class="cta-left-content">
+            <h2 class="scroll-letter-title" id="scrollCtaBannerTitle">
+                Secure your digital matrix today
+            </h2>
+        </div>
+
+        <!-- Right Side: Floating Action Button Only -->
+        <div class="cta-right-action">
+            <div class="floating-btn-wrap">
+                <button class="banner-action-btn" type="button">
+                    <span>Deploy Immediate Guard</span>
+                    <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+}
+
+/* ==========================================
+   CTA BANNER GENERAL LAYOUT SETTINGS
+========================================== */
+.single-line-cta-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 50px;       /* Strict 50px top padding layout limit */
+    padding-bottom: 30px;    /* Strict 30px bottom padding layout footprint */
+    background-color: var(--bg-deep);
+    overflow: hidden;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(0, 240, 255, 0.05);
+    border-bottom: 1px solid rgba(157, 78, 221, 0.05);
+}
+
+.cta-banner-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; opacity: 0.04; pointer-events: none; z-index: 1;
+}
+
+.cta-banner-container {
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between; /* Perfect horizontal corner-to-corner balance */
+    align-items: center;
+    gap: 40px;
+    z-index: 3;
+}
+
+/* ==========================================
+   LEFT ZONE - TITLE STYLING
+========================================== */
+.cta-left-content {
+    display: flex;
+    max-width: 65%;
+    flex: 1;
+}
+
+.scroll-letter-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    color: var(--text-bright);
+    margin: 0;
+    text-align: left;
+    word-break: keep-all; 
+    overflow-wrap: break-word;
+    width: 100%;
+}
+
+/* Character split node baselines before scrolling viewport intersection */
+.scroll-letter-title .char-unit {
+    display: inline-block;
+    opacity: 0.15;
+    transform: scale(0.95);
+    transition: opacity 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), text-shadow 0.2s ease;
+}
+
+.scroll-letter-title .char-unit.glow-active {
+    opacity: 1;
+    transform: scale(1);
+    color: var(--text-bright);
+    text-shadow: 0 0 15px rgba(0, 240, 255, 0.45);
+}
+
+/* ==========================================
+   RIGHT ZONE - FLOATING BUTTON ACTION
+========================================== */
+.cta-right-action {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.floating-btn-wrap {
+    animation: ctaButtonFloat 4.5s ease-in-out infinite; /* Automated smooth float loop */
+}
+
+.banner-action-btn {
+    padding: 16px 36px;
+    border-radius: 35px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--text-bright);
+    background: linear-gradient(90deg, var(--neon-purple), var(--neon-cyan));
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+}
+
+/* Hover glow illumination effects */
+.banner-action-btn:hover {
+    box-shadow: 0 12px 35px rgba(0, 240, 255, 0.45);
+    transform: scale(1.02);
+}
+
+.banner-action-btn:active {
+    transform: scale(0.98);
+}
+
+.btn-arrow {
+    width: 16px; height: 16px;
+    transition: transform 0.3s ease;
+}
+.banner-action-btn:hover .btn-arrow {
+    transform: translateX(4px);
+}
+
+/* Floating animation timelines */
+@keyframes ctaButtonFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+}
+
+/* ==========================================
+   FLUID RESPONSIVE DESIGN BOUNDARIES
+========================================== */
+@media (max-width: 992px) {
+    .cta-banner-container {
+        flex-direction: column; /* Flips track layout cleanly to columns on tablet/mobile screens */
+        text-align: center;
+        gap: 30px;
+        padding: 0 24px;
+    }
+    
+    .cta-left-content {
+        max-width: 100%;
+    }
+    
+    .scroll-letter-title { font-size: 2.2rem; text-align: center; }
+    .cta-right-action { justify-content: center; width: 100%; }
+}
+
+@media (max-width: 480px) {
+    .cta-banner-container { padding: 0 16px; }
+    .scroll-letter-title { font-size: 1.75rem; }
+    .banner-action-btn { width: 100%; justify-content: center; padding: 14px; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // SCROLL REVEAL: Minimal Single-Line Title Animation Engine
+    const ctaTitleNode = document.getElementById("scrollCtaBannerTitle");
+
+    if (ctaTitleNode) {
+        const structuralTextStr = ctaTitleNode.textContent.trim();
+        ctaTitleNode.textContent = ""; // Clear placeholder text context
+
+        // Split text cleanly into individual character wrapper span nodes
+        const charSpanElements = structuralTextStr.split("").map(character => {
+            const spanNode = document.createElement("span");
+            spanNode.className = "char-unit";
+            // Ensure blank spacing values are rendered as non-breaking entities
+            spanNode.innerHTML = character === " " ? "&nbsp;" : character;
+            ctaTitleNode.appendChild(spanNode);
+            return spanNode;
+        });
+
+        function handleBannerTitleScrollReveal() {
+            const nodeRect = ctaTitleNode.getBoundingClientRect();
+            const browserViewportHeight = window.innerHeight;
+            
+            // Text illuminates progressively once section passes bottom 95% threshold
+            const startScrollRevealLine = browserViewportHeight * 0.95;
+            const endScrollRevealLine = (browserViewportHeight * 0.4) + 100; // Built-in padding buffer
+            
+            let scrollRevealProgress = (startScrollRevealLine - nodeRect.top) / (startScrollRevealLine - endScrollRevealLine);
+            scrollRevealProgress = Math.max(0, Math.min(1, scrollRevealProgress));
+
+            const totalActiveCharsIndex = Math.floor(scrollRevealProgress * charSpanElements.length);
+
+            charSpanElements.forEach((spanNode, index) => {
+                if (index < totalActiveCharsIndex) {
+                    spanNode.classList.add("glow-active");
+                } else {
+                    spanNode.classList.remove("glow-active");
+                }
+            });
+        }
+
+        // Attach lightweight resize and scroll window listener loops
+        window.addEventListener("scroll", handleBannerTitleScrollReveal);
+        window.addEventListener("resize", handleBannerTitleScrollReveal);
+        
+        // Execute an instant baseline run frame immediately on DOM initialization
+        handleBannerTitleScrollReveal(); 
+    }
+});
+
+</script>
+
+<footer class="cyber-footer">
+    <div class="footer-top-grid">
+        
+        <!-- Column 1: Cybersecurity Brand Info & 5 Vector Social Nodes -->
+        <div class="footer-brand-column">
+            <!-- Brand logo triggers scroll back to top of the webpage window -->
+            <div class="footer-logo-wrapper" id="footerLogoBtn" title="Back to Top">
+                <img src="https://placehold.co" alt="Stackly Logo" class="footer-brand-img">
+            </div>
+            <p class="brand-bio-text">
+                Securing enterprise perimeter clusters with automated zero-trust architecture, multi-vector threat mitigation modules, and continuous low-latency network camouflage.
+            </p>
+            
+            <!-- 5 Ordered Social Icons linked to 404 targets -->
+            <div class="social-icon-row">
+                <!-- 1. Instagram -->
+                <a href="404.html" class="social-btn" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" class="social-svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.849.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.125-1.664 4.671-4.919 4.819-1.265.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.82-.058-1.265-.069-1.64-.069-4.849 0-3.204.013-3.583.069-4.849.149-3.125 1.664-4.671 4.919-4.819 1.265-.057 1.644-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.79.073 7.151.014 8.433 0 8.84 0 12c0 3.159.014 3.567.072 4.847.199 4.359 2.62 6.782 6.98 6.981 1.28.058 1.688.072 4.848.072 3.159 0 3.567-.014 4.847-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.848 0-3.159-.014-3.567-.073-4.847-.199-4.359-2.62-6.782-6.979-6.98C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                </a>
+                <!-- 2. LinkedIn -->
+                <a href="404.html" class="social-btn" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" class="social-svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <!-- 3. YouTube -->
+                <a href="404.html" class="social-btn" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" class="social-svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.016 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.86-.502 5.74a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.016 0 0 0 2.122-2.136C24 15.86 24 12 24 12s0-3.86-.502-5.74zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+                <!-- 4. Facebook -->
+                <a href="404.html" class="social-btn" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24" class="social-svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <!-- 5. Twitter / X -->
+                <a href="404.html" class="social-btn" aria-label="Twitter X">
+                    <svg viewBox="0 0 24 24" class="social-svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Links Directory Column 2: Customized Network Links -->
+        <div class="footer-links-column">
+            <h3>Infrastructure</h3>
+            <a href="404.html">Camouflage Grid</a>
+            <a href="404.html">Zero-Trust Node</a>
+            <a href="404.html">Reflex Sandbox</a>
+            <a href="404.html">Key Mutation</a>
+            <a href="404.html">Threat Metrics</a>
+        </div>
+
+        <!-- Links Directory Column 3 -->
+        <div class="footer-links-column">
+            <h3>Intelligence</h3>
+            <a href="404.html">Vulnerability Ops</a>
+            <a href="404.html">Security Blog</a>
+            <a href="404.html">Threat Intel</a>
+            <a href="404.html">Patch Pipeline</a>
+            <a href="404.html">Incident Desk</a>
+        </div>
+
+        <!-- Links Directory Column 4 -->
+        <div class="footer-links-column">
+            <h3>Governance</h3>
+            <a href="404.html">Compliance Vault</a>
+            <a href="404.html">API Reference</a>
+            <a href="404.html">Node Status</a>
+            <a href="404.html">Audit Protocol</a>
+            <a href="404.html">Operator Desk</a>
+        </div>
+
+        <!-- Column 5: Subscription Console Area -->
+        <div class="footer-news-column">
+            <h3>Threat Watch</h3>
+            <p class="news-subtitle">Subscribe to receive system exploit patches and weekly perimeter vulnerability reports.</p>
+            
+            <form id="footerNewsForm" novalidate>
+                <div class="news-input-wrapper">
+                    <input type="email" id="newsEmailInput" placeholder="routing_email@domain.com" autocomplete="off">
+                </div>
+                <button type="submit" class="news-submit-btn">Initialize Sync</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Bottom Legals Bar Container -->
+    <div class="footer-bottom-bar">
+        <div class="bottom-bar-container">
+            <span class="copyright-text">&copy; 2026 Stackly Systems. Perimeter Secured.</span>
+            
+            <div class="legal-links-row">
+                <a href="404.html">Privacy Encryption</a>
+                <a href="404.html">Terms of Deployment</a>
+                <a href="404.html">Cookie Isolation</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Fixed Floating Back-to-Top Scroller -->
+<button class="fixed-top-scroller" id="floatingTopBtn" title="Back to Top" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+</button>
+
+<style>
+    :root {
+    --bg-deep: #060913;
+    --bg-surface: #0d1527;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #9d4edd;
+    --text-bright: #ffffff;
+    --text-dim: #55657e;
+    --accent-error: #ff3366;
+}
+
+/* ==========================================
+   GLOBAL FOOTER CUSTOMIZED CYBER PALETTE
+========================================== */
+.cyber-footer {
+    width: 100%;
+    display: block;
+    background-color: #03060c; /* Deep black space layout baseline */
+    border-top: 1px solid rgba(0, 240, 255, 0.15); /* Neon cyan crisp top seam border */
+    padding-top: 60px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.footer-top-grid {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 40px 50px 40px;
+    display: grid;
+    grid-template-columns: 1.35fr repeat(3, 0.7fr) 1.35fr;
+    gap: 40px;
+}
+
+.footer-brand-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-logo-wrapper {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    margin-bottom: 20px;
+}
+.footer-logo-wrapper:hover { transform: scale(1.02); }
+.footer-brand-img { height: 34px; width: auto; display: block; }
+
+.brand-bio-text {
+    font-size: 0.95rem; /* High readability contrast scale */
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.social-icon-row {
+    display: flex;
+    gap: 12px;
+}
+
+.social-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.social-svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--text-bright); /* Forced solid white icon nodes */
+}
+
+/* Cyber network glow filters activated on mouse focus */
+.social-btn:hover {
+    border-color: var(--neon-cyan);
+    background-color: rgba(0, 240, 255, 0.05);
+    transform: translateY(-3px);
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.3);
+}
+.social-btn:hover .social-svg { fill: var(--neon-cyan); }
+
+/* Alternating themed accents to split icon block visuals */
+.social-btn:nth-child(even):hover {
+    border-color: var(--neon-purple);
+    background-color: rgba(157, 78, 221, 0.05);
+    box-shadow: 0 0 12px rgba(157, 78, 221, 0.3);
+}
+.social-btn:nth-child(even):hover .social-svg { fill: var(--neon-purple); }
+
+/* Directory Link Links Grid Column layout sets */
+.footer-links-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.footer-links-column h3, 
+.footer-news-column h3 {
+    font-size: 1.05rem; /* Increased font scale heading */
+    font-weight: 700;
+    color: var(--text-bright); /* Forced white title */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+}
+
+.footer-links-column a {
+    font-size: 0.95rem; /* Increased font scale choices */
+    color: var(--text-dim);
+    text-decoration: none;
+    margin-bottom: 12px;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+.footer-links-column a:hover {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
+}
+
+.footer-news-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.news-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+#footerNewsForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.news-input-wrapper { width: 100%; }
+
+#newsEmailInput {
+    width: 100%;
+    padding: 13px 16px;
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    color: var(--text-bright); /* Forced white input text */
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    transition: border-color 0.25s ease;
+}
+#newsEmailInput:focus {
+    outline: none;
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 8px rgba(0, 240, 255, 0.15);
+}
+
+/* Transmit Sync Button Layout Rules */
+.news-submit-btn {
+    width: 100%;
+    padding: 13px;
+    background: linear-gradient(90deg, var(--neon-purple), var(--neon-cyan));
+    color: var(--text-bright); /* Forced bright readable choice */
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+.news-submit-btn:hover {
+    box-shadow: 0 6px 20px rgba(0, 240, 255, 0.35);
+    transform: translateY(-1px);
+}
+
+/* ==========================================
+   BOTTOM DETAILS LEGALS SECTION
+========================================== */
+.footer-bottom-bar {
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.02);
+    background-color: #020408;
+    padding: 24px 0;
+}
+
+.bottom-bar-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright-text {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+}
+
+.legal-links-row {
+    display: flex;
+    gap: 24px;
+}
+
+.legal-links-row a {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.legal-links-row a:hover { color: var(--text-bright); }
+
+/* ==========================================
+   FLOATING UPWARD ACTION BACK TO TOP SCROLLER
+========================================== */
+.fixed-top-scroller {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--neon-cyan); /* Styled custom cyan ring border */
+    color: var(--neon-cyan);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 240, 255, 0.2);
+    z-index: 990;
+    opacity: 0;
+    transform: translateY(15px);
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.fixed-top-scroller.scroller-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.fixed-top-scroller svg { width: 18px; height: 18px; }
+.fixed-top-scroller:hover { background-color: var(--neon-cyan); color: #03060c; transform: translateY(-3px); }
+
+/* ==========================================
+   MANDATORY RESPONSIVE DESIGN VIEWPORTS
+========================================== */
+@media (max-width: 1024px) {
+    .footer-top-grid {
+        grid-template-columns: 1fr 1fr; /* Rearrange grid column layouts down into dual sets to bypass text overlaps */
+        gap: 40px;
+    }
+    .footer-news-column {
+        grid-column: span 2;
+        max-width: 440px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bottom-bar-container {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+    .legal-links-row { justify-content: center; flex-wrap: wrap; gap: 16px; }
+}
+
+@media (max-width: 540px) {
+    .footer-top-grid {
+        grid-template-columns: 1fr; /* Infallible single column stacks for total mobile protection padding scaling bounds */
+    }
+    .footer-news-column { grid-column: span 1; max-width: 100%; }
+    .footer-top-grid, .bottom-bar-container { padding-left: 24px; padding-right: 24px; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    const footerLogoBtn = document.getElementById("footerLogoBtn");
+    const floatingTopBtn = document.getElementById("floatingTopBtn");
+    const newsForm = document.getElementById("footerNewsForm");
+    const newsEmailInput = document.getElementById("newsEmailInput");
+
+    // 1. Unified Back-to-Top Window Reset Smooth Engine Call
+    function triggerWindowTopReset() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth" 
+        });
+    }
+
+    if (footerLogoBtn) footerLogoBtn.addEventListener("click", triggerWindowTopReset);
+    if (floatingTopBtn) floatingTopBtn.addEventListener("click", triggerWindowTopReset);
+
+    // 2. Observer monitoring viewport scrolling height to show/fade the floating button ring safely
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            floatingTopBtn.classList.add("scroller-visible");
+        } else {
+            floatingTopBtn.classList.remove("scroller-visible");
+        }
+    });
+
+    // 3. Zero-Trust Newsletter Empty Check & 404 Route Interception
+    if (newsForm) {
+        newsForm.addEventListener("submit", (event) => {
+            event.preventDefault(); 
+
+            const emailPayload = newsEmailInput.value.trim();
+
+            // Validate that the field is not empty before transmitting
+            if (!emailPayload) {
+                newsEmailInput.style.borderColor = "var(--accent-error)";
+                alert("Please fill the email field before subscribing.");
+                return;
+            }
+
+            // Route successfully verified submission channels straight into your 404 terminal page
+            window.location.href = "404.html";
+        });
+
+        // Instantly wipe out error border flashes upon subsequent input change triggers
+        if (newsEmailInput) {
+            newsEmailInput.addEventListener("input", () => {
+                newsEmailInput.style.borderColor = "rgba(255, 255, 255, 0.05)";
+            });
+        }
+    }
+});
+
+</script>
+
+</body>
