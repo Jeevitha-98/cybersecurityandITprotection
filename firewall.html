@@ -62,7 +62,7 @@
     <div class="header-container">
         <!-- Brand Logo Container (Tied to JS Window Reload Engine) -->
         <div class="logo-wrapper" id="brandLogoBtn" title="Refresh Dashboard">
-            <img src="https://placehold.co" alt="Stackly Logo" class="brand-img">
+            <img src="./assests/automotive logo.webp" alt="Stackly Logo" class="brand-img">
         </div>
 
         <!-- Centralized App Menu Navigation Links (Now with Contact Us) -->
@@ -77,7 +77,9 @@
 
         <!-- Authorization Action Controls Corner -->
         <div class="auth-wrapper">
-            <button class="auth-btn">Access Console</button>
+      <button class="auth-btn" onclick="window.location.href='login.html'">
+    Access Console
+</button>
         </div>
 
         <!-- Adaptive Mobile Hamburger Icon Trigger -->
@@ -136,7 +138,7 @@
 
 <section class="firewall-hero" id="firewall">
     <!-- Atmospheric base layout grid backdrop -->
-    <img src="https://unsplash.com" alt="Tech Grid Overlay" class="firewall-bg-image">
+    
 
     <div class="firewall-container">
         
@@ -155,9 +157,16 @@
             
             <!-- Floating CTA Buttons with hover scaling mechanics -->
             <div class="cta-group">
-                <button class="cta-btn primary-cta" type="button">Deploy Immediate Guard</button>
-                <button class="cta-btn secondary-cta" type="button">
-                    <span>Inspect Firewall Logs</span> 
+    
+<button class="cta-btn primary-cta" type="button" onclick="window.location.href='404.html';">
+    Deploy Immediate Guard
+</button>
+
+<button class="cta-btn secondary-cta" type="button" onclick="window.location.href='404.html';">
+    <span>Inspect Firewall Logs</span>
+
+
+
                     <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                         <polyline points="12 5 19 12 12 19"></polyline>
@@ -234,7 +243,7 @@
     background-color: var(--bg-deep);
     overflow: hidden;
     box-sizing: border-box;
-    padding: 130px 0;
+    padding: 110px 0 0;
 }
 
 .firewall-bg-image {
@@ -510,7 +519,7 @@
 </script>
 
 <section class="firewall-ops-section" id="diagnostics">
-    <img src="https://unsplash.com" alt="Tech Wireframe Backdrop" class="ops-bg-mesh">
+    <img src="./assests/polymorphic keys.webp" alt="Tech Wireframe Backdrop" class="ops-bg-mesh">
 
     <div class="ops-matrix-container">
         
@@ -592,7 +601,7 @@
     position: relative;
     width: 100%;
     display: block;
-    padding-top: 50px;        /* Restricts layout to requested 50px top padding limit */
+    padding-top: 10px;        /* Restricts layout to requested 50px top padding limit */
     padding-bottom: 30px;     /* Restricts layout to requested 30px bottom padding layout */
     background-color: var(--bg-deep);
     overflow: hidden;
@@ -694,7 +703,7 @@
     transition: background 0.3s ease, border-color 0.3s ease;
 }
 
-.row-label { color: var(--text-dim); }
+.row-label { color: white; }
 .val-cyan { color: var(--neon-cyan); text-shadow: 0 0 6px rgba(0,240,255,0.4); }
 .val-purple { color: var(--neon-purple); text-shadow: 0 0 6px rgba(157,78,221,0.4); }
 
@@ -773,7 +782,7 @@
 }
 
 .reveal-line {
-    font-size: 0.9rem; /* Reduced paragraph font size */
+    font-size: 16px; /* Reduced paragraph font size */
     color: rgba(255, 255, 255, 0.7);
     line-height: 1.65;
     margin: 0;
@@ -859,7 +868,7 @@
 
 <section class="enforcement-section" id="strategy">
     <!-- Base atmospheric background image tag -->
-    <img src="https://unsplash.com" alt="Server Mesh Backdrop" class="enforcement-bg-backdrop">
+    <img src="./assets/polymorphic-keys.webp" alt="Server Mesh Backdrop" class="enforcement-bg-backdrop">
 
     <div class="enforcement-container">
         
@@ -880,10 +889,16 @@
 
             <!-- Floating CTA Button Container -->
             <div class="floating-btn-wrap">
-                <button class="enforcement-action-btn" type="button">
-                    <span>Deploy Edge Profile</span>
-                    <svg viewBox="0 0 24 24" class="btn-arrow-icon"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </button>
+             
+<button class="enforcement-action-btn" type="button" onclick="window.location.href='404.html';">
+    <span>Deploy Edge Profile</span>
+    <svg viewBox="0 0 24 24" class="btn-arrow-icon">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+    </svg>
+</button>
+
+
             </div>
         </div>
 
@@ -1085,7 +1100,7 @@
 }
 
 .hud-telemetry-tag {
-    position: absolute; font-family: monospace; font-size: 0.65rem; color: var(--text-dim);
+    position: absolute; font-family: monospace; font-size: 0.65rem; color: white;
     letter-spacing: 1px; background-color: var(--bg-deep); padding: 2px 8px;
     border: 1px solid rgba(255, 255, 255, 0.04); border-radius: 4px;
 }
@@ -1164,7 +1179,7 @@
 
 <section class="dual-line-cta-section">
     <!-- Atmospheric base layout background image tag -->
-    <img src="https://unsplash.com" alt="Cyber Grid Core Backdrop" class="cta-banner-bg">
+    <img src="./assests/quantum.webp" alt="Cyber Grid Core Backdrop" class="cta-banner-bg">
 
     <div class="cta-banner-container">
         
@@ -1180,13 +1195,16 @@
         <!-- Right Side: Floating Central Action Button Column -->
         <div class="cta-action-column">
             <div class="floating-btn-wrap">
-                <button class="banner-action-btn" type="button">
-                    <span>Deploy Immediate Guard</span>
-                    <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                </button>
+          
+<button class="banner-action-btn" type="button" onclick="window.location.href='404.html';">
+    <span>Deploy Immediate Guard</span>
+    <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+    </svg>
+</button>
+
+
             </div>
         </div>
 
@@ -1270,7 +1288,7 @@
 
 /* Second Content Line: Detailed Description Copy */
 .cta-sub-paragraph {
-    font-size: 0.95rem;
+    font-size: 16px;
     color: rgba(255, 255, 255, 0.7);
     line-height: 1.6;
     margin: 0;
@@ -1590,7 +1608,7 @@
 
 .panel-meta-code { font-family: monospace; font-size: 0.65rem; color: var(--text-dim); letter-spacing: 1px; margin-bottom: 6px; transition: color 0.3s ease; }
 .panel-interactive-content h3 { font-size: 1.25rem; font-weight: 700; color: var(--text-bright); margin-bottom: 10px; transition: color 0.3s, text-shadow 0.3s ease; }
-.panel-interactive-content p { font-size: 0.85rem; color: rgba(255, 255, 255, 0.7); line-height: 1.6; }
+.panel-interactive-content p { font-size: 16px; color: rgba(255, 255, 255, 0.7); line-height: 1.6; }
 
 /* ==========================================
    INTERACTIVE NEON HOVER GLOWS
@@ -1630,6 +1648,526 @@
     .terminal-shell-box, .radar-viewport { height: 160px; }
 }
 
+@media (max-width: 1100px) {
+
+    .logs-container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+        box-sizing: border-box;
+    }
+
+    .logs-matrix-layout {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 22px;
+    }
+
+    .logs-panel {
+        min-width: 0;
+        padding: 20px;
+    }
+
+    .logs-main-title {
+        font-size: 2.35rem;
+    }
+
+    .tag-title {
+        font-size: 0.68rem;
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .terminal-shell-box {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .shell-line {
+        max-width: 100%;
+        font-size: 0.68rem;
+    }
+
+    .panel-interactive-content h3 {
+        font-size: 1.15rem;
+    }
+
+    .panel-interactive-content p {
+        font-size: 15px;
+        line-height: 1.55;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+@media (max-width: 992px) {
+
+    .firewall-logs-section {
+        padding-top: 42px;
+        padding-bottom: 28px;
+    }
+
+    .logs-container {
+        width: 100%;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .logs-section-header {
+        margin-bottom: 28px;
+    }
+
+    .logs-main-title {
+        font-size: 2.15rem;
+        line-height: 1.2;
+    }
+
+    /* Stack the two panels */
+    .logs-matrix-layout {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .logs-panel {
+        width: 100%;
+        min-width: 0;
+        padding: 20px;
+    }
+
+    .panel-header-tag {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .tag-title {
+        font-size: 0.7rem;
+        line-height: 1.4;
+        overflow-wrap: anywhere;
+    }
+
+    .header-vector-icon {
+        flex: 0 0 auto;
+        width: 15px;
+        height: 15px;
+    }
+
+    .terminal-shell-box {
+        width: 100%;
+        height: 175px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .shell-line {
+        width: 100%;
+        max-width: 100%;
+        font-size: 0.72rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .radar-viewport {
+        width: 100%;
+        height: 175px;
+    }
+
+    .radar-scope-svg {
+        width: 180px;
+        height: 90%;
+        max-width: 90%;
+    }
+
+    .panel-interactive-content {
+        margin-top: 18px;
+    }
+
+    .panel-interactive-content h3 {
+        font-size: 1.2rem;
+        line-height: 1.3;
+    }
+
+    .panel-interactive-content p {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 0;
+    }
+}
+
+
+/* =========================================================
+   MOBILE — 600px
+   ========================================================= */
+@media (max-width: 600px) {
+
+    .firewall-logs-section {
+        padding-top: 35px;
+        padding-bottom: 25px;
+    }
+
+    .logs-container {
+        width: 100%;
+        padding-left: 18px;
+        padding-right: 18px;
+        box-sizing: border-box;
+    }
+
+    .logs-section-header {
+        margin-bottom: 24px;
+        text-align: left;
+    }
+
+    .cyber-badge {
+        font-size: 0.65rem;
+        letter-spacing: 1.2px;
+        line-height: 1.5;
+    }
+
+    .logs-main-title {
+        font-size: 1.8rem;
+        line-height: 1.25;
+        letter-spacing: -0.3px;
+        margin-top: 8px;
+    }
+
+    .logs-matrix-layout {
+        width: 100%;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 17px;
+    }
+
+    .logs-panel {
+        width: 100%;
+        padding: 16px;
+        border-radius: 13px;
+        min-width: 0;
+    }
+
+    .panel-header-tag {
+        margin-bottom: 13px;
+        padding-bottom: 7px;
+        gap: 10px;
+    }
+
+    .tag-title {
+        font-size: 0.61rem;
+        letter-spacing: 0.65px;
+        line-height: 1.45;
+        overflow-wrap: anywhere;
+    }
+
+    .header-vector-icon {
+        width: 13px;
+        height: 13px;
+    }
+
+    /* Terminal */
+    .terminal-shell-box {
+        width: 100%;
+        height: 155px;
+        padding: 11px;
+        border-radius: 7px;
+        box-sizing: border-box;
+    }
+
+    .shell-line {
+        width: 100%;
+        font-size: 0.61rem;
+        line-height: 1.85;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Radar */
+    .radar-viewport {
+        width: 100%;
+        height: 155px;
+        min-height: 155px;
+        border-radius: 7px;
+    }
+
+    .radar-scope-svg {
+        width: 145px;
+        height: 145px;
+        max-width: 85%;
+        max-height: 90%;
+    }
+
+    .radar-inner-ring {
+        animation-duration: 18s;
+    }
+
+    .radar-sweep-beam {
+        animation-duration: 5s;
+    }
+
+    /* Content */
+    .panel-interactive-content {
+        margin-top: 15px;
+    }
+
+    .panel-meta-code {
+        font-size: 0.58rem;
+        letter-spacing: 0.7px;
+        margin-bottom: 5px;
+        overflow-wrap: anywhere;
+    }
+
+    .panel-interactive-content h3 {
+        font-size: 1.05rem;
+        line-height: 1.35;
+        margin-bottom: 7px;
+    }
+
+    .panel-interactive-content p {
+        font-size: 13px;
+        line-height: 1.55;
+        margin: 0;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE — 480px
+   ========================================================= */
+@media (max-width: 480px) {
+
+    .firewall-logs-section {
+        padding-top: 30px;
+        padding-bottom: 22px;
+    }
+
+    .logs-container {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .logs-section-header {
+        margin-bottom: 20px;
+    }
+
+    .cyber-badge {
+        font-size: 0.58rem;
+        letter-spacing: 1px;
+    }
+
+    .logs-main-title {
+        font-size: 1.55rem;
+        line-height: 1.25;
+        letter-spacing: -0.2px;
+    }
+
+    .logs-matrix-layout {
+        gap: 14px;
+    }
+
+    .logs-panel {
+        padding: 13px;
+        border-radius: 11px;
+    }
+
+    .panel-header-tag {
+        margin-bottom: 11px;
+    }
+
+    .tag-title {
+        font-size: 0.56rem;
+        letter-spacing: 0.45px;
+    }
+
+    .header-vector-icon {
+        width: 12px;
+        height: 12px;
+    }
+
+    .terminal-shell-box {
+        height: 145px;
+        padding: 9px;
+    }
+
+    .shell-line {
+        font-size: 0.55rem;
+        line-height: 1.85;
+    }
+
+    .radar-viewport {
+        height: 145px;
+        min-height: 145px;
+    }
+
+    .radar-scope-svg {
+        width: 135px;
+        height: 135px;
+    }
+
+    .panel-interactive-content {
+        margin-top: 13px;
+    }
+
+    .panel-meta-code {
+        font-size: 0.52rem;
+    }
+
+    .panel-interactive-content h3 {
+        font-size: 0.98rem;
+    }
+
+    .panel-interactive-content p {
+        font-size: 12.5px;
+        line-height: 1.55;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES — 360px
+   ========================================================= */
+@media (max-width: 360px) {
+
+    .firewall-logs-section {
+        padding-top: 26px;
+        padding-bottom: 20px;
+    }
+
+    .logs-container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .cyber-badge {
+        font-size: 0.52rem;
+        letter-spacing: 0.7px;
+    }
+
+    .logs-main-title {
+        font-size: 1.35rem;
+        line-height: 1.3;
+    }
+
+    .logs-panel {
+        padding: 11px;
+    }
+
+    .tag-title {
+        font-size: 0.5rem;
+    }
+
+    .header-vector-icon {
+        width: 11px;
+        height: 11px;
+    }
+
+    .terminal-shell-box {
+        height: 135px;
+        padding: 8px;
+    }
+
+    .shell-line {
+        font-size: 0.49rem;
+        line-height: 1.9;
+    }
+
+    .radar-viewport {
+        height: 135px;
+        min-height: 135px;
+    }
+
+    .radar-scope-svg {
+        width: 120px;
+        height: 120px;
+    }
+
+    .panel-meta-code {
+        font-size: 0.48rem;
+    }
+
+    .panel-interactive-content h3 {
+        font-size: 0.9rem;
+    }
+
+    .panel-interactive-content p {
+        font-size: 11.5px;
+        line-height: 1.5;
+    }
+}
+
+
+/* =========================================================
+   WIDTH / OVERFLOW SAFETY
+   ========================================================= */
+
+.firewall-logs-section,
+.logs-container,
+.logs-matrix-layout,
+.logs-panel,
+.panel-header-tag,
+.terminal-shell-box,
+.radar-viewport {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.logs-panel *,
+.logs-panel svg {
+    max-width: 100%;
+}
+
+.logs-panel svg {
+    flex-shrink: 1;
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+   Avoid sticky hover glow on mobile
+   ========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+    .logs-panel:hover {
+        border-color: rgba(255, 255, 255, 0.03);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .logs-panel:hover .panel-meta-code,
+    .logs-panel:hover h3 {
+        color: var(--text-bright);
+        text-shadow: none;
+    }
+
+    .logs-matrix-layout .logs-panel:nth-child(2):hover {
+        border-color: rgba(255, 255, 255, 0.03);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .logs-matrix-layout .logs-panel:nth-child(2):hover .panel-meta-code,
+    .logs-matrix-layout .logs-panel:nth-child(2):hover h3 {
+        color: var(--text-bright);
+        text-shadow: none;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .scroll-reveal-node,
+    .radar-inner-ring,
+    .radar-ping-dot,
+    .radar-sweep-beam {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+
+
 </style>
 
 <script>
@@ -1665,7 +2203,7 @@
 </script>
 
 <section class="reflex-matrix-section" id="mitigations">
-    <img src="https://unsplash.com" alt="Cyber Grid Texture" class="matrix-bg-spline">
+    <img src="./assests/sandbox.webp" alt="Cyber Grid Texture" class="matrix-bg-spline">
 
     <div class="matrix-container">
         
@@ -1695,7 +2233,7 @@
                     </div>
 
                     <div class="diag-card-image">
-                        <img src="https://unsplash.com" alt="Active Cyber Security Interface Network" class="diag-img">
+                        <img src="./assests/subnet.webp" alt="Active Cyber Security Interface Network" class="diag-img">
                         <div class="scan-laser-beam"></div>
                     </div>
 
@@ -1990,7 +2528,7 @@
 
 <section class="firewall-services-section" id="services">
     <!-- Base layout atmospheric background mesh image tag -->
-    <img src="https://unsplash.com" alt="Tech Background Texture" class="services-bg-mesh">
+    <img src="./assests/footprint.webp" alt="Tech Background Texture" class="services-bg-mesh">
 
     <div class="services-container">
         
@@ -2009,7 +2547,7 @@
                 <div class="service-card">
                     <div class="card-laser-trim cyan-laser"></div>
                     <div class="service-card-image-box">
-                        <img src="https://unsplash.com" alt="Quantum Shielding Core" class="card-display-img">
+                        <img src="./assests/quantum.webp" alt="Quantum Shielding Core" class="card-display-img">
                     </div>
                     <div class="service-card-body">
                         <span class="service-meta">MODULE_01 // SECURE</span>
@@ -2022,7 +2560,7 @@
                 <div class="service-card">
                     <div class="card-laser-trim purple-laser"></div>
                     <div class="service-card-image-box">
-                        <img src="https://unsplash.com" alt="Subnet Camouflage Grid" class="card-display-img">
+                        <img src="./assests/subnet.webp" alt="Subnet Camouflage Grid" class="card-display-img">
                     </div>
                     <div class="service-card-body">
                         <span class="service-meta">MODULE_02 // CAMOUFLAGE</span>
@@ -2035,7 +2573,7 @@
                 <div class="service-card">
                     <div class="card-laser-trim green-laser"></div>
                     <div class="service-card-image-box">
-                        <img src="https://unsplash.com" alt="Reflexive Sandboxing Subnet" class="card-display-img">
+                        <img src="./assests/sandbox.webp" alt="Reflexive Sandboxing Subnet" class="card-display-img">
                     </div>
                     <div class="service-card-body">
                         <span class="service-meta">MODULE_03 // KINETIC_AI</span>
@@ -2048,7 +2586,7 @@
                 <div class="service-card">
                     <div class="card-laser-trim cyan-laser"></div>
                     <div class="service-card-image-box">
-                        <img src="https://unsplash.com" alt="Deep Packet Analysis" class="card-display-img">
+                        <img src="./assests/footprint.webp" alt="Deep Packet Analysis" class="card-display-img">
                     </div>
                     <div class="service-card-body">
                         <span class="service-meta">MODULE_04 // DEEP_INSPECT</span>
@@ -2062,7 +2600,7 @@
                 <div class="service-card">
                     <div class="card-laser-trim cyan-laser"></div>
                     <div class="service-card-image-box">
-                        <img src="https://unsplash.com" alt="Quantum Shielding Core" class="card-display-img">
+                        <img src="./assests/quantum.webp" alt="Quantum Shielding Core" class="card-display-img">
                     </div>
                     <div class="service-card-body">
                         <span class="service-meta">MODULE_01 // SECURE</span>
@@ -2075,7 +2613,7 @@
                 <div class="service-card">
                     <div class="card-laser-trim purple-laser"></div>
                     <div class="service-card-image-box">
-                        <img src="https://unsplash.com" alt="Subnet Camouflage Grid" class="card-display-img">
+                        <img src="./assests/subnet.webp" alt="Subnet Camouflage Grid" class="card-display-img">
                     </div>
                     <div class="service-card-body">
                         <span class="service-meta">MODULE_02 // CAMOUFLAGE</span>
@@ -2088,7 +2626,7 @@
                 <div class="service-card">
                     <div class="card-laser-trim green-laser"></div>
                     <div class="service-card-image-box">
-                        <img src="https://unsplash.com" alt="Reflexive Sandboxing Subnet" class="card-display-img">
+                        <img src="./assests/sandbox.webp" alt="Reflexive Sandboxing Subnet" class="card-display-img">
                     </div>
                     <div class="service-card-body">
                         <span class="service-meta">MODULE_03 // KINETIC_AI</span>
@@ -2101,7 +2639,7 @@
                 <div class="service-card">
                     <div class="card-laser-trim cyan-laser"></div>
                     <div class="service-card-image-box">
-                        <img src="https://unsplash.com" alt="Deep Packet Analysis" class="card-display-img">
+                        <img src="./assests/footprint.webp" alt="Deep Packet Analysis" class="card-display-img">
                     </div>
                     <div class="service-card-body">
                         <span class="service-meta">MODULE_04 // DEEP_INSPECT</span>
@@ -2257,7 +2795,7 @@
 
 .service-meta { font-family: monospace; font-size: 0.65rem; color: var(--text-dim); letter-spacing: 1px; margin-bottom: 6px; transition: color 0.3s; }
 .service-card-body h3 { font-size: 1.2rem; font-weight: 700; color: var(--text-bright); margin-bottom: 8px; transition: color 0.3s, text-shadow 0.3s; }
-.service-card-body p { font-size: 0.85rem; color: rgba(255, 255, 255, 0.6); line-height: 1.55; margin: 0; }
+.service-card-body p { font-size: 16px; color: rgba(255, 255, 255, 0.6); line-height: 1.55; margin: 0; }
 
 /* ==========================================
    INTERACTIVE NEON HOVER GLOW COUPLINGS
@@ -2334,7 +2872,7 @@
 
 <section class="faq-section" id="faq">
     <!-- Atmospheric background network grid layer -->
-    <img src="https://unsplash.com" alt="Tech Wireframe Matrix" class="faq-bg-mesh">
+    <img src="./assests/topography map.webp" alt="Tech Wireframe Matrix" class="faq-bg-mesh">
 
     <div class="faq-container">
         
@@ -2464,7 +3002,7 @@
 .cyber-badge {
     font-family: monospace;
     color: var(--neon-cyan);
-    font-size: 0.8rem;
+    font-size: 12px;
     letter-spacing: 2px;
 }
 
@@ -2472,7 +3010,7 @@
    BUG RECON: RESOLVED WORD BREAK CRASH
 ========================================== */
 .scroll-letter-header {
-    font-size: 3rem; /* Increased size significantly for sharp prominence */
+    font-size: 35px; /* Increased size significantly for sharp prominence */
     font-weight: 800; 
     line-height: 1.25; /* Expanded to clean up glow metrics overlapping lines */
     text-transform: uppercase; 
@@ -2547,16 +3085,16 @@
 
 .faq-index {
     font-family: monospace;
-    font-size: 0.9rem; /* Increased index typography size */
+    font-size: 12px; /* Increased index typography size */
     font-weight: 700;
-    color: var(--text-dim);
+    color: white;
     letter-spacing: 1px;
     transition: color 0.3s ease;
 }
 
 /* Increased Question Heading Size */
 .trigger-meta-block h3 {
-    font-size: 1.35rem; /* Increased size significantly for heavy prominence */
+    font-size: 20px; /* Increased size significantly for heavy prominence */
     font-weight: 700;
     color: var(--text-bright);
     line-height: 1.4;
@@ -2761,7 +3299,7 @@
 
 <section class="single-line-cta-section">
     <!-- Atmospheric base layout background image tag -->
-    <img src="https://unsplash.com" alt="Cyber Glow Backdrop" class="cta-banner-bg">
+    <img src="./assests/quantum.webp" alt="Cyber Glow Backdrop" class="cta-banner-bg">
 
     <div class="cta-banner-container">
         
@@ -2775,13 +3313,16 @@
         <!-- Right Side: Floating Action Button Only -->
         <div class="cta-right-action">
             <div class="floating-btn-wrap">
-                <button class="banner-action-btn" type="button">
-                    <span>Deploy Immediate Guard</span>
-                    <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                </button>
+         
+<button class="banner-action-btn" type="button" onclick="window.location.href='404.html';">
+    <span>Deploy Immediate Guard</span>
+    <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+    </svg>
+</button>
+
+
             </div>
         </div>
 
@@ -2815,7 +3356,7 @@
 .cta-banner-bg {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    object-fit: cover; opacity: 0.04; pointer-events: none; z-index: 1;
+    object-fit: cover; opacity: 0.14; pointer-events: none; z-index: 1;
 }
 
 .cta-banner-container {
@@ -2841,7 +3382,7 @@
 }
 
 .scroll-letter-title {
-    font-size: 2.5rem;
+    font-size: 35px;
     font-weight: 800;
     line-height: 1.2;
     text-transform: uppercase;
@@ -3012,7 +3553,7 @@
         <div class="footer-brand-column">
             <!-- Brand logo triggers scroll back to top of the webpage window -->
             <div class="footer-logo-wrapper" id="footerLogoBtn" title="Back to Top">
-                <img src="https://placehold.co" alt="Stackly Logo" class="footer-brand-img">
+                <img src="./assests/automotive logo.webp" alt="Stackly Logo" class="footer-brand-img">
             </div>
             <p class="brand-bio-text">
                 Securing enterprise perimeter clusters with automated zero-trust architecture, multi-vector threat mitigation modules, and continuous low-latency network camouflage.
@@ -3156,7 +3697,7 @@
 
 .brand-bio-text {
     font-size: 0.95rem; /* High readability contrast scale */
-    color: var(--text-dim);
+    color: white;
     line-height: 1.6;
     margin-bottom: 24px;
     text-align: left;
@@ -3222,7 +3763,7 @@
 
 .footer-links-column a {
     font-size: 0.95rem; /* Increased font scale choices */
-    color: var(--text-dim);
+    color: white;
     text-decoration: none;
     margin-bottom: 12px;
     transition: color 0.2s ease, text-shadow 0.2s ease;
@@ -3241,7 +3782,7 @@
 
 .news-subtitle {
     font-size: 0.95rem;
-    color: var(--text-dim);
+    color: white;
     line-height: 1.5;
     margin-bottom: 20px;
 }
@@ -3313,7 +3854,7 @@
 
 .copyright-text {
     font-size: 0.9rem;
-    color: var(--text-dim);
+    color: white;
 }
 
 .legal-links-row {
@@ -3323,7 +3864,7 @@
 
 .legal-links-row a {
     font-size: 0.9rem;
-    color: var(--text-dim);
+    color: white;
     text-decoration: none;
     transition: color 0.2s ease;
 }

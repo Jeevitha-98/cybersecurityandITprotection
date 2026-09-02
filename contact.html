@@ -62,7 +62,7 @@
     <div class="header-container">
         <!-- Brand Logo Container (Tied to JS Window Reload Engine) -->
         <div class="logo-wrapper" id="brandLogoBtn" title="Refresh Dashboard">
-            <img src="https://placehold.co" alt="Stackly Logo" class="brand-img">
+            <img src="./assests/automotive logo.webp" alt="Stackly Logo" class="brand-img">
         </div>
 
         <!-- Centralized App Menu Navigation Links (Now with Contact Us) -->
@@ -153,14 +153,20 @@
             <!-- Floating CTA Controls Row -->
             <div class="floating-btn-wrap">
                 <div class="cta-group">
-                    <button class="cta-btn primary-cta" type="button" onclick="document.getElementById('contact-form').scrollIntoView({behavior: 'smooth'})">Initialize Link</button>
-                    <button class="cta-btn secondary-cta" type="button">
-                        <span>View Node Status</span> 
-                        <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </button>
+                 
+<button class="cta-btn primary-cta" type="button" onclick="window.location.href='404.html';">
+    Initialize Link
+</button>
+
+<button class="cta-btn secondary-cta" type="button" onclick="window.location.href='404.html';">
+    <span>View Node Status</span>
+    <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+    </svg>
+</button>
+
+
                 </div>
             </div>
         </div>
@@ -913,7 +919,7 @@
             </div>
 
             <!-- Redirection trigger maps directly onto real Google Maps coordinates link -->
-            <a href="https://google.com" target="_blank" rel="noopener noreferrer" class="open-map-action-btn">
+            <a href="https://maps.app.goo.gl/1iUAJLxSuFhmkqeE8" target="_blank" rel="noopener noreferrer" class="open-map-action-btn">
                 <span>Open Map Node</span>
                 <svg viewBox="0 0 24 24" class="btn-map-vector-icon"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon><line x1="9" y1="3" x2="9" y2="18"></line><line x1="15" y1="6" x2="15" y2="21"></line></svg>
             </a>
@@ -926,7 +932,7 @@
                 <div class="card-laser-trim cyan-trim"></div>
                 
                 <!-- Real HTML layout img tag to house your custom radar map artwork asset -->
-                <img src="https://unsplash.com" alt="Command Satellite Radar Tracking Map Layer" class="map-display-img-node">
+                <img src="./assests/quantum.webp" alt="Command Satellite Radar Tracking Map Layer" class="map-display-img-node">
                 
                 <!-- Advanced scanning beam matrix crosshair radar filters overlay -->
                 <div class="map-laser-sweep-beam"></div>
@@ -1142,7 +1148,7 @@
 
 <section class="single-line-cta-section">
     <!-- Atmospheric base layout background image tag -->
-    <img src="https://unsplash.com" alt="Cyber Glow Backdrop" class="cta-banner-bg">
+    <img src="./assests/quantum.webp" alt="Cyber Glow Backdrop" class="cta-banner-bg">
 
     <div class="cta-banner-container">
         
@@ -1156,13 +1162,13 @@
         <!-- Right Side: Floating Action Button Only -->
         <div class="cta-right-action">
             <div class="floating-btn-wrap">
-                <button class="banner-action-btn" type="button">
-                    <span>Deploy Immediate Guard</span>
-                    <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                </button>
+             <button class="banner-action-btn" type="button" onclick="window.location.href='404.html';">
+    <span>Deploy Immediate Guard</span>
+    <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+    </svg>
+</button>
             </div>
         </div>
 
@@ -1196,7 +1202,7 @@
 .cta-banner-bg {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    object-fit: cover; opacity: 0.04; pointer-events: none; z-index: 1;
+    object-fit: cover; opacity: 0.14; pointer-events: none; z-index: 1;
 }
 
 .cta-banner-container {
@@ -1222,7 +1228,7 @@
 }
 
 .scroll-letter-title {
-    font-size: 2.5rem;
+    font-size: 35px;
     font-weight: 800;
     line-height: 1.2;
     text-transform: uppercase;
@@ -1393,7 +1399,7 @@
         <div class="footer-brand-column">
             <!-- Brand logo triggers scroll back to top of the webpage window -->
             <div class="footer-logo-wrapper" id="footerLogoBtn" title="Back to Top">
-                <img src="https://placehold.co" alt="Stackly Logo" class="footer-brand-img">
+                <img src="./assests/automotive logo.webp" alt="Stackly Logo" class="footer-brand-img">
             </div>
             <p class="brand-bio-text">
                 Securing enterprise perimeter clusters with automated zero-trust architecture, multi-vector threat mitigation modules, and continuous low-latency network camouflage.
@@ -1537,7 +1543,7 @@
 
 .brand-bio-text {
     font-size: 0.95rem; /* High readability contrast scale */
-    color: var(--text-dim);
+    color: white;
     line-height: 1.6;
     margin-bottom: 24px;
     text-align: left;
@@ -1603,7 +1609,7 @@
 
 .footer-links-column a {
     font-size: 0.95rem; /* Increased font scale choices */
-    color: var(--text-dim);
+    color: white;
     text-decoration: none;
     margin-bottom: 12px;
     transition: color 0.2s ease, text-shadow 0.2s ease;
@@ -1622,7 +1628,7 @@
 
 .news-subtitle {
     font-size: 0.95rem;
-    color: var(--text-dim);
+    color: white;
     line-height: 1.5;
     margin-bottom: 20px;
 }
@@ -1694,7 +1700,7 @@
 
 .copyright-text {
     font-size: 0.9rem;
-    color: var(--text-dim);
+    color: white;
 }
 
 .legal-links-row {
@@ -1704,7 +1710,7 @@
 
 .legal-links-row a {
     font-size: 0.9rem;
-    color: var(--text-dim);
+    color: white;
     text-decoration: none;
     transition: color 0.2s ease;
 }
